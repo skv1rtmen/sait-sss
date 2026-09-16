@@ -420,7 +420,8 @@
     const cfg=S5[scene.id];
     curScene=scene;curCfg=cfg;
     W.setAttribute('data-s5-k',String(k));   /* CSS: «Rundgang»-Knopf nur in der Ankunft */
-    akteAdd(scene.navLabel);
+    if(k>0)akteAdd(scene.navLabel);            /* die Ankunft ist kein besuchter Raum — die Akte beginnt bei 1 */
+    else akteBadge();
     if(!cfg)return;
     todoLine(cfg);
     const make=cfg.mech&&MECHS[cfg.mech];
@@ -455,13 +456,17 @@
     host=el('div','s5-host');host.id='wS5';host.setAttribute('aria-hidden','false');
     stage.insertBefore(host,ov);                            /* vor #wOv: gleicher z-index, Text bleibt oben */
     akteBadge();
-    /* «Offerte in 48 h» führt im Haus zuerst in die Akte. */
-    const off=document.querySelector('#stickycall .off');
-    if(off&&!off._s5){
-      off._s5=true;
-      off.addEventListener('click',e=>{
-        const inHouse=window.Film16&&Film16.house;
-        if(!inHouse)return;
+    /* «Offerte in 48 h» führt im Haus zuerst in die Akte.
+       BUG (16.09): der Haken hing am Knopf selbst — film-v16.js lauscht aber auf DOCUMENT in der
+       Capture-Phase (onClickAny) und ruft dort releaseHouse(); wenn unser Haken an die Reihe kam, war
+       Film16.house schon false und die Schublade öffnete nie. Darum eine Ebene höher, an WINDOW: dort
+       läuft er vor dem Dokument, hält das Haus und stoppt die Weitergabe. */
+    if(!window.__s5AkteHook){
+      window.__s5AkteHook=true;
+      addEventListener('click',e=>{
+        const t=e.target&&e.target.closest&&e.target.closest('#stickycall .off');
+        if(!t)return;
+        if(!(window.Film16&&Film16.house))return;      /* ausserhalb des Hauses: normaler Weg nach /kontakt */
         e.preventDefault();e.stopPropagation();akteSheet();
       },true);
     }
@@ -473,5 +478,5 @@
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);
   else boot();
   addEventListener('v16:mounted',boot);
-  window.Stage5={boot,teardown,deadline48,akte:akteRooms};
+  window.Stage5={boot,teardown,deadline48,akte:akteRooms,sheet:akteSheet};
 })();

@@ -270,6 +270,11 @@
   .wohnung.is-v16 .w-trust span:nth-of-type(3),
   .wohnung.is-v16 .w-trust i:nth-of-type(3){display:none}
   .wohnung.is-v16 #wStart{margin-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+  /* Drei Zahlen, die in zwei Zeilen umbrachen («100 %» allein unten) — als drei Spalten sind sie
+     eine Aussage statt eines Rests. */
+  .wohnung.is-v16 .w-counters{display:grid;grid-template-columns:repeat(3,1fr);gap:0 12px;margin-top:16px}
+  .wohnung.is-v16 .w-counters b{font-size:26px}
+  .wohnung.is-v16 .w-counters b+span{font-size:11px;line-height:1.25;margin-top:4px}
 }
 
 /* ============================ 6 · Trace (?trace=1) ============================ */

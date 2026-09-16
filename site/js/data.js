@@ -748,7 +748,9 @@ const FILM_V15={
    d:'Ihr Umbau. Klar geplant und sauber umgesetzt — bis zur Schlüsselübergabe.',
    hero:true,
    counters:[["6","","Gewerke aus einer Hand"],["24","h","Antwort an Werktagen"],["100","%","Deutschschweiz abgedeckt"]],
-   hotP:[{x:38,y:52}],
+   /* Etappe 5 §7: der Stecknadel-Text lag auf dem Kicker — hoch auf die Fassade, links, damit die
+      Sprechblase im Kader bleibt. */
+   hotP:[{x:30,y:24}],
    hot:[{x:42,y:52,t:'Ein Haus, ein Ansprechpartner',l:['Sichtbeton, Lärche, Glas — sechs Gewerke, ein Werkvertrag','Beginn und Übergabe stehen schriftlich fest'],go:'leistungen/renovation'}]},
   {id:'flur',f:227,room:'flur',navLabel:'Schwelle',kicker:'Ein Ansprechpartner',h:'Sechs Gewerke. <em>Ein</em> Ansprechpartner.',
    d:'Sie sprechen mit einer Person — wir koordinieren alle Gewerke, Termine und Nachweise.',chips:true,
