@@ -198,6 +198,10 @@
 .wohnung.is-v16 .s5-abl-lab.is-done b,.wohnung.is-v16 .s5-abl-lab.is-on b{color:var(--s5-warm)}
 .wohnung.is-v16 .s5-abl-lab span{display:block;margin-top:4px;font:500 11px/1 'Instrument Sans',system-ui,sans-serif;
   color:rgba(255,255,255,.88);text-shadow:0 1px 8px rgba(0,0,0,.7)}
+/* Telefon: die Unterzeile («innert 48 h», «Protokoll + Schlüssel») ist breiter als der Abstand zweier
+   Knoten — sie lief ineinander. Die fünf Namen genügen; das Detail zum aktiven Schritt steht ohnehin
+   gross auf der Karte darunter. */
+@media (max-width:760px){.wohnung.is-v16 .s5-abl-lab span{display:none}}
 .wohnung.is-v16 .s5-card-abl{box-shadow:inset 0 0 0 1.5px var(--s5-warm),0 10px 30px rgba(0,0,0,.45)}
 .wohnung.is-v16 .s5-card-abl small{color:var(--s5-warm)}
 
@@ -232,7 +236,10 @@
 @media (max-width:760px){
   .wohnung.is-v16 .w-sig{right:18px;top:auto;bottom:calc(150px + env(safe-area-inset-bottom,0px));
     width:120px;z-index:6}
-  .wohnung.is-v16.s5-clock-on .w-sig{top:57%;bottom:auto;right:14px;width:152px}
+  /* Der Zug selbst bleibt schmal, die Bildunterschrift braucht aber die volle Breite — sonst lief
+     «… · INHABER» aus dem Kader. Darum Kasten 172 px, SVG darin rechtsbündig auf 120 px. */
+  .wohnung.is-v16.s5-clock-on .w-sig{top:54%;bottom:auto;right:14px;width:172px}
+  .wohnung.is-v16.s5-clock-on .w-sig svg{display:block;width:120px;margin-left:auto}
   .wohnung.is-v16 .w-sig small{font-size:9px;letter-spacing:.1em}
   .wohnung.is-v16.s5-clock-on .w-sig small{font-size:8.5px;letter-spacing:.06em;white-space:nowrap}
 }
