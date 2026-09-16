@@ -677,6 +677,72 @@ const FILM_V15={
     Fallback (dir:null): Pan-Scan der 16:9-Kader mit Überblendung in die hochkanten Haltebilder. */
  portrait:{enabled:true,stillDir:'img/film/s15p/',dir:'img/film/fp15/',matDir:null,videoDir:'img/film/mp15/',w:540,h:960},
  ankunft:{enabled:false},   /* v14-Prolog nicht mehr nötig: die Ankunft ist Szene 0 (Intro-Clip) — in beiden Engines */
+ /* ---- Etappe 5 «Eine Frage — eine Geste» (PLAN-v16-ETAPPE5.md) -------------------------------------
+    S5[id] wird von js/stage5-v16.js gelesen und in film-v16.js nur über scene.mech/scene.q/scene.todo
+    berührt. Koordinaten in Prozent der Bühne (#wStage), P = Hochkant (Telefon), L = Querformat (Desktop).
+    Neue Polygone/Punkte trassiert man mit ?trace=1 (Klick schreibt {x,y} in die Konsole). */
+ s5:{
+  flur:{ q:'Wer ist zuständig?', mech:'six2one',
+    todo:{task:'Sechs Offerten einholen und vergleichen', done:'eine.'},
+    six:{ hub:{P:{x:46,y:50}, L:{x:48,y:47}},
+      /* Zwei Spalten mit Versatz: der Zettel ist ~34 % breit (Telefon), darum links x<38 und rechts x>56 —
+         so wirkt der Stapel chaotisch (Drehung r), ohne dass sich zwei Zettel wirklich überdecken. */
+      notes:[
+       {t:'Sanitär',     l:'Offerte ausstehend · Termin: <i>?</i>',        P:{x:3,y:28},  L:{x:16,y:24},  r:-6},
+       {t:'Elektro',     l:'Rechnung 2/6 · Rückruf offen',                 P:{x:54,y:14}, L:{x:66,y:14}, r:5},
+       {t:'Schreiner',   l:'Lieferung <i>verschoben</i> · 3 Wochen',       P:{x:56,y:28}, L:{x:70,y:34}, r:-4},
+       {t:'Maler',       l:'wartet auf Gipser',                            P:{x:5,y:42},  L:{x:17,y:47},  r:7},
+       {t:'Plattenleger',l:'Abdichtung: <i>wer?</i>',                      P:{x:2,y:56},  L:{x:16,y:69}, r:-5},
+       {t:'Rückbau',     l:'Wiegeschein fehlt',                            P:{x:52,y:42}, L:{x:68,y:54}, r:4}],
+      card:{k:'EIN BAULEITER', t:'eine Nummer · ein Werkvertrag<br>eine Rechnung', s:'Artem Kozlovskyi · Inhaber'} } },
+
+  kueche:{ q:'Wer macht was?', mech:'takt',
+    todo:{task:'Schreiner, Sanitär und Elektro koordinieren', done:'ein Takt.'},
+    takt:{ end:'Drei Gewerke, ein Termin.',
+      /* Am Standbild abgelesen (?trace=1): Insel unten rechts, Regal mit Armatur in der Wandmitte,
+         Messing-Pendel oben rechts. Die Karte steht in der freien Betonfläche über allem. */
+      zones:[
+       {t:'Schreiner', l:'Insel Räuchereiche, Abdeckung Naturstein',
+        P:'55,59 100,55 100,76 57,86',                  L:'48,60 100,53 100,82 54,88',
+        pP:{x:73,y:67}, pL:{x:74,y:70}},
+       {t:'Sanitär', l:'Anschlüsse und Armatur — im Takt mit dem Schreiner',
+        P:'44,54 67,52 67,64 44,66',                    L:'34,46 60,42 60,58 34,60',
+        pP:{x:33,y:58}, pL:{x:40,y:54}},
+       {t:'Elektro', l:'Pendel, Stromschienen, Steuerung — koordiniert',
+        P:'70,19 97,19 97,47 72,47',                    L:'64,12 92,8 92,42 66,44',
+        pP:{x:72,y:38}, pL:{x:78,y:50}}],
+      card:{P:{x:30,y:32}, L:{x:76,y:18}} } },
+
+  bad:{ q:'Abnahme bei Tageslicht', mech:'dusk',
+    todo:{task:'Abdichtung und Normen selbst kontrollieren', done:'protokolliert.'},
+    dusk:{ img:'img/film/v16/stills/bad-dusk-', start:38,
+      labL:'Tageslicht', labR:'Abend',
+      /* Kerzen-Glut: Position der Flammen im ABEND-Bild, Atmung per CSS */
+      glow:{P:[{x:52,y:64,r:8},{x:61,y:67,r:6},{x:44,y:61,r:5}],
+            L:[{x:26,y:62,r:7},{x:33,y:66,r:5},{x:20,y:59,r:5}]} } },
+
+  schlaf:{ q:'Wie läuft es ab?', mech:'ablauf',
+    todo:{task:'Handwerker-Termine abstimmen', done:'ein Bauzeitplan.'},
+    ablauf:{ line:{P:{y:38,x0:18,x1:76}, L:{y:33,x0:23,x1:84}}, active:3,
+      steps:[
+       {t:'Anfrage',       f:'Rückruf in 5 Min',      c:'Sie schildern kurz, worum es geht — wir rufen in 5 Minuten zurück'},
+       {t:'Besichtigung',  f:'kostenlos, vor Ort',    c:'Aufmass vor Ort, Ist-Zustand mit Fotos dokumentiert'},
+       {t:'Offerte',       f:'innert 48 h',           c:'Festpreis-Offerte, Position für Position'},
+       {t:'Ausführung',    f:'wöchentliches Update',  c:'Ein Bauleiter, ein Bauzeitplan — Sie bekommen jede Woche ein Update'},
+       {t:'Übergabe',      f:'Protokoll + Schlüssel', c:'Gemeinsame Abnahme, Protokoll, Schlüssel'}] } },
+
+  wohnen:{ q:'Wie bleibt es?', mech:null,
+    todo:{task:'Wöchentlich auf die Baustelle', done:'wöchentliches Update.'} },
+
+  rohbau:{ q:'Wie war es vorher?', mech:'wipe',
+    todo:{task:'Schutt, Staub und Container organisieren', done:'täglich besenrein.'},
+    wipe:{labL:'Monate früher', labR:'Heute'} },
+
+  eingang:{ q:'Wann geht es los?', mech:'clock',
+    todo:{done:'Ihre Liste: leer.', tail:'Ein Anruf genügt.'},
+    clock:{ kicker:'ANFRAGE JETZT', pre:'Offerte bis',
+      versprechen:['Offerte innert 48 h','Ein Ansprechpartner — bis zum Schlüssel','Nach Norm — SIA, mit Protokoll','Termin im Werkvertrag · 24 Mt. Garantie'] } }
+ },
  scenes:[
   {id:'ankunft',f:95,room:'ankunft',navLabel:'Ankunft',kicker:'Zürich · Deutschschweiz',rot:['für Hausverwaltungen','für Generalunternehmer','für Gewerbe & Ladenbau','für Eigentümer'],h:'Bauen mit System und <em>Vertrauen.</em>',
    d:'Ihr Umbau. Klar geplant und sauber umgesetzt — bis zur Schlüsselübergabe.',

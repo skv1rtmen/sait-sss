@@ -21,7 +21,16 @@ html.v16-lock,html.v16-lock body{overflow:hidden!important;overscroll-behavior:n
 .wohnung.is-v16 .w-cmp{z-index:4}
 .wohnung.is-v16 .w-cmp-after{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
   clip-path:inset(0 0 0 calc(var(--x) * 100%))}
-@media (max-width:760px){.wohnung.is-v16 .w-cmp{display:none!important}}   /* Telefon: nur der Wischer-Splitstop, kein Zusatzregler */
+/* Etappe 5 §4.5b: Der Regler ist jetzt auch auf dem Telefon da (stage5-v16.js setzt .s5-wipe-on und die
+   Etiketten «Monate früher / Heute»); ohne diese Klasse bleibt er dort wie bisher aus. */
+@media (max-width:760px){
+  .wohnung.is-v16 .w-cmp{display:none!important}
+  .wohnung.is-v16 .w-cmp.s5-wipe-on{display:block!important}
+  .wohnung.is-v16 .w-cmp.s5-wipe-on .w-cmp-h{width:46px;height:46px;top:52%}
+  .wohnung.is-v16 .w-cmp.s5-wipe-on .w-cmp-tag{top:auto;bottom:calc(30% + 10px);font-size:10px;letter-spacing:.16em}
+  .wohnung.is-v16 .w-cmp.s5-wipe-on .w-cmp-tag-l{left:18px}
+  .wohnung.is-v16 .w-cmp.s5-wipe-on .w-cmp-tag-r{right:18px;color:var(--s5-brass,#D6B685)}
+}
 
 /* Erstes Bild aus dem HTML (schneller Paint, bevor die Engine läuft) */
 .v16-boot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0}

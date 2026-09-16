@@ -19,6 +19,10 @@
   const reduced=()=>matchMedia('(prefers-reduced-motion:reduce)').matches;
   const orient=()=>innerHeight>innerWidth?'P':'L';
   const isPhone=()=>matchMedia('(max-width:760px)').matches;
+  /* Etappe 5: Stammdaten der Kammer-Mechaniken liegen in FILM_V16.s5[id] (data.js), nicht in der Szene
+     selbst — so bleibt scenes[] mit ?film=15 kompatibel. */
+  const s5of=scene=>(scene&&F.s5&&F.s5[scene.id])||null;
+  const sceneMech=scene=>{const c=s5of(scene);return c&&c.mech||null;};
   const goRoute=g=>{if(typeof go==='function')go(g);else location.href='/'+String(g).replace(/^\/+/,'');};
 
   /* ---------- Netz/Gerät: leichter Tier (720p) ---------- */
@@ -189,7 +193,9 @@
         rotTimer=setInterval(()=>{if(!sp.isConnected){clearInterval(rotTimer);rotTimer=0;return;}
           i=(i+1)%scene.rot.length;sp.classList.add('out');
           setTimeout(()=>{sp.textContent=scene.rot[i];sp.classList.remove('out');sp.classList.add('in');setTimeout(()=>sp.classList.remove('in'),420);},260);},2600);
-      } else k.textContent=(scene.kicker||'')+(scene.rot?' · '+scene.rot[0]:'');
+      } else k.textContent=((s5of(scene)||{}).q||scene.kicker||'')+(scene.rot?' · '+scene.rot[0]:'');
+      /* Etappe 5 §2.5: In den Kammern ersetzt die FRAGE der Kammer den Gewerk-Kicker. Die Rotator-Variante
+         oben betrifft nur die Ankunft (scene.rot), dort bleibt der Kicker unverändert. */
       h.innerHTML=String(scene.h||'');
       const walker=document.createTreeWalker(h,NodeFilter.SHOW_TEXT),nodes=[];let tn;
       while((tn=walker.nextNode()))nodes.push(tn);
@@ -213,6 +219,9 @@
     }
     function buildHots(scene){
       if(!hotL)return;hotL.innerHTML='';
+      /* Etappe 5 §2.4: Eine Kammer hat entweder Pins ODER eine Geste, nie beides — die Pin-Texte leben
+         ab jetzt in der Mechanik selbst (Zonen, Notizzettel, Knoten). Betrifft alle Geräte. */
+      if(sceneMech(scene))return;
       const list=(orient()==='P'?(scene.hotP&&scene.hot?scene.hot.slice(0,scene.hotP.length):scene.hot):scene.hot)||[];
       const pos=orient()==='P'&&scene.hotP?scene.hotP:null;
       const items=list.slice(0,orient()==='P'?3:4).map((hp,i)=>({hp,x:pos&&pos[i]?pos[i].x:hp.x,y:pos&&pos[i]?pos[i].y:hp.y}));
@@ -340,7 +349,9 @@
     }
     function updateCmp(k){
       if(!cmp)return;
-      if(k===RUECK_K&&RUECK_AFTER_K>=0&&!isPhone()){
+      /* Etappe 5 §4.5b: Der Vorher/Nachher-Regler lief bisher nur auf dem Desktop. Auf dem Telefon war der
+         Splitstop der einzige Blick zurück — jetzt bleibt er der Auftritt, und der Regler kommt danach dazu. */
+      if(k===RUECK_K&&RUECK_AFTER_K>=0){
         if(cmpAfter)cmpAfter.src=stillUrl(RUECK_AFTER_K);
         cmp.style.setProperty('--x','.5');
         cmp.hidden=false;
@@ -435,12 +446,14 @@
          stand darum in der Abnahme-Kammer nur als fertiger (weil nie gezeichneter, also unsichtbarer) Strich
          da, statt sich wie beabsichtigt von Hand zu schreiben. Reset bei jedem anderen Kapitel, damit sie bei
          erneutem Besuch der Kammer wieder neu zeichnet statt nur aufzupoppen. */
-      if(sig){const sv=sig.querySelector('svg');if(sv){if(scene.sig){if(sv._sigRun)sv._sigRun();}else if(sv._sigReset)sv._sigReset();}}
+      /* Etappe 5 §4.6: In der Abnahme-Kammer startet stage5-v16.js die Unterschrift erst NACH den vier
+         Versprechen — hier nur noch zurücksetzen, damit sie beim erneuten Besuch wieder neu schreibt. */
+      if(sig){const sv=sig.querySelector('svg');if(sv){if(scene.sig){if(!sceneMech(scene)&&sv._sigRun)sv._sigRun();else if(sv._sigReset)sv._sigReset();}else if(sv._sigReset)sv._sigReset();}}
       prefetchNeighbours();
       /* 2,5D erst NACH dem neutralen Haltebild: erst steht das Bild, dann wächst die Tiefe hinein.
          Der erste gezeichnete Kader ist pixelgleich zum Standbild — kein Sprung am Übergang. */
       showDepth(k);
-      W.dispatchEvent(new CustomEvent('v16:hold',{detail:{ch:k}}));   /* stepChain() hängt hier dran */
+      W.dispatchEvent(new CustomEvent('v16:hold',{detail:{ch:k,k,scene:S[k]}}));   /* stepChain() + stage5-v16.js hängen hier dran */
       if(pending&&chainTarget==null){const p=pending;pending=0;setTimeout(()=>command(p),40);}
       else pending=0;
     }
@@ -567,6 +580,9 @@
         const t=ch+dir;
         if(t<0){return;}                                  /* oben: bleibt in Ankunft */
         if(t>=N){return exitHouse();}                      /* nach der letzten Kammer: Seite freigeben */
+        /* Etappe 5: die Kammer wird verlassen — stage5-v16.js räumt Mechanik und To-do-Zeile ab,
+           BEVOR der Flug startet (sonst bliebe ein Overlay über dem Video stehen). */
+        W.dispatchEvent(new CustomEvent('v16:leave',{detail:{k:ch}}));
         startFly(ch,t,dir);
       } else {
         if(dir===flyDir){ if(!pending)pending=dir; }       /* höchstens EIN Schritt in der Warteschlange */
@@ -760,6 +776,10 @@
       if(cmp)cmp.hidden=true;
     };
     st={mode:'v16',cleanup};
+    /* Etappe 5: Die SPA (pages.js) ersetzt beim Rendern der Startseite das gesamte #view und damit auch
+       die Bühne — ein Modul, das sich an #wohnung hängt, verliert dabei seine Ebene. Dieses Signal sagt
+       stage5-v16.js, dass eine frische Bühne steht und es sich neu einhängen muss. */
+    dispatchEvent(new CustomEvent('v16:mounted',{detail:{root:W}}));
     /* Debug/Tests */
     window.Film16={
       get ch(){return ch;},get phase(){return phase;},get dir(){return flyDir;},get to(){return flyTo;},
@@ -767,6 +787,7 @@
       get active(){return active&&(active.v.currentSrc||active.v.src);},
       get poolSize(){return pool.size;},
       go:gotoChapter,cmd:command,next:()=>command(1),prev:()=>command(-1),exit:exitHouse,enter:()=>enterHouse(true),
+      release:releaseHouse,   /* Etappe 5: die Akte-Schublade gibt die Seite frei, bevor sie zum Rechner scrollt */
       setTier(t){TIER=t;},rooms:ROOMS,legs:LEGS,N
     };
     return cleanup;

@@ -179,6 +179,7 @@ const wStage=()=>`<div class="w-stage" id="wStage">
   <div class="w-ov is-hero" id="wOv" aria-live="polite">
     <p class="w-kicker"><span class="dia"></span><span class="w-kicker-t"></span></p>
     <h2 class="w-h disp"></h2>
+    <p class="w-todo" aria-live="polite"></p>
     <p class="w-d"></p>
     <div class="w-chips" hidden>${SVC.map(s=>`<button type="button" class="w-chip" data-go="leistungen/${s.slug}">${s.t}</button>`).join('')}</div>
     <div class="w-counters" hidden></div>

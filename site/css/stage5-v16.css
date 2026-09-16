@@ -1,0 +1,308 @@
+/* BauStern — stage5-v16.css · Etappe 5 «Eine Frage — eine Geste»
+   Gehört zu js/stage5-v16.js. Aufbau: (1) Aufräumen des Kaders, (2) To-do-Zeile, (3) Mechaniken,
+   (4) Akte, (5) Ankunft-Feinschliff, (6) Trace-Hilfe.
+   Auf dem Desktop ist alles GRÖSSER (Entscheid §10.3): --s5-scale skaliert Karten, Zettel und Griffe. */
+
+.wohnung.is-v16{--s5-brass:#D6B685;--s5-blue:#6FA3F2;--s5-warm:#FFE7B8;--s5-ink:rgba(14,18,22,.74);--s5-scale:1}
+/* BUG (Sichtprüfung 16.09, Desktop): «clamp(1.25, 100vw/1100, 1.6)» ist ungültig — 100vw/1100 ist eine LÄNGE
+   (px), kein Verhältnis, also war der ganze clamp() ungültig, damit jede Deklaration mit
+   scale(var(--s5-scale)) ungültig und damit auf dem Desktop JEDES transform weg: Karten unskaliert, die
+   Ablauf-Beschriftungen ohne Versatz mitten auf der Linie. Darum Stufen statt clamp(). */
+@media (min-width: 761px){.wohnung.is-v16{--s5-scale:1.25}}
+@media (min-width:1100px){.wohnung.is-v16{--s5-scale:1.34}}
+@media (min-width:1400px){.wohnung.is-v16{--s5-scale:1.45}}
+@media (min-width:1700px){.wohnung.is-v16{--s5-scale:1.60}}
+
+/* ============================ 1 · Kader aufräumen (§2.3) ============================ */
+/* Der Ort steht auf dem Telefon fünfmal im Bild (Nummer, Name, «Kapitel N von 8», Punkte, Grundriss).
+   Zwei davon reichen; der Rest macht Platz für die Geste. .w-d bleibt im DOM (SEO), nur unsichtbar. */
+/* Gilt auch für das quer gehaltene Telefon (Sichtprüfung 16.09, 844 × 390): dort war der Kader durch
+   Grundriss, Beschreibung, «Kapitel N von 8» und drei Knöpfe restlos zugestellt. */
+@media (max-width:760px), (max-height:560px) and (orientation:landscape){
+  .wohnung.is-v16 #wPlan,
+  .wohnung.is-v16 .v16-chap-s,
+  .wohnung.is-v16 .w-d,
+  .wohnung.is-v16 #wScrollHint{display:none!important}
+  #stickycall .call{display:none!important}     /* zwei Knöpfe: Rückruf + Offerte (§10.1) */
+}
+/* «Rundgang durch das Haus» gehört nur in die Ankunft — dort ruft er die erste Geste auf.
+   data-s5-k setzt js/stage5-v16.js bei jedem Halt. */
+.wohnung.is-v16[data-s5-k]:not([data-s5-k="0"]) #wStart{display:none!important}
+
+/* Desktop (Sichtprüfung 16.09): die Raum-Punktleiste (#wRoomNav, aus site.css) steht seit Engine B in
+   derselben Ecke wie die Kapitelmarke — die Punkte lagen quer über der «02» und ihr Name («SCHWELLE»)
+   doppelt über dem Kapitelnamen. Die Leiste rutscht unter die Marke; Zettel/Linien der Mechaniken
+   halten davon Abstand (Koordinaten in data.js). */
+@media (min-width:1241px){
+  .wohnung.is-v16 .w-roomnav,
+  .wohnung.is-v16.is-full .w-roomnav{top:clamp(320px,38vh,430px)}
+  /* Der Name des aktiven Raums steht schon gross in der Kapitelmarke — in der Punktleiste ist er die
+     dritte Nennung und legt sich je nach Kapitel über die Überschrift. Beim Zeigen bleibt er. */
+  .wohnung.is-v16 .w-roomnav-dot.on span{max-width:0;opacity:0}
+  .wohnung.is-v16 .w-roomnav-dot:hover span,
+  .wohnung.is-v16 .w-roomnav-dot:focus-visible span{max-width:160px;opacity:1}
+}
+
+/* ============================ 2 · To-do-Zeile (§3) ============================ */
+/* Eine Zeile aus der Liste des Hausverwalters — sie wird vor seinen Augen durchgestrichen.
+   Steht im Fluss direkt unter der Überschrift (nie absolute, sonst kollidiert sie im Eingang
+   mit Unterschrift und Knöpfen). */
+.wohnung.is-v16 .w-todo{margin:10px 0 0;font:500 13px/1.35 'Instrument Sans',system-ui,sans-serif;
+  color:rgba(255,255,255,.62);opacity:0;transform:translateY(4px);
+  transition:opacity .25s ease,transform .25s ease;text-shadow:0 1px 10px rgba(0,0,0,.5)}
+.wohnung.is-v16 .w-todo.is-in{opacity:1;transform:none}
+.wohnung.is-v16 .w-todo s{position:relative;text-decoration:none;white-space:normal}
+.wohnung.is-v16 .w-todo s i{position:absolute;left:0;top:52%;height:1.5px;width:0;background:var(--s5-brass);
+  box-shadow:0 0 6px rgba(214,182,133,.6);transition:width .48s cubic-bezier(.65,0,.35,1)}
+.wohnung.is-v16 .w-todo.is-struck s i{width:100%}
+.wohnung.is-v16 .w-todo.is-struck s{color:rgba(255,255,255,.42)}
+.wohnung.is-v16 .w-todo em{font-style:normal;font-weight:600;color:var(--s5-brass);
+  opacity:0;display:inline-block;transform:translateX(-6px);transition:opacity .3s ease,transform .3s ease}
+.wohnung.is-v16 .w-todo.is-done em{opacity:1;transform:none}
+.wohnung.is-v16 .w-todo u{text-decoration:none;color:#fff;opacity:0;transition:opacity .3s ease .1s}
+.wohnung.is-v16 .w-todo.is-done u{opacity:1}
+@media (min-width:761px){.wohnung.is-v16 .w-todo{font-size:15px;margin-top:14px}}
+
+/* ============================ 3 · Bühne der Mechaniken ============================ */
+/* #wS5 liegt VOR #wOv im DOM bei gleichem z-index — der Text bleibt dadurch oben, ohne dass eine
+   abdunkelnde Ebene ihn je überdeckt. */
+.wohnung.is-v16 #wS5{position:absolute;inset:0;z-index:5;pointer-events:none;overflow:hidden;
+  color:#fff;font-family:'Instrument Sans',system-ui,sans-serif}
+.wohnung.is-v16 #wS5 svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.wohnung.is-v16 .w-ov.s5-dim{opacity:.35;transition:opacity .25s ease}
+
+/* Gemeinsame Karte: Messingrahmen, dunkles Glas. */
+.wohnung.is-v16 .s5-card{position:absolute;transform:translate(-50%,0) scale(var(--s5-scale));transform-origin:50% 0;
+  text-align:center;padding:10px 14px 11px;border-radius:8px;background:var(--s5-ink);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  box-shadow:inset 0 0 0 1.5px var(--s5-brass),0 10px 30px rgba(0,0,0,.45);
+  opacity:0;transition:opacity .3s ease;max-width:min(78vw,340px)}
+.wohnung.is-v16 .s5-card.show{opacity:1}
+.wohnung.is-v16 .s5-card small{display:block;font:700 9.5px/1 'Archivo',system-ui,sans-serif;
+  letter-spacing:.22em;color:var(--s5-brass);margin-bottom:6px;text-transform:uppercase}
+.wohnung.is-v16 .s5-card b{display:block;font:600 14.5px/1.25 'Instrument Sans',system-ui,sans-serif}
+.wohnung.is-v16 .s5-card u{display:block;margin-top:6px;text-decoration:none;
+  font:600 9px/1 'Archivo',system-ui,sans-serif;letter-spacing:.16em;color:rgba(255,255,255,.55);text-transform:uppercase}
+
+/* ---------- 3.1 Sechs → Eins (Schwelle) ---------- */
+.wohnung.is-v16 .s5-six{position:absolute;inset:0}
+.wohnung.is-v16 .s5-line{stroke:var(--s5-brass);stroke-width:.25;stroke-opacity:0;stroke-dasharray:1 1;
+  transition:stroke-opacity .3s ease;vector-effect:non-scaling-stroke}
+.wohnung.is-v16 .s5-six.is-held .s5-line{stroke-opacity:.6}
+.wohnung.is-v16 .s5-note{position:absolute;width:calc(132px * var(--s5-scale));padding:8px 10px;border-radius:6px;
+  background:rgba(240,240,236,.93);color:#1c1f22;font:500 10.5px/1.25 'Instrument Sans',system-ui,sans-serif;
+  box-shadow:0 8px 20px rgba(0,0,0,.35);opacity:0;pointer-events:none;
+  transform:translateY(12px) scale(.6) rotate(var(--r,0deg));transform-origin:0 0;
+  transition:opacity .28s ease,transform .38s cubic-bezier(.34,1.56,.64,1);transition-delay:calc(var(--i,0) * 60ms)}
+.wohnung.is-v16 .s5-note b{display:block;font:700 10px/1 'Archivo',system-ui,sans-serif;letter-spacing:.06em;
+  text-transform:uppercase;margin-bottom:4px;color:#3a3f44}
+.wohnung.is-v16 .s5-note i{font-style:normal;color:#b3261e;font-weight:600}
+.wohnung.is-v16 .s5-six.is-held .s5-note{opacity:1;transform:translateY(0) scale(1) rotate(var(--r,0deg))}
+.wohnung.is-v16 .s5-hub{position:absolute;width:calc(96px * var(--s5-scale));height:calc(96px * var(--s5-scale));
+  margin:calc(-48px * var(--s5-scale)) 0 0 calc(-48px * var(--s5-scale));border:0;background:none;padding:0;
+  pointer-events:auto;cursor:grab;touch-action:none;-webkit-tap-highlight-color:transparent}
+.wohnung.is-v16 .s5-hub::before{content:"";position:absolute;left:50%;top:50%;width:14px;height:14px;margin:-7px 0 0 -7px;
+  border-radius:50%;background:var(--s5-brass);box-shadow:0 0 0 1.5px rgba(0,0,0,.35),0 4px 14px rgba(0,0,0,.45)}
+.wohnung.is-v16 .s5-hub::after{content:"";position:absolute;left:50%;top:50%;width:52px;height:52px;margin:-26px 0 0 -26px;
+  border-radius:50%;border:1px solid rgba(214,182,133,.45);animation:s5pulse 2.6s ease-out infinite}
+@keyframes s5pulse{0%{transform:scale(.8);opacity:.9}70%{transform:scale(1.25);opacity:0}100%{opacity:0}}
+.wohnung.is-v16 .s5-six.is-held .s5-hub::after{animation:none;opacity:0}
+.wohnung.is-v16 .s5-card-hub{margin-top:calc(26px * var(--s5-scale));opacity:1}
+.wohnung.is-v16 .s5-six.is-held .s5-card-hub{opacity:0;transition:opacity .2s ease}
+
+/* ---------- 3.2 Takt (Küche) ---------- */
+.wohnung.is-v16 .s5-takt{position:absolute;inset:0}
+.wohnung.is-v16 .s5-zone{fill:rgba(111,163,242,0);stroke:rgba(111,163,242,0);stroke-width:2;
+  vector-effect:non-scaling-stroke;transition:fill .3s ease,stroke .3s ease}
+.wohnung.is-v16 .s5-zone.is-on{fill:rgba(111,163,242,.25);stroke:var(--s5-blue)}
+/* Sichtprüfung 16.09: alle drei Umrisse gleichzeitig stehen zu lassen ergab ein Liniengewirr über dem Kader.
+   Nach dem Takt verschwinden sie wieder — es bleiben die drei abgehakten Marken und der Schlusssatz. */
+.wohnung.is-v16 .s5-zone.is-done{fill:rgba(214,182,133,0);stroke:rgba(214,182,133,0)}
+.wohnung.is-v16 .s5-pill{position:absolute;transform:translate(-50%,-50%) scale(var(--s5-scale));white-space:nowrap;
+  font:600 11.5px/1 'Archivo',system-ui,sans-serif;letter-spacing:.02em;padding:7px 11px;border-radius:100px;
+  background:rgba(28,31,34,.8);box-shadow:inset 0 0 0 1px rgba(255,255,255,.22);
+  opacity:0;transition:opacity .3s ease,box-shadow .3s ease}
+.wohnung.is-v16 .s5-pill i{font-style:normal;opacity:0;margin-left:5px;color:var(--s5-brass);transition:opacity .3s ease}
+.wohnung.is-v16 .s5-pill.is-on{opacity:1;box-shadow:inset 0 0 0 1px var(--s5-blue)}
+.wohnung.is-v16 .s5-pill.is-done{opacity:.85;box-shadow:inset 0 0 0 1px rgba(214,182,133,.7)}
+.wohnung.is-v16 .s5-pill.is-done i{opacity:1}
+.wohnung.is-v16 .s5-card-takt{box-shadow:inset 0 0 0 1.5px var(--s5-blue),0 10px 30px rgba(0,0,0,.45);
+  max-width:min(48vw,260px)}
+@media (min-width:761px){.wohnung.is-v16 .s5-card-takt{max-width:min(30vw,340px)}}
+.wohnung.is-v16 .s5-card-takt small{color:var(--s5-blue)}
+.wohnung.is-v16 .s5-takt-end{position:absolute;left:50%;top:33%;transform:translate(-50%,-50%) scale(var(--s5-scale));
+  font:600 16px/1.2 'Instrument Sans',system-ui,sans-serif;color:var(--s5-brass);white-space:nowrap;
+  padding:9px 16px;border-radius:100px;background:rgba(20,23,26,.78);
+  box-shadow:inset 0 0 0 1px rgba(214,182,133,.4),0 10px 30px rgba(0,0,0,.45);
+  text-shadow:0 2px 14px rgba(0,0,0,.65);opacity:0;transition:opacity .4s ease}
+@media (min-width:761px){.wohnung.is-v16 .s5-takt-end{top:26%}}
+.wohnung.is-v16 .s5-takt-end.show{opacity:1}
+
+/* ---------- 3.3 Abend bei Kerzen (Bad) ---------- */
+.wohnung.is-v16 .s5-dusk{position:absolute;inset:0;--x:0%;clip-path:inset(0 0 0 var(--x))}
+.wohnung.is-v16 .s5-dusk-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+/* Zwischenlösung, solange der Abend-Render fehlt: Tagesbild wird eingefärbt (Kerzen fehlen dann). */
+.wohnung.is-v16 .s5-dusk.is-fallback .s5-dusk-img{filter:brightness(.36) contrast(1.18) saturate(.72) sepia(.4) hue-rotate(-12deg)}
+/* Warmer Kerzenschein über dem eingefärbten Tagesbild — ohne ihn wirkt der Abend nur grau, nicht beleuchtet. */
+.wohnung.is-v16 .s5-dusk.is-fallback::after{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(60% 45% at 55% 66%,rgba(255,176,92,.30),rgba(255,150,70,.10) 55%,transparent 78%),
+             linear-gradient(180deg,rgba(10,14,26,.34),rgba(10,14,26,0) 46%)}
+.wohnung.is-v16 .s5-dusk.is-fallback::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(8,14,30,.55) 0%,rgba(8,14,30,.3) 45%,rgba(0,0,0,0) 72%)}
+.wohnung.is-v16 .s5-dusk-glow{position:absolute;inset:0;pointer-events:none}
+.wohnung.is-v16 .s5-dusk-glow i{position:absolute;width:var(--r,7vmin);height:var(--r,7vmin);margin:calc(var(--r,7vmin) / -2) 0 0 calc(var(--r,7vmin) / -2);
+  border-radius:50%;background:radial-gradient(circle,rgba(255,206,140,.95) 0%,rgba(255,176,90,.45) 38%,rgba(255,160,70,0) 70%);
+  animation:s5flame 2.6s ease-in-out infinite;animation-delay:calc(var(--i,0) * -.8s);mix-blend-mode:screen}
+@keyframes s5flame{0%,100%{opacity:.85;transform:scale(.97)}50%{opacity:1;transform:scale(1.05)}}
+.wohnung.is-v16 .s5-wipe{position:absolute;inset:0;--x:0%}
+.wohnung.is-v16 .s5-wipe-line{position:absolute;left:var(--x);top:0;bottom:0;width:2px;margin-left:-1px;
+  background:rgba(255,255,255,.92);box-shadow:0 0 0 1px rgba(0,0,0,.25),0 0 24px rgba(0,0,0,.45)}
+.wohnung.is-v16 .s5-wipe-grip{position:absolute;left:var(--x);top:52%;
+  width:calc(50px * var(--s5-scale));height:calc(50px * var(--s5-scale));
+  margin:calc(-25px * var(--s5-scale)) 0 0 calc(-25px * var(--s5-scale));
+  border-radius:50%;border:2px solid #fff;background:rgba(28,31,34,.8);color:#fff;
+  display:flex;align-items:center;justify-content:center;gap:5px;font-size:calc(15px * var(--s5-scale));
+  box-shadow:0 10px 30px rgba(0,0,0,.45);pointer-events:auto;cursor:ew-resize;touch-action:none}
+.wohnung.is-v16 .s5-wipe-grip i{font-style:normal}
+.wohnung.is-v16 .s5-wipe.is-drag .s5-wipe-grip{background:var(--s5-brass);color:#1c1f22;border-color:var(--s5-brass)}
+.wohnung.is-v16 .s5-wipe-lab{position:absolute;top:28%;font:700 9.5px/1 'Archivo',system-ui,sans-serif;
+  letter-spacing:.22em;padding:6px 9px;border-radius:100px;background:rgba(14,18,22,.6);text-transform:uppercase;
+  transition:opacity .25s ease}
+.wohnung.is-v16 .s5-wipe-lab.is-l{left:22px;color:#fff;opacity:calc((100% - var(--x)) / 100% + .15)}
+.wohnung.is-v16 .s5-wipe-lab.is-r{right:22px;color:var(--s5-warm)}
+
+/* ---------- 3.4 Ablauf-Lichtlinie (Schlaf) ---------- */
+.wohnung.is-v16 .s5-ablauf{position:absolute;inset:0}
+.wohnung.is-v16 .s5-abl-base{stroke:rgba(255,231,184,.3);stroke-width:2;vector-effect:non-scaling-stroke}
+.wohnung.is-v16 .s5-abl-lit{stroke:var(--s5-warm);stroke-width:2.5;vector-effect:non-scaling-stroke;
+  filter:drop-shadow(0 0 6px rgba(255,231,184,.9))}
+.wohnung.is-v16 .s5-abl-dot{position:absolute;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;border-radius:50%;
+  background:rgba(255,231,184,.35);transition:background .3s ease,transform .3s ease,box-shadow .3s ease;pointer-events:none}
+.wohnung.is-v16 .s5-abl-dot.is-done{background:var(--s5-warm)}
+.wohnung.is-v16 .s5-abl-dot.is-on{background:var(--s5-warm);transform:scale(1.7);
+  box-shadow:0 0 10px 2px rgba(255,231,184,.85)}
+.wohnung.is-v16 .s5-abl-lab{position:absolute;transform:translate(-50%,16px) scale(var(--s5-scale));transform-origin:50% 0;
+  text-align:center;white-space:nowrap;opacity:.55;transition:opacity .3s ease}
+.wohnung.is-v16 .s5-abl-lab.is-up{transform:translate(-50%,calc(-100% - 14px)) scale(var(--s5-scale));transform-origin:50% 100%}
+.wohnung.is-v16 .s5-abl-lab.is-first{transform:translate(-14%,16px) scale(var(--s5-scale));transform-origin:0 0}
+.wohnung.is-v16 .s5-abl-lab.is-last{transform:translate(-86%,16px) scale(var(--s5-scale));transform-origin:100% 0}
+.wohnung.is-v16 .s5-abl-lab.is-first.is-up{transform:translate(-14%,calc(-100% - 14px)) scale(var(--s5-scale));transform-origin:0 100%}
+.wohnung.is-v16 .s5-abl-lab.is-last.is-up{transform:translate(-86%,calc(-100% - 14px)) scale(var(--s5-scale));transform-origin:100% 100%}
+.wohnung.is-v16 .s5-abl-lab.is-done{opacity:.8}
+.wohnung.is-v16 .s5-abl-lab.is-on{opacity:1}
+.wohnung.is-v16 .s5-abl-lab b{display:block;font:700 9.5px/1 'Archivo',system-ui,sans-serif;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(255,255,255,.7);text-shadow:0 1px 8px rgba(0,0,0,.7)}
+.wohnung.is-v16 .s5-abl-lab.is-done b,.wohnung.is-v16 .s5-abl-lab.is-on b{color:var(--s5-warm)}
+.wohnung.is-v16 .s5-abl-lab span{display:block;margin-top:4px;font:500 11px/1 'Instrument Sans',system-ui,sans-serif;
+  color:rgba(255,255,255,.88);text-shadow:0 1px 8px rgba(0,0,0,.7)}
+.wohnung.is-v16 .s5-card-abl{box-shadow:inset 0 0 0 1.5px var(--s5-warm),0 10px 30px rgba(0,0,0,.45)}
+.wohnung.is-v16 .s5-card-abl small{color:var(--s5-warm)}
+
+/* ---------- 3.5 48-Stunden-Uhr + Vier Versprechen (Eingang) ---------- */
+.wohnung.is-v16 .s5-clock{position:absolute;inset:0}
+.wohnung.is-v16 .s5-card-clock{left:50%;top:26%;opacity:0;transform:translate(-50%,6px) scale(var(--s5-scale));
+  transition:opacity .45s ease,transform .45s ease;padding:12px 18px 13px}
+.wohnung.is-v16 .s5-clock.is-in .s5-card-clock{opacity:1;transform:translate(-50%,0) scale(var(--s5-scale))}
+.wohnung.is-v16 .s5-card-clock b{font-size:16.5px}
+.wohnung.is-v16 .s5-card-clock u{display:block;text-decoration:none;color:var(--s5-brass);
+  font:inherit;letter-spacing:0;text-transform:none;white-space:nowrap}
+.wohnung.is-v16 .s5-versprechen{position:absolute;left:22px;top:38%;width:min(300px,72vw)}
+.wohnung.is-v16 .s5-vp{display:flex;gap:10px;align-items:flex-start;margin-bottom:7px;
+  opacity:0;transform:translateY(6px);transition:opacity .35s ease,transform .35s ease;
+  transition-delay:calc(var(--i,0) * 120ms + 260ms)}
+.wohnung.is-v16 .s5-clock.is-in .s5-vp{opacity:1;transform:none}
+.wohnung.is-v16 .s5-clock.no-anim .s5-vp{transition:none}
+.wohnung.is-v16 .s5-vp span{flex:0 0 auto;width:18px;height:18px;border-radius:50%;margin-top:1px;
+  box-shadow:inset 0 0 0 1.5px var(--s5-brass);display:grid;place-items:center;
+  font:700 8.5px/1 'Archivo',system-ui,sans-serif;color:var(--s5-brass)}
+.wohnung.is-v16 .s5-vp b{font:500 12.5px/1.3 'Instrument Sans',system-ui,sans-serif;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+@media (min-width:761px){
+  /* Sichtprüfung 16.09: bei top:18% lag die Karte hinter dem Grundriss-Vorschaubild oben rechts. */
+  .wohnung.is-v16 .s5-card-clock{left:auto;right:6%;top:30%;transform:translate(0,6px) scale(var(--s5-scale));transform-origin:100% 0}
+  .wohnung.is-v16 .s5-clock.is-in .s5-card-clock{transform:translate(0,0) scale(var(--s5-scale))}
+  .wohnung.is-v16 .s5-versprechen{left:auto;right:6%;top:45%;width:min(340px,32vw)}
+  .wohnung.is-v16 .s5-vp b{font-size:14px}
+}
+/* Unterschrift: Sichtprüfung 16.09 — sie stand am unteren Rand quer über «Schlüsselübergabe.» und über dem
+   WhatsApp-Knopf. In der Abnahme-Kammer gibt es EIN freies Band: unter den vier Versprechen, über dem Kicker.
+   Dorthin, rechtsbündig — sie schreibt sich dort, wo der Blick nach dem vierten Versprechen ohnehin steht. */
+@media (max-width:760px){
+  .wohnung.is-v16 .w-sig{right:18px;top:auto;bottom:calc(150px + env(safe-area-inset-bottom,0px));
+    width:120px;z-index:6}
+  .wohnung.is-v16.s5-clock-on .w-sig{top:57%;bottom:auto;right:14px;width:152px}
+  .wohnung.is-v16 .w-sig small{font-size:9px;letter-spacing:.1em}
+  .wohnung.is-v16.s5-clock-on .w-sig small{font-size:8.5px;letter-spacing:.06em;white-space:nowrap}
+}
+@media (min-width:761px){
+  .wohnung.is-v16.s5-clock-on .w-sig{right:6%;top:auto;bottom:16%}
+}
+
+/* ============================ 4 · Akte ============================ */
+.s5-akte-badge{position:absolute;top:-17px;right:2px;z-index:3;
+  font:700 10px/1 'Archivo',system-ui,sans-serif;letter-spacing:.04em;color:#0D1230;background:var(--brass,#D6B685);
+  padding:5px 8px;border-radius:100px;box-shadow:0 4px 14px rgba(0,0,0,.4);pointer-events:none;white-space:nowrap}
+.s5-sheet{position:fixed;left:0;right:0;bottom:0;z-index:140;padding:22px 22px calc(26px + env(safe-area-inset-bottom,0px));
+  background:rgba(18,22,26,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:#fff;
+  border-radius:18px 18px 0 0;box-shadow:0 -10px 40px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.12);
+  transform:translateY(102%);transition:transform .38s cubic-bezier(.16,1,.3,1);
+  font-family:'Instrument Sans',system-ui,sans-serif}
+.s5-sheet.show{transform:none}
+.s5-sheet small{display:block;font:700 9.5px/1 'Archivo',system-ui,sans-serif;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--brass,#D6B685)}
+.s5-sheet h3{margin:10px 0 14px;font:600 20px/1.2 'Instrument Sans',system-ui,sans-serif}
+.s5-sheet-x{position:absolute;right:16px;top:14px;width:34px;height:34px;border-radius:50%;border:0;
+  background:rgba(255,255,255,.1);color:#fff;font-size:14px;cursor:pointer}
+.s5-sheet-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.s5-sheet-chips span{font:600 12px/1 'Archivo',system-ui,sans-serif;letter-spacing:.04em;padding:8px 11px;
+  border-radius:100px;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,.16)}
+.s5-sheet-btns{display:flex;gap:10px;flex-wrap:wrap}
+.s5-btn{flex:1 1 150px;padding:14px 16px;border-radius:100px;border:0;cursor:pointer;
+  font:600 14px/1 'Instrument Sans',system-ui,sans-serif}
+.s5-btn-line{background:none;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
+.s5-btn-brass{background:var(--accent,#1A64C8);color:#fff}
+@media (min-width:761px){.s5-sheet{left:auto;right:24px;bottom:24px;width:420px;border-radius:18px}}
+
+/* ============================ 5 · Ankunft (§7) ============================ */
+/* Vier Vertrauens-Chips brachen auf dem Telefon in zwei Zeilen und drückten den Start-Knopf in die
+   Sticky-Leiste. Drei Chips reichen — «Versichert» steht weiterhin im Footer. */
+@media (max-width:760px){
+  .wohnung.is-v16 .w-trust{flex-wrap:nowrap;gap:8px;font-size:11px;overflow:hidden}
+  .wohnung.is-v16 .w-trust span:nth-of-type(3),
+  .wohnung.is-v16 .w-trust i:nth-of-type(3){display:none}
+  .wohnung.is-v16 #wStart{margin-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+}
+
+/* ============================ 6 · Trace (?trace=1) ============================ */
+.s5-trace{position:fixed;inset:0;z-index:200;pointer-events:none}
+.s5-trace i{position:absolute;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;
+  background:#ff3b30;box-shadow:0 0 0 2px #fff}
+.s5-trace-tag{position:fixed;left:10px;bottom:10px;z-index:201;padding:6px 10px;border-radius:6px;
+  background:#111;color:#0f0;font:600 12px/1 ui-monospace,monospace;pointer-events:none}
+
+/* ============================ 7 · Reduzierte Bewegung ============================ */
+@media (prefers-reduced-motion:reduce){
+  .wohnung.is-v16 .s5-note,.wohnung.is-v16 .s5-pill,.wohnung.is-v16 .s5-card,
+  .wohnung.is-v16 .s5-vp,.wohnung.is-v16 .w-todo,.wohnung.is-v16 .w-todo s i{transition:none!important}
+  .wohnung.is-v16 .s5-dusk-glow i,.wohnung.is-v16 .s5-hub::after{animation:none!important}
+}
+
+/* ============================ 8 · Telefon im Querformat ============================ */
+/* 844 × 390: greift die «ab 761 px»-Regeln (Desktop) ab, hat aber die Höhe eines Telefons. Ohne eigene
+   Stufe standen Uhr, Versprechen, Unterschrift und Überschrift übereinander (Sichtprüfung 16.09). */
+@media (min-width:761px) and (max-height:560px) and (orientation:landscape){
+  .wohnung.is-v16{--s5-scale:1}
+  .wohnung.is-v16 .s5-card-clock{top:29%;right:4%}
+  .wohnung.is-v16 .s5-versprechen{top:52%;right:4%;width:min(300px,40vw)}
+  /* Die Kapitelmarke liegt im Querformat zwangsläufig auf der Überschrift — der Fortschritt steht
+     oben rechts, der Raum in der Überschrift. Hier ist sie eine Nennung zu viel. */
+  .wohnung.is-v16 .v16-chap{display:none}
+  .wohnung.is-v16 .s5-vp{margin-bottom:4px}
+  .wohnung.is-v16 .s5-vp b{font-size:12px}
+  .wohnung.is-v16.s5-clock-on .w-sig{display:none}      /* kein freies Band — die Unterschrift wartet aufs Hochformat */
+  .wohnung.is-v16 .w-roomnav{display:none}
+  .wohnung.is-v16 .s5-takt-end{top:20%}
+  .wohnung.is-v16 .s5-card-takt{max-width:min(34vw,240px)}
+  /* Die Bauleiter-Karte steht im Querformat sonst auf der Überschrift — hier ÜBER die Nabe statt darunter. */
+  .wohnung.is-v16 .s5-card-hub{margin-top:0;transform:translate(-50%,calc(-100% - 58px)) scale(var(--s5-scale));
+    transform-origin:50% 100%}
+}
