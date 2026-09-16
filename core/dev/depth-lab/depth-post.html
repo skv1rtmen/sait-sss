@@ -15,7 +15,9 @@ const SAVE='http://127.0.0.1:8123/put?name=';
 const LONG=960;                                   /* lange Kante der Ausgabe */
 /* Bekannte Fehlstellen: Spiegel/Glas, die das Modell als Loch in der Wand liest.
    Werte in Originalpixeln des jeweiligen Standbilds. */
-const PATCH={'eingang-P':[{cx:295,cy:400,rx:212,ry:278,feather:16}]};
+/* v16b: Standbilder neu — der grosse Spiegel liegt jetzt ausserhalb des Hochkant-Ausschnitts,
+   die alte Ellipse gilt nicht mehr. Nach dem Lauf prüfen, ob eine neue Fehlstelle nötig ist. */
+const PATCH={};
 window.POST={state:'run',done:[],fail:[],info:{}};
 
 const load=u=>new Promise((r,j)=>{const i=new Image();i.onload=()=>r(i);i.onerror=j;i.src=u;});

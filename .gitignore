@@ -65,3 +65,9 @@ desktop.ini
 !.env.example
 *.pem
 *.key
+
+# Покадровые QA-дампы переходов (регенерируются)
+core/dev/_frames*/
+core/dev/_prodchk/
+core/dev/_tmpchk/
+core/dev/_old_*.jpg

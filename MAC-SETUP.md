@@ -28,17 +28,15 @@
 
 ---
 
-## Шаг 1. Windows: собрать репозиторий
+## Шаг 1. Windows — ✅ СДЕЛАНО
 
-Запусти в папке проекта:
+Репозиторий создан и опубликован:
 
-```powershell
-.\setup-git.ps1
-```
+**https://github.com/skv1rtmen/sait-sss** (приватный)
 
-Скрипт сам: создаст репо, добавит файлы, проверит размеры, сделает коммит и запушит на GitHub (спросит URL).
-
-Перед этим создай **пустой приватный** репозиторий на https://github.com/new — без README, без .gitignore, без лицензии.
+- ветка `main`
+- коммиты: `a1b6dfd` Initial commit, `0595846` Add git helper script
+- 463 МБ, 1025 файлов
 
 ---
 
@@ -46,11 +44,11 @@
 
 ```bash
 cd ~/Projects          # или куда удобно
-git clone <URL-репозитория> "сайт-ссс"
-cd "сайт-ссс"
+git clone https://github.com/skv1rtmen/sait-sss.git
+cd sait-sss
 ```
 
-Клон ~600 МБ, несколько минут.
+Клон 463 МБ, несколько минут. Репо приватный — Git попросит логин GitHub (или используй `gh auth login` / SSH-ключ).
 
 ---
 
