@@ -1,4 +1,4 @@
-# BauStern v16 — ТЗ Этап 5 «Один вопрос — один жест» (v2, 16.09.2026)
+# BauStern v16 — ТЗ Этап 5 «Один вопрос — один жест» (v2.1, 16.09.2026 — все вопросы закрыты)
 
 Заменяет §3.3 в `PLAN-v16.md`. Утверждено владельцем 16.09 после трёх раундов референсов (см. `core/dev/refs/` — 8 кадров, если положены в репо).
 Вставь этот файл первым сообщением в чат для кода. Роль: фронт-разработчик (vanilla JS + GSAP, без сборки), аккуратность важнее креатива — дизайн уже решён.
@@ -38,7 +38,7 @@
 
 2.2 Хуки в `film-v16.js` (минимально): в конце `enterHold(k)` после показа холда — `W.dispatchEvent(new CustomEvent('v16:hold',{detail:{k,scene:S[k]}}))`; в начале `gesture()` (когда команда принята и начинается полёт) — `W.dispatchEvent(new CustomEvent('v16:leave',{detail:{k:ch}}))`. Также экспорт `Film16.stage=W` не нужен — модуль сам берёт `#wohnung`.
 
-2.3 Скрыть на телефоне через CSS (`.wohnung.is-v16` + media 760): `#wPlan`, `.v16-chap-s` («Kapitel N von 8»), `.w-d` (описание остаётся в DOM для SEO), `#wStart` везде кроме `k=0`, `#wScrollHint`. `#stickycall .call` — скрыть (две кнопки: «Rückruf in 5 Min» + «Offerte in 48 h»). **Открытый вопрос владельцу — §10.1.**
+2.3 Скрыть на телефоне через CSS (`.wohnung.is-v16` + media 760): `#wPlan`, `.v16-chap-s` («Kapitel N von 8»), `.w-d` (описание остаётся в DOM для SEO), `#wStart` везде кроме `k=0`, `#wScrollHint`. `#stickycall .call` — скрыть (две кнопки: «Rückruf in 5 Min» + «Offerte in 48 h»). Утверждено владельцем.
 
 2.4 Пины: `buildHots()` не строит `.w-hs`, если `scene.mech` задан (§4) — на всех устройствах. Пины остаются только у `ankunft` (1 шт.) и `wohnen`.
 
@@ -56,7 +56,7 @@
 
 Ankunft без изменений (`Zürich · Deutschschweiz …`).
 
-2.6 Десктоп: план `#wPlan` остаётся, `.w-d` остаётся, пины по 2.4, механики те же, «hold» = `mousedown`, «tap» = `click`, драг = `pointermove` с зажатой кнопкой; hover не обязателен.
+2.6 Десктоп: план `#wPlan` остаётся, `.w-d` остаётся, пины по 2.4. **Механики те же, но крупнее** (утверждено): все размеры из §4 умножаются на `--s5-scale` = `clamp(1.25, 100vw / 1100, 1.6)` (карточки, бумажки, ручки шторок, толщина линий ×1.5, шрифты +2 px); координаты фигур — из `L`-наборов; «hold» = `mousedown`, «tap» = `click`, драг = `pointermove` с зажатой кнопкой; hover над зоной/узлом подсвечивает его.
 
 ---
 
@@ -75,7 +75,7 @@ Ankunft без изменений (`Zürich · Deutschschweiz …`).
 | bad | Abdichtung und Normen selbst kontrollieren | protokolliert. |
 | schlaf | Handwerker-Termine abstimmen | ein Bauzeitplan. |
 | wohnen | Wöchentlich auf die Baustelle | wöchentliches Update. |
-| rohbau | Mieter über Lärm und Termine informieren | machen wir. |
+| rohbau | Schutt, Staub und Container organisieren | täglich besenrein. |
 | eingang | — (без зачёркивания) | **Ihre Liste: leer.** Ein Anruf genügt. |
 
 Eingang: `em` первым, белый хвост «Ein Anruf genügt.» обычным весом; `em` появляется с задержкой 400 мс после четырёх обещаний (§4.6).
@@ -122,7 +122,7 @@ Eingang: `em` первым, белый хвост «Ein Anruf genügt.» обы�
 - На телефоне сейчас split-stop (`film-v16.js` ~L376–405, `SPLIT_LEG/SPLIT_HOLD`). Оставить split-stop как **вход** в главу, после него включить `#wCmp` и на телефоне тоже (снять `display:none!important` в `film-v16.css` для `k===RUECK_K`), ручка `‹ ›`, метки `Monate früher` / `Heute` (латунь). Драг как на десктопе (`.w-cmp` уже умеет). Демо не нужно — split-stop и есть демо.
 
 **4.6 Eingang — 48 часов + Vier Versprechen + Akte.** `mech:'clock'`.
-- Карточка вверху кадра (`P: y=26%`, по центру; `L: справа сверху`): `ANFRAGE JETZT` / `Offerte bis <b>{Tag}, {HH:MM}</b>` (латунь). Расчёт `deadline48()`: `now + 48 h`; если результат попадает на Sa/So → следующий Montag, время сохраняется; если Fr после 16:00 → Di того же времени; вывод: `heute`, `morgen`, иначе день недели по-немецки (`Montag…Sonntag`) + время `HH:MM` (Europe/Zurich). **Правило подтвердить — §10.2.** Обновлять раз в минуту, пока глава активна.
+- Карточка вверху кадра (`P: y=26%`, по центру; `L: справа сверху`): `ANFRAGE JETZT` / `Offerte bis <b>{Tag}, {HH:MM}</b>` (латунь). Расчёт `deadline48()`: **календарные 48 часов** (утверждено): `deadline = now + 48 h`, без пропуска выходных; вывод: день недели по-немецки (`Montag…Sonntag`) + `HH:MM` в Europe/Zurich, минуты округлить до :00/:30 вверх. Обновлять раз в минуту, пока глава активна.
 - Под карточкой 4 строки «Vier Versprechen» (номер в латунном кольце 18 px + текст 12.5 px): 01 Offerte innert 48 h · 02 Ein Ansprechpartner — bis zum Schlüssel · 03 Nach Norm — SIA, mit Protokoll · 04 Termin im Werkvertrag · 24 Mt. Garantie. Появление stagger 120 мс; после 4-й строки — `_sigRun()` подписи (сейчас подпись стартует в `enterHold` сразу — перенести запуск в модуль для `eingang`, для остальных сцен `sig` не используется).
 - Подпись на телефоне: сдвинуть `.w-sig` так, чтобы не пересекалась с `.w-todo` и `.w-ctas` (сейчас `A` ложится на кнопки — см. кадр 08). Целевое место: справа над `.w-ctas`, `max-width:120px`.
 - To-do финал по §3.3.
@@ -181,11 +181,11 @@ Hero перегружен: `.w-trust` (4 чипа) переносится на �
 
 ---
 
-## 10. Открытые вопросы владельцу (ответить до старта кода)
+## 10. Решения владельца (16.09, закрыто)
 
-1. **Две кнопки вместо трёх** (убрать «Anrufen», номер остаётся в меню и в Rückruf-шторке) — ок?
-2. **Правило 48 h**: календарные часы или рабочие дни? Предложено: +48 h, выходные → Montag, Fr после 16:00 → Di. Как реально обещает Артем?
-3. **Десктоп**: те же механики (hold/tap/drag мышью) — ок, или на десктопе оставить пины как сейчас?
-4. **«Mieter über Lärm und Termine informieren → machen wir»** — BauStern это действительно берёт на себя? Вычёркивать можно только реальное.
-5. Свечи: настроение «вечер после сдачи» — для B2B-аудитории Hausverwaltung это осознанный эмоциональный ход; подтверди, что не смущает, что кадр читается «частно/романтично».
-6. Akte → «Offerte anfragen»: в предзаполненное сообщение класть только список комнат (без времени/устройства) — ок?
+1. Две кнопки в sticky-панели: «Rückruf in 5 Min» + «Offerte in 48 h»; «Anrufen» убран, номер остаётся в меню и в Rückruf-шторке.
+2. 48 h — календарные часы, без пропуска выходных (§4.6).
+3. Десктоп — те же механики, крупнее (§2.6).
+4. To-do для Rückblende: «Schutt, Staub und Container organisieren → täglich besenrein.» (из реального обещания STEPS «Baustelle täglich sauber»; вариант «Mieter informieren» отклонён).
+5. Bad при свечах — делаем (§6).
+6. Akte → «Offerte anfragen»: в сообщении только список комнат (§4.7).
