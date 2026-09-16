@@ -146,6 +146,21 @@
     [holdA,holdB].forEach(i=>{i.className='v16-hold';i.alt='';i.decoding='async';i.setAttribute('aria-hidden','true');cam.appendChild(i);});
     let holdTop=holdA,holdBot=holdB;
     const glCanvas=document.createElement('canvas');glCanvas.className='v16-gl';glCanvas.setAttribute('aria-hidden','true');cam.appendChild(glCanvas);
+    /* v16.1 Kapitelmarke: Nummer + Name oben links, Fortschritt oben rechts. Sichtbar im Halt, weg im Flug —
+       sie sagt dem Besucher «neues Kapitel», damit ein Dekorationswechsel als Absicht gelesen wird. */
+    const chap=document.createElement('div');chap.className='v16-chap';chap.setAttribute('aria-hidden','true');
+    chap.innerHTML='<div class="v16-chap-n"></div><div class="v16-chap-rule"></div><div class="v16-chap-t"></div><div class="v16-chap-s"></div>'+
+      '<div class="v16-chap-p">'+S.map((_,i)=>'<i data-i="'+i+'"></i>').join('')+'</div>';
+    stage.appendChild(chap);
+    const chapN=qs(chap,'.v16-chap-n'),chapT=qs(chap,'.v16-chap-t'),chapS=qs(chap,'.v16-chap-s'),chapP=qa(chap,'.v16-chap-p i');
+    function chapShow(k){
+      chapN.textContent=String(k+1).padStart(2,'0');chapT.textContent=S[k].navLabel||'';
+      chapS.textContent='Kapitel '+(k+1)+' von '+N;
+      chapP.forEach((el,i)=>{el.classList.toggle('done',i<k);el.classList.toggle('cur',i===k);});
+      chap.classList.toggle('is-hero',!!S[k].hero);   /* Titelkapitel: nur der Fortschritt, die Nummer wäre doppelt zum Hero */
+      chap.classList.remove('show');void chap.offsetWidth;chap.classList.add('show');
+    }
+    function chapHide(){chap.classList.remove('show');}
 
     const RED=reduced();
     let ch=0,phase='HOLD',flyDir=0,flyTo=0,gen=0,active=null,pending=0,destroyed=false;
@@ -242,7 +257,7 @@
       opts=opts||{};
       phase='HOLD';flyDir=0;ch=k;
       const scene=S[k];
-      fillScene(scene);buildHots(scene);setPlan(k);setDots(k);
+      fillScene(scene);buildHots(scene);setPlan(k);setDots(k);chapShow(k);
       if(hint)hint.classList.toggle('is-off',k>0);
       await showHoldImage(stillUrl(k),opts.fade||0);
       setStageFly(false);
@@ -288,7 +303,7 @@
       const myGen=++gen;
       phase='FLY';flyDir=dir;flyTo=to;
       hideDepth();                                   /* Halt-Ebene sofort neutral, kein Doppelspiel mit dem Video */
-      setDots(from,to);
+      setDots(from,to);chapHide();
       if(ov)ov.classList.remove('show');if(hotL)hotL.classList.remove('show');
       qa(hotL||W,'.w-hs.open').forEach(x=>x.classList.remove('open'));
       const leg=legOf(from,to);
@@ -348,7 +363,7 @@
       hideDepth();
       if(cur){try{cur.pause();}catch(x){}}
       const leg=legOf(newFrom,newTo);
-      ch=newFrom;flyTo=newTo;flyDir=newDir;setDots(ch,flyTo);
+      ch=newFrom;flyTo=newTo;flyDir=newDir;setDots(ch,flyTo);chapHide();
       if(!leg||RED||!cur){
         await showHoldImage(stillUrl(newTo),V.flashFade);
         if(myGen!==gen)return;return enterHold(newTo);
