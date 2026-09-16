@@ -49,6 +49,10 @@ html.v16-lock,html.v16-lock body{overflow:hidden!important;overscroll-behavior:n
 .wohnung.is-v16 .w-scrollhint.is-off{opacity:0;visibility:hidden;transition:opacity .35s ease}
 .wohnung.is-v16 .w-roomnav-dot.is-target i{box-shadow:0 0 0 2px rgba(184,146,90,.55);animation:v16dot 1.1s ease-in-out infinite}
 @keyframes v16dot{0%,100%{transform:scale(1)}50%{transform:scale(1.35)}}
+/* Sichtprüfung: #wRoomNav (links, ~15vh) läuft auf breiten Desktops in den vertikal zentrierten Hero-Kicker
+   von .w-ov.is-hero (Ankunft-Kammer) hinein — beide teilen denselben linken Anker. Während der Hero-Kammer
+   daher ausblenden statt neu zu positionieren (die Liste ist dort ohnehin redundant zum Start-Button). */
+.wohnung.is-v16 .w-roomnav.is-hero-active{opacity:0;pointer-events:none;transition:opacity .3s ease}
 .wohnung.is-v16 #wStart{opacity:0;transition:opacity .5s ease .2s}
 .wohnung.is-v16 #wStart.show{opacity:1}
 

@@ -95,7 +95,11 @@ function parseRoute(src){
   if(src==null)src=(/^#\//.test(location.hash))?location.hash:location.pathname;
   const h=String(src).replace(/^#/,'').replace(/^\/+/,'').replace(/\/+$/,'').replace(/\.html$/,'').split('?')[0];
   const parts=h.split('/').filter(Boolean).map(p=>{try{return decodeURIComponent(p);}catch(e){return p;}});
-  const name=parts[0]||'home',slug=parts.slice(1).join('/');
+  /* "index" landet hier nur, wenn jemand /index.html direkt aufruft (Netlify Pretty-URLs leiten das im Betrieb
+     zwar auf "/" um, aber ein alter Link, ein Screenshot-Tool oder eine lokale Vorschau umgeht das) — ohne diese
+     Zeile griff "index" nicht in ROUTES und die Startseite zeigte fälschlich die 404-Seite. */
+  let name=parts[0]||'home';if(name==='index')name='home';
+  const slug=parts.slice(1).join('/');
   if(name==='notfound'||!Object.prototype.hasOwnProperty.call(ROUTES,name)||(slug&&!Object.prototype.hasOwnProperty.call(META,name+'/'+slug)))return {name:'notfound',slug:h};
   return {name,slug};
 }

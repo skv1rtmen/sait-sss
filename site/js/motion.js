@@ -206,6 +206,15 @@
     nativeCleanup=()=>{mq.removeEventListener('change',onChange);wide.removeEventListener('change',onChange);};
     mode=mq.matches||innerWidth>=1000?'off':'native';
     if(name==='home'&&window.Film){if(mode==='off')Film.plain(root);else Film.lite(root);}
+    /* Bug (Playwright-Sichtprüfung, <1000px bzw. reduzierte Bewegung): countUp() aus dem vollen GSAP-Pfad
+       läuft hier nie, darum blieben Zähler wie "0 m² Wohnfläche · 0 Räume komplett · 0 schlüsselfertig" für
+       praktisch jeden Handy-/Tablet-Besucher dauerhaft auf "0" stehen — sichtbar erst nach echtem Scrollen bis
+       zur Fallstudie, nie behoben. Zielwert hier sofort statisch setzen, analog zum bestehenden
+       .no-gsap .rv{opacity:1}-Fallback (Endzustand ohne Animation statt kaputtem Nullwert). */
+    qa(root,'[data-count]').forEach(el=>{
+      const target=parseFloat(el.dataset.count),suf=el.dataset.suf||'';
+      if(!isNaN(target))el.textContent=Math.round(target)+suf;
+    });
     if(mode==='off'||!window.IntersectionObserver||!Element.prototype.animate)return;
     const running=new Set(),targets=new Set();
     const observer=new IntersectionObserver(entries=>{entries.forEach(({target:el,isIntersecting})=>{

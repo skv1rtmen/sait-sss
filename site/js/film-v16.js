@@ -205,6 +205,11 @@
       if(cta)cta.hidden=!scene.final;
       if(sig)sig.hidden=!scene.sig;
       ov.classList.toggle('is-hero',!!scene.hero);
+      /* Bug (gefunden bei der v16-Sichtprüfung): #wRoomNav hängt links fix auf Höhe ~15vh und kollidiert auf
+         breiten Desktops mit dem Kicker/Rotator der Hero-Kammer (Ankunft), der bei .w-ov.is-hero vertikal
+         zentriert ist und dort durchläuft. War unsichtbar, solange --reveal (Bug §8.1) den Overlay-Text
+         unterdrückte — seit dessen Fix real sichtbar. Blendet die Raumliste nur für die Dauer der Hero-Kammer aus. */
+      if(roomNav)roomNav.classList.toggle('is-hero-active',!!scene.hero);
     }
     function buildHots(scene){
       if(!hotL)return;hotL.innerHTML='';
