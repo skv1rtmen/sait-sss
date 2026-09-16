@@ -15,7 +15,13 @@ html.v16-lock,html.v16-lock body{overflow:hidden!important;overscroll-behavior:n
 
 /* ---------- Alte Ebenen der Kader-Engine stilllegen ---------- */
 .wohnung.is-v16 .w-canvas,.wohnung.is-v16 .w-fx,.wohnung.is-v16 .w-stills,
-.wohnung.is-v16 .w-poster,.wohnung.is-v16 picture:has(.w-poster),.wohnung.is-v16 .w-cmp{display:none!important}
+.wohnung.is-v16 .w-poster,.wohnung.is-v16 picture:has(.w-poster){display:none!important}
+/* .w-cmp bleibt erhalten (v16.1): Rückblende bekommt auf dem Desktop einen Vorher/Nachher-Regler auf dem
+   Halt (film-v16.js zeigt/versteckt ihn je Kapitel). Reine Bild+clip-path-Lösung, kein Canvas nötig. */
+.wohnung.is-v16 .w-cmp{z-index:4}
+.wohnung.is-v16 .w-cmp-after{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  clip-path:inset(0 0 0 calc(var(--x) * 100%))}
+@media (max-width:760px){.wohnung.is-v16 .w-cmp{display:none!important}}   /* Telefon: nur der Wischer-Splitstop, kein Zusatzregler */
 
 /* Erstes Bild aus dem HTML (schneller Paint, bevor die Engine läuft) */
 .v16-boot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0}
@@ -107,4 +113,16 @@ html.v16-lock,html.v16-lock body{overflow:hidden!important;overscroll-behavior:n
   .v16-wipe b{top:auto;font-size:11px;padding:8px 11px;left:18px!important;right:auto!important}
   .v16-wipe .v16-wipe-a{bottom:calc(164px + env(safe-area-inset-bottom,0px))}
   .v16-wipe .v16-wipe-b{bottom:calc(122px + env(safe-area-inset-bottom,0px))}
+}
+/* v16.1 (§9a) Splitstop-Pause (Telefon): Linie leuchtet stärker, beide Etiketten bleiben in Ruhe stehen —
+   liest sich als bewusster Vergleich «Heute | Monate früher», nicht als Zwischenstand eines Wischs. */
+.v16-wipe.mid .v16-wipe-line{box-shadow:0 0 28px rgba(255,255,255,.95),0 0 0 5px rgba(255,255,255,.12)}
+/* Bug-Fix (HANDOFF §8.1, zweiter Teil): .w-ov/.w-h/.w-d sind auf .is-lite zugeschnitten (site.css), das
+   v16 nie setzt — v16 ist EIN Movement für alle Breiten, unterschieden nur über orient() L/P. Ohne diese
+   Regeln bleibt auf dem Telefon die Desktop-Breite (max-width:52vw) stehen und der Text wirkt gequetscht. */
+@media (max-width:760px){
+  .wohnung.is-v16 .w-ov{left:22px;right:22px;max-width:none;bottom:calc(clamp(96px,14vh,140px) + env(safe-area-inset-bottom,0px))}
+  .wohnung.is-v16 .w-ov.is-hero{max-width:none}
+  .wohnung.is-v16 .w-h{font-size:clamp(30px,8vw,40px)}
+  .wohnung.is-v16 .w-d{font-size:15px}
 }

@@ -717,7 +717,7 @@ const FILM_V15={
         {x:10,y:66,t:'Grossformat, kaum Fugen',l:['Kalkstein 120 × 60','Verbundabdichtung inklusive'],go:'leistungen/fliesen-parkett'},
         {x:52,y:24,t:'Ein Fenster in die Berge',l:['Festverglasung, Stahlrahmen schwarz','Neu- & Umbau, statisch geprüft'],go:'leistungen/neu-umbau'}],
    sheet:{type:'split',key:'works'}},
-  {id:'schlaf',f:491,room:'schlaf',navLabel:'Schlafzimmer',kicker:'Gewerk 05 · Malerarbeiten',h:'Zum Schluss die <em>Oberfläche.</em>',
+  {id:'schlaf',f:491,room:'schlaf',navLabel:'Schlaf',kicker:'Gewerk 05 · Malerarbeiten',h:'Zum Schluss die <em>Oberfläche.</em>',
    d:'Spachteln, Grundieren, Streichen — Abnahme bei Tageslicht.',
    hotP:[{x:30,y:36},{x:36,y:66},{x:80,y:46}],
    hot:[{x:26,y:30,t:'Holz, das leuchtet',l:['Eichenlamellen, hinterleuchtet','Koordination im Bauzeitplan'],go:'leistungen/neu-umbau'},

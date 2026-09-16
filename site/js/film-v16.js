@@ -18,6 +18,7 @@
   const clamp=(v,a,b)=>v<a?a:v>b?b:v;
   const reduced=()=>matchMedia('(prefers-reduced-motion:reduce)').matches;
   const orient=()=>innerHeight>innerWidth?'P':'L';
+  const isPhone=()=>matchMedia('(max-width:760px)').matches;
   const goRoute=g=>{if(typeof go==='function')go(g);else location.href='/'+String(g).replace(/^\/+/,'');};
 
   /* ---------- Netz/Gerät: leichter Tier (720p) ---------- */
@@ -135,9 +136,14 @@
     const W=qs(root,'#wohnung');if(!W)return null;
     const cam=qs(W,'.w-cam');if(!cam)return null;
     const ov=qs(W,'#wOv'),hotL=qs(W,'#wHot'),planHost=qs(W,'#wPlan'),roomNav=qs(W,'#wRoomNav'),
-          hint=qs(W,'#wScrollHint'),hud=qs(W,'#wHud'),sig=qs(W,'.w-sig'),startBtn=qs(W,'#wStart');
+          hint=qs(W,'#wScrollHint'),hud=qs(W,'#wHud'),sig=qs(W,'.w-sig'),startBtn=qs(W,'#wStart'),
+          cmp=qs(W,'#wCmp'),cmpAfter=cmp&&qs(cmp,'.w-cmp-after');
     W.classList.add('is-v16');W.classList.remove('is-full','is-lite','is-plain');
     document.documentElement.classList.add('v16');
+    /* Bug-Fix (HANDOFF §8.1): .w-ov/.w-kicker/.w-d nehmen ihre Deckkraft aus --reveal (0..1), das bisher
+       nur film.js/film-mobile setzten. v16 hat kein Scroll-Scrub, also ist der Wert konstant 1 — der Text
+       ist einfach immer da, sobald der Halt steht (fillScene/showHoldImage steuern Auftreten separat). */
+    W.style.setProperty('--reveal','1');
 
     /* --- Ebenen --- */
     const stage=qs(W,'#wStage');
@@ -240,6 +246,41 @@
       if(hud){const t=qs(hud,'.k'),b=qs(hud,'b');if(t)t.textContent=String(i+1).padStart(2,'0');if(b)b.textContent=S[i].navLabel||'';}
     }
 
+    /* ---------------- v16.1 Rückblende-Regler (Desktop): Vorher/Nachher-Drag auf dem Halt der Rückblende ---
+       Wiederverwendet das bestehende #wCmp-Markup (pages.js), aber neu und schlank verdrahtet: kein Canvas,
+       nur Bild + clip-path (film-v16.css). Bindung passiert genau einmal, auch wenn v16 mehrfach ge-mountet
+       wird (SPA-Navigation) — das Element gehört zur statischen Seite, nicht zu unserem mount()/cleanup(). */
+    const RUECK_K=ROOMS.indexOf('wohnen-rohbau'),RUECK_AFTER_K=ROOMS.indexOf('wohnen');
+    if(cmp&&!cmp._v16Bound){
+      cmp._v16Bound=true;
+      const h=qs(cmp,'.w-cmp-h');
+      if(h){
+        let dragging=false;
+        const setX=x=>{x=clamp(x,.04,.96);cmp.style.setProperty('--x',x.toFixed(4));h.setAttribute('aria-valuenow',String(Math.round(x*100)));};
+        const fromEv=e=>{const r=cmp.getBoundingClientRect();return (e.clientX-r.left)/Math.max(1,r.width);};
+        h.addEventListener('pointerdown',e=>{dragging=true;cmp.classList.add('is-drag');try{h.setPointerCapture(e.pointerId);}catch(x){}setX(fromEv(e));e.preventDefault();});
+        addEventListener('pointermove',e=>{if(dragging)setX(fromEv(e));},{passive:true});
+        addEventListener('pointerup',()=>{dragging=false;cmp.classList.remove('is-drag');});
+        addEventListener('pointercancel',()=>{dragging=false;cmp.classList.remove('is-drag');});
+        cmp.addEventListener('click',e=>{if(e.target===h||h.contains(e.target))return;setX(fromEv(e));});
+        h.addEventListener('keydown',e=>{
+          const v=parseFloat(cmp.style.getPropertyValue('--x')),x=Number.isFinite(v)?v:.5;
+          if(e.key==='ArrowLeft'){setX(x-.05);e.preventDefault();}
+          else if(e.key==='ArrowRight'){setX(x+.05);e.preventDefault();}
+          else if(e.key==='Home'){setX(0);e.preventDefault();}
+          else if(e.key==='End'){setX(1);e.preventDefault();}
+        });
+      }
+    }
+    function updateCmp(k){
+      if(!cmp)return;
+      if(k===RUECK_K&&RUECK_AFTER_K>=0&&!isPhone()){
+        if(cmpAfter)cmpAfter.src=stillUrl(RUECK_AFTER_K);
+        cmp.style.setProperty('--x','.5');
+        cmp.hidden=false;
+      } else cmp.hidden=true;
+    }
+
     /* ---------------- Halt / Flug ---------------- */
     function showHoldImage(url,fade){
       return new Promise(res=>{
@@ -256,28 +297,49 @@
       });
     }
     function setStageFly(on){stage.classList.toggle('is-fly',!!on);}
-    /* Wischer: das neue Haltebild wird von links (dir>0) oder rechts (dir<0) aufgedeckt, dazu eine Kante und zwei Etiketten. */
-    const WIPE_MS=1400;
+    /* Wischer: das neue Haltebild wird von links (dir>0) oder rechts (dir<0) aufgedeckt, dazu eine Kante und zwei Etiketten.
+       v16.1 (§9a): auf dem Telefon hält der Wischer bei 50 % ~1 s — «zwei Zustände nebeneinander» statt eines schnellen
+       Wischs, der als Bugsprung gelesen wurde (HANDOFF §8.2). Desktop bleibt der ununterbrochene 1400-ms-Wisch. */
+    const WIPE_MS=1400,SPLIT_LEG=650,SPLIT_HOLD=950;
     function showHoldWipe(url,dir){
       return new Promise(res=>{
-        const next=holdBot;
+        const next=holdBot,line=qs(wipe,'.v16-wipe-line'),EASE='cubic-bezier(.65,0,.35,1)';
         const go=()=>{
-          next.style.transition='none';
-          next.style.clipPath=dir>0?'inset(0 100% 0 0)':'inset(0 0 0 100%)';
+          const phone=isPhone();
+          const hiddenClip=dir>0?'inset(0 100% 0 0)':'inset(0 0 0 100%)';
+          const midClip=dir>0?'inset(0 50% 0 0)':'inset(0 0 0 50%)';
+          next.style.transition='none';next.style.clipPath=hiddenClip;
           next.classList.add('on');
           wipe.classList.remove('r','l');wipe.classList.add(dir>0?'l':'r');
           wipe.classList.toggle('to-rohbau',dir>0);
+          if(line){line.style.transition='none';line.style[dir>0?'left':'right']='0%';}
           void next.offsetWidth;
           wipe.classList.add('run');
-          next.style.transition='clip-path '+WIPE_MS+'ms cubic-bezier(.65,0,.35,1)';
-          next.style.clipPath='inset(0 0 0 0)';
-          setTimeout(()=>{
+          const leg=(clip,pct,ms)=>new Promise(r=>{
+            next.style.transition='clip-path '+ms+'ms '+EASE;next.style.clipPath=clip;
+            if(line){line.style.transition=(dir>0?'left':'right')+' '+ms+'ms '+EASE;line.style[dir>0?'left':'right']=pct;}
+            setTimeout(r,ms);
+          });
+          const finish=()=>{
             holdTop.classList.remove('on');const t=holdTop;holdTop=next;holdBot=t;
             next.style.transition='';next.style.clipPath='';
-            wipe.classList.remove('run');wipe.classList.add('fade');
+            if(line){line.style.transition='';line.style.left='';line.style.right='';}
+            wipe.classList.remove('run','split','mid');wipe.classList.add('fade');
             setTimeout(()=>wipe.classList.remove('fade','l','r','to-rohbau'),900);
             res();
-          },WIPE_MS+40);
+          };
+          if(phone){
+            wipe.classList.add('split');
+            leg(midClip,'50%',SPLIT_LEG).then(()=>{
+              wipe.classList.add('mid');
+              setTimeout(()=>{
+                wipe.classList.remove('mid');
+                leg('inset(0 0 0 0)','100%',SPLIT_LEG).then(finish);
+              },SPLIT_HOLD);
+            });
+          } else {
+            leg('inset(0 0 0 0)','100%',WIPE_MS).then(finish);
+          }
         };
         const ready=()=>{const d=next.decode?next.decode():Promise.resolve();d.then(go,go);};
         if(next.getAttribute('src')===url&&next.complete)return ready();
@@ -289,7 +351,7 @@
       opts=opts||{};
       phase='HOLD';flyDir=0;ch=k;
       const scene=S[k];
-      fillScene(scene);buildHots(scene);setPlan(k);setDots(k);chapShow(k);
+      fillScene(scene);buildHots(scene);setPlan(k);setDots(k);chapShow(k);updateCmp(k);
       if(hint)hint.classList.toggle('is-off',k>0);
       await showHoldImage(stillUrl(k),opts.fade||0);
       setStageFly(false);
@@ -336,6 +398,7 @@
       phase='FLY';flyDir=dir;flyTo=to;
       hideDepth();                                   /* Halt-Ebene sofort neutral, kein Doppelspiel mit dem Video */
       setDots(from,to);chapHide();
+      if(cmp)cmp.hidden=true;
       if(ov)ov.classList.remove('show');if(hotL)hotL.classList.remove('show');
       qa(hotL||W,'.w-hs.open').forEach(x=>x.classList.remove('open'));
       const leg=legOf(from,to);
@@ -607,6 +670,8 @@
       if(poolHost)poolHost.remove();poolHost=null;
       lock(false);
       W.classList.remove('is-v16');document.documentElement.classList.remove('v16');
+      W.style.removeProperty('--reveal');
+      if(cmp)cmp.hidden=true;
     };
     st={mode:'v16',cleanup};
     /* Debug/Tests */

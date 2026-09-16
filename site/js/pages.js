@@ -746,7 +746,7 @@ ${pageHead("Diese Seite gibt es nicht.",`Unter «${esc(String(slug||'').slice(0,
   <div class="promises">
     <article class="promise rv"><span class="dia" aria-hidden="true"></span><h3 class="disp">Leistungen</h3><p>Sechs Gewerke aus einer Hand — Renovation bis Malerarbeiten.</p><button class="lnk-arrow" data-go="leistungen">Zu den Leistungen <span>${ic.arrow}</span></button></article>
     <article class="promise rv"><span class="dia" aria-hidden="true"></span><h3 class="disp">Referenzen</h3><p>Ausgeführte Projekte mit Bildern und Ablauf.</p><button class="lnk-arrow" data-go="referenzen">Referenzen ansehen <span>${ic.arrow}</span></button></article>
-    <article class="promise rv"><span class="dia" aria-hidden="true"></span><h3 class="disp">Kontakt</h3><p>Anfrage in 30 Sekunden — Antwort an Werktagen innert 24 Stunden.</p><button class="lnk-arrow" data-go="kontakt">Anfrage senden <span>${ic.arrow}</span></button></article>
+    <article class="promise rv"><span class="dia" aria-hidden="true"></span><h3 class="disp">Kontakt</h3><p>Anfrage in 30 Sekunden — Antwort an Werktagen innert 24 Stunden.</p><button class="lnk-arrow" data-go="kontakt">Offerte anfragen <span>${ic.arrow}</span></button></article>
     <article class="promise rv"><span class="dia" aria-hidden="true"></span><h3 class="disp">Startseite</h3><p>Zurück zum Rundgang durch die Wohnung.</p><button class="lnk-arrow" data-go="home">Zur Startseite <span>${ic.arrow}</span></button></article>
   </div>
 </div></section>
