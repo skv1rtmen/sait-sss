@@ -77,3 +77,34 @@ html.v16-lock,html.v16-lock body{overflow:hidden!important;overscroll-behavior:n
 }
 @media (max-width:999px) and (orientation:landscape){.v16-chap{top:64px}.v16-chap-n{font-size:52px}}
 .v16-chap.is-hero .v16-chap-n,.v16-chap.is-hero .v16-chap-rule,.v16-chap.is-hero .v16-chap-t,.v16-chap.is-hero .v16-chap-s,.v16-chap.is-hero::before{display:none}
+
+/* ---------- v16.1 Rückblende-Wischer ---------- */
+.v16-wipe{position:absolute;inset:0;z-index:4;pointer-events:none;opacity:0}
+.v16-wipe.run,.v16-wipe.fade{opacity:1}
+.v16-wipe.fade{transition:opacity .8s ease}
+.v16-wipe.fade{opacity:0}
+.v16-wipe-line{position:absolute;top:0;bottom:0;width:3px;background:#fff;box-shadow:0 0 18px rgba(255,255,255,.7);opacity:0}
+.v16-wipe.run .v16-wipe-line{opacity:1;transition:left 1400ms cubic-bezier(.65,0,.35,1),right 1400ms cubic-bezier(.65,0,.35,1)}
+.v16-wipe.l .v16-wipe-line{left:0}.v16-wipe.l.run .v16-wipe-line{left:100%}
+.v16-wipe.r .v16-wipe-line{right:0}.v16-wipe.r.run .v16-wipe-line{right:100%}
+.v16-wipe b{position:absolute;top:clamp(84px,11vh,120px);font-family:'Archivo',system-ui,sans-serif;font-size:clamp(11px,1vw,14px);font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;padding:9px 14px;opacity:0;transform:translateY(6px);transition:opacity .35s ease,transform .35s ease}
+.v16-wipe-a{left:50%;transform:translate(-50%,6px);background:rgba(13,18,48,.86);color:#fff}
+.v16-wipe-b{left:50%;transform:translate(-50%,6px);background:var(--blau-hi,#6FA3F2);color:#0D1230}
+.v16-wipe.run b,.v16-wipe.fade b{opacity:1}
+.v16-wipe.run .v16-wipe-a,.v16-wipe.fade .v16-wipe-a{transform:translate(-50%,0);transition-delay:.05s}
+.v16-wipe.run .v16-wipe-b,.v16-wipe.fade .v16-wipe-b{transform:translate(-50%,0);transition-delay:.7s}
+/* Richtung: zum Rohbau steht «heute» links oben, «früher» rechts oben; zurück umgekehrt */
+.v16-wipe.to-rohbau .v16-wipe-a{left:clamp(20px,4vw,64px);transform:translate(0,6px)}
+.v16-wipe.to-rohbau.run .v16-wipe-a,.v16-wipe.to-rohbau.fade .v16-wipe-a{transform:translate(0,0)}
+.v16-wipe.to-rohbau .v16-wipe-b{left:auto;right:clamp(20px,4vw,64px);transform:translate(0,6px)}
+.v16-wipe.to-rohbau.run .v16-wipe-b,.v16-wipe.to-rohbau.fade .v16-wipe-b{transform:translate(0,0)}
+.v16-wipe:not(.to-rohbau) .v16-wipe-b{left:clamp(20px,4vw,64px);transform:translate(0,6px)}
+.v16-wipe:not(.to-rohbau).run .v16-wipe-b,.v16-wipe:not(.to-rohbau).fade .v16-wipe-b{transform:translate(0,0);transition-delay:.05s}
+.v16-wipe:not(.to-rohbau) .v16-wipe-a{left:auto;right:clamp(20px,4vw,64px);transform:translate(0,6px)}
+.v16-wipe:not(.to-rohbau).run .v16-wipe-a,.v16-wipe:not(.to-rohbau).fade .v16-wipe-a{transform:translate(0,0);transition-delay:.7s}
+@media (max-width:999px){
+  .v16-wipe b{top:auto;font-size:11px;padding:8px 11px;left:18px!important;right:auto!important}
+  .v16-wipe .v16-wipe-a{bottom:calc(164px + env(safe-area-inset-bottom,0px))}
+  .v16-wipe .v16-wipe-b{bottom:calc(122px + env(safe-area-inset-bottom,0px))}
+}

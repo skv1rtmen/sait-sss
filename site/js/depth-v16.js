@@ -266,7 +266,10 @@ void main(){
     hide(){
       token++;on=false;wantShow=false;cx=cy=tx=ty=0;
       if(mode==='css'){api._cssOff&&api._cssOff();return;}
-      if(cv){cv.style.transition='opacity .14s linear';cv.style.opacity='0';}
+      /* sofort weg: mit preserveDrawingBuffer:false ist der Puffer nach dem Kompositing leer — eine Blende
+         würde einen schwarzen Kader über den Halt legen (dunkler Blitz zu Flugbeginn). Neutral ist die
+         Ebene ohnehin pixelgleich zum Standbild. */
+      if(cv){cv.style.transition='none';cv.style.opacity='0';}
       stop();
     },
     pause(){paused=true;stop();},

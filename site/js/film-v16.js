@@ -152,6 +152,10 @@
     chap.innerHTML='<div class="v16-chap-n"></div><div class="v16-chap-rule"></div><div class="v16-chap-t"></div><div class="v16-chap-s"></div>'+
       '<div class="v16-chap-p">'+S.map((_,i)=>'<i data-i="'+i+'"></i>').join('')+'</div>';
     stage.appendChild(chap);
+    /* v16.1 Rückblende: senkrechter Wischer statt Blitz — ein bewusster Schnitt «heute ↔ Monate früher» */
+    const wipe=document.createElement('div');wipe.className='v16-wipe';wipe.setAttribute('aria-hidden','true');
+    wipe.innerHTML='<i class="v16-wipe-line"></i><b class="v16-wipe-a">Heute · Übergabe</b><b class="v16-wipe-b">Monate früher · Rohbau</b>';
+    cam.appendChild(wipe);
     const chapN=qs(chap,'.v16-chap-n'),chapT=qs(chap,'.v16-chap-t'),chapS=qs(chap,'.v16-chap-s'),chapP=qa(chap,'.v16-chap-p i');
     function chapShow(k){
       chapN.textContent=String(k+1).padStart(2,'0');chapT.textContent=S[k].navLabel||'';
@@ -252,6 +256,34 @@
       });
     }
     function setStageFly(on){stage.classList.toggle('is-fly',!!on);}
+    /* Wischer: das neue Haltebild wird von links (dir>0) oder rechts (dir<0) aufgedeckt, dazu eine Kante und zwei Etiketten. */
+    const WIPE_MS=1400;
+    function showHoldWipe(url,dir){
+      return new Promise(res=>{
+        const next=holdBot;
+        const go=()=>{
+          next.style.transition='none';
+          next.style.clipPath=dir>0?'inset(0 100% 0 0)':'inset(0 0 0 100%)';
+          next.classList.add('on');
+          wipe.classList.remove('r','l');wipe.classList.add(dir>0?'l':'r');
+          wipe.classList.toggle('to-rohbau',dir>0);
+          void next.offsetWidth;
+          wipe.classList.add('run');
+          next.style.transition='clip-path '+WIPE_MS+'ms cubic-bezier(.65,0,.35,1)';
+          next.style.clipPath='inset(0 0 0 0)';
+          setTimeout(()=>{
+            holdTop.classList.remove('on');const t=holdTop;holdTop=next;holdBot=t;
+            next.style.transition='';next.style.clipPath='';
+            wipe.classList.remove('run');wipe.classList.add('fade');
+            setTimeout(()=>wipe.classList.remove('fade','l','r','to-rohbau'),900);
+            res();
+          },WIPE_MS+40);
+        };
+        const ready=()=>{const d=next.decode?next.decode():Promise.resolve();d.then(go,go);};
+        if(next.getAttribute('src')===url&&next.complete)return ready();
+        next.onload=ready;next.onerror=()=>res();next.src=url;
+      });
+    }
 
     async function enterHold(k,opts){
       opts=opts||{};
@@ -309,9 +341,10 @@
       const leg=legOf(from,to);
       /* Rückblende (5↔6): kein Clip, gleicher Blickwinkel — kurze Blende. */
       if(!leg||RED){
-        await showHoldImage(stillUrl(to),RED?260:V.flashFade);
+        if(RED)await showHoldImage(stillUrl(to),260);
+        else await showHoldWipe(stillUrl(to),dir);
         if(myGen!==gen)return;
-        return enterHold(to);
+        return enterHold(to,{fade:0});
       }
       const o=orient(),dirn=dir>0?'fwd':'rev';
       const url=clipUrl(leg+'-'+o,dirn);
