@@ -272,6 +272,7 @@
       }).catch(()=>{});
     }
     function hideDepth(){depthGen++;if(depthReady())try{V16Depth.hide();}catch(e){}}
+    function prepareDepth(k){if(!depthReady()||!V16Depth.prepare)return;const u=depthUrl(k);if(u)try{V16Depth.prepare(stillUrl(k),u);}catch(e){}}
     function prefetchNeighbours(){
       const o=orient();
       if(V.depth)[ch+1,ch-1].forEach(k=>{if(k>=0&&k<N){const im=new Image();im.decoding='async';im.src=depthUrl(k,o);}});
@@ -300,6 +301,7 @@
       const o=orient(),dirn=dir>0?'fwd':'rev';
       const url=clipUrl(leg+'-'+o,dirn);
       const e=warm(url);
+      prepareDepth(to);                              /* v16.1: Ziel-Halt schon während des Flugs auf die GPU */
       /* Rückblende → Wohnen: erst weich in den ersten Kader des Clips blenden, dann fahren. */
       if(needFade(from,to)&&dir>0){
         await showHoldImage(edgeUrl(leg+'-'+o,'first'),V.flashFade);
@@ -352,6 +354,7 @@
         if(myGen!==gen)return;return enterHold(newTo);
       }
       const o=orient(),url=clipUrl(leg+'-'+o,newDir>0?'fwd':'rev'),e=warm(url);
+      prepareDepth(newTo);
       try{await e.ready;}catch(x){}
       if(myGen!==gen||destroyed)return;
       await seekTo(e.v,clamp(d-t,0,d));

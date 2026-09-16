@@ -52,6 +52,9 @@ void main(){
 }`;
 
   let cv=null,gl=null,prog=null,U={},tex={photo:null,depth:null},raf=0,host=null;
+  /* v16.1: zweites Texturpaar — der Nachbar wird WÄHREND des Flugs hochgeladen, show() tauscht nur noch.
+     fxT0: Nebel und Atmen wachsen nach dem Einblenden aus 0 heran → erster Kader = Standbild, kein Pop. */
+  let tex2={photo:null,depth:null,key:null,w:0,h:0},fxT0=0;const FX_IN=1200;
   let tx=0,ty=0,cx=0,cy=0;                /* Ziel / aktuell */
   let on=false,ready=false,paused=false,lost=false,t0=0,wantShow=false;
   let imgW=0,imgH=0,cssW=0,cssH=0;
@@ -92,7 +95,7 @@ void main(){
     gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,false);
     gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,img);}
   function onLost(e){e.preventDefault();lost=true;ready=false;stop();if(cv)cv.style.opacity='0';}
-  function onRestored(){lost=false;U={};if(initGL()&&lastPair)api.show(lastPair[0],lastPair[1]);}
+  function onRestored(){lost=false;U={};tex2={photo:null,depth:null,key:null,w:0,h:0};if(initGL()&&lastPair)api.show(lastPair[0],lastPair[1]);}
 
   function resize(){
     if(!cv||!gl)return;
@@ -111,6 +114,8 @@ void main(){
   }
 
   /* ---------------- Schleife ---------------- */
+  function fxK(){if(!fxT0)return 0;const k=Math.min(1,(performance.now()-fxT0)/FX_IN);return k*k*(3-2*k);}
+  function setFx(k){gl.uniform1f(U.uFog,reduced()?0:FOG*k);gl.uniform1f(U.uBreath,reduced()?0:BREATH*k);}
   function frame(){
     raf=0;
     if(!on||paused||!ready||lost||document.hidden)return;
@@ -118,6 +123,7 @@ void main(){
     const mag=Math.min(1,Math.hypot(cx,cy));
     gl.uniform2f(U.uOff,cx*AMP,cy*AMP);
     gl.uniform1f(U.uMag,mag);
+    setFx(fxK());
     gl.uniform1f(U.uT,(performance.now()-t0)/1000);
     gl.drawArrays(gl.TRIANGLE_STRIP,0,4);
     raf=requestAnimationFrame(frame);
@@ -127,10 +133,11 @@ void main(){
   function drawOnce(){
     if(!gl||!ready&&!lastPair)return;
     gl.uniform2f(U.uOff,cx*AMP,cy*AMP);gl.uniform1f(U.uMag,Math.min(1,Math.hypot(cx,cy)));
+    setFx(fxK());
     gl.uniform1f(U.uT,(performance.now()-t0)/1000);
     gl.drawArrays(gl.TRIANGLE_STRIP,0,4);
   }
-  function reveal(){wantShow=false;if(!cv)return;cv.style.transition='opacity .5s ease';cv.style.opacity='1';start();}
+  function reveal(){wantShow=false;if(!cv)return;fxT0=performance.now();cv.style.transition='opacity .18s linear';cv.style.opacity='1';start();}
 
   /* ---------------- Eingabe ---------------- */
   let tId=null,tsx=0,tsy=0,tMode=0;          /* 0 = unentschieden, 1 = Parallaxe, 2 = Navigation */
@@ -215,16 +222,24 @@ void main(){
       if(mode==='css'){on=true;api.ready=true;return true;}
       if(!gl||lost)return false;
       const my=++token;
-      cx=cy=tx=ty=0;
-      let a,b;
-      try{[a,b]=await Promise.all([loadImg(photoUrl),loadImg(depthUrl)]);}
-      catch(e){ if(my===token){api.ready=false;if(cv)cv.style.opacity='0';} return false; }
-      if(my!==token||!gl||lost)return false;
-      imgW=a.naturalWidth;imgH=a.naturalHeight;
-      upload(0,tex.photo,a);upload(1,tex.depth,b);
+      cx=cy=tx=ty=0;fxT0=0;
+      const key=photoUrl+'|'+depthUrl;
+      if(tex2.key===key&&tex2.photo){
+        /* Nachbar liegt bereits auf der GPU: Paare tauschen, sofort zeichnen */
+        const tp=tex;tex=tex2;tex2={photo:tp.photo,depth:tp.depth,key:null,w:0,h:0};
+        imgW=tex.w;imgH=tex.h;
+        gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,tex.photo);
+        gl.activeTexture(gl.TEXTURE1);gl.bindTexture(gl.TEXTURE_2D,tex.depth);
+      } else {
+        let a,b;
+        try{[a,b]=await Promise.all([loadImg(photoUrl),loadImg(depthUrl)]);}
+        catch(e){ if(my===token){api.ready=false;if(cv)cv.style.opacity='0';} return false; }
+        if(my!==token||!gl||lost)return false;
+        imgW=a.naturalWidth;imgH=a.naturalHeight;
+        upload(0,tex.photo,a);upload(1,tex.depth,b);
+      }
       resize();
-      gl.uniform1f(U.uFog,reduced()?0:FOG);
-      gl.uniform1f(U.uBreath,reduced()?0:BREATH);
+      setFx(0);
       ready=true;api.ready=true;on=true;paused=false;
       /* erster Kader in Neutrallage zeichnen, danach einblenden — kein Springen am Übergang.
          Im versteckten Tab wird nicht komponiert: die Leinwand bliebe schwarz und würde das
@@ -232,6 +247,19 @@ void main(){
       drawOnce();
       if(document.hidden){wantShow=true;return true;}
       reveal();
+      return true;
+    },
+    /* v16.1: Nachbar vorbereiten (während des Flugs). Lädt beide Bilder und legt sie in das Reservepaar. */
+    async prepare(photoUrl,depthUrl){
+      if(mode!=='gl'||!gl||lost)return false;
+      const key=photoUrl+'|'+depthUrl;if(tex2.key===key)return true;
+      let a,b;try{[a,b]=await Promise.all([loadImg(photoUrl),loadImg(depthUrl)]);}catch(e){return false;}
+      if(!gl||lost)return false;
+      if(!tex2.photo){tex2.photo=mkTex();tex2.depth=mkTex();}
+      upload(0,tex2.photo,a);upload(1,tex2.depth,b);tex2.key=key;tex2.w=a.naturalWidth;tex2.h=a.naturalHeight;
+      /* aktive Einheiten wieder auf das sichtbare Paar */
+      gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,tex.photo);
+      gl.activeTexture(gl.TEXTURE1);gl.bindTexture(gl.TEXTURE_2D,tex.depth);
       return true;
     },
     /* Während eines Flugs: sofort neutral, ausblenden, nicht mehr rendern. */
@@ -265,10 +293,10 @@ void main(){
       removeEventListener('deviceorientation',onOrient,true);
       if(gl){
         if(cv){cv.removeEventListener('webglcontextlost',onLost);cv.removeEventListener('webglcontextrestored',onRestored);}
-        try{gl.deleteTexture(tex.photo);gl.deleteTexture(tex.depth);gl.deleteProgram(prog);
+        try{gl.deleteTexture(tex.photo);gl.deleteTexture(tex.depth);if(tex2.photo){gl.deleteTexture(tex2.photo);gl.deleteTexture(tex2.depth);}gl.deleteProgram(prog);
           const e=gl.getExtension('WEBGL_lose_context');if(e)e.loseContext();}catch(e){}
       }
-      gl=null;prog=null;tex={photo:null,depth:null};cv=null;host=null;lastPair=null;mode='gl';
+      gl=null;prog=null;tex={photo:null,depth:null};tex2={photo:null,depth:null,key:null,w:0,h:0};cv=null;host=null;lastPair=null;mode='gl';
     },
     /* Messung: mittlere GPU-Zeit je Kader, sofern die Erweiterung vorhanden ist; sonst JS-Zeit. */
     async measure(n){
