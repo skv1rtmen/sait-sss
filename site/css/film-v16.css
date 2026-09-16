@@ -56,6 +56,20 @@ html.v16-lock,html.v16-lock body{overflow:hidden!important;overscroll-behavior:n
 .wohnung.is-v16 #wStart{opacity:0;transition:opacity .5s ease .2s}
 .wohnung.is-v16 #wStart.show{opacity:1}
 
+/* Bug (Sichtprüfung, alle Geräte): Hotspot-Marker (.w-hs) landeten in v16 immer am Nullpunkt der Bühne
+   (oben links), egal welches x/y die Szene in data.js für sie vorsieht — film-v16.js's buildHots() setzt
+   zwar --hx/--hy auf jeden Button (wie Engine A es tat), aber nur film.js (Engine A) übersetzte das je per
+   JS in echte Pixel-Positionen; für v16 fehlte die entsprechende Regel komplett. Sichtbar wurde das v.a. auf
+   dem Telefon als abgeschnittener Textfetzen oben im Bild (der zur Mitte hin ausgerichtete Pin landete zur
+   Hälfte über dem Bildrand) — auf dem Desktop ebenso betroffen, dort nur weniger auffällig. */
+.wohnung.is-v16 #wHot .w-hs{left:calc(var(--hx,50) * 1%);top:calc(var(--hy,50) * 1%)}
+/* Gleicher Grund wie oben (§8.1-Muster): .w-hs-lbl bricht mobil nur unter .is-lite um (site.css Zeile ~1561),
+   das v16 nie setzt — ohne diese Regel läuft ein längeres Label (z. B. "Ein Fenster, kein Rahmen") auf dem
+   schmalen Telefon-Viewport rechts aus dem Bild. */
+@media (max-width:760px){
+  .wohnung.is-v16 .w-hs-lbl{width:max-content;max-width:min(58vw,240px);white-space:normal;line-height:1.25}
+}
+
 /* Reduced Motion: keine dekorative Bewegung, Kapitelwechsel bleibt als kurze Blende erhalten. */
 @media (prefers-reduced-motion:reduce){
   .v16-hold{transition-duration:180ms!important}

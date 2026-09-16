@@ -218,8 +218,17 @@
       list.slice(0,orient()==='P'?3:4).forEach((hp,i)=>{
         const x=pos&&pos[i]?pos[i].x:hp.x,y=pos&&pos[i]?pos[i].y:hp.y;
         const el=document.createElement('button');
-        el.type='button';el.className='w-hs'+(x>66?' flip':'')+(y>66?' up':'');
-        el.style.setProperty('--hx',x);el.style.setProperty('--hy',y);el.style.setProperty('--i',i);
+        /* Erst jetzt (Sichtprüfung) bekommen .w-hs überhaupt eine echte Position (siehe film-v16.css:
+           #wHot .w-hs{left/top}) — vorher lagen alle bei 0,0 und der flip-Schwellwert 66 % kam nie zum Tragen.
+           Auf dem schmalen Telefon reicht 66 % nicht: das Label ist dort ein deutlich grösserer Anteil der
+           Bildbreite als am Desktop, darum kippt es auf dem Telefon schon ab der Bildmitte nach links. */
+        const flipAt=isPhone()?50:66;
+        /* Gleicher Fund: hotP-Koordinaten wurden nie sichtbar gerendert (s.o.), darum kollidieren einzelne
+           y-Werte (z. B. 66 %) mit der Textzone von .w-ov, die auf dem Telefon bottom-verankert ist und die
+           unteren ~35–40 % einnimmt (§8.1-Fix). Deckel statt Neuvermessung jedes einzelnen Datenpunkts. */
+        const yr=isPhone()?Math.min(y,58):y;
+        el.type='button';el.className='w-hs'+(x>flipAt?' flip':'')+(yr>66?' up':'');
+        el.style.setProperty('--hx',x);el.style.setProperty('--hy',yr);el.style.setProperty('--i',i);
         el.setAttribute('aria-label',hp.t);el.setAttribute('aria-expanded','false');
         el.innerHTML=`<i></i><span class="w-hs-lbl">${hp.t}</span><span class="w-hs-pop"><b>${hp.l[0]}</b><em>${hp.l[1]||''}</em>${hp.go?'<u>Mehr dazu →</u>':''}</span>`;
         el.addEventListener('click',e=>{
@@ -362,6 +371,14 @@
       setStageFly(false);
       if(active){try{active.v.pause();}catch(e){}active.v.classList.remove('is-on');active.active=false;active=null;}
       if(ov)ov.classList.add('show');if(hotL)hotL.classList.add('show');
+      /* Handschrift-Reveal der Inhaber-Unterschrift (fx.js: signature()) nachrüsten: fx.js hängt _sigRun/
+         _sigReset an jedes .w-sig svg, überspringt aber bewusst den Auto-Start innerhalb von .w-stage
+         ("im Rundgang steuert film.js den Start") — das war für Engine A (film.js, Zeile ~558) gedacht.
+         film-v16.js schaltete bisher nur sig.hidden um, ohne den Trigger je aufzurufen — die Unterschrift
+         stand darum in der Abnahme-Kammer nur als fertiger (weil nie gezeichneter, also unsichtbarer) Strich
+         da, statt sich wie beabsichtigt von Hand zu schreiben. Reset bei jedem anderen Kapitel, damit sie bei
+         erneutem Besuch der Kammer wieder neu zeichnet statt nur aufzupoppen. */
+      if(sig){const sv=sig.querySelector('svg');if(sv){if(scene.sig){if(sv._sigRun)sv._sigRun();}else if(sv._sigReset)sv._sigReset();}}
       prefetchNeighbours();
       /* 2,5D erst NACH dem neutralen Haltebild: erst steht das Bild, dann wächst die Tiefe hinein.
          Der erste gezeichnete Kader ist pixelgleich zum Standbild — kein Sprung am Übergang. */
@@ -528,7 +545,14 @@
       if(e.cancelable)e.preventDefault();
       if(tFired)return;
       if(Math.abs(dy)<(V.swipeMin||46)||Math.abs(dy)<Math.abs(dx))return;
-      tFired=true;inGesture=false;gesture(dy>0?1:-1,Math.abs(dy));
+      tFired=true;inGesture=false;
+      /* Handy-Sichtprüfung: spürbarer Mikrofreeze genau im Moment des Wischs. Ursache: startFly() (u.a.
+         showHoldWipe()'s void offsetWidth-Zwangs-Reflow, prepareDepth()) lief bisher synchron im selben
+         Touchmove-Callback — non-passive touchmove blockiert damit einen Frame lang die Touch-Pipeline.
+         rAF schiebt den Start eine Frame weiter: der Browser darf den aktuellen Touch-Frame zuerst fertig
+         verarbeiten, bevor die schwerere Übergangslogik läuft. */
+      const dirn=dy>0?1:-1,strength=Math.abs(dy);
+      requestAnimationFrame(()=>gesture(dirn,strength));
     }
     function onTouchEnd(){tActive=false;setTimeout(()=>{tFired=false;},80);}
     const KEY_NEXT={ArrowDown:1,PageDown:1,' ':1,Space:1,ArrowRight:1},KEY_PREV={ArrowUp:-1,PageUp:-1,ArrowLeft:-1};
