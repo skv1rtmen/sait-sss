@@ -147,7 +147,10 @@ const richtTable=()=>{const u={auftrag:'pro Auftrag',zimmer:'pro Raum',m2:'pro m
   <p class="rp-foot rv">Stand August 2026, Arbeit ohne Material. Verbindlich ist die Offerte, die Sie innert 48 h erhalten.</p>`;};
 /* v16: Raumbild kommt aus v16/stills/<room>-L*.jpg (Engine B); v15/v13 weiterhin aus stillDir/st<i>.jpg. */
 const V16=(typeof FILM!=='undefined'&&FILM.engine==='v16');
-const roomImg=i=>V16?{s:`${FILM.v16.stillDir}${FILM.v16.rooms[i]}-L-1280.jpg`,b:`${FILM.v16.stillDir}${FILM.v16.rooms[i]}-L.jpg`}
+/* ?v=<rev> — Netlify liefert /img/** als «immutable»; ohne den Zusatz sieht ein Besucher nach einer
+   Neuberechnung der Standbilder noch ein Jahr lang die alten. */
+const V16REV=V16&&FILM.v16.rev?'?v='+FILM.v16.rev:'';
+const roomImg=i=>V16?{s:`${FILM.v16.stillDir}${FILM.v16.rooms[i]}-L-1280.jpg${V16REV}`,b:`${FILM.v16.stillDir}${FILM.v16.rooms[i]}-L.jpg${V16REV}`}
                     :{s:`${FILM.stillDir}st${i}-1280.jpg`,b:`${FILM.stillDir}st${i}.jpg`};
 const wRoom=i=>{const s=FILM.scenes[i];const vh=(i===0?(FILM.room0Vh||1.2):(FILM.roomVh||2.8));const ri=roomImg(i);
   return `<section class="w-room" data-scene="${i}" aria-label="${esc(s.kicker||'Rundgang')}" style="--room-vh:${vh}">
@@ -158,7 +161,7 @@ const wRoom=i=>{const s=FILM.scenes[i];const vh=(i===0?(FILM.room0Vh||1.2):(FILM
 const wStage=()=>`<div class="w-stage" id="wStage">
   <div class="w-cam">
     ${V16?`<!-- v16: Halt- und Videoebenen legt js/film-v16.js an; hier nur das erste Haltebild als schneller Paint. -->
-    <img class="v16-boot" src="${FILM.v16.stillDir}ankunft-L.jpg" alt="" aria-hidden="true" fetchpriority="high" decoding="async">`
+    <img class="v16-boot" src="${FILM.v16.stillDir}ankunft-L.jpg${V16REV}" alt="" aria-hidden="true" fetchpriority="high" decoding="async">`
     :`<picture><source media="(min-width:1000px)" srcset="${FILM.poster}"><img class="w-poster" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" aria-hidden="true" fetchpriority="high" decoding="async"></picture>
     <canvas class="w-canvas" aria-hidden="true"></canvas>
     <canvas class="w-fx" aria-hidden="true"></canvas>

@@ -761,7 +761,15 @@ const FILM_V16=Object.assign({},FILM_V15,{
   /* Etappe 4: je Raum/Ausrichtung eine Karte — R = Tiefe (hell = nah), G = Fernmaske (Glas).
      Build-Werkzeug: core/dev/_depth (Depth Anything V2 small, WebGPU) — das Modell wird nicht ausgeliefert. */
   depthDir:'img/film/v16/depth/',depth:true,
-  clipDur:3.0,quiet:700,swipeMin:46,flashFade:420,
+  /* Netlify отдаёт /img/** с `cache-control: max-age=31536000, immutable` — браузер НЕ перепроверяет
+     такие файлы год. Имена клипов и стиллов не меняются, поэтому после пересборки посетитель (и мы
+     сами) продолжали смотреть старое видео. rev подставляется ко всем URL фильма: новая сборка =
+     новый адрес = свежая загрузка. ПОДНИМАТЬ ПРИ КАЖДОЙ ПЕРЕСБОРКЕ АССЕТОВ. */
+  rev:'c1',
+  /* v16c: клипы больше не равной длины (1.3–2.1 с) — выдуманная Veo середина вырезана и
+     проносится смазанным рывком. Движок берёт настоящую длительность из <video>; clipDur —
+     только запасное значение, если duration ещё не известна. */
+  clipDur:2.0,quiet:700,swipeMin:46,flashFade:420,
   rooms:['ankunft','schwelle','kueche','bad','schlaf','wohnen','wohnen-rohbau','eingang'],
   legs:['ankunft-schwelle','schwelle-kueche','kueche-bad','bad-schlaf','schlaf-wohnen',null,'wohnen-eingang'],
   fadeInLegs:[6]

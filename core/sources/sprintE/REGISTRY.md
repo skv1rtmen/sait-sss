@@ -85,3 +85,25 @@
 Заметки:
 - Один запрос «Generate TWO separate images… 16:9 / 9:16» даёт обе ориентации за раз (проверено на Ankunft) — используем для всех сцен.
 - Файлы в Downloads именуются по заголовку тайла (`<Title>_2K_<timestamp>.jpeg`); маппинг в `core/dev/portrait-map.json` (v15 секция).
+
+
+## v16b — согласованная цепочка «один дом» (16.09.2026, акк. «Дима Пупкин» `/u/2/`, проект a0a0e0dd-71cd-4003-86e2-244a8ee7691f)
+
+Мастера: `core/_incoming/v16b/`. Картинки — Nano Banana 2 (бонусы не тратит), видео — Veo 3.1 Quality, 6 × 100 = 600 бонусов (остаток 150).
+
+| Кадр | Файл | Что в проёме |
+|---|---|---|
+| Ankunft | ankunft-L_2K_open.jpeg | открытая дверь → коридор Schwelle; объём дома приведён к интерьеру |
+| Schwelle | (без изменений, v16) | кухня справа |
+| Küche | kueche-L_2K_bathdoor.jpeg | ванная слева |
+| Bad | bad-L_2K_beddoor.jpeg | спальня справа |
+| Schlafzimmer | schlaf-L_2K_livedoor.jpeg | гостиная в проходе |
+| Wohnen | wohnen-L_2K_halldoor.jpeg | коридор ко входу слева |
+| Rohbau | wohnen-rohbau-L_2K.jpeg | тот же ракурс, стройка |
+| Eingang | (без изменений, v16) | — |
+
+Переходы (только L, портрет получается кадрированием): t_ankunft-schwelle-L, t_schwelle-kueche-L, t_kueche-bad-L,
+t_bad-schlaf-L, t_schlaf-wohnen-L, t_wohnen-eingang-L — все 1080p, 8 с, «Кадры» first/last, x1.
+
+Сборка: `node core/dev/v16b-build.js` (env V16_ONLY=clips|stills|lite|verify). Портретное окно 608×1080,
+позиции PX в скрипте. Стыки PSNR 41,5–75 dB — см. `core/dev/_v16b-build.log`.

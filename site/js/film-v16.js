@@ -47,10 +47,13 @@
     }).catch(()=>{TIER='hd';return TIER;});
     return tierProbe;
   }
-  const clipUrl=(id,dirn)=>(TIER==='lite'?V.liteDir:V.clipDir)+id+'.'+dirn+'.mp4';
-  const edgeUrl=(id,which)=>V.clipDir+id+'.'+which+'.jpg';     /* erster/letzter Kader als Bild */
-  const stillUrl=(k,o)=>V.stillDir+ROOMS[k]+'-'+(o||orient())+'.jpg';
-  const depthUrl=(k,o)=>V.depthDir?V.depthDir+ROOMS[k]+'-'+(o||orient())+'.webp':null;
+  /* Alle Film-Adressen bekommen ?v=<rev> angehängt. Netlify liefert /img/** als «immutable» aus —
+     ohne diesen Zusatz behält der Browser die alten Clips ein Jahr lang, egal was neu deployt wird. */
+  const REV=V.rev?'?v='+V.rev:'';
+  const clipUrl=(id,dirn)=>(TIER==='lite'?V.liteDir:V.clipDir)+id+'.'+dirn+'.mp4'+REV;
+  const edgeUrl=(id,which)=>V.clipDir+id+'.'+which+'.jpg'+REV;     /* erster/letzter Kader als Bild */
+  const stillUrl=(k,o)=>V.stillDir+ROOMS[k]+'-'+(o||orient())+'.jpg'+REV;
+  const depthUrl=(k,o)=>V.depthDir?V.depthDir+ROOMS[k]+'-'+(o||orient())+'.webp'+REV:null;
   const legIx=(from,to)=>Math.min(from,to);
   const legOf=(from,to)=>LEGS[legIx(from,to)];
   /* Strecken, deren Anfangskader NICHT der Halt der Ausgangskammer ist (Rückblende → Wohnen-Blickwinkel):
