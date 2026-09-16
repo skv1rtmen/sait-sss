@@ -215,20 +215,72 @@
       if(!hotL)return;hotL.innerHTML='';
       const list=(orient()==='P'?(scene.hotP&&scene.hot?scene.hot.slice(0,scene.hotP.length):scene.hot):scene.hot)||[];
       const pos=orient()==='P'&&scene.hotP?scene.hotP:null;
-      list.slice(0,orient()==='P'?3:4).forEach((hp,i)=>{
-        const x=pos&&pos[i]?pos[i].x:hp.x,y=pos&&pos[i]?pos[i].y:hp.y;
+      const items=list.slice(0,orient()==='P'?3:4).map((hp,i)=>({hp,x:pos&&pos[i]?pos[i].x:hp.x,y:pos&&pos[i]?pos[i].y:hp.y}));
+      /* Bug (Sichtprüfung nach dem Positionierungs-Fix, Telefon): ein fester Y-Deckel (58 %) reichte nicht für
+         Szenen mit hohem Text-Turm (Zähler-Reihe, Chips oder CTA lassen .w-ov weiter nach oben wachsen als in
+         einer schlichten Szene — betrifft sowohl bottom-verankerte Szenen als auch die vertikal zentrierte
+         Hero-Kammer, .w-ov.is-hero) — Pins landeten trotzdem auf Headline/Fliesstext (z. B. "Renovation aus
+         einer Hand", "Schlüsselübergabe", der Hero-Kicker). Fix: die TATSÄCHLICHE Oberkante von .w-ov pro Szene
+         messen. Erster Versuch dafür verschob EINFACH ALLE Pins gemeinsam um denselben Betrag nach oben — das
+         liess zwei vorher sauber getrennte Pins auf demselben (Boden-)Wert übereinanderfallen (Rückblende,
+         y:60 und y:78 → beide 58; Schwelle, y:40 und y:16 → beide 8 nach zu grossem Versatz). Zweiter Versuch
+         verschob NUR die Pins, deren y die Grenze selbst überschreitet — das liess wiederum einen verschobenen
+         Pin direkt neben einem unverschobenen, eigentlich unbeteiligten Pin landen (Bad, "Dicht nach Norm" auf
+         52 neben "Grossformat, kaum Fugen" auf 50). Jetzt: von unten nach oben durchgehen (grösstes y zuerst),
+         jeden Pin auf die bisherige Decke ODER seinen eigenen Wert deckeln (je nachdem, was kleiner ist), dann
+         die Decke für den nächsthöheren Pin um den Mindestabstand weiter absenken — so bleiben unbeteiligte Pins
+         unverändert, solange kein tieferer Pin sie beim Hochschieben einholt, und kein Pin überschreitet je die
+         Grenze oder landet auf demselben Wert wie ein Nachbar. */
+      if(isPhone()&&items.length&&stage&&ov){
+        const stageR=stage.getBoundingClientRect(),ovR=ov.getBoundingClientRect();
+        if(stageR.height>0){
+          const ovTopPct=((ovR.top-stageR.top)/stageR.height)*100;
+          /* Bug (Sichtprüfung, nach obigem Fix): Pins, die weit genug hochgeschoben wurden (Szenen mit Zähler-
+             Reihe wie "Wohnen"), liefen oben in die Kapitelmarke (.v16-chap: Nummer + Name + "Kapitel N von 8"
+             oben links) hinein — "Beton, der bleibt" landete auf "Kapitel 6 von 8". Der Frame selbst hat keine
+             feste Untergrenze dafür, darum jetzt zusätzlich die TATSÄCHLICHE Unterkante von .v16-chap messen und
+             als harte Untergrenze für floor verwenden (statt der vorher geschätzten 12). */
+          const floor=chap?Math.min(30,Math.max(14,((chap.getBoundingClientRect().bottom-stageR.top)/stageR.height)*100+2)):14;
+          /* Kein Deckel nach UNTEN mehr für safeMax (früher Math.max(30,...)): der liess safeMax nie unter 30
+             fallen und erlaubte Hero-Pins damit direkt in dessen — deutlich höher liegenden — Text hineinzuragen.
+             62 bleibt als Obergrenze gegen unnötiges Verschieben, falls die Messung mal einen sehr niedrigen
+             Wert liefert. Rand auf 4 (statt 7) verkleinert: bei drei Pins in einer Szene mit hohem Text-Turm
+             UND Kapitelmarke blieb sonst zu wenig Korridor übrig, um alle drei ohne Überlappung zu stapeln
+             (Wohnen: "Beton, der bleibt" / "Drei Gewerke im Takt" / "Bis zum letzten Vorhang"). */
+          const safeMax=Math.min(62,Math.max(floor,ovTopPct-4));
+          /* Bug (Sichtprüfung, Telefon): mit der Kapitelmarke als zusätzlicher Untergrenze (floor, s. o.) wird
+             der Korridor zwischen floor und safeMax bei manchen Szenen zu schmal für den festen Mindestabstand
+             von 12 — die Kaskade unten drückte dann mehrere Pins auf (fast) denselben floor-Wert (Schwelle:
+             "Geprüft, nicht geschätzt" und "Licht in der Decke" praktisch übereinander). Ein einfach verkleinerter
+             fester Abstand half nicht zuverlässig, weil floor jeden weiteren Pin auf denselben Wert zieht, sobald
+             einer ihn erreicht. Fix: zuerst die natürliche Kaskade (nur mit Decke, ohne Boden) ausrechnen — passt
+             sie in den Korridor, bleibt sie stehen (unbeteiligte Pins unverändert); reicht der Platz nicht, ALLE
+             Pins der Szene gleichmässig zwischen floor und safeMax verteilen (garantiert kollisionsfrei, statt
+             mehrere am unteren Ende zu stapeln). */
+          const n=items.length,sorted=items.slice().sort((a,b)=>b.y-a.y);
+          if(n===1){
+            sorted[0].y=Math.max(floor,Math.min(sorted[0].y,safeMax));
+          }else{
+            const nominalGap=12;let ceiling=safeMax;const naturalY=[];
+            sorted.forEach(it=>{const y=Math.min(it.y,ceiling);naturalY.push(y);ceiling=y-nominalGap;});
+            if(naturalY[naturalY.length-1]<floor){
+              const gap=(safeMax-floor)/(n-1);
+              sorted.forEach((it,i)=>{it.y=safeMax-i*gap;});
+            }else{
+              sorted.forEach((it,i)=>{it.y=naturalY[i];});
+            }
+          }
+        }
+      }
+      items.forEach(({hp,x,y},i)=>{
         const el=document.createElement('button');
         /* Erst jetzt (Sichtprüfung) bekommen .w-hs überhaupt eine echte Position (siehe film-v16.css:
            #wHot .w-hs{left/top}) — vorher lagen alle bei 0,0 und der flip-Schwellwert 66 % kam nie zum Tragen.
            Auf dem schmalen Telefon reicht 66 % nicht: das Label ist dort ein deutlich grösserer Anteil der
            Bildbreite als am Desktop, darum kippt es auf dem Telefon schon ab der Bildmitte nach links. */
         const flipAt=isPhone()?50:66;
-        /* Gleicher Fund: hotP-Koordinaten wurden nie sichtbar gerendert (s.o.), darum kollidieren einzelne
-           y-Werte (z. B. 66 %) mit der Textzone von .w-ov, die auf dem Telefon bottom-verankert ist und die
-           unteren ~35–40 % einnimmt (§8.1-Fix). Deckel statt Neuvermessung jedes einzelnen Datenpunkts. */
-        const yr=isPhone()?Math.min(y,58):y;
-        el.type='button';el.className='w-hs'+(x>flipAt?' flip':'')+(yr>66?' up':'');
-        el.style.setProperty('--hx',x);el.style.setProperty('--hy',yr);el.style.setProperty('--i',i);
+        el.type='button';el.className='w-hs'+(x>flipAt?' flip':'')+(y>66?' up':'');
+        el.style.setProperty('--hx',x);el.style.setProperty('--hy',y);el.style.setProperty('--i',i);
         el.setAttribute('aria-label',hp.t);el.setAttribute('aria-expanded','false');
         el.innerHTML=`<i></i><span class="w-hs-lbl">${hp.t}</span><span class="w-hs-pop"><b>${hp.l[0]}</b><em>${hp.l[1]||''}</em>${hp.go?'<u>Mehr dazu →</u>':''}</span>`;
         el.addEventListener('click',e=>{
@@ -365,7 +417,12 @@
       opts=opts||{};
       phase='HOLD';flyDir=0;ch=k;
       const scene=S[k];
-      fillScene(scene);buildHots(scene);setPlan(k);setDots(k);chapShow(k);updateCmp(k);
+      /* Bug (Sichtprüfung, Telefon): buildHots() misst jetzt die Unterkante von .v16-chap (Kapitelmarke), um
+         Pins nicht darauf landen zu lassen — chapShow(k) stand hier aber bisher NACH buildHots(), lieferte also
+         noch die Geometrie des VORHERIGEN Kapitels (kürzer bei der Hero-Kammer, die nur den Fortschritt zeigt,
+         ohne Nummer/Titel/"Kapitel N von 8"). Reihenfolge getauscht, damit buildHots() die Kapitelmarke des
+         NEUEN Kapitels misst. */
+      fillScene(scene);chapShow(k);buildHots(scene);setPlan(k);setDots(k);updateCmp(k);
       if(hint)hint.classList.toggle('is-off',k>0);
       await showHoldImage(stillUrl(k),opts.fade||0);
       setStageFly(false);

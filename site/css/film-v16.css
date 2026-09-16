@@ -65,9 +65,13 @@ html.v16-lock,html.v16-lock body{overflow:hidden!important;overscroll-behavior:n
 .wohnung.is-v16 #wHot .w-hs{left:calc(var(--hx,50) * 1%);top:calc(var(--hy,50) * 1%)}
 /* Gleicher Grund wie oben (§8.1-Muster): .w-hs-lbl bricht mobil nur unter .is-lite um (site.css Zeile ~1561),
    das v16 nie setzt — ohne diese Regel läuft ein längeres Label (z. B. "Ein Fenster, kein Rahmen") auf dem
-   schmalen Telefon-Viewport rechts aus dem Bild. */
+   schmalen Telefon-Viewport rechts aus dem Bild.
+   Bug (Sichtprüfung, Telefon): bei 58vw/240px reichte das noch nicht — ein gekipptes Label (.flip, hängt am
+   Pin nach LINKS statt nach rechts) an der Kipp-Schwelle (x>50 %) ragte selbst dann noch über den linken
+   Bildschirmrand hinaus (sichtbar z. B. bei "Geprüft vor dem Verputz"). Schmaler statt breiter: 46vw/190px
+   lässt an der Schwelle auf beiden Seiten genug Luft, Labels brechen dafür auf 2–3 Zeilen. */
 @media (max-width:760px){
-  .wohnung.is-v16 .w-hs-lbl{width:max-content;max-width:min(58vw,240px);white-space:normal;line-height:1.25}
+  .wohnung.is-v16 .w-hs-lbl{width:max-content;max-width:min(46vw,190px);white-space:normal;line-height:1.25}
 }
 
 /* Reduced Motion: keine dekorative Bewegung, Kapitelwechsel bleibt als kurze Blende erhalten. */
