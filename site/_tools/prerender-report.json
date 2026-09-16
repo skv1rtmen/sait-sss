@@ -1,0 +1,250 @@
+[
+ {
+  "route": "bewertung",
+  "file": "bewertung.html",
+  "url": "https://www.baustern.ch/bewertung",
+  "title": "Bewertung schreiben — BauStern",
+  "bytes": 18575,
+  "h1": "Wie war's mit BauStern?"
+ },
+ {
+  "route": "karriere",
+  "file": "karriere.html",
+  "url": "https://www.baustern.ch/karriere",
+  "title": "Karriere — Wir suchen Monteure | BauStern Zürich",
+  "bytes": 26175,
+  "h1": "Handwerk, das man sieht."
+ },
+ {
+  "route": "wissen/badsanierung-kosten-zuerich-2026",
+  "file": "wissen/badsanierung-kosten-zuerich-2026.html",
+  "url": "https://www.baustern.ch/wissen/badsanierung-kosten-zuerich-2026",
+  "title": "Was kostet eine Badsanierung in Zürich 2026? — BauStern",
+  "bytes": 22452,
+  "h1": "Was kostet eine Badsanierung in Zürich 2026? Richt"
+ },
+ {
+  "route": "wissen/leerwohnung-streichen-preise",
+  "file": "wissen/leerwohnung-streichen-preise.html",
+  "url": "https://www.baustern.ch/wissen/leerwohnung-streichen-preise",
+  "title": "Leerwohnung streichen: Preise pro Zimmer & m² — BauStern",
+  "bytes": 22125,
+  "h1": "Leerwohnung streichen: Preise pro Zimmer & Quadrat"
+ },
+ {
+  "route": "wissen/baubewilligung-zuerich-sanierung",
+  "file": "wissen/baubewilligung-zuerich-sanierung.html",
+  "url": "https://www.baustern.ch/wissen/baubewilligung-zuerich-sanierung",
+  "title": "Baubewilligung in Zürich für Sanierungen — BauStern",
+  "bytes": 22420,
+  "h1": "Baubewilligung in Zürich: Wann ist ein Baugesuch f"
+ },
+ {
+  "route": "wissen/buero-gewerbe-umbau-ablauf",
+  "file": "wissen/buero-gewerbe-umbau-ablauf.html",
+  "url": "https://www.baustern.ch/wissen/buero-gewerbe-umbau-ablauf",
+  "title": "Büroumbau & Gewerbe-Renovierung — BauStern Zürich",
+  "bytes": 22450,
+  "h1": "Büroumbau & Gewerbe-Renovierung: Ablauf, Terminsic"
+ },
+ {
+  "route": "sanierung-winterthur",
+  "file": "sanierung-winterthur.html",
+  "url": "https://www.baustern.ch/sanierung-winterthur",
+  "title": "Renovation & Sanitär in Winterthur — BauStern",
+  "bytes": 26350,
+  "h1": "Bauunternehmen für Winterthur."
+ },
+ {
+  "route": "sanierung-zug",
+  "file": "sanierung-zug.html",
+  "url": "https://www.baustern.ch/sanierung-zug",
+  "title": "Renovation & Sanitär im Kanton Zug — BauStern",
+  "bytes": 26291,
+  "h1": "Bauunternehmen für Zug."
+ },
+ {
+  "route": "sanierung-luzern",
+  "file": "sanierung-luzern.html",
+  "url": "https://www.baustern.ch/sanierung-luzern",
+  "title": "Renovation & Sanitär in Luzern — BauStern",
+  "bytes": 26263,
+  "h1": "Bauunternehmen für Luzern."
+ },
+ {
+  "route": "home",
+  "file": "index.html",
+  "url": "https://www.baustern.ch/",
+  "title": "BauStern — Bauunternehmen Zürich | Renovation, Sanitär, Umbau",
+  "bytes": 84963,
+  "h1": "BauStern — Bauunternehmen Zürich: Renovation, Sani"
+ },
+ {
+  "route": "leistungen",
+  "file": "leistungen.html",
+  "url": "https://www.baustern.ch/leistungen",
+  "title": "Leistungen — BauStern Bauunternehmen Zürich",
+  "bytes": 26339,
+  "h1": "Sechs Gewerke aus einer Hand."
+ },
+ {
+  "route": "leistungen/renovation",
+  "file": "leistungen/renovation.html",
+  "url": "https://www.baustern.ch/leistungen/renovation",
+  "title": "Renovation in Zürich — BauStern",
+  "bytes": 30425,
+  "h1": "Renovation in Zürich"
+ },
+ {
+  "route": "leistungen/sanitaer",
+  "file": "leistungen/sanitaer.html",
+  "url": "https://www.baustern.ch/leistungen/sanitaer",
+  "title": "Sanitärarbeiten in Zürich — BauStern",
+  "bytes": 28216,
+  "h1": "Sanitärarbeiten in Zürich"
+ },
+ {
+  "route": "leistungen/neu-umbau",
+  "file": "leistungen/neu-umbau.html",
+  "url": "https://www.baustern.ch/leistungen/neu-umbau",
+  "title": "Neu- und Umbau in Zürich — BauStern",
+  "bytes": 30054,
+  "h1": "Neu- und Umbau in Zürich"
+ },
+ {
+  "route": "leistungen/abbruch-rueckbau",
+  "file": "leistungen/abbruch-rueckbau.html",
+  "url": "https://www.baustern.ch/leistungen/abbruch-rueckbau",
+  "title": "Abbruch und Rückbau in Zürich — BauStern",
+  "bytes": 27494,
+  "h1": "Abbruch und Rückbau in Zürich"
+ },
+ {
+  "route": "leistungen/fliesen-parkett",
+  "file": "leistungen/fliesen-parkett.html",
+  "url": "https://www.baustern.ch/leistungen/fliesen-parkett",
+  "title": "Fliesen und Parkett in Zürich — BauStern",
+  "bytes": 28150,
+  "h1": "Fliesen und Parkett in Zürich"
+ },
+ {
+  "route": "leistungen/malerarbeiten",
+  "file": "leistungen/malerarbeiten.html",
+  "url": "https://www.baustern.ch/leistungen/malerarbeiten",
+  "title": "Malerarbeiten in Zürich — BauStern",
+  "bytes": 28656,
+  "h1": "Malerarbeiten in Zürich"
+ },
+ {
+  "route": "loesungen",
+  "file": "loesungen.html",
+  "url": "https://www.baustern.ch/loesungen",
+  "title": "Lösungen für Verwaltungen, GU & Gewerbe — BauStern",
+  "bytes": 28222,
+  "h1": "Auf Ihren Betrieb zugeschnitten."
+ },
+ {
+  "route": "loesungen/hausverwaltungen",
+  "file": "loesungen/hausverwaltungen.html",
+  "url": "https://www.baustern.ch/loesungen/hausverwaltungen",
+  "title": "Bauleistungen für Hausverwaltungen — BauStern Zürich",
+  "bytes": 25049,
+  "h1": "Bauleistungen für Hausverwaltungen"
+ },
+ {
+  "route": "loesungen/generalunternehmer",
+  "file": "loesungen/generalunternehmer.html",
+  "url": "https://www.baustern.ch/loesungen/generalunternehmer",
+  "title": "Subunternehmer für Generalunternehmer — BauStern",
+  "bytes": 25008,
+  "h1": "Subunternehmer für Generalunternehmer"
+ },
+ {
+  "route": "loesungen/gewerbe-ladenbau",
+  "file": "loesungen/gewerbe-ladenbau.html",
+  "url": "https://www.baustern.ch/loesungen/gewerbe-ladenbau",
+  "title": "Fit-out für Gewerbe und Ladenbau — BauStern Zürich",
+  "bytes": 24791,
+  "h1": "Fit-out für Gewerbe, Büro und Ladenbau"
+ },
+ {
+  "route": "referenzen",
+  "file": "referenzen.html",
+  "url": "https://www.baustern.ch/referenzen",
+  "title": "Referenzen — BauStern Zürich",
+  "bytes": 33764,
+  "h1": "Ausgeführte Projekte."
+ },
+ {
+  "route": "projekt/atlant-komplettausbau",
+  "file": "projekt/atlant-komplettausbau.html",
+  "url": "https://www.baustern.ch/projekt/atlant-komplettausbau",
+  "title": "WHK Atlant — Komplettausbau 47 m² | BauStern",
+  "bytes": 26404,
+  "h1": "WHK Atlant — Komplettausbau"
+ },
+ {
+  "route": "projekt/objektbad-gruener-marmor",
+  "file": "projekt/objektbad-gruener-marmor.html",
+  "url": "https://www.baustern.ch/projekt/objektbad-gruener-marmor",
+  "title": "Objektbad in grünem Marmor — Fallstudie | BauStern",
+  "bytes": 24836,
+  "h1": "Objektbad — Grüner Marmor und Messing"
+ },
+ {
+  "route": "projekt/salon-fitout",
+  "file": "projekt/salon-fitout.html",
+  "url": "https://www.baustern.ch/projekt/salon-fitout",
+  "title": "Fit-out Coiffure-Salon — Fallstudie | BauStern",
+  "bytes": 25010,
+  "h1": "Fit-out Coiffure-Salon"
+ },
+ {
+  "route": "projekt/hotel-gewoelbe",
+  "file": "projekt/hotel-gewoelbe.html",
+  "url": "https://www.baustern.ch/projekt/hotel-gewoelbe",
+  "title": "Hotelzimmer und Gewölbe-Bar — Fallstudie | BauStern",
+  "bytes": 25267,
+  "h1": "Hotel — Zimmer in Serie und Gewölbe-Bar"
+ },
+ {
+  "route": "ueber-uns",
+  "file": "ueber-uns.html",
+  "url": "https://www.baustern.ch/ueber-uns",
+  "title": "Über uns — BauStern Bauunternehmen Zürich",
+  "bytes": 25916,
+  "h1": "Wer hinter BauStern steht."
+ },
+ {
+  "route": "wissen",
+  "file": "wissen.html",
+  "url": "https://www.baustern.ch/wissen",
+  "title": "Wissen & Ratgeber — BauStern Zürich",
+  "bytes": 24615,
+  "h1": "Wissen & Ratgeber."
+ },
+ {
+  "route": "impressum",
+  "file": "impressum.html",
+  "url": "https://www.baustern.ch/impressum",
+  "title": "Impressum — BauStern",
+  "bytes": 17930,
+  "h1": "Impressum."
+ },
+ {
+  "route": "datenschutz",
+  "file": "datenschutz.html",
+  "url": "https://www.baustern.ch/datenschutz",
+  "title": "Datenschutz — BauStern",
+  "bytes": 21059,
+  "h1": "Datenschutz."
+ },
+ {
+  "route": "kontakt",
+  "file": "kontakt.html",
+  "url": "https://www.baustern.ch/kontakt",
+  "title": "Kontakt & Offerte — BauStern Zürich",
+  "bytes": 24884,
+  "h1": "In 30 Sekunden zur Anfrage."
+ }
+]

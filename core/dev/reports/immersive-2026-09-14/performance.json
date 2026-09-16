@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-09-14T14:32:10.286Z",
+  "browser": "153.0.8010.36",
+  "viewport": "393x852",
+  "physicalIPhone": false,
+  "idleUpdates": 0,
+  "layoutCount": 0,
+  "frames": 676,
+  "p95": 5.600000000000364,
+  "over33": 0,
+  "panUpdates": 116,
+  "video": {
+    "total": 204,
+    "dropped": 4,
+    "paused": true
+  }
+}

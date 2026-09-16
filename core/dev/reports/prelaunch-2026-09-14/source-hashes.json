@@ -1,0 +1,89 @@
+[
+  {
+    "file": "js/app.js",
+    "status": 200,
+    "equal": true,
+    "sha256": "6c709b8728302961fa77b36fc20fd84602acdb933528315da92a1fbd6c16406b"
+  },
+  {
+    "file": "js/data.js",
+    "status": 200,
+    "equal": true,
+    "sha256": "e4ae53be452d2621d8599c1a90e96cc4c466e12a5afb6342695db0fe3da27c66"
+  },
+  {
+    "file": "js/analytics.js",
+    "status": 200,
+    "equal": true,
+    "sha256": "bf47956f4da8fc5745bc6254a3948a9303c9660c04f61f3c855ac0d38d89d34d"
+  },
+  {
+    "file": "js/pages.js",
+    "status": 200,
+    "equal": true,
+    "sha256": "da97be369804272759df94fc70e8092c240f978eea5aa8833e4295cdf12f53eb"
+  },
+  {
+    "file": "js/film.js",
+    "status": 200,
+    "equal": true,
+    "sha256": "33bcadb01e1d56843cca59305f955b4781b9e07a0600f26fa3fab04f8e5f8f13"
+  },
+  {
+    "file": "js/film-fx.js",
+    "status": 200,
+    "equal": true,
+    "sha256": "799bccccbcb43dab074320ab42ab7087cf049cd90f8682748cfb893106636045"
+  },
+  {
+    "file": "js/film-mobile.js",
+    "status": 200,
+    "equal": true,
+    "sha256": "1792514cf467fddcf8853e3bda1650df11095fd5f80d3893517575dbc58f7cb7"
+  },
+  {
+    "file": "css/site.css",
+    "status": 200,
+    "equal": true,
+    "sha256": "a33aa50aefc7edfcacbe502ec717d816f9387283f6acdd01aedf9d699783e055"
+  },
+  {
+    "file": "css/mobile-ui.css",
+    "status": 200,
+    "equal": true,
+    "sha256": "1257da54474858744d4222e468e4a192588b092231d665d29fe8153090781ff3"
+  },
+  {
+    "file": "css/mobile-film.css",
+    "status": 200,
+    "equal": true,
+    "sha256": "497bcee73ef70b99cd837cd7785adc71f2e18b8fd4e578779b8accc46f838c7c"
+  },
+  {
+    "file": "css/lightbox.css",
+    "status": 200,
+    "equal": true,
+    "sha256": "c09f9c2c364dd931293709baa2f8a2118401bc89840a161eb9152508d4e75b05"
+  },
+  {
+    "file": "img/film/poster-v13.jpg",
+    "status": 200,
+    "type": "image/jpeg",
+    "cache": "public,max-age=31536000,immutable",
+    "bytes": "239502"
+  },
+  {
+    "file": "img/film/m3p/intro.mp4",
+    "status": 200,
+    "type": "video/mp4",
+    "cache": "public,max-age=31536000,immutable",
+    "bytes": "1747345"
+  },
+  {
+    "file": "downloads/baustern-referenzen-v1.pdf",
+    "status": 200,
+    "type": "application/pdf",
+    "cache": "public,max-age=0,must-revalidate",
+    "bytes": null
+  }
+]

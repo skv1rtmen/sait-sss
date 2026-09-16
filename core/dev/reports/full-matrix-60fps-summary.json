@@ -1,0 +1,10 @@
+{
+  "date": "2026-09-12",
+  "source": "Completed full test processes: Chromium session 9962, WebKit session 27681, both exit 0. Contact copy then received a separate focused recheck.",
+  "chromium": {"profiles":9,"routes":31,"checked":279,"failed":0,"interactionFailures":[],"smallTargets":[]},
+  "webkit": {"profiles":9,"routes":31,"checked":279,"failed":0,"interactionFailures":[],"smallTargets":[]},
+  "profiles": [[320,568],[360,640],[375,667],[390,844],[393,852],[412,915],[430,932],[768,1024],[812,375]],
+  "axe": "31 routes at 390px in Chromium and WebKit, no violations",
+  "cinema": {"engines":2,"profilesPerEngine":9,"scenesPerProfile":7,"scenesPassed":126,"fallbacksPassed":8},
+  "rawReportNote": "The Chromium full raw rows were overwritten by the focused contact rerun; the full-run summary above was captured from the successful completed process. Future focused runs use a distinct output directory. WebKit full raw rows remain available."
+}

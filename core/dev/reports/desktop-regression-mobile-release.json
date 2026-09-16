@@ -1,0 +1,27 @@
+[
+  {
+    "file": "route-test.js",
+    "code": 0,
+    "output": "[\n {\n  \"step\": \"direct /leistungen/sanitaer\",\n  \"url\": \"/leistungen/sanitaer\",\n  \"title\": \"Sanitärarbeiten in Zürich — BauStern\",\n  \"h1\": \"Sanitärarbeiten in Zürich\",\n  \"canon\": \"https://www.baustern.ch/leistungen/sanitaer\"\n },\n {\n  \"step\": \"legacy #/kontakt\",\n  \"url\": \"/kontakt\",\n  \"title\": \"Kontakt & Offerte — BauStern Zürich\",\n  \"h1\": \"In 30 Sekunden zur Anfrage.\",\n  \"canon\": \"https://www.baustern.ch/kontakt\"\n },\n {\n  \"step\": \"click Referenzen\",\n  \"url\": \"/referenzen\",\n  \"title\": \"Referenzen — BauStern Zürich\",\n  \"h1\": \"Ausgeführte Projekte.\",\n  \"canon\": \"https://www.baustern.ch/referenzen\"\n },\n {\n  \"step\": \"click Über uns\",\n  \"url\": \"/ueber-uns\",\n  \"title\": \"Über uns — BauStern Bauunternehmen Zürich\",\n  \"h1\": \"Wer hinter BauStern steht.\",\n  \"canon\": \"https://www.baustern.ch/ueber-uns\"\n },\n {\n  \"step\": \"back\",\n  \"url\": \"/referenzen\",\n  \"title\": \"Referenzen — BauStern Zürich\",\n  \"h1\": \"Ausgeführte Projekte.\",\n  \"canon\": \"https://www.baustern.ch/referenzen\"\n },\n {\n  \"step\": \"forward\",\n  \"url\": \"/ueber-uns\",\n  \"title\": \"Über uns — BauStern Bauunternehmen Zürich\",\n  \"h1\": \"Wer hinter BauStern steht.\",\n  \"canon\": \"https://www.baustern.ch/ueber-uns\"\n },\n {\n  \"step\": \"404\",\n  \"url\": \"/gibts-nicht\",\n  \"title\": \"Seite nicht gefunden — BauStern\",\n  \"h1\": \"Diese Seite gibt es nicht.\",\n  \"canon\": null,\n  \"robots\": \"noindex,follow\"\n },\n {\n  \"step\": \"rail anchor click\",\n  \"urlSame\": true,\n  \"url\": \"http://localhost:8099/leistungen\"\n }\n]\nerrors []\n"
+  },
+  {
+    "file": "flight-test.js",
+    "code": 0,
+    "output": "fling1 {\"flyStart\":400,\"flyEnd\":2117,\"flyFrames\":46,\"videoOnFrames\":42,\"videoOff\":true,\"videoSrc\":\"img/film/r1/c2-flur.fwd.av1.mp4\",\"frameFrom\":104,\"frameTo\":191,\"final\":[1931,191,\"1\"],\"scene\":\"1\"} p1 0.45\nfling2 {\"from\":1957,\"to\":5726,\"scene\":\"2\",\"flew\":true}\nback {\"from\":5726,\"to\":4875,\"flew\":48,\"frameFrom\":284,\"frameTo\":191,\"scene\":\"2\"}\ndot3 {\"scene\":\"3\",\"frame\":\"383\",\"p\":0.45} errors []\n"
+  },
+  {
+    "file": "hybrid-test.js",
+    "code": 0,
+    "output": "slow scrub {\"from\":0,\"to\":1929,\"flew\":false,\"videoOn\":false,\"videoOff\":true,\"frames\":[95,191]} p1 0.449\nafter snap p1 0.45\nfast {\"from\":1976,\"to\":5726,\"flew\":true,\"videoOn\":true,\"videoOff\":true,\"frames\":[191,287]} p1 2.458\nerrors []\n"
+  },
+  {
+    "file": "sig-test.js",
+    "code": 0,
+    "output": "[[0,\"148.27\",\"5\",\"0\",0],[238,\"148.27\",\"5\",\"0\",0],[433,\"148.27\",\"6\",\"0\",1],[602,\"148.27\",\"6\",\"0\",1],[760,\"148.27\",\"6\",\"0\",1],[932,\"148.27\",\"6\",\"0\",1],[1103,\"148.27\",\"6\",\"0\",1],[1269,\"148.27\",\"6\",\"0\",1],[1434,\"148.27\",\"6\",\"0\",1],[1585,\"148.27\",\"6\",\"0\",1],[1728,\"148.27\",\"6\",\"0\",1],[1872,\"148.27\",\"6\",\"0\",1],[2013,\"148.27\",\"6\",\"0\",1],[2159,\"148.27\",\"6\",\"0\",1],[2304,\"148.27\",\"6\",\"0\",0],[2451,\"148.27\",\"6\",\"0.444502\",0],[2596,\"148.27\",\"6\",\"0.833584\",0],[2756,\"0\",\"6\",\"0.989679\",0],[2917,\"0\",\"6\",\"1\",0],[3077,\"0\",\"6\",\"1\",0],[3237,\"0\",\"6\",\"1\",0],[3398,\"0\",\"6\",\"1\",0],[3558,\"0\",\"6\",\"1\",0],[3719,\"0\",\"6\",\"1\",0],[3879,\"0\",\"6\",\"1\",0],[4039,\"0\",\"6\",\"1\",0],[4200,\"0\",\"6\",\"1\",0],[4360,\"0\",\"6\",\"1\",0],[4524,\"0\",\"6\",\"1\",0],[4685,\"0\",\"6\",\"1\",0],[4845,\"0\",\"6\",\"1\",0],[5005,\"0\",\"6\",\"1\",0],[5165,\"0\",\"6\",\"1\",0],[5326,\"0\",\"6\",\"1\",0]]\n"
+  },
+  {
+    "file": "final-home-check.js",
+    "code": 0,
+    "output": "m375 {\"errs\":[],\"failed\":[],\"scene\":\"6\",\"mode\":\"wohnung is-lite is-cinema is-covered\",\"dl\":\"page_view,tour_room,tour_room,tour_room,tour_room,scroll_depth,tour_room,scroll_depth,tour_room,tour_room,scroll_depth,scroll_depth\"}\nt768 {\"errs\":[],\"failed\":[],\"scene\":\"6\",\"mode\":\"wohnung is-lite is-cinema is-covered\",\"dl\":\"page_view,tour_room,tour_room,tour_room,tour_room,scroll_depth,tour_room,tour_room,scroll_depth,tour_room,scroll_depth,scroll_depth\"}\nd1440 {\"errs\":[],\"failed\":[],\"scene\":\"6\",\"mode\":\"wohnung is-full is-drawn is-covered\",\"dl\":\"page_view,tour_room,tour_room,scroll_depth,tour_room,tour_room,scroll_depth,tour_room,scroll_depth,tour_room,scroll_depth\"}\n"
+  }
+]

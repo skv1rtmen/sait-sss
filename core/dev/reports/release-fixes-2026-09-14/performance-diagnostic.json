@@ -1,0 +1,146 @@
+[
+  {
+    "mode": "normal",
+    "frames": 381,
+    "p50": 33.29999999999927,
+    "p95": 33.400000000001455,
+    "pctOver33": 56.69291338582677,
+    "paints": 108,
+    "scene": "3",
+    "scrollY": 8390,
+    "canvas": [
+      [
+        "w-canvas",
+        1440,
+        900
+      ],
+      [
+        "w-fx",
+        300,
+        150
+      ]
+    ],
+    "stats": {
+      "bm": 40,
+      "low": 40,
+      "blobs": 296,
+      "lowBlobs": 380
+    },
+    "metrics": {
+      "TaskDuration": 3.596334,
+      "ScriptDuration": 0.288396,
+      "LayoutDuration": 0.032117,
+      "RecalcStyleDuration": 0.551572,
+      "LayoutCount": 167,
+      "RecalcStyleCount": 1350
+    }
+  },
+  {
+    "mode": "no-cam",
+    "frames": 467,
+    "p50": 16.699999999999818,
+    "p95": 33.30000000000109,
+    "pctOver33": 12.84796573875803,
+    "paints": 125,
+    "scene": "3",
+    "scrollY": 8388,
+    "canvas": [
+      [
+        "w-canvas",
+        1440,
+        900
+      ],
+      [
+        "w-fx",
+        300,
+        150
+      ]
+    ],
+    "stats": {
+      "bm": 36,
+      "low": 40,
+      "blobs": 292,
+      "lowBlobs": 380
+    },
+    "metrics": {
+      "TaskDuration": 4.140098,
+      "ScriptDuration": 0.33111799999999997,
+      "LayoutDuration": 0.036639,
+      "RecalcStyleDuration": 0.68049,
+      "LayoutCount": 200,
+      "RecalcStyleCount": 1648
+    }
+  },
+  {
+    "mode": "no-canvas",
+    "frames": 505,
+    "p50": 16.69999999999891,
+    "p95": 16.799999999999272,
+    "pctOver33": 1.188118811881188,
+    "paints": 134,
+    "scene": "3",
+    "scrollY": 8387,
+    "canvas": [
+      [
+        "w-canvas",
+        1440,
+        900
+      ],
+      [
+        "w-fx",
+        300,
+        150
+      ]
+    ],
+    "stats": {
+      "bm": 37,
+      "low": 40,
+      "blobs": 292,
+      "lowBlobs": 380
+    },
+    "metrics": {
+      "TaskDuration": 3.101403,
+      "ScriptDuration": 0.30902,
+      "LayoutDuration": 0.031768,
+      "RecalcStyleDuration": 0.703617,
+      "LayoutCount": 210,
+      "RecalcStyleCount": 1790
+    }
+  },
+  {
+    "mode": "flat",
+    "frames": 486,
+    "p50": 16.69999999999891,
+    "p95": 16.80000000000109,
+    "pctOver33": 4.732510288065844,
+    "paints": 127,
+    "scene": "3",
+    "scrollY": 8385,
+    "canvas": [
+      [
+        "w-canvas",
+        1440,
+        900
+      ],
+      [
+        "w-fx",
+        300,
+        150
+      ]
+    ],
+    "stats": {
+      "bm": 37,
+      "low": 40,
+      "blobs": 292,
+      "lowBlobs": 380
+    },
+    "metrics": {
+      "TaskDuration": 4.044624,
+      "ScriptDuration": 0.32680000000000003,
+      "LayoutDuration": 0.033855,
+      "RecalcStyleDuration": 0.750202,
+      "LayoutCount": 205,
+      "RecalcStyleCount": 1729
+    }
+  }
+]

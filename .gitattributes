@@ -1,0 +1,27 @@
+# Нормализация переводов строк: в репо всегда LF,
+# на Windows в рабочей копии — CRLF, на Mac — LF.
+# Без этого при работе с двух машин каждый файл будет "изменён".
+* text=auto eol=lf
+
+# Бинарные — не трогать
+*.mp4   binary
+*.webm  binary
+*.webp  binary
+*.jpg   binary
+*.jpeg  binary
+*.png   binary
+*.gif   binary
+*.ico   binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.otf   binary
+*.zip   binary
+*.pdf   binary
+
+# Скрипты Windows — оставить CRLF
+*.cmd   text eol=crlf
+*.bat   text eol=crlf
+
+# Shell-скрипты — всегда LF
+*.sh    text eol=lf

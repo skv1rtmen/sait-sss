@@ -1,0 +1,143 @@
+<title>BauStern Audit v8.4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{--bg:#E8E7E4;--bg2:#DEDDD9;--card:#F4F3F1;--ink:#1C1F22;--ink2:#3A3E43;--muted:#5C5F63;--acc:#4A5C6B;--acch:#99A2A8;--line:rgba(28,31,34,.13);--ok:#3F6E4F;--warn:#8A5A1E;--crit:#8C3A2E;--okbg:rgba(63,110,79,.1);--warnbg:rgba(138,90,30,.1);--critbg:rgba(140,58,46,.1)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1C1F22;--bg2:#24282D;--card:#242830;--ink:#ECEBE8;--ink2:#D3D2CF;--muted:#A6A9AC;--acc:#99A2A8;--acch:#4A5C6B;--line:rgba(232,231,228,.14);--ok:#8FC9A0;--warn:#E0B070;--crit:#E39A8E;--okbg:rgba(143,201,160,.12);--warnbg:rgba(224,176,112,.12);--critbg:rgba(227,154,142,.12)}}
+:root[data-theme="dark"]{--bg:#1C1F22;--bg2:#24282D;--card:#242830;--ink:#ECEBE8;--ink2:#D3D2CF;--muted:#A6A9AC;--acc:#99A2A8;--acch:#4A5C6B;--line:rgba(232,231,228,.14);--ok:#8FC9A0;--warn:#E0B070;--crit:#E39A8E;--okbg:rgba(143,201,160,.12);--warnbg:rgba(224,176,112,.12);--critbg:rgba(227,154,142,.12)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:'Instrument Sans',system-ui,sans-serif;font-size:15.5px;line-height:1.6;padding:0 20px 80px}
+.wrap{max-width:980px;margin:0 auto}
+header{padding:56px 0 28px;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:'Archivo',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--acc)}
+h1{font-family:'Archivo',sans-serif;font-weight:600;font-size:clamp(30px,4.6vw,48px);letter-spacing:-.035em;line-height:1.02;margin-top:10px;text-wrap:balance}
+h2{font-family:'Archivo',sans-serif;font-weight:600;font-size:clamp(22px,2.6vw,30px);letter-spacing:-.03em;line-height:1.1;margin:0 0 6px}
+h3{font-family:'Archivo',sans-serif;font-weight:600;font-size:17px;letter-spacing:-.015em;line-height:1.25}
+.lead{color:var(--muted);font-size:17px;max-width:64ch;margin-top:14px}
+section{padding:40px 0 8px;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+.sub{color:var(--muted);max-width:66ch;margin-bottom:22px}
+.verdict{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);margin-top:26px}
+.verdict>div{padding:16px 18px;border-right:1px solid var(--line)}
+.verdict>div:last-child{border-right:0}
+.verdict b{display:block;font-family:'Archivo',sans-serif;font-size:26px;font-weight:600;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.verdict span{font-size:12.5px;color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th{text-align:left;font-family:'Archivo',sans-serif;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 12px 10px 0;border-bottom:1px solid var(--line)}
+td{padding:12px 12px 12px 0;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{white-space:nowrap;font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--muted)}
+.tw{overflow-x:auto}
+.sev{display:inline-block;font-family:'Archivo',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:3px;white-space:nowrap}
+.sev.crit{background:var(--critbg);color:var(--crit)}.sev.warn{background:var(--warnbg);color:var(--warn)}.sev.ok{background:var(--okbg);color:var(--ok)}.sev.info{background:var(--bg2);color:var(--ink2)}
+.gaps{display:flex;flex-direction:column}
+.gap{display:grid;grid-template-columns:52px 1fr;gap:16px;padding:18px 0;border-top:1px solid var(--line)}
+.gap:first-child{border-top:0}
+.gap .n{font-family:'Archivo',sans-serif;font-size:22px;font-weight:600;color:var(--acc);letter-spacing:-.03em;line-height:1.15;font-variant-numeric:tabular-nums}
+.gap p{color:var(--ink2);margin-top:6px;max-width:72ch}
+.gap .fix{margin-top:8px;font-size:14px;color:var(--muted)}
+.gap .fix b{color:var(--ink);font-weight:600}
+.road{display:grid;grid-template-columns:1fr;border:1px solid var(--line)}
+.road>div{display:grid;grid-template-columns:36px 1fr auto auto;gap:14px;align-items:baseline;padding:12px 16px;border-bottom:1px solid var(--line);font-size:14.5px}
+.road>div:last-child{border-bottom:0}
+.road .k{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted)}
+.road .e{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);white-space:nowrap}
+.kv{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;font-size:14.5px}
+.kv div{padding:12px 0;border-bottom:1px solid var(--line)}
+.kv b{display:block;font-family:'Archivo',sans-serif;font-weight:600;font-size:15px;margin-bottom:3px}
+.kv span{color:var(--muted)}
+.note{font-size:13.5px;color:var(--muted);margin-top:16px;max-width:70ch}
+@media(max-width:760px){.verdict{grid-template-columns:1fr 1fr}.verdict>div:nth-child(2){border-right:0}.verdict>div:nth-child(1),.verdict>div:nth-child(2){border-bottom:1px solid var(--line)}.kv{grid-template-columns:1fr}.road>div{grid-template-columns:30px 1fr;}.road .e{grid-column:2}}
+</style>
+<div class="wrap">
+<header>
+  <div class="eyebrow">baustern.ch · Stand v8.4 · 10.09.2026</div>
+  <h1>Экспертный аудит и список правок</h1>
+  <p class="lead">Проверено: 33 роута × десктоп, 10 × телефон, 17 сценариев взаимодействия (модал, лайтбокс, калькулятор, фильтры, сегменты, форма, меню, кнопка «назад»). Ниже — что починил сейчас, чего не хватает, и что я бы добавил, в порядке важности для денег, а не для красоты.</p>
+  <div class="verdict">
+    <div><b>43 / 43</b><span>роутов без ошибок консоли, 404-ассетов, битых ссылок, дублей id</span></div>
+    <div><b>9</b><span>багов найдено и закрыто в этой итерации</span></div>
+    <div><b>60 fps</b><span>медиана кадра при скролле по комнатам (было 30)</span></div>
+    <div><b>1</b><span>индексируемая страница в Google — главная проблема, см. §2.1</span></div>
+  </div>
+</header>
+
+<section>
+  <h2>1. Что починил сейчас</h2>
+  <p class="sub">Всё ниже уже в архиве v8.4. Прогнано повторно: 0 ошибок, 0 битых ссылок, форма и рюкруф работают (вебхук в тесте подменён — реальных заявок не создавал).</p>
+  <div class="tw"><table>
+    <tr><th>Где</th><th>Что было</th><th>Вес</th></tr>
+    <tr><td>/bewertung</td><td>Кнопка «Auf Renovero bewerten» была белой на белом — невидима. Карточки стояли в сетке на 4 колонки при ширине 760px → кнопка Google ломалась на три строки.</td><td><span class="sev crit">конверсия</span></td></tr>
+    <tr><td>главная, телефон</td><td>Заголовок и подпись белым на светлых кадрах (кухня) — читалось процентов на 40. Добавлен градиентный затемняющий слой за текстом.</td><td><span class="sev crit">читаемость</span></td></tr>
+    <tr><td>главная, телефон</td><td>Подписи хотспотов справа уезжали за край экрана («Schreiner trifft Me…»), хотспот садился прямо на заголовок. Правая половина теперь раскрывается влево, точки держатся выше текста.</td><td><span class="sev warn">верстка</span></td></tr>
+    <tr><td>/sanierung-*</td><td>Две H1 на странице (скрытая SEO-фраза + видимый заголовок). Осталась одна.</td><td><span class="sev warn">seo</span></td></tr>
+    <tr><td>/datenschutz</td><td>Текст утверждал, что шрифты грузятся с Google Fonts — уже неправда (self-hosted). Не упоминались Netlify, n8n и Supabase, через которые реально идут данные. Переписал абзац; юрист должен взглянуть.</td><td><span class="sev warn">юр.</span></td></tr>
+    <tr><td>вся площадка</td><td>Не было skip-link для клавиатуры. Добавлен «Zum Inhalt springen» (не ломает hash-роутер).</td><td><span class="sev info">a11y</span></td></tr>
+    <tr><td>Netlify</td><td>Не было <code>_redirects</code> (прямой заход на /leistungen давал бы 404 Netlify), <code>_headers</code> (кэш на 384 кадра фильма и вендор-скрипты, security-заголовки), <code>robots.txt</code>, <code>sitemap.xml</code>. Добавлены.</td><td><span class="sev info">инфра</span></td></tr>
+    <tr><td>корень сайта</td><td><code>index.bak.html</code> и <code>index.monolith.bak.html</code> лежат в папке сайта — на Netlify они стали бы публичными URL со старым дизайном. Из архива исключены, в robots закрыты; из репо стоит удалить.</td><td><span class="sev info">гигиена</span></td></tr>
+    <tr><td>лист «Referenzen»</td><td>(из прошлой итерации, для полноты) зависание при въезде — clip-path по восьми фото + декод картинок в один момент. Убрано.</td><td><span class="sev ok">закрыто</span></td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2>2. Чего не хватает</h2>
+  <p class="sub">По убыванию влияния на заявки. Первые два пункта важнее всего дизайна вместе взятого.</p>
+  <div class="gaps">
+    <div class="gap"><div class="n">2.1</div><div><h3>Сайт индексируется как одна страница</h3>
+      <p>Роутер работает на <code>#/…</code>. Для Google адрес <code>baustern.ch/#/wissen/badsanierung-kosten-zuerich-2026</code> — это просто <code>baustern.ch</code>. Все детальные страницы Leistungen, три региональные страницы «Sanierung Zug/Winterthur/Luzern», четыре статьи Wissen, кейсы — написаны под SEO и <b>невидимы для поиска</b>. Это самая дорогая дыра на сайте: контент есть, трафика с него не будет.</p>
+      <p class="fix"><b>Решение:</b> перевести роутер на обычные пути (History API) + Netlify <code>_redirects</code> уже лежит + пререндер при деплое (скрипт на Playwright генерирует статический HTML для каждого из ~30 роутов). Ссылки и <code>data-go</code> уже централизованы в <code>goPath()</code>, так что переезд контролируемый. Оценка: 1–2 дня. Sitemap тогда станет настоящим.</p></div></div>
+    <div class="gap"><div class="n">2.2</div><div><h3>Нет никакой аналитики — вы летите вслепую</h3>
+      <p>Ни один клик не измеряется: не видно, доходят ли люди до калькулятора, что выбирают в сегментах «Ich bin…», где бросают форму (9 полей), работает ли «Rückruf in 5 Min». Всё, что мы делали по дизайну, нельзя проверить цифрами.</p>
+      <p class="fix"><b>Решение:</b> Plausible или Umami (без cookies, совместимо с nDSG, баннер не нужен) + 6 событий: Offerte-клик, Rückruf, Rechner-использование, Segment-выбор, Form-submit, Lightbox-открытие. 2 часа.</p></div></div>
+    <div class="gap"><div class="n">2.3</div><div><h3>«Wissen &amp; Ratgeber»: 9 тем, 4 статьи</h3>
+      <p>Пять позиций в списке ведут на «Frage stellen» — это выглядит как пустой раздел, и именно те темы, по которым ищут («Was kostet eine Renovation in Zürich?», «Sanitärnotfall»), без статьи. Данные для первой статьи у вас уже есть — диапазоны из калькулятора.</p>
+      <p class="fix"><b>Решение:</b> дописать 3 самые поисковые темы (по 400–600 слов, из ваших данных), остальные две убрать из списка до готовности. Без пререндера (2.1) статьи всё равно не найдут — делать в паре.</p></div></div>
+    <div class="gap"><div class="n">2.4</div><div><h3>Доказательства доверия наполовину пустые</h3>
+      <p>Google 4.6 (12) и Renovero 4.3 (33) показаны — хорошо. Но: полоса логотипов клиентов в коде стоит как <code>[PLATZHALTER]</code> и не выводится; «Versichert» без конкретики (Haftpflicht на какую сумму, SUVA); «Werkgarantie 24 Monate» нигде не расписана, что покрывает; на детальных страницах Leistungen нет ни одного «до/после» (они есть только на главной, в туре).</p>
+      <p class="fix"><b>Решение:</b> 3–5 логотипов Verwaltungen/GU с их согласия; одна строка про страховку с суммой; блок «Vorher/Nachher» на Leistungen-детали из уже существующих фото (Rückblende-кадры есть). Нужны от вас: согласия и цифра страховки.</p></div></div>
+    <div class="gap"><div class="n">2.5</div><div><h3>Телефон получает сайт «второго сорта»</h3>
+      <p>На десктопе: видео-интро, тур по квартире, Bauplan-массетки, стеклянные листы. На телефоне: статичные кадры + текст, без тура, без Bauplan, без HUD. Для B2B-сайта 40–60 % визитов с телефона (Verwaltung смотрит с телефона на объекте). Разрыв заметен.</p>
+      <p class="fix"><b>Решение:</b> мобильный «Rundgang» как горизонтальный свайп по семи стоп-кадрам с подписями Gewerke (без канваса и видео — дёшево и быстро). 1 день.</p></div></div>
+    <div class="gap"><div class="n">2.6</div><div><h3>Калькулятор только на главной</h3>
+      <p>Самый сильный конверсионный элемент («Richtwerte in 30 Sekunden») живёт на одном листе тура. На страницах Leistungen/Sanitär или Renovation — где намерение выше всего — его нет.</p>
+      <p class="fix"><b>Решение:</b> тот же <code>.est</code>-компонент с предвыбранным Gewerk на каждой Leistungen-детали. 3 часа.</p></div></div>
+  </div>
+</section>
+
+<section>
+  <h2>3. Что выглядит слабее, чем могло бы</h2>
+  <p class="sub">Не баги — вкус и последовательность. Честно, без «всё отлично».</p>
+  <div class="kv">
+    <div><b>Старые карточки на второстепенных страницах</b><span>/sanierung-*, /bewertung, /karriere, 404 всё ещё на белых «promise»-карточках с ромбиком. Главная, Leistungen, Lösungen, Über uns уже говорят языком v8 (Datenblatt, индекс, стекло). Разнобой заметен, если ходить по сайту подряд.</span></div>
+    <div><b>Hero на десктопе перегружен</b><span>Одновременно: ротирующийся кикер, заголовок, абзац, три счётчика, две кнопки, trust-строка, «Rundgang»-подсказка, три хотспота, план, точки. Всё по отдельности хорошее; вместе — плотно. Я бы убрал счётчики из hero (они повторяются в Referenzen) и оставил одну кнопку.</span></div>
+    <div><b>Футер</b><span>Функциональный, но плоский: 5 колонок ссылок. Для строительной фирмы там просится одно фото объекта и строчка «Nächste freie Kapazität: KW 40» — живое доказательство, что фирма работает.</span></div>
+    <div><b>Кейсы — 4 штуки, из них 2 «Deutschschweiz»</b><span>Для Verwaltung в Цюрихе важна география. Если есть ещё объекты в городе — их стоит поднять, даже без полной истории (фото + 3 факта).</span></div>
+    <div><b>Кнопка «Rückruf in 5 Min»</b><span>Сильное обещание. Если после 18:00 или в воскресенье оно не выполняется, это первый минус-балл. Модал должен показывать «Mo–Fr 07–18: in 5 Min · sonst am nächsten Werktag ab 07:00» в зависимости от времени.</span></div>
+    <div><b>Анимации всегда включены</b><span>Осознанное решение проекта («reduced-motion игнорируется»). Тур на 384 кадра для части людей — реальный дискомфорт. Один переключатель «Animation aus» в HUD снимает риск и не трогает дизайн для остальных.</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>4. Что бы я добавил — по порядку</h2>
+  <p class="sub">Оценки — чистое время реализации. Первые три дают почти весь эффект.</p>
+  <div class="road">
+    <div><span class="k">01</span><span>History-роутинг + пререндер 30 страниц (SEO)</span><span class="sev crit">трафик</span><span class="e">1–2 дня</span></div>
+    <div><span class="k">02</span><span>Plausible/Umami + 6 событий конверсии</span><span class="sev crit">измеримость</span><span class="e">2 ч</span></div>
+    <div><span class="k">03</span><span>3 статьи Wissen из ваших данных, 2 темы убрать</span><span class="sev warn">контент</span><span class="e">контент</span></div>
+    <div><span class="k">04</span><span>Калькулятор на каждой Leistungen-детали</span><span class="sev warn">конверсия</span><span class="e">3 ч</span></div>
+    <div><span class="k">05</span><span>Мобильный Rundgang (свайп по 7 кадрам + подписи)</span><span class="sev warn">телефон</span><span class="e">1 день</span></div>
+    <div><span class="k">06</span><span>Логотипы клиентов, страховка с суммой, Vorher/Nachher на Leistungen</span><span class="sev warn">доверие</span><span class="e">нужны материалы</span></div>
+    <div><span class="k">07</span><span>Второстепенные страницы перевести на язык v8 (Datenblatt/индекс)</span><span class="sev info">консистентность</span><span class="e">0.5 дня</span></div>
+    <div><span class="k">08</span><span>Rückruf-модал с учётом времени суток; «Animation aus» в HUD</span><span class="sev info">полировка</span><span class="e">2 ч</span></div>
+  </div>
+  <p class="note">Чего я сознательно не предлагаю: чат-бот, всплывающие окна с «-10 %», карусели логотипов «как у всех», английскую версию (для Verwaltungen и GU в Цюрихе немецкий достаточен; EN — только если пойдёт экспат-сегмент через Privat).</p>
+</section>
+
+<section>
+  <h2>5. Техническое состояние — кратко</h2>
+  <div class="kv">
+    <div><b>Производительность</b><span>Скролл по комнатам: медиана 16.7 ms (60 fps), 17 % кадров дольше 33 ms (было 61 %). FCP 188 ms без троттлинга. Первый экран главной ≈ 2.5 MB (1 MB видео-интро + 0.9 MB кадров/фото) — для десктопа нормально; на телефон видео не грузится.</span></div>
+    <div><b>Стек</b><span>Vanilla JS, GSAP + ScrollTrigger + Lenis, без сборки. Шрифты self-hosted. Три внешних вызова: n8n (формы), Supabase (кэш отзывов, только чтение), Calendly/WhatsApp (ссылки). Ключ Supabase anon — публичный по дизайну, RLS на стороне базы должен быть read-only на эту таблицу — проверьте.</span></div>
+    <div><b>Доступность</b><span>Фокус видимый, Esc закрывает модал и лайтбокс, tablist сегментов на стрелках, skip-link добавлен, alt у всех изображений, одна H1 на страницу. Открытый вопрос — только reduced-motion (см. §3).</span></div>
+    <div><b>Что не проверял</b><span>Реальный Safari/iOS (headless Chromium без H.264 — видео-интро играет там через WebM-fallback), реальную отправку в n8n (подменена в тесте), поведение под Cloudflare/DNS после переезда домена с Vercel.</span></div>
+  </div>
+</section>
+</div>

@@ -1,0 +1,38 @@
+{
+  "label": "v13-isolated-after",
+  "firstLoad_unthrottled": {
+    "domContentLoaded": 213,
+    "load": 248,
+    "fcp": 352,
+    "firstDrawnFrame": 559,
+    "preloaderGone": 571,
+    "introFinished": 4007,
+    "now": 4007.2000000011176
+  },
+  "firstLoad_1p6Mbps_120ms": {
+    "domContentLoaded": 7178,
+    "load": 0,
+    "fcp": 4284,
+    "preloaderGone": 9026,
+    "firstDrawnFrame": 13266,
+    "now": 14147.5
+  },
+  "scroll_run1": {
+    "frames": 398,
+    "avgMs": 24.2,
+    "p50": 16.7,
+    "p95": 33.4,
+    "maxMs": 66.7,
+    "pctOver33": 43.2,
+    "scene": "3"
+  },
+  "scroll_run2": {
+    "frames": 380,
+    "avgMs": 25.8,
+    "p50": 33.2,
+    "p95": 33.4,
+    "maxMs": 66.6,
+    "pctOver33": 51.1,
+    "scene": "3"
+  }
+}

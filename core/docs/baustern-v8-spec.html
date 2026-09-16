@@ -1,0 +1,517 @@
+<title>BauStern v8 Blueprint</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --paper:#E8E7E4;--paper-2:#DEDDD9;--paper-3:#F3F2F0;--ink:#1C1F22;--ink-2:#2A2F34;--muted:#5C6470;
+  --slate:#4A5C6B;--slate-hi:#3E4D5A;--slate-soft:rgba(74,92,107,.12);--line:rgba(28,31,34,.14);
+  --ok:#3D6B4F;--warn:#8A5A1E;--bad:#8C3B2E;--code-bg:#1C1F22;--code-fg:#E8E7E4;--code-accent:#9FB1BE;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#1C1F22;--paper-2:#23272B;--paper-3:#2A2F34;--ink:#E8E7E4;--ink-2:#D6D5D1;--muted:#A3ABB3;
+  --slate:#9FB1BE;--slate-hi:#B7C5CF;--slate-soft:rgba(159,177,190,.14);--line:rgba(232,231,228,.14);
+  --ok:#8FC3A2;--warn:#D9A65C;--bad:#D98B7C;--code-bg:#14171A;--code-fg:#E8E7E4;--code-accent:#9FB1BE;}}
+:root[data-theme="dark"]{
+  --paper:#1C1F22;--paper-2:#23272B;--paper-3:#2A2F34;--ink:#E8E7E4;--ink-2:#D6D5D1;--muted:#A3ABB3;
+  --slate:#9FB1BE;--slate-hi:#B7C5CF;--slate-soft:rgba(159,177,190,.14);--line:rgba(232,231,228,.14);
+  --ok:#8FC3A2;--warn:#D9A65C;--bad:#D98B7C;--code-bg:#14171A;--code-fg:#E8E7E4;--code-accent:#9FB1BE;}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:'Instrument Sans',system-ui,sans-serif;font-size:16px;line-height:1.55;margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding:40px 28px 90px}
+h1,h2,h3,h4{font-family:'Archivo',system-ui,sans-serif;letter-spacing:-.025em;line-height:1.1;text-wrap:balance;margin:0}
+h1{font-size:clamp(34px,4.6vw,54px);font-weight:700}
+h2{font-size:clamp(24px,3vw,32px);font-weight:700;margin-top:72px;padding-top:26px;border-top:1px solid var(--line)}
+h3{font-size:20px;font-weight:600;margin-top:34px}
+h4{font-size:16px;font-weight:600;margin-top:22px}
+p{max-width:72ch;margin:12px 0}
+.lead{font-size:18px;color:var(--ink-2);max-width:70ch}
+.eyebrow{font-family:'Archivo',sans-serif;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--slate)}
+.hero{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:end;padding-bottom:34px;border-bottom:1px solid var(--line)}
+.meta{font-size:13.5px;color:var(--muted);display:grid;gap:6px}
+.meta b{color:var(--ink);font-weight:600}
+.swatches{display:flex;gap:8px;margin-top:14px}
+.sw{flex:1;height:54px;border-radius:6px;position:relative;font-family:'JetBrains Mono',monospace;font-size:11px;display:flex;align-items:flex-end;padding:6px 8px}
+.sw.e{background:#E8E7E4;color:#1C1F22;border:1px solid rgba(28,31,34,.2)}.sw.i{background:#1C1F22;color:#E8E7E4}.sw.s{background:#4A5C6B;color:#E8E7E4}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}
+.tile{background:var(--paper-3);border:1px solid var(--line);border-radius:8px;padding:18px 20px}
+.tile b.n{font-family:'Archivo',sans-serif;font-size:30px;font-weight:700;letter-spacing:-.03em;display:block;line-height:1;font-variant-numeric:tabular-nums}
+.tile span{font-size:13.5px;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;margin:14px 0}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font-family:'Archivo',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+td code,p code,li code{font-family:'JetBrains Mono',monospace;font-size:13px;background:var(--slate-soft);padding:1px 6px;border-radius:4px}
+.tw{overflow-x:auto}
+pre{background:var(--code-bg);color:var(--code-fg);font-family:'JetBrains Mono',monospace;font-size:12.6px;line-height:1.5;padding:18px 20px;border-radius:8px;overflow-x:auto;margin:14px 0;tab-size:2}
+pre .c{color:var(--code-accent);opacity:.85}
+ul,ol{padding-left:22px;max-width:76ch}li{margin:6px 0}
+.tasks{list-style:none;padding:0;max-width:none}
+.tasks li{display:grid;grid-template-columns:24px 1fr auto;gap:12px;align-items:start;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px}
+.tasks .cb{width:18px;height:18px;border:1.5px solid var(--slate);border-radius:4px;margin-top:2px;display:grid;place-items:center;font-size:12px;color:#fff}
+.tasks .cb.on{background:var(--slate);border-color:var(--slate)}
+.tasks .own{font-size:12px;color:var(--muted);white-space:nowrap;font-family:'Archivo',sans-serif;letter-spacing:.06em;text-transform:uppercase;padding-top:3px}
+.tasks .sub{display:block;color:var(--muted);font-size:13.5px;margin-top:2px}
+.pill{display:inline-block;font-family:'Archivo',sans-serif;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;padding:3px 9px;border-radius:100px;border:1px solid var(--line);color:var(--ink-2);vertical-align:middle;margin-right:6px}
+.pill.fixed{background:var(--ok);color:#fff;border-color:var(--ok)}.pill.sev{background:var(--bad);color:#fff;border-color:var(--bad)}.pill.spec{background:var(--slate);color:#fff;border-color:var(--slate)}.pill.warn{background:var(--warn);color:#fff;border-color:var(--warn)}
+.bug{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:8px;padding:18px 22px;margin:18px 0;background:var(--paper-3)}
+.bug h3{margin-top:0}
+.kv{display:grid;grid-template-columns:150px 1fr;gap:6px 16px;font-size:14.5px;margin:10px 0}
+.kv dt{color:var(--muted)}.kv dd{margin:0}
+.flow{font-family:'JetBrains Mono',monospace;font-size:12.5px;background:var(--paper-3);border:1px solid var(--line);border-radius:8px;padding:16px 18px;overflow-x:auto;white-space:pre;line-height:1.55}
+.note{border-left:3px solid var(--slate);padding:6px 16px;color:var(--ink-2);background:var(--slate-soft);border-radius:0 6px 6px 0;margin:14px 0;max-width:76ch}
+.spec{margin-top:26px;padding:22px 24px;border:1px solid var(--line);border-radius:10px;background:var(--paper-3)}
+.spec h3{margin-top:0}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:4px 28px;margin:26px 0 0;padding:0;list-style:none;font-size:14.5px}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);padding:6px 0;display:block}
+.toc a:hover{color:var(--slate)}
+a{color:var(--slate)}
+.svg-wrap{background:var(--paper-3);border:1px solid var(--line);border-radius:8px;padding:18px;display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+@media(max-width:820px){.hero,.g2,.g3,.toc{grid-template-columns:1fr}.kv{grid-template-columns:1fr}}
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div>
+    <div class="eyebrow">BauStern · Startseite v8 · System Design &amp; Audit</div>
+    <h1 style="margin-top:12px">BauStern v8 Blueprint</h1>
+    <p class="lead">Архитектурная карта, найденные и закрытые баги, техзадания на новый motion-режим, палитру, логотип и переработку разделов. Один документ для исполнителя — без «продолжить?».</p>
+  </div>
+  <div>
+    <div class="meta">
+      <div><b>Кодовая база:</b> <code>/site</code> — vanilla JS/CSS, hash-router (app.js), GSAP 3 + ScrollTrigger + Lenis, film.js (384 WebP-кадров)</div>
+      <div><b>Проверено:</b> Playwright / Chromium 1440×900, CPU ×2 throttle, локальный статик-сервер</div>
+      <div><b>Сборка с патчами:</b> <code>baustern-site-v7_1-bugfix.zip</code> + <code>patches/</code></div>
+    </div>
+    <div class="swatches"><div class="sw e">#E8E7E4</div><div class="sw i">#1C1F22</div><div class="sw s">#4A5C6B</div></div>
+  </div>
+</header>
+
+<ul class="toc">
+  <li><a href="#s0">0 · Резюме за 60 секунд</a></li>
+  <li><a href="#s1">1 · Архитектурная карта и дерево задач</a></li>
+  <li><a href="#s2">2 · Баги и патчи (применены, проверены)</a></li>
+  <li><a href="#m1">3.1 · Палитра и токены (#4)</a></li>
+  <li><a href="#m2">3.2 · Логотип и его места (#5)</a></li>
+  <li><a href="#m3">3.3 · Motion v8 — «станции» вместо скраба (#6)</a></li>
+  <li><a href="#m4">3.4 · Информация внутри сцен, конец «гигантских карточек» (#2)</a></li>
+  <li><a href="#m5">3.5 · Переработка разделов Leistungen / Lösungen / Referenzen / Über uns (#7, #8)</a></li>
+  <li><a href="#m6">3.6 · Открывающий клип и производительность (#3)</a></li>
+  <li><a href="#s4">4 · Что заблокировано на человеке</a></li>
+  <li><a href="#s5">5 · Приёмка и тест-план</a></li>
+</ul>
+
+<h2 id="s0">0 · Резюме за 60 секунд</h2>
+<div class="grid g3">
+  <div class="tile"><b class="n">4</b><span>бага воспроизведено в Playwright, исправлено и перепроверено (задачи #1, #3, #9, #10)</span></div>
+  <div class="tile"><b class="n">1</b><span>причина у трёх из них: навигация и «возврат» всегда приземлялись на границу комнаты, где кадр — ещё предыдущая сцена, а текст скрыт</span></div>
+  <div class="tile"><b class="n">6</b><span>техзаданий на переработку: палитра, логотип, motion v8, контент в сценах, разделы, интро-клип</span></div>
+</div>
+<p style="margin-top:22px">Ключевой вывод по дизайну: проблема «однообразно и пусто» — не в картинках, а в архитектуре страницы. Сейчас 7 сцен фильма несут по одному заголовку, а вся информация лежит в семи «листах» (<code>.w-sheet</code>) на всю высоту экрана после каждой сцены. Клиент видит пустую анимацию, потом простыню. Раздел 3.4 переносит факты внутрь сцен и оставляет только три листа, которым нужна настоящая UI (калькулятор, галерея, форма). Раздел 3.3 меняет модель прокрутки: камера едет сама, застрять посередине больше нельзя.</p>
+<div class="note"><b>Важное открытие вне брифа.</b> Домен <code>www.baustern.ch</code> сейчас отдаёт <em>другой</em> сайт — Next.js-приложение на Vercel («Bauunternehmen Zürich · Renovation &amp; Sanitär — BauStern», Plausible-аналитика). Сборка, которую мы дорабатываем, живёт на Netlify (бейдж «Powered by Netlify» на ваших скриншотах). Прежде чем вкладывать недели в v8, нужно решение, какой из двух сайтов — продакшн (см. раздел 4).</div>
+
+<h2 id="s1">1 · Архитектурная карта и дерево задач</h2>
+<h3>1.1 Модули и поток данных</h3>
+<div class="flow">index.html ── vendor/gsap · ScrollTrigger · lenis
+   │
+   ├─ js/data.js      CO, SVC[6], SOL[3], PROJECTS, WORKS, FILM{scenes[7], frames:384}, TEAM, RICHTWERTE …
+   ├─ js/pages.js     pHome() → #wohnung { .w-stage (fixed canvas) + .w-flow { .w-room ×7 ⇄ .w-sheet ×6 } }
+   │                  pLeistungen · pLoesungen · pReferenzen · pUeber · pKontakt · detail-templates
+   ├─ js/app.js       hash-router → render(route) → view.innerHTML → Motion.mount(route) → Film.auto()
+   │                  Smooth (Lenis) · Lightbox · формы → n8n webhook /web-anfrage
+   ├─ js/motion.js    gsap.context per route · SheetKit(fade/wipe/splitLine) · homeFull() → Film.full()
+   ├─ js/film.js      кэш ImageBitmap (окно 2 клипа) · ScrollTrigger per .w-room (scrub) · snap [0, REVEAL]
+   │                  playIntro() · updateRoom(i,p) · cover() (листы затемняют кадр) · roomnav/plan
+   └─ css/site.css    :root-токены (3 поколения алиасов: navy/gold → putz/fenstergrün) · .w-* · страницы
+
+Прокрутка (full, ≥1000px):
+  wheel → Lenis(lerp .085 в #wohnung) → ScrollTrigger.update → room[i].onUpdate(p)
+        p&lt;.30 : кадр = lerp(prev.f, cur.f, easeIO(p/.30))   ← «камера едет» под пальцем
+        p≥.35 : кадр стоит, .w-ov.show / #wHot.show          ← текст и хотспоты
+        snap  : после отпускания тянет на 0 или .35
+  листы (.w-sheet) — обычный документ поверх фиксированной сцены, cover() гасит кадр</div>
+
+<h3>1.2 Узкие места, найденные при разборе</h3>
+<ul>
+  <li><b>Точка приземления = граница комнаты.</b> Все переходы (точки слева, мини-план, кнопка «Rundgang», <code>onLeaveBack</code>) целились в верх <code>.w-room</code>. Там прогресс = 0: кадр предыдущей сцены, текст скрыт, snap держит на месте. Отсюда баги #1, #9, #10.</li>
+  <li><b>Односторонний прелоад.</b> <code>afterArrive(i)</code> грузил только диапазон вперёд; окно памяти уже хранило «назад», но кадры туда никогда не запрашивались → при прокрутке вверх <code>nearest()</code> показывал застывший кадр.</li>
+  <li><b>Интро начиналось с последнего кадра.</b> <code>frame = S[0].f</code> (63) рисовался поверх постера (кадр 0), потом клип прыгал на 0. Плюс старт по таймеру 3 с на неполном кэше → шаг 150–200 мс между кадрами.</li>
+  <li><b>Нет «ремонта» сцены 0.</b> У комнаты 0 не было обработчика возврата: после прокрутки вверх страница оставалась в состоянии «сцена 1, is-driving».</li>
+  <li><b>Навигация без подложки над фильмом.</b> При <code>scrollY ≤ 40</code> nav белая и без затемнения — над светлыми кадрами (Bad, Küche) логотип и ссылки исчезают. На вашем скриншоте с ванной именно это: шапка есть, но невидима.</li>
+  <li><b>Память.</b> Окно кэша «2 клипа» = до 130 ImageBitmap 1280×720 ≈ 470 МБ. На десктопе терпимо, на слабых ноутбуках — свопы и рывки. Решается переходом на видеоклипы (3.6).</li>
+  <li><b>Долгая задача при старте</b> (~650 мс main-thread): рендер 70-килобайтного шаблона Home + 7 постеров + 7 стилей + шрифты + инициализация ~40 ScrollTrigger'ов одновременно с 64 fetch кадров интро.</li>
+</ul>
+
+<h3>1.3 Дерево задач</h3>
+<ul class="tasks">
+  <li><span class="cb on">✓</span><span>#1 Возврат на главную / к верху — заголовок BauStern и все подписи пропадают<span class="sub">Три причины, три патча: восстановление сцены 0, интро один раз за сессию, подложка nav. Проверено.</span></span><span class="own">fixed · film.js, site.css</span></li>
+  <li><span class="cb on">✓</span><span>#3 Открывающая анимация начинается с «зависания»<span class="sub">Старт с кадра 0, пауза вместо рывка при отсутствии кадра, пропуск интро через 2.2 с (+1.5 с если ≥60 % загружено). Проверено.</span></span><span class="own">fixed · film.js</span></li>
+  <li><span class="cb on">✓</span><span>#9 Прокрутка снизу вверх — анимация не грузится, видна предыдущая<span class="sub">Двусторонний прелоад в afterArrive(). Проверено: 14 промежуточных кадров при прокрутке назад вместо 1.</span></span><span class="own">fixed · film.js</span></li>
+  <li><span class="cb on">✓</span><span>#10 Точки слева переключают «на одну вперёд», назад — без текста<span class="sub">gotoRoom(idx) целит в зону покоя (REVEAL + 3 %), не в кромку комнаты. Проверено на 0/1/3/6.</span></span><span class="own">fixed · film.js</span></li>
+  <li><span class="cb on">✓</span><span>#8 Убрать фото Артема Козловского<span class="sub">pUeber(): figure.team-fig удалён, .team получил .no-fig (одноколоночная сетка уже есть в CSS).</span></span><span class="own">done · pages.js</span></li>
+  <li><span class="cb"></span><span>#4 Палитра #E8E7E4 + #1C1F22 + #4A5C6B<span class="sub">ТЗ 3.1: токены, контраст, карта затронутых компонентов.</span></span><span class="own">spec · исполнитель</span></li>
+  <li><span class="cb"></span><span>#5 Логотип в новых цветах и все его места<span class="sub">ТЗ 3.2: SVG-вордмарка + знак, тёмная/светлая версии, 9 точек размещения.</span></span><span class="own">spec · исполнитель</span></li>
+  <li><span class="cb"></span><span>#6 Motion v8: автопереезд камеры после прочтения, без контроля прокруткой<span class="sub">ТЗ 3.3: станции, state-machine, тайминги, edge cases, fallback.</span></span><span class="own">spec · исполнитель</span></li>
+  <li><span class="cb"></span><span>#2 Информация из карточек внутри анимации, лишние листы убрать<span class="sub">ТЗ 3.4: посценная таблица «что в кадре / что остаётся листом / что удаляется».</span></span><span class="own">spec · исполнитель</span></li>
+  <li><span class="cb"></span><span>#7 Переработать разделы Leistungen / Lösungen / Referenzen / Über uns<span class="sub">ТЗ 3.5: четыре разных лэйаута вместо одного шаблона pageHead + карточки.</span></span><span class="own">spec · исполнитель</span></li>
+  <li><span class="cb"></span><span>#3b Интро как видео, приоритеты загрузки<span class="sub">ТЗ 3.6: 64 WebP → один WebM, preload-очередь, content-visibility.</span></span><span class="own">spec · исполнитель</span></li>
+</ul>
+
+<h2 id="s2">2 · Баги и патчи</h2>
+<p>Все четыре бага воспроизведены скриптом до правки и перепроверены после. Патчи применены в <code>baustern-site-v7_1-bugfix.zip</code>; полный diff — <code>patches/film.js.diff</code> (99 изменённых строк). Ниже — причина, доказательство, код.</p>
+
+<div class="bug">
+  <h3><span class="pill sev">P0</span>#10 · Точки навигации и мини-план приземляются на предыдущую сцену</h3>
+  <dl class="kv">
+    <dt>Файл</dt><dd><code>js/film.js</code> → <code>onRoomNav</code>, <code>onPlan</code>, <code>onStart</code></dd>
+    <dt>Причина</dt><dd><code>scrollEl(rooms[idx])</code> скроллил к <em>верхней кромке</em> комнаты. Для ScrollTrigger <code>start:'top top'</code> это прогресс 0: кадр = <code>prev.f</code>, <code>is-driving</code>, оверлей скрыт; snap [0, .35] держит там. Иногда Lenis останавливался на 0.5 px выше кромки и onEnter не срабатывал вовсе.</dd>
+    <dt>Доказательство</dt><dd>до: клик по точке 3 → <code>scene:"2", frame:191, ovShow:false</code>; назад по точке 1 → <code>scene:"1", frame:63, is-driving</code>. После: точка 3 → <code>scene:"3", frame:255, ovShow:true</code>; 1 → <code>127/true</code>; 6 → <code>383/true</code>; 0 → <code>63/true</code>.</dd>
+  </dl>
+<pre><span class="c">/* film.js — Fix #10: цель прыжка = зона покоя (REVEAL + 3 %), не кромка комнаты */</span>
+const absTop=el=&gt;{let y=0,n=el;while(n){y+=n.offsetTop||0;n=n.offsetParent;}return y;};
+function gotoRoom(idx){const r=rooms[idx];if(!r)return;setActiveDot(idx);
+  const y=idx===0?0:Math.round(absTop(r)+r.offsetHeight*(REVEAL+.03));
+  if(window.Smooth&amp;&amp;Smooth.to)Smooth.to(y);else window.scrollTo({top:y,behavior:'smooth'});}
+const onRoomNav=e=&gt;{const b=e.target.closest('.w-roomnav-dot');if(!b)return;gotoRoom(+b.dataset.i);};
+const onPlan=e=&gt;{const p=e.target.closest('.w-pr');if(!p)return;
+  const idx=S.findIndex(s=&gt;s.room===p.dataset.room&amp;&amp;!s.flash);if(idx&lt;0)return;gotoRoom(idx);};
+const onStart=()=&gt;gotoRoom(1);</pre>
+</div>
+
+<div class="bug">
+  <h3><span class="pill sev">P0</span>#9 · Прокрутка вверх: камера не едет, стоит предыдущий кадр</h3>
+  <dl class="kv">
+    <dt>Файл</dt><dd><code>js/film.js</code> → <code>afterArrive(i)</code></dd>
+    <dt>Причина</dt><dd>После прибытия в комнату грузился только диапазон <code>S[i].f → S[i+1].f</code>. Диапазон назад никогда не запрашивался (а окно памяти его даже «держало»), поэтому при обратном проезде <code>nearest()</code> отдавал ближайший кэшированный кадр — стоп-кадр сцены.</dd>
+    <dt>Доказательство</dt><dd>прокрутка вверх из комнаты 3: до — 1 уникальный кадр за проезд; после — 14 (<code>255,251,244,229,216,204,196,192,191,187,173,146,133,127</code>).</dd>
+  </dl>
+<pre><span class="c">/* film.js — Fix #9: прелоад в обе стороны (вперёд приоритетнее); blend-переходы (flash) диапазона не требуют */</span>
+function afterArrive(i){if(!alive)return;const nx=S[i+1],pv=S[i-1];const win=[];
+  if(pv)win.push([pv.f,S[i].f]);if(nx)win.push([S[i].f,nx.f]);prune(win);
+  const fwd=!!(nx&amp;&amp;!nx.flash&amp;&amp;!S[i].flash),bwd=!!(pv&amp;&amp;!pv.flash&amp;&amp;!S[i].flash);
+  if(fwd)ensureRangeLow(S[i].f,nx.f);if(bwd)ensureRangeLow(pv.f,S[i].f);
+  setTimeout(()=&gt;{if(!alive||cur!==i)return;
+    (fwd?ensureRange(S[i].f,nx.f,4):Promise.resolve()).then(()=&gt;{if(alive&amp;&amp;cur===i&amp;&amp;bwd)ensureRange(S[i].f,pv.f,3);});},150);}</pre>
+</div>
+
+<div class="bug">
+  <h3><span class="pill sev">P0</span>#1 · Возврат на главную / к верху: пропадают заголовок, подписи, логотип</h3>
+  <dl class="kv">
+    <dt>Файлы</dt><dd><code>js/film.js</code> (две правки), <code>css/site.css</code> (nav)</dd>
+    <dt>Причина 1</dt><dd>У комнаты 0 не было обработчика прибытия. <code>onLeaveBack</code> комнаты 1 ставил <code>is-driving</code> и прятал оверлей, а восстановить сцену 0 было некому. Воспроизведено: скролл вниз до Bad и колёсиком обратно → <code>scene:"1", is-driving, ovShow:false</code> при <code>y=0</code>.</dd>
+    <dt>Причина 2</dt><dd>При каждом возврате на Home интро проигрывалось заново: очистка кэша → 64 fetch → ждать до 3 с → 3.4 с клипа. Итого 6–7 с сцены без единого слова.</dd>
+    <dt>Причина 3</dt><dd>Nav в состоянии <code>overhero</code> (scrollY ≤ 40) — белая типографика без подложки. Над светлым кадром ванной вордмарка неразличима (ваш 5-й скриншот).</dd>
+    <dt>После</dt><dd>верх после прокрутки — <code>scene:"0", ovShow:true</code>; возврат из Leistungen — заголовок виден через 1.6 с (вместо 6–7 с).</dd>
+  </dl>
+<pre><span class="c">/* film.js — Fix #1a: восстановление сцены 0 при возврате к верху страницы */</span>
+function restoreScene0(){if(!alive||cur===0||!introDone)return;cur=0;const sc=S[0];W.dataset.scene=0;
+  hotL.classList.remove('show');ov.classList.remove('show');hotL.style.opacity='';split.on=false;if(cmp)cmp.hidden=true;
+  baseIm=null;mix={im:null,a:0};drawn=-1;frame=sc.f;drift.s=1;drift.x=0;drift.y=0;hotDirty=true;
+  fillScene(ov,sc);buildHotspots(hotL,sc,goRoute);setPlan(pl,0);setActiveDot(0);W.classList.remove('is-driving');
+  requestAnimationFrame(()=&gt;{if(!alive||cur!==0)return;ov.classList.add('show');hotL.classList.add('show');
+    revealDone=true;if(sc.counters)countUp(ov,.9);kick();});
+  kick();afterArrive(0);}
+<span class="c">/* триггер комнаты 0 */</span>
+ScrollTrigger.create({trigger:r,start:'top top',end:'bottom top',
+  onEnterBack:restoreScene0,onEnter:restoreScene0,
+  onUpdate:s=&gt;{const p=s.progress;drift.s=1+.05*p;drift.x=(-.8+1.6*p)*-1;drift.y=-.5*p;kick();}});
+
+<span class="c">/* film.js — Fix #1b: интро один раз за SPA-сессию (модульный флаг introPlayed, см. playIntro в 3.6) */</span>
+let introPlayed=false;              <span class="c">// уровень модуля, переживает unmount()</span>
+let frame=introPlayed?S[0].f:0;     <span class="c">// внутри full()</span>
+
+<span class="c">/* site.css — Fix #1c: подложка nav над фильмом */</span>
+#nav.overhero:not(.solid)::before{content:'';position:absolute;inset:0 0 -34px 0;z-index:-1;pointer-events:none;
+  background:linear-gradient(to bottom,rgba(28,31,34,.62) 0%,rgba(28,31,34,.28) 60%,rgba(28,31,34,0) 100%)}
+#nav.overhero:not(.solid) .brand-word{filter:brightness(0) invert(1) drop-shadow(0 1px 2px rgba(0,0,0,.35))}</pre>
+</div>
+
+<div class="bug">
+  <h3><span class="pill sev">P1</span>#3 · Открывающий клип начинается с рывка</h3>
+  <dl class="kv">
+    <dt>Файл</dt><dd><code>js/film.js</code> → инициализация <code>frame</code>, <code>playIntro()</code>, <code>setupRoom()</code></dd>
+    <dt>Причина</dt><dd>(a) первый нарисованный кадр — 63 (конец клипа), затем прыжок на 0; (b) старт по таймеру 3 с на неполном кэше → <code>nearest()</code> повторяет соседние кадры (замер: 198 мс на кадре 0, 165 мс на кадре 1); (c) 7 стоп-кадров и 64 кадра интро качались одновременно; (d) при скролле во время интро <code>step()</code> и <code>updateRoom()</code> писали в <code>frame</code> одновременно.</dd>
+    <dt>После</dt><dd>кадры 0→63 без обратных прыжков; при медленной сети клип пропускается (ваше условие: «лучше без стартовой анимации, чем с лагом»).</dd>
+  </dl>
+<pre><span class="c">/* film.js — Fix #3 */</span>
+const INTRO_DUR=3.4,INTRO_WAIT=2200,INTRO_STALL_MAX=700;
+function playIntro(){
+  cur=0;const sc=S[0],f1=sc.f;
+  W.dataset.scene=0;fillScene(ov,sc);buildHotspots(hotL,sc,goRoute);setPlan(pl,0);setActiveDot(0);
+  const finish=()=&gt;{if(!alive)return;introRunning=false;introDone=true;introPlayed=true;
+    S.forEach(x=&gt;loadBitmap(x.f));                 <span class="c">// стоп-кадры — только ПОСЛЕ клипа</span>
+    if(cur!==0)return;                              <span class="c">// пользователь уже уехал: ведёт updateRoom()</span>
+    frame=f1;drawn=-1;W.classList.remove('is-driving');
+    ov.classList.add('show');hotL.classList.add('show');revealDone=true;if(sc.counters)countUp(ov,.9);kick();afterArrive(0);};
+  if(introPlayed||!F.introEnd){frame=f1;loadBitmap(f1).then(()=&gt;{if(alive){drawn=-1;finish();}});return;}
+  const run=()=&gt;{if(!alive||introDone||introRunning)return;let prog=0,last=performance.now(),stall=0;introRunning=true;W.classList.add('is-driving');
+    const step=now=&gt;{if(!alive||!introRunning)return;const dt=Math.min(.05,(now-last)/1000);last=now;
+      const nextProg=clamp(prog+dt/INTRO_DUR,0,1),want=lerp(0,f1,easeIO(nextProg));
+      if(bm.has(Math.round(want))){prog=nextProg;frame=want;stall=0;kick();}          <span class="c">// кадр есть → идём</span>
+      else{stall+=dt*1000;loadBitmap(Math.round(want));if(stall&gt;INTRO_STALL_MAX){finish();return;}} <span class="c">// нет → пауза, не рывок</span>
+      if(prog&lt;1)requestAnimationFrame(step);else finish();};
+    requestAnimationFrame(step);};
+  let started=false;
+  const once=()=&gt;{if(started||!alive)return;started=true;run();};
+  const skip=()=&gt;{if(started||!alive)return;started=true;loadBitmap(f1).then(()=&gt;{if(alive){drawn=-1;finish();}});};
+  if(rangeReady(0,f1)){once();return;}
+  ensureRange(0,f1,8).then(once);
+  const loaded=()=&gt;{let n=0;for(let k=0;k&lt;=f1;k++)if(bm.has(k))n++;return n/(f1+1);};
+  setTimeout(()=&gt;{if(started)return;if(loaded()&gt;=.6)setTimeout(skip,1500);else skip();},INTRO_WAIT);
+}
+<span class="c">/* setupRoom(i): прокрутка во время интро обрывает клип — иначе гонка за `frame` */</span>
+if(introRunning){introRunning=false;introDone=true;introPlayed=true;S.forEach(x=&gt;loadBitmap(x.f));}
+<span class="c">/* при монтировании: только кадр 0 (= постер) сразу, без 7 стоп-кадров */</span>
+fit(cv);loadBitmap(introPlayed?S[0].f:0).then(()=&gt;{if(!alive)return;drawn=-1;kick();});</pre>
+</div>
+
+<div class="note">Не баг, но замечание после патчей: если остановить колесо ровно в зоне камеры (0–30 % комнаты), snap с Lenis иногда не дотягивает — сцена замирает на полпути без текста. Это и есть системная причина вашего пункта #6; motion v8 (3.3) убирает саму возможность такого состояния.</div>
+
+<h2 id="m1">3.1 · Палитра и токены <span class="pill spec">ТЗ</span></h2>
+<div class="spec">
+<h3>Задача</h3>
+<p>Перевести весь сайт на три цвета клиента: <code>#E8E7E4</code> (основа), <code>#1C1F22</code> (чернила), <code>#4A5C6B</code> (акцент, сланцевый). Всё остальное — производные, без новых оттенков.</p>
+<h4>Входные данные</h4>
+<p>Сейчас <code>:root</code> в <code>site.css</code> несёт три поколения алиасов (<code>--navy/--gold</code> → <code>--bg/--ink/--accent</code> → <code>--paper/--night/--brass</code>). Менять нужно только первый блок; алиасы каскадируют сами. Проверенные контрасты (WCAG):</p>
+<div class="tw"><table>
+<tr><th>Роль</th><th>Токен</th><th>Значение</th><th>Контраст</th><th>Использование</th></tr>
+<tr><td>Основа</td><td><code>--bg</code></td><td>#E8E7E4</td><td>—</td><td>фон страниц, листов, форм</td></tr>
+<tr><td>Основа-2</td><td><code>--bg-2</code></td><td>#DEDDD9</td><td>1.1 : 1 к bg</td><td>чередование секций, скроллбар-трек</td></tr>
+<tr><td>Поверхность</td><td><code>--card</code></td><td>#F3F2F0</td><td>—</td><td>карточки, поля ввода (не белый: белый на #E8E7E4 «светится»)</td></tr>
+<tr><td>Чернила</td><td><code>--ink</code></td><td>#1C1F22</td><td>13.4 : 1 на bg</td><td>текст, кнопки btn-night, тёмные полосы, preloader, curtain</td></tr>
+<tr><td>Чернила-2</td><td><code>--ink-2</code></td><td>#2A2F34</td><td>10.9 : 1</td><td>вторичный текст, hover тёмных кнопок</td></tr>
+<tr><td>Приглушённый</td><td><code>--muted</code></td><td>#5C6470</td><td>4.84 : 1 ✓ AA</td><td>подписи, лиды, метаданные (сейчас #5E6360 — тёплый, заменить на холодный)</td></tr>
+<tr><td>Акцент</td><td><code>--accent</code></td><td>#4A5C6B</td><td>5.6 : 1 на bg ✓ · 6.9 : 1 белый на нём ✓</td><td>кнопки btn-brass, ссылки, активные табы, точки навигации, фокус</td></tr>
+<tr><td>Акцент hover</td><td><code>--accent-text</code></td><td>#3E4D5A</td><td>7.0 : 1</td><td>hover/pressed акцентных кнопок, текст-ссылки</td></tr>
+<tr><td>Акцент на тёмном</td><td><code>--accent-hi</code></td><td>#9FB1BE</td><td>7.5 : 1 на ink ✓</td><td>кикеры, цифры, активная точка и хотспоты <em>над фильмом</em> и в тёмных полосах. #4A5C6B на #1C1F22 = 2.4 : 1 — запрещён для текста</td></tr>
+<tr><td>Линии</td><td><code>--line</code></td><td>rgba(28,31,34,.14)</td><td>—</td><td>разделители, рамки табов</td></tr>
+<tr><td>Линии на тёмном</td><td><code>--line-dark</code></td><td>rgba(232,231,228,.16)</td><td>—</td><td>футер, полосы</td></tr>
+<tr><td>Выделение</td><td><code>::selection</code></td><td>bg #4A5C6B / fg #E8E7E4</td><td>5.6 : 1</td><td>—</td></tr>
+</table></div>
+<pre><span class="c">/* site.css — новый головной блок :root (заменяет «Palette N: Putz &amp; Fenstergrün») */</span>
+:root{
+  --bg:#E8E7E4; --bg-2:#DEDDD9; --card:#F3F2F0;
+  --ink:#1C1F22; --ink-2:#2A2F34; --muted:#5C6470;
+  --accent:#4A5C6B; --accent-text:#3E4D5A; --accent-hi:#9FB1BE; --accent-soft:rgba(74,92,107,.10);
+  --secondary:var(--accent);
+  --line:rgba(28,31,34,.14); --line-dark:rgba(232,231,228,.16);
+  <span class="c">/* алиасы предыдущих поколений — не трогать, каскадируют */</span>
+  --paper:var(--bg); --paper-2:var(--bg-2); --night:var(--ink); --night-2:var(--ink-2); --fg:var(--ink);
+  --brass:var(--accent); --brass-lo:var(--accent-text); --brass-hi:var(--accent-hi);
+  --bg-putz:var(--bg); --text-main:var(--ink); --fenstergruen:var(--accent); --fenstergruen-hover:var(--accent-text);
+  --fenstergruen-hi:var(--accent-hi); --fenstergruen-subtle:var(--accent-soft); --text-muted:var(--muted); --surface-white:var(--card);
+}</pre>
+<h4>Что поменять руками (токены не покрывают)</h4>
+<ul>
+  <li><b>Жёстко зашитые цвета</b> в <code>site.css</code>: <code>#nav.solid</code> (rgba 243,240,233 → 232,231,228 при .82), <code>#nav.solid.overfilm</code> (27,29,33 → 28,31,34), <code>.w-roomnav-dot.on i</code> (тень rgba(224,112,79) — остаток «терракоты», заменить на rgba(159,177,190,.35)), <code>#cur.big</code> (rgba(194,85,58) → rgba(74,92,107,.35)), ошибки форм <code>#b4331f</code> в <code>app.js</code> ×5 → ввести <code>--bad:#8C3B2E</code> (5.9 : 1 на bg). Команда для поиска: <code>grep -nE "#[0-9a-f]{6}|rgba\(" css/site.css js/app.js js/pages.js | grep -v "var(--"</code>.</li>
+  <li><b>Фильм.</b> <code>.w-stage{background:var(--ink)}</code> уже через токен. Оверлей <code>.w-ov</code>: заголовок #E8E7E4, кикер и цифры — <code>--accent-hi</code>. Хотспоты: точка #E8E7E4, кольцо rgba(159,177,190,.5).</li>
+  <li><b>Кнопки.</b> <code>.btn-brass</code> = accent/white, hover accent-text; <code>.btn-night</code> = ink/bg; <code>.btn-line</code> = прозрачная с рамкой line-dark над фильмом. Тени — только тонированные: <code>0 10px 30px rgba(28,31,34,.18)</code>.</li>
+  <li><b>Зерно</b> (<code>.grain</code>) оставить, opacity .04 — на холодной палитре работает лучше, чем на кремовой.</li>
+  <li><b>Lightbox</b> (<code>lightbox.css</code>) — фон rgba(28,31,34,.92).</li>
+  <li><b>Изображения.</b> Фото с тёплым балансом (кухня «gold», Küche/Bad) будут конфликтовать с холодной палитрой. Рецепт: единый пресет на все JPG — насыщенность −8 %, температура −200 K, чёрная точка 12/12/14. Скрипт на Pillow/ImageMagick, 33 файла. Не обязательно для запуска, обязательно для ощущения «одного мира».</li>
+</ul>
+<h4>Приёмка</h4>
+<ul><li>Нет ни одного вхождения старых hex (#F1EEE7, #2C4A3E, #6FA085, #E0704F, #C2553A, #B4331F) в css/js.</li><li>axe-core: 0 ошибок контраста (скрипт <code>axe-scan.js</code> в рабочей папке уже есть).</li><li>Скриншоты 5 страниц светлая/тёмная nav — в <code>shots/</code>.</li></ul>
+</div>
+
+<h2 id="m2">3.2 · Логотип и его места <span class="pill spec">ТЗ</span></h2>
+<div class="spec">
+<h3>Состояние</h3>
+<p>Сейчас два PNG: <code>img/logo-word.png</code> (194×44, вордмарка, чёрно-синяя #000010 + #0060C0) и <code>img/logo.png</code> (202×255, знак + вордмарка). В nav белая версия получается CSS-фильтром <code>invert(1)</code> — то есть у вордмарки нет собственной светлой версии, а синий на инверсии становится жёлто-оранжевым (см. кикеры на тёмном фоне).</p>
+<h4>Что сделать</h4>
+<ol>
+  <li><b>Векторизовать.</b> Один мастер-файл <code>img/brand/baustern.svg</code>: вордмарка «BauStern» шрифтом Archivo 700, трекинг −0.03em, «Bau» — <code>#1C1F22</code>, «Stern» — <code>#4A5C6B</code>. Шрифт перевести в кривые (Illustrator/Inkscape «Object to path»), чтобы SVG не зависел от загрузки шрифта.</li>
+  <li><b>Знак.</b> Из существующего мотива сайта — ромб <code>.dia</code> (повёрнутый квадрат), который уже стоит перед каждым кикером. Знак = ромб 24×24 с вырезом-«звездой» (четыре луча по диагоналям, толщина 2 px). Работает в 16 px (favicon) и в 120 px (preloader). Никаких градиентов.</li>
+  <li><b>Три цветовых версии, одним файлом через <code>currentColor</code>:</b> <code>.brand-dark</code> (ink + slate на светлом), <code>.brand-light</code> (#E8E7E4 + #9FB1BE на тёмном/над фильмом), <code>.brand-mono</code> (один цвет — для favicon, штампов, PDF в ч/б).</li>
+</ol>
+<div class="svg-wrap">
+  <svg width="220" height="48" viewBox="0 0 220 48" aria-label="BauStern — эскиз вордмарки">
+    <g transform="translate(4,12) rotate(45)"><rect x="0" y="0" width="17" height="17" rx="1.5" fill="#4A5C6B"/><path d="M8.5 2v13M2 8.5h13" stroke="#E8E7E4" stroke-width="2"/></g>
+    <text x="34" y="34" font-family="Archivo, system-ui, sans-serif" font-weight="700" font-size="30" letter-spacing="-0.9" fill="#1C1F22">Bau<tspan fill="#4A5C6B">Stern</tspan></text>
+  </svg>
+  <svg width="220" height="48" viewBox="0 0 220 48" style="background:#1C1F22;border-radius:6px" aria-label="светлая версия">
+    <g transform="translate(4,12) rotate(45)"><rect x="0" y="0" width="17" height="17" rx="1.5" fill="#9FB1BE"/><path d="M8.5 2v13M2 8.5h13" stroke="#1C1F22" stroke-width="2"/></g>
+    <text x="34" y="34" font-family="Archivo, system-ui, sans-serif" font-weight="700" font-size="30" letter-spacing="-0.9" fill="#E8E7E4">Bau<tspan fill="#9FB1BE">Stern</tspan></text>
+  </svg>
+  <span style="font-size:13px;color:var(--muted);max-width:26ch">Эскиз для согласования пропорций; финал — в кривых, знак доработать до «звезды».</span>
+</div>
+<h4>Где логотип должен стоять — карта размещения (анализ кода и точек контакта)</h4>
+<div class="tw"><table>
+<tr><th>Место</th><th>Файл / система</th><th>Версия</th><th>Сейчас</th></tr>
+<tr><td>Nav (все страницы)</td><td><code>index.html</code> <code>.brand-word</code></td><td>dark; над фильмом — light без CSS-инверсии</td><td>PNG + invert</td></tr>
+<tr><td>Preloader, curtain</td><td><code>#pre .logo</code>, <code>#curtain .mark</code></td><td>light (знак + вордмарка, стек)</td><td>PNG + invert</td></tr>
+<tr><td>Футер</td><td><code>pages.js</code> <code>footer</code></td><td>light, знак + вордмарка + «Bauunternehmen Zürich»</td><td>только текст</td></tr>
+<tr><td>Favicon / PWA</td><td><code>img/favicon.png</code> → <code>favicon.svg</code> + 32/180/512 PNG + <code>manifest.webmanifest</code> (maskable)</td><td>mono-знак на #1C1F22</td><td>старый PNG</td></tr>
+<tr><td>OG-изображение</td><td><code>og:image</code> → <code>img/og.jpg</code> 1200×630: кадр кухни 0 + знак + слоган</td><td>light</td><td>отсутствует (og:image не задан!)</td></tr>
+<tr><td>Мобильное меню</td><td><code>#mobmenu</code></td><td>dark</td><td>нет</td></tr>
+<tr><td>404 / Impressum шапка</td><td><code>pNotFound</code></td><td>dark</td><td>нет</td></tr>
+<tr><td>Referenzmappe PDF</td><td>n8n-сценарий «Referenzmappe» (email-магнит)</td><td>dark на обложке, mono в колонтитуле</td><td>—</td></tr>
+<tr><td>E-mail подтверждения</td><td>n8n /web-anfrage → письмо клиенту</td><td>PNG 360 px light/dark (почтовые клиенты)</td><td>—</td></tr>
+<tr><td>Внешние профили</td><td>Google Business, Renovero, KnowS, NeedHelp</td><td>знак 512×512 mono</td><td>требует входа — раздел 4</td></tr>
+</table></div>
+<h4>Правила</h4>
+<ul><li>Минимальная высота вордмарки 20 px, охранное поле = высота буквы «B».</li><li>Никогда не инвертировать растр фильтром; только SVG-версии.</li><li>Знак без вордмарки — только ≤ 40 px (favicon, аватар, буллит).</li></ul>
+</div>
+
+<h2 id="m3">3.3 · Motion v8 — «станции» вместо скраба <span class="pill spec">ТЗ</span></h2>
+<div class="spec">
+<h3>Ваша идея, зафиксированная как модель</h3>
+<p>Скролл управляет только <em>текстом</em>; камерой управляет система. Пользователь докрутил до сцены — информация уже в кадре и дораскрывается прокруткой; дочитал, крутит дальше — камера сама едет в следующую комнату (1.6–2.2 с), старый текст уходит, новый приходит. Застрять на середине проезда невозможно, потому что середины как состояния больше нет. Это возврат к принципу SPEC-v6 («Kamera fährt selbst»), но с прелоадом и защитами, которых тогда не было.</p>
+<h4>Модель</h4>
+<div class="flow">Станция i  (высота STATION_VH = 1.6 · 100vh, ScrollTrigger start 'top top' end 'bottom top')
+  p ∈ [0, 1]  — прогресс чтения. Кадр = S[i].f, стоит. Drift (Ken Burns 1.00→1.04) едет от p.
+  reveal(i,p):  кикер+заголовок  p≥.05   факт 1  p≥.22   факт 2  p≥.38   факт 3  p≥.54   хотспоты  p≥.62   CTA  p≥.70
+  EXIT_AT = .86 — после этого прогресса «всё прочитано»
+  onLeave  (p→1, вниз)   → drive(i → i+1)
+  onLeaveBack (p→0, вверх) → drive(i → i−1)
+
+drive(from, to):                     state = 'driving'
+  1. Smooth.stop(); wheel/touch/keys глушатся (passive:false, preventDefault)
+  2. параллельно:
+       textOut(from)   0 → .30 dur   (opacity, y −12px, stagger 40 ms, обратный порядок)
+       frameTween      0 → 1.00 dur  (from.f → to.f, power2.inOut; dur = clamp(|Δf|/64 · 1.8, 1.6, 2.2))
+       textIn(to)     .70 → 1.00 dur (кикер+заголовок; факты остаются на скролл)
+  3. onComplete: Smooth.to(top(to) + (dir&gt;0 ? 2 : h·EXIT_AT − 2), {immediate:true}); Smooth.start(); state='idle'
+     (скролл-позиция и картинка снова согласованы; при движении вверх приземляемся в «прочитанное» состояние)</div>
+<h4>Требования и граничные условия</h4>
+<ul>
+  <li><b>Ввод во время проезда.</b> Колесо, тач, клавиши — проглатываются; запоминается только знак последнего wheel. Если после проезда знак противоположен направлению — ничего не делаем (пользователь передумал). Если совпадает и |Δ| суммарно &gt; 600 px — не цепляем автоматически следующий проезд: одно действие = один переход. Это защита от «пролетел три комнаты».</li>
+  <li><b>Точки, мини-план, «Rundgang».</b> Прыжок к станции k: если |k − cur| = 1 — обычный drive. Если больше — один проезд по кадрам напрямую <code>cur.f → k.f</code> с длительностью 2.2 с по low-res-кадрам (они есть всегда, 8 МБ) + подмена на full-res по прибытии. Промежуточные станции не «останавливаются».</li>
+  <li><b>Кадры не готовы.</b> drive ждёт до 400 мс (<code>rangeReady</code>, сначала low-res). Не дождался — кроссфейд между двумя стоп-кадрами 600 мс. Никогда не показывать «шаг» по 3–4 кадра.</li>
+  <li><b>Гарантия выхода из состояния.</b> Watchdog: если <code>state==='driving'</code> дольше <code>dur + 1000 мс</code> — принудительно завершить (frame = to.f, Smooth.start()).</li>
+  <li><b>Deep-link / history.</b> Приземление на станцию без проезда (frame = S[k].f, текст сразу в конечном состоянии).</li>
+  <li><b>Blend-сцены</b> (Rohbau, кадр = фото): drive = кроссфейд 1.2 с, механика та же.</li>
+  <li><b>Листы</b> (те, что остаются, см. 3.4): лист — обычная секция после станции; стан­ция i → лист → станция i+1. Выход со станции вниз в лист — <em>не</em> проезд (кадр темнеет через cover()); первый скролл из листа вниз в следующую станцию запускает drive(i → i+1). Т. е. лист всегда «между» и никогда не ломает согласованность кадра.</li>
+  <li><b>Клавиатура и a11y.</b> ↓/PageDown/Space = «дочитать станцию → следующий проезд», ↑ — симметрично; точки — <code>aria-current</code>. Проезд объявляется через <code>aria-live="polite"</code> текстом кикера. <code>prefers-reduced-motion</code>: проезд заменяется кроссфейдом 300 мс, текст без stagger (текущая продуктовая позиция «анимация всегда» пересматривается только в этой части — это требование WCAG 2.3.3).</li>
+  <li><b>Телефон (lite)</b> — без изменений: стоп-кадры + затухание; факты становятся обычным текстом под заголовком.</li>
+</ul>
+<h4>Изменения в коде (для исполнителя)</h4>
+<ul>
+  <li><code>data.js</code>: <code>FILM.roomVh: 1.6</code>, <code>camFrac</code> удалить; у сцен новое поле <code>facts:[{k,v}×3]</code> (3.4).</li>
+  <li><code>film.js</code>: <code>updateRoom()</code> → <code>reveal(i,p)</code> (только текст/drift); <code>setupRoom()</code> остаётся (сборка DOM сцены); новый <code>drive(from,to)</code> + <code>lockInput()/unlockInput()</code>; snap убрать (<code>snap</code> в ScrollTrigger.create). <code>gotoRoom()</code> вызывает drive. Прелоад из патча #9 остаётся как есть.</li>
+  <li><code>app.js</code>: <code>Smooth.lock()/unlock()</code> — обёртка над <code>L.stop()/start()</code> + обработчики wheel/touchmove/keydown с <code>preventDefault</code> на время блокировки.</li>
+  <li><code>pages.js/wStage()</code>: в <code>.w-ov</code> добавить <code>&lt;ul class="w-facts"&gt;</code> (3 строки: <code>&lt;b&gt;{k}&lt;/b&gt;&lt;span&gt;{v}&lt;/span&gt;</code>) и <code>.w-progress</code> — тонкая вертикальная шкала чтения справа от точек (заменяет «Scrollen»-хинт).</li>
+</ul>
+<h4>Тайминги (токены motion)</h4>
+<div class="tw"><table><tr><th>Токен</th><th>Значение</th><th>Где</th></tr>
+<tr><td><code>--m-drive</code></td><td>1.6–2.2 s, power2.inOut</td><td>проезд камеры</td></tr>
+<tr><td><code>--m-text-out</code></td><td>.36 s, power2.in, stagger .04</td><td>уход текста</td></tr>
+<tr><td><code>--m-text-in</code></td><td>.7 s, cubic-bezier(.16,1,.3,1), stagger .06</td><td>приход кикера/заголовка</td></tr>
+<tr><td><code>--m-fact</code></td><td>.5 s, y 14→0, blur 4→0</td><td>каждый факт на своём пороге p</td></tr>
+<tr><td><code>--m-xfade</code></td><td>.6 s</td><td>fallback без кадров / reduced-motion .3 s</td></tr></table></div>
+<h4>Приёмка</h4>
+<ul><li>Скрипт Playwright: 30 случайных wheel-серий (±200…±1400 px, паузы 0–300 мс) → после каждой серии через 3 с состояние ∈ {станция k с текстом, лист}. Ни одного «driving» и ни одного кадра ≠ S[k].f.</li><li>Средняя длительность проезда 1.6–2.2 с, jank (кадры &gt; 50 мс) ≤ 2 на проезд при CPU ×4.</li><li>Возврат наверх, deep-link, точки 0…6, клавиатура — те же проверки, что в разделе 5.</li></ul>
+</div>
+
+<h2 id="m4">3.4 · Информация внутри сцен, конец «гигантских карточек» <span class="pill spec">ТЗ</span></h2>
+<div class="spec">
+<h3>Принцип</h3>
+<p>Правило SPEC-v6 «≤ 3 строки + 1 картинка → в комнату; сетка/форма/калькулятор → лист» так и не было применено: в комнатах по одному заголовку, а листы разрослись до 5–7 экранов. Новое правило: <b>каждая сцена несёт 3 факта из бывшей карточки</b>, листов остаётся три, и они становятся «полулистами» (панель 46 % ширины поверх фильма, кадр остаётся виден слева и темнеет до 35 %). Домашняя страница сокращается примерно с 28 000 до ~16 000 px.</p>
+<div class="tw"><table>
+<tr><th>Сцена</th><th>В кадре (новое)</th><th>Лист после сцены</th><th>Что удаляется с Home</th></tr>
+<tr><td>0 Küche · hero</td><td>как сейчас: заголовок, 3 счётчика, CTA, trust-строка. Кнопка «Rundgang» → тонкая шкала чтения</td><td>—</td><td>—</td></tr>
+<tr><td>1 Flur · «Ein Ansprechpartner»</td><td>6 чипов Gewerke (есть) + <b>3 факта</b> = три из «Vier Versprechen» (Festpreis · Termin im Werkvertrag · Ein Ansprechpartner) — по одной строке, появляются по p. Четвёртое обещание (Garantie 24 Mt) — в trust-строке hero</td><td><b>удалить</b> лист «Versprechen + Wo stehen Sie gerade + Kennzahlen»</td><td>PROMISES-лист, SIT (3 ситуации → раздел Lösungen 3.5), плоские счётчики (дубль hero)</td></tr>
+<tr><td>2 Bad · Sanitär</td><td>3 факта: SIA 385/1 · Notfall am gleichen Tag · Druckprobe mit Protokoll</td><td><b>полулист</b> Richtwert-Rechner (панель справа, пресет «Bad»)</td><td>—</td></tr>
+<tr><td>3 Schlafzimmer · Malerarbeiten</td><td>3 факта: Q3-Spachtelung · Abnahme bei Tageslicht · Keine Nacharbeit</td><td><b>лист</b> «Ausgeführte Arbeiten»: табы + bento 6 плиток (не 8+) + «Alle Referenzen →». Единственный полноширинный лист — фото нужна ширина</td><td>кнопка «Mehr Arbeiten zeigen» (уводит в Referenzen)</td></tr>
+<tr><td>4 Wohnen · Renovation</td><td>счётчики 47 m² · 6 Räume · 100 % (есть) + <b>одна цитата клиента</b> (rotating, из REVIEWS ≥ 4★) в нижней трети кадра</td><td><b>полулист</b> Fallstudie Atlant: 1 фото 4:3 + 3 факта + «Zur Fallstudie». Марquee отзывов — удалить (цитата уже в кадре)</td><td>rv-cols marquee, rating-badge (→ футер)</td></tr>
+<tr><td>5 Rohbau · Rückblende</td><td>«Drei Schritte» как горизонтальный рельс из 3 пунктов прямо в кадре (Besichtigung → Offerte → Übergabe), появляются по p; Vorher/Nachher-ползунок остаётся</td><td><b>удалить</b> лист Ablauf/Knigge/Trust</td><td>Timeline (дубль рельса), Knigge (→ Über uns), Trust-band (→ Über uns / футер)</td></tr>
+<tr><td>6 Eingang · Abnahme</td><td>подпись + 2 факта: Abnahmeprotokoll · Werkgarantie 24 Monate</td><td><b>лист</b> Anfrage: форма + контакты + 4 FAQ. Всё остальное — вон</td><td>Team-блок, Region (→ Kontakt), Referenzmappe-магнит (→ Referenzen)</td></tr>
+</table></div>
+<h4>Контракт данных (data.js)</h4>
+<pre>{id:'bad', f:191, room:'bad', kicker:'Gewerk 03 · Sanitär', h:'Bad und Leitungen, &lt;em&gt;SIA-konform.&lt;/em&gt;',
+ facts:[{k:'SIA 385/1',v:'Leitungen nach Norm, nicht nach Gefühl'},
+        {k:'Gleicher Tag',v:'Notfall-Einsatz bei Wasserschaden'},
+        {k:'Protokoll',v:'Druck- und Dichtigkeitsprüfung schriftlich'}],
+ hot:[…], sheet:{type:'panel', key:'estimate', side:'right'}}   <span class="c">// type: 'panel' | 'full' | null</span></pre>
+<h4>Полулист (.w-sheet--panel) — спецификация</h4>
+<ul>
+  <li>Панель <code>min(560px, 46vw)</code>, прижата к правому краю, фон <code>--card</code>, без тени; слева кадр остаётся, <code>cover()</code> считает только площадь панели → затемнение до .35, не до 1.</li>
+  <li>Вход: <code>SheetKit.wipe</code> справа (clip-path inset(0 0 0 100%) → 0), .7 s, scrub-привязка как сейчас; текст внутри — fade со stagger.</li>
+  <li>Высота панели = контент, минимум 100vh; между панелью и следующей станцией — 40vh «воздуха» (кадр снова светлеет, текст сцены не возвращается).</li>
+  <li>Панель прокручивается вместе со страницей (не sticky) — иначе конфликт с Lenis.</li>
+</ul>
+<h4>Приёмка</h4><ul><li>Высота Home ≤ 17 000 px при 1440×900.</li><li>Каждая станция показывает ≥ 3 информационных элемента без прокрутки листа.</li><li>Ни одного блока, дублирующего страницу второго уровня.</li></ul>
+</div>
+
+<h2 id="m5">3.5 · Переработка разделов <span class="pill spec">ТЗ</span></h2>
+<div class="spec">
+<h3>Диагноз</h3>
+<p>Все четыре страницы собраны одним шаблоном: <code>pageHead()</code> → карточки на всю ширину с фото → <code>band</code> → <code>ctaBand()</code>. Leistungen — шесть одинаковых «фото + текст» блоков по 800 px каждый; Lösungen — три одинаковые карточки; Referenzen — сетка без иерархии; Über uns — портрет и текст. Клиент не может <em>выбрать</em>: нет сравнения, нет фильтра, нет разницы между страницами. Ниже — четыре разных лэйаута с разной механикой, чтобы каждый раздел отвечал на свой вопрос.</p>
+
+<h3>A · Leistungen — «Указатель услуг» (что мы делаем)</h3>
+<p>Паттерн: <b>sticky-индекс слева, живая панель справа</b> — редакционный формат, который используют студии архитектуры на Awwwards (список слева, изображение меняется по hover/скроллу). Клиент сканирует шесть строк за три секунды и ныряет только в нужную.</p>
+<ul>
+  <li><b>Сетка:</b> 2 колонки <code>minmax(0,1fr) 46%</code>; слева список <code>.svc-index</code> (6 строк: название Archivo 28 px, одна строка описания, 3 тега-Teilleistungen, стрелка); справа <code>.svc-stage</code> sticky (top 96 px), высота 62vh: фото активной услуги (кроссфейд .45 s) + 3 «Merkmale» + кнопка «Offerte für {Gewerk}» (<code>data-svc</code> уже поддерживается формой).</li>
+  <li><b>Активность:</b> hover/фокус строки → активна; при скролле — строка, ближайшая к 40 % высоты вьюпорта (IntersectionObserver, threshold по центру). Клик по строке — переход на детальную (<code>leistungen/{slug}</code>).</li>
+  <li><b>Ниже индекса:</b> сравнительная таблица «Einzelgewerk vs Gesamtauftrag» (5 строк: Ansprechpartner · Termin · Offerte · Garantie · Koordination) — это ответ на главный вопрос B2B-клиента; затем компактный список «Im Festpreis inbegriffen» в 2 колонки; CTA-band.</li>
+  <li><b>Мобильно (&lt; 900 px):</b> индекс становится аккордеоном: строка раскрывает фото + Merkmale.</li>
+  <li><b>Данные:</b> всё есть в <code>SVC[].detail</code> (h1, lead, merkmale, teil, incl). Новых полей нет.</li>
+  <li><b>Состояния:</b> активная строка — левая линия 2 px <code>--accent</code>, номер не нужен (порядок услуг не сюжет); фокус — outline; изображение не загрузилось — фон <code>--bg-2</code> + название услуги.</li>
+</ul>
+
+<h3>B · Lösungen — «Сегмент-переключатель» (для кого)</h3>
+<ul>
+  <li>Вместо трёх одинаковых карточек — <b>сегментированный контрол</b> вверху (Hausverwaltungen · Generalunternehmer · Gewerbe &amp; Ladenbau), ниже одна композиция, содержимое подменяется без перезагрузки; hash <code>#/loesungen/{slug}</code> синхронизируется (детальные роуты уже существуют — <code>pLoesung()</code> становится телом сегмента).</li>
+  <li><b>Композиция сегмента:</b> заголовок-обращение (<code>detail.h1</code>) + 1 фото 3:2 справа; блок «Ihre Realität» — три проблемы как крупные тезисы с ответом под каждым (<code>detail.real</code> + <code>detail.takes</code> в одну двухколоночную таблицу «Проблема → Что берёт на себя BauStern»); строка доказательств (3 цифры <code>detail.gruende</code>); одна релевантная Fallstudie; CTA с <code>data-who</code> (форма уже принимает).</li>
+  <li><b>Смена сегмента:</b> кроссфейд .3 s + y 8 px; фокус на заголовке; ScrollTrigger.refresh() после смены.</li>
+  <li>«Vier Versprechen» с этой страницы убрать (переезжают в Über uns).</li>
+</ul>
+
+<h3>C · Referenzen — «Галерея с выбором» (докажите)</h3>
+<ul>
+  <li><b>Верх:</b> горизонтальная лента Fallstudien (scroll-snap, карточка 62vw / 3 в ряд на ≥1400): cover, заголовок, 3 факта, гipотезу «Vorher/Nachher» показывать тумблером, если у проекта есть <code>before</code>-фото (сейчас только Atlant).</li>
+  <li><b>Середина:</b> существующие табы с счётчиками (оставить) + <code>workgrid--bento</code> (уже есть на Home, здесь — основной). На плитке hover: тёмная плашка снизу с Gewerk · Ort · Jahr (поле <code>year</code> добавить в WORKS, где известно). Сортировка по умолчанию: новые сверху.</li>
+  <li><b>Низ:</b> «Referenzmappe als PDF» (переезжает с Home) + регионы как список с временем доезда (переезжает с Home).</li>
+  <li><b>Lightbox</b> — без изменений (API есть), но кнопка «Zur Fallstudie» показывается только при <code>w.project</code>.</li>
+</ul>
+
+<h3>D · Über uns — «Факты вместо портрета» (кому доверяю)</h3>
+<ul>
+  <li>Фото убрано (#8, сделано). Композиция: слева крупная цитата Артема с SVG-подписью (та же <code>.w-sig</code> из фильма — переиспользовать), справа таблица фактов (Rechtsform, UID, HR seit, Sitz, Sprachen, Einsatzgebiet) — <code>dl</code> с выравниванием значений, <code>tabular-nums</code>.</li>
+  <li>Далее: «Vier Versprechen» (с Lösungen), «Knigge» + «Im Festpreis inbegriffen» (с Home), «Eingetragen, eingehalten, einsehbar» (с Home). Страница становится единственным местом «правил игры».</li>
+  <li>Никаких стоковых фото «команды»; если появятся реальные фото бригады на объекте — секция «Auf der Baustelle» с 3 кадрами, не раньше.</li>
+</ul>
+
+<h3>Общие требования для всех четырёх</h3>
+<ul>
+  <li><b>Шапка страницы</b> (<code>pageHead</code>) — разная по форме: A — заголовок + короткий индекс-оглавление; B — заголовок + сегмент-контрол; C — заголовок + счётчик «{N} Arbeiten · {M} Fallstudien»; D — цитата вместо заголовка.</li>
+  <li><b>Фото.</b> Текущие JPG неровные по свету; до появления новых — единый пресет из 3.1 и обрезка 3:2 / 4:3 по правилам (без «во весь экран одна картинка»). Новые фото — раздел 4.</li>
+  <li><b>Компоненты из библиотек.</b> 21st.dev / shadcn здесь неприменимы напрямую (сайт без React/Tailwind); брать оттуда только <em>паттерны</em>: segmented control, sticky index, bento hover — реализовать на существующем CSS. Не тащить зависимостей.</li>
+  <li><b>Все ссылки внутри — через <code>data-go</code></b> (делегированный роутер), новых обработчиков не плодить.</li>
+  <li><b>Приёмка:</b> четыре страницы визуально различимы на миниатюре 200 px; ни одного блока выше 100vh без интерактива; ни одного дубля с Home.</li>
+</ul>
+</div>
+
+<h2 id="m6">3.6 · Открывающий клип и производительность <span class="pill spec">ТЗ</span></h2>
+<div class="spec">
+<p>Патч из раздела 2 закрывает баг. Ниже — как сделать, чтобы интро не приходилось пропускать вообще.</p>
+<ol>
+  <li><b>Интро как видео.</b> 64 WebP (2.3 МБ, 64 запроса) → один <code>img/film/intro.webm</code> (VP9, 1280×720, ~350–450 КБ, 8 fps → перекодировать в 24 fps с интерполяцией из исходного клипа C1 в <code>film/src</code>) + <code>intro.mp4</code> (H.264) для Safari. Проигрывание: скрытый <code>&lt;video muted playsinline preload="auto"&gt;</code>, кадры на тот же canvas через <code>drawImage(video)</code> → ни одной строки в остальной механике не меняется; по <code>ended</code> — <code>finish()</code>. Тот же приём применим к 6 проездам в v8 (12 клипов с обратными версиями ≈ 4 МБ вместо 22 МБ кадров, и память ≈ 0).</li>
+  <li><b>Очередь загрузки.</b> <code>&lt;link rel="preload" as="video"&gt;</code> для интро; постеры <code>.w-still</code> (7 × 810×1440) — <code>loading="lazy"</code> кроме первого; <code>.w-room img</code> — lazy все; шрифты — <code>font-display: swap</code> уже есть.</li>
+  <li><b>Длинная задача при старте</b> (650 мс): <code>content-visibility:auto; contain-intrinsic-size: 1px 1200px</code> на все <code>.w-sheet</code>; marquee-клонирование и <code>worksInit</code> — в <code>requestIdleCallback</code>; ScrollTrigger'ы листов создавать лениво (IntersectionObserver на первый лист).</li>
+  <li><b>Preloader</b>: снимать по первому кадру, не по таймеру 1.8 с — уже так, но добавить минимум 400 мс показа, чтобы не мигал.</li>
+</ol>
+<p>Приёмка: LCP ≤ 2.0 с на throttled «Fast 3G / CPU ×4», интро стартует без пропуска в 95 % запусков на 10 Мбит/с.</p>
+</div>
+
+<h2 id="s4">4 · Что заблокировано на человеке</h2>
+<ul class="tasks">
+  <li><span class="cb"></span><span><b>Решить, какой сайт — продакшн.</b><span class="sub">www.baustern.ch отдаёт Next.js/Vercel-версию, эта сборка — на Netlify. Нужны доступы к DNS/Vercel/Netlify и решение владельца. Без этого v8 некуда выкатывать.</span></span><span class="own">владелец</span></li>
+  <li><span class="cb"></span><span><b>Утвердить палитру и эскиз логотипа</b> (3.1, 3.2) — цвет «Stern» в вордмарке, форма знака.<span class="sub">После утверждения: отрисовка в кривых, экспорт favicon/OG/PNG для писем.</span></span><span class="own">владелец</span></li>
+  <li><span class="cb"></span><span><b>Обновить логотип во внешних профилях</b> — Google Business, Renovero, KnowS, NeedHelp.<span class="sub">Требует входа в аккаунты (2FA) — делает человек, файлы подготовит исполнитель.</span></span><span class="own">владелец</span></li>
+  <li><span class="cb"></span><span><b>Фото.</b> Для Leistungen/Referenzen нужны 8–12 новых кадров реальных объектов при дневном свете (по одному «герою» на Gewerk + 2 процесса).<span class="sub">Пока — единый цветовой пресет на существующие 33 файла (3.1).</span></span><span class="own">Артем / фотограф</span></li>
+  <li><span class="cb"></span><span><b>Исходный клип C1 и остальные проезды</b> (папка <code>film/src</code>) для перекодирования в WebM 24 fps (3.6).<span class="sub">Если исходников больше нет — генерировать из существующих 8 fps кадров с интерполяцией (RIFE/ffmpeg minterpolate), качество ниже.</span></span><span class="own">владелец</span></li>
+</ul>
+
+<h2 id="s5">5 · Приёмка и тест-план</h2>
+<p>Скрипты лежат рядом с проектом: <code>verify-fixes.js</code> (сценарии ниже), <code>axe-scan.js</code>, <code>crawl.js</code>. Запуск: <code>node static-srv.js &amp;&amp; node verify-fixes.js</code>. Ожидаемые значения — из фактических прогонов после патчей.</p>
+<div class="tw"><table>
+<tr><th>Сценарий</th><th>Проверка</th><th>Факт после патча</th></tr>
+<tr><td>Интро при загрузке</td><td>кадры монотонно 0→63, ни одного обратного прыжка, остановки ≤ 170 мс (кроме ожидания сети)</td><td>backwardJumps: 0; stalls: 155 / 165 мс</td></tr>
+<tr><td>Точки 3 → 1 → 6 → 0</td><td>scene = индекс точки, ovShow = true, is-driving = false</td><td>3/255 · 1/127 · 6/383 · 0/63 ✓</td></tr>
+<tr><td>Скролл вверх из комнаты 3</td><td>≥ 8 промежуточных кадров за проезд</td><td>14 ✓</td></tr>
+<tr><td>Колесом до самого верха</td><td>scene 0, заголовок и хотспоты видны</td><td>✓</td></tr>
+<tr><td>Leistungen → логотип → Home</td><td>заголовок виден ≤ 2.5 с, интро не повторяется</td><td>1.6 с ✓</td></tr>
+<tr><td>Nav над светлым кадром</td><td>контраст вордмарки ≥ 3 : 1 на любом кадре при scrollY ≤ 40</td><td>градиент .62 → ✓ (визуально)</td></tr>
+<tr><td>Регрессия</td><td><code>crawl.js</code>: 0 console errors, все роуты 200, формы привязаны</td><td>прогнать после мержа</td></tr>
+</table></div>
+<p style="margin-top:34px;color:var(--muted);font-size:13.5px">Источники для ориентиров по разделам: подборки Awwwards (Architecture / Business), обзоры сервис-страниц Huemor и строительных сайтов Nover; motion-справочник ui-ux-pro-max (pin/scrub, auto-rotation controls, reduced motion); аудит-чеклист redesign-existing-projects. Все решения адаптированы под существующий стек без новых зависимостей.</p>
+</div>

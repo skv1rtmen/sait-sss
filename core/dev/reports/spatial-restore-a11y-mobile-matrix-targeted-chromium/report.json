@@ -1,0 +1,73 @@
+{
+  "summary": {
+    "engine": "chromium",
+    "profiles": 1,
+    "routes": 1,
+    "checked": 1,
+    "failed": 0,
+    "interactionFailures": [],
+    "smallTargets": []
+  },
+  "rows": [
+    {
+      "width": 390,
+      "height": 844,
+      "route": "home",
+      "top": {
+        "overflow": false,
+        "wide": [],
+        "small": [],
+        "inputs": [],
+        "pages": 1,
+        "h1": 1,
+        "broken": [],
+        "motion": "native"
+      },
+      "axe": [],
+      "middle": {
+        "overflow": false,
+        "wide": [],
+        "small": [],
+        "inputs": [],
+        "pages": 1,
+        "h1": 1,
+        "broken": [],
+        "motion": "native"
+      },
+      "bottom": {
+        "overflow": false,
+        "wide": [],
+        "small": [],
+        "inputs": [],
+        "pages": 1,
+        "h1": 1,
+        "broken": [],
+        "motion": "native"
+      },
+      "errors": [],
+      "http": [],
+      "ok": true
+    }
+  ],
+  "ui": [
+    {
+      "width": 390,
+      "height": 844,
+      "ok": true,
+      "menu": {
+        "open": true,
+        "inert": false,
+        "scrollable": false,
+        "clip": "none",
+        "body": "hidden"
+      },
+      "callback": {
+        "top": 451.625,
+        "bottom": 828,
+        "vh": 844,
+        "font": "16px",
+        "overflow": "hidden"
+      }
+    }
+  ]
+}

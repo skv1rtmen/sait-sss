@@ -1,0 +1,180 @@
+{
+ "fps": 60,
+ "dur": 3,
+ "clips": {
+  "ankunft-schwelle-L": {
+   "dur": 3,
+   "w": 1920,
+   "h": 1080,
+   "fps": 60,
+   "kb": 6607,
+   "revDur": 3,
+   "liteKb": 1655
+  },
+  "ankunft-schwelle-P": {
+   "dur": 3,
+   "w": 1080,
+   "h": 1920,
+   "fps": 60,
+   "kb": 7243,
+   "revDur": 3,
+   "liteKb": 1846
+  },
+  "schwelle-kueche-L": {
+   "dur": 3,
+   "w": 1920,
+   "h": 1080,
+   "fps": 60,
+   "kb": 5881,
+   "revDur": 3,
+   "liteKb": 1545
+  },
+  "schwelle-kueche-P": {
+   "dur": 3,
+   "w": 1080,
+   "h": 1920,
+   "fps": 60,
+   "kb": 5388,
+   "revDur": 3,
+   "liteKb": 1341
+  },
+  "kueche-bad-L": {
+   "dur": 3,
+   "w": 1920,
+   "h": 1080,
+   "fps": 60,
+   "kb": 5896,
+   "revDur": 3,
+   "liteKb": 1314
+  },
+  "kueche-bad-P": {
+   "dur": 3,
+   "w": 1080,
+   "h": 1920,
+   "fps": 60,
+   "kb": 5332,
+   "revDur": 3,
+   "liteKb": 1193
+  },
+  "bad-schlaf-L": {
+   "dur": 3,
+   "w": 1920,
+   "h": 1080,
+   "fps": 60,
+   "kb": 5506,
+   "revDur": 3,
+   "liteKb": 1199
+  },
+  "bad-schlaf-P": {
+   "dur": 3,
+   "w": 1080,
+   "h": 1920,
+   "fps": 60,
+   "kb": 3997,
+   "revDur": 3,
+   "liteKb": 962
+  },
+  "schlaf-wohnen-L": {
+   "dur": 3,
+   "w": 1920,
+   "h": 1080,
+   "fps": 60,
+   "kb": 5734,
+   "revDur": 3,
+   "liteKb": 1385
+  },
+  "schlaf-wohnen-P": {
+   "dur": 3,
+   "w": 1080,
+   "h": 1920,
+   "fps": 60,
+   "kb": 6270,
+   "revDur": 3,
+   "liteKb": 1351
+  },
+  "wohnen-eingang-L": {
+   "dur": 3,
+   "w": 1920,
+   "h": 1080,
+   "fps": 60,
+   "kb": 5132,
+   "revDur": 3,
+   "liteKb": 1303
+  },
+  "wohnen-eingang-P": {
+   "dur": 3,
+   "w": 1080,
+   "h": 1920,
+   "fps": 60,
+   "kb": 4817,
+   "revDur": 3,
+   "liteKb": 1336
+  }
+ },
+ "stills": {
+  "ankunft-L": {
+   "w": 1920,
+   "h": 1080
+  },
+  "ankunft-P": {
+   "w": 1080,
+   "h": 1920
+  },
+  "bad-L": {
+   "w": 1920,
+   "h": 1080
+  },
+  "bad-P": {
+   "w": 1080,
+   "h": 1920
+  },
+  "eingang-L": {
+   "w": 1920,
+   "h": 1080
+  },
+  "eingang-P": {
+   "w": 1080,
+   "h": 1920
+  },
+  "kueche-L": {
+   "w": 1920,
+   "h": 1080
+  },
+  "kueche-P": {
+   "w": 1080,
+   "h": 1920
+  },
+  "schlaf-L": {
+   "w": 1920,
+   "h": 1080
+  },
+  "schlaf-P": {
+   "w": 1080,
+   "h": 1920
+  },
+  "schwelle-L": {
+   "w": 1920,
+   "h": 1080
+  },
+  "schwelle-P": {
+   "w": 1080,
+   "h": 1920
+  },
+  "wohnen-L": {
+   "w": 1920,
+   "h": 1080
+  },
+  "wohnen-P": {
+   "w": 1080,
+   "h": 1920
+  },
+  "wohnen-rohbau-L": {
+   "w": 1920,
+   "h": 1080
+  },
+  "wohnen-rohbau-P": {
+   "w": 1080,
+   "h": 1920
+  }
+ }
+}

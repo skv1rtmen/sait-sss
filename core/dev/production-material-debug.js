@@ -1,0 +1,6 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();try{const p=await b.newPage({viewport:{width:1440,height:900}}),http=[],errors=[];p.on('response',r=>{if(r.status()>=400||r.url().includes('/mat'))http.push({status:r.status(),url:r.url()});});p.on('pageerror',e=>errors.push(e.message));await p.goto('https://leafy-bublanina-48b840.netlify.app/?nolenis');await p.waitForTimeout(7000);
+console.log('start',await p.evaluate(()=>({mode:Film.mode(),scene:wohnung.dataset.scene,classes:wohnung.className,ready:document.readyState,gsap:!!window.gsap})));
+await p.evaluate(()=>{const r=document.querySelectorAll('.w-room')[5];scrollTo(0,r.getBoundingClientRect().top+scrollY+r.offsetHeight*(.45+.55*.3));ScrollTrigger.update();});await p.waitForTimeout(5000);
+console.log('end',await p.evaluate(()=>({mode:Film.mode(),scene:wohnung.dataset.scene,renderer:wohnung.dataset.materialRenderer,classes:wohnung.className,doms:[...document.querySelectorAll('.w-material')].map(e=>({hidden:e.hidden,imgs:e.querySelectorAll('img').length})),cfg:FILM.scenes[5].mat,debug:__filmDebug.mat(),scroll:scrollY})));console.log({http,errors});await p.screenshot({path:'reports/production-material-debug.png'});
+}finally{await b.close();}})();

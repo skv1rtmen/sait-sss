@@ -1,0 +1,53 @@
+[
+  {
+    "width": 320,
+    "passed": true,
+    "submittedOnlyToMock": 2,
+    "photoTarget": {
+      "x": 182.953125,
+      "y": 566.03125,
+      "width": 44,
+      "height": 44
+    },
+    "comparison": {
+      "before": 0.5,
+      "after": 0.3
+    },
+    "routeCycles": 5,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "passed": true,
+    "submittedOnlyToMock": 2,
+    "photoTarget": {
+      "x": 182.953125,
+      "y": 980.53125,
+      "width": 44,
+      "height": 44
+    },
+    "comparison": {
+      "before": 0.5,
+      "after": 0.3
+    },
+    "routeCycles": 5,
+    "errors": []
+  },
+  {
+    "width": 430,
+    "passed": true,
+    "submittedOnlyToMock": 2,
+    "photoTarget": {
+      "x": 182.953125,
+      "y": 980.53125,
+      "width": 44,
+      "height": 44
+    },
+    "comparison": {
+      "before": 0.5,
+      "after": 0.3
+    },
+    "routeCycles": 5,
+    "errors": []
+  }
+]

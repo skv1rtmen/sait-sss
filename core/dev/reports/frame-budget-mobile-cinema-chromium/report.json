@@ -1,0 +1,1214 @@
+[
+  {
+    "width": 320,
+    "height": 568,
+    "initial": {
+      "mode": "lite",
+      "motion": "native",
+      "videoOn": true,
+      "currentTime": 0.171331,
+      "src": "http://localhost:8099/img/film/m3p/intro.mp4",
+      "details": 3
+    },
+    "scenes": [
+      {
+        "scene": 0,
+        "title": "Bauen mit System und Vertrauen.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 351.15625,
+          "bottom": 415
+        },
+        "titleOverlapsDetails": false,
+        "vh": 568,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 1,
+        "title": "Sechs Gewerke. Ein Ansprechpartner.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 6,
+        "overflow": false,
+        "titleRect": {
+          "top": 343.15625,
+          "bottom": 407
+        },
+        "titleOverlapsDetails": false,
+        "vh": 568,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 2,
+        "title": "Bad und Leitungen, SIA-konform.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 364.15625,
+          "bottom": 428
+        },
+        "titleOverlapsDetails": false,
+        "vh": 568,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 3,
+        "title": "Zum Schluss die Oberfläche.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 364.15625,
+          "bottom": 428
+        },
+        "titleOverlapsDetails": false,
+        "vh": 568,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 4,
+        "title": "Renovation aus einer Hand.",
+        "titleOpacity": 0.999,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 263.15625,
+          "bottom": 327
+        },
+        "titleOverlapsDetails": false,
+        "vh": 568,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 5,
+        "title": "So hat es angefangen.",
+        "titleOpacity": 0.998,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 333.15625,
+          "bottom": 397
+        },
+        "titleOverlapsDetails": false,
+        "vh": 568,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 6,
+        "title": "Abnahme. Schlüsselübergabe.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 2,
+        "overflow": false,
+        "titleRect": {
+          "top": 281.15625,
+          "bottom": 345
+        },
+        "titleOverlapsDetails": false,
+        "vh": 568,
+        "videoOn": false,
+        "controls": true
+      }
+    ],
+    "errors": [],
+    "failed": [],
+    "comparison": 0.55
+  },
+  {
+    "width": 360,
+    "height": 640,
+    "initial": {
+      "mode": "lite",
+      "motion": "native",
+      "videoOn": true,
+      "currentTime": 0.1694,
+      "src": "http://localhost:8099/img/film/m3p/intro.mp4",
+      "details": 3
+    },
+    "scenes": [
+      {
+        "scene": 0,
+        "title": "Bauen mit System und Vertrauen.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 423.15625,
+          "bottom": 487
+        },
+        "titleOverlapsDetails": false,
+        "vh": 640,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 1,
+        "title": "Sechs Gewerke. Ein Ansprechpartner.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 6,
+        "overflow": false,
+        "titleRect": {
+          "top": 436.15625,
+          "bottom": 500
+        },
+        "titleOverlapsDetails": false,
+        "vh": 640,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 2,
+        "title": "Bad und Leitungen, SIA-konform.",
+        "titleOpacity": 0.999,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 436.15625,
+          "bottom": 500
+        },
+        "titleOverlapsDetails": false,
+        "vh": 640,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 3,
+        "title": "Zum Schluss die Oberfläche.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 436.15625,
+          "bottom": 500
+        },
+        "titleOverlapsDetails": false,
+        "vh": 640,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 4,
+        "title": "Renovation aus einer Hand.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 355.15625,
+          "bottom": 419
+        },
+        "titleOverlapsDetails": false,
+        "vh": 640,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 5,
+        "title": "So hat es angefangen.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 457.078125,
+          "bottom": 489
+        },
+        "titleOverlapsDetails": false,
+        "vh": 640,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 6,
+        "title": "Abnahme. Schlüsselübergabe.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 2,
+        "overflow": false,
+        "titleRect": {
+          "top": 352.15625,
+          "bottom": 416
+        },
+        "titleOverlapsDetails": false,
+        "vh": 640,
+        "videoOn": false,
+        "controls": true
+      }
+    ],
+    "errors": [],
+    "failed": [],
+    "comparison": 0.55
+  },
+  {
+    "width": 375,
+    "height": 667,
+    "initial": {
+      "mode": "lite",
+      "motion": "native",
+      "videoOn": true,
+      "currentTime": 0.156441,
+      "src": "http://localhost:8099/img/film/m3p/intro.mp4",
+      "details": 3
+    },
+    "scenes": [
+      {
+        "scene": 0,
+        "title": "Bauen mit System und Vertrauen.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 450.15625,
+          "bottom": 514
+        },
+        "titleOverlapsDetails": false,
+        "vh": 667,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 1,
+        "title": "Sechs Gewerke. Ein Ansprechpartner.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 6,
+        "overflow": false,
+        "titleRect": {
+          "top": 463.15625,
+          "bottom": 527
+        },
+        "titleOverlapsDetails": false,
+        "vh": 667,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 2,
+        "title": "Bad und Leitungen, SIA-konform.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 463.15625,
+          "bottom": 527
+        },
+        "titleOverlapsDetails": false,
+        "vh": 667,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 3,
+        "title": "Zum Schluss die Oberfläche.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 463.15625,
+          "bottom": 527
+        },
+        "titleOverlapsDetails": false,
+        "vh": 667,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 4,
+        "title": "Renovation aus einer Hand.",
+        "titleOpacity": 0.999,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 381.15625,
+          "bottom": 445
+        },
+        "titleOverlapsDetails": false,
+        "vh": 667,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 5,
+        "title": "So hat es angefangen.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 483.078125,
+          "bottom": 515
+        },
+        "titleOverlapsDetails": false,
+        "vh": 667,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 6,
+        "title": "Abnahme. Schlüsselübergabe.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 2,
+        "overflow": false,
+        "titleRect": {
+          "top": 378.15625,
+          "bottom": 442
+        },
+        "titleOverlapsDetails": false,
+        "vh": 667,
+        "videoOn": false,
+        "controls": true
+      }
+    ],
+    "errors": [],
+    "failed": [],
+    "comparison": 0.55
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "initial": {
+      "mode": "lite",
+      "motion": "native",
+      "videoOn": true,
+      "currentTime": 0.153983,
+      "src": "http://localhost:8099/img/film/m3p/intro.mp4",
+      "details": 3
+    },
+    "scenes": [
+      {
+        "scene": 0,
+        "title": "Bauen mit System und Vertrauen.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 434.125,
+          "bottom": 508
+        },
+        "titleOverlapsDetails": false,
+        "vh": 844,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 1,
+        "title": "Sechs Gewerke. Ein Ansprechpartner.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 6,
+        "overflow": false,
+        "titleRect": {
+          "top": 621.125,
+          "bottom": 695
+        },
+        "titleOverlapsDetails": false,
+        "vh": 844,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 2,
+        "title": "Bad und Leitungen, SIA-konform.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 621.125,
+          "bottom": 695
+        },
+        "titleOverlapsDetails": false,
+        "vh": 844,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 3,
+        "title": "Zum Schluss die Oberfläche.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 621.125,
+          "bottom": 695
+        },
+        "titleOverlapsDetails": false,
+        "vh": 844,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 4,
+        "title": "Renovation aus einer Hand.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 536.125,
+          "bottom": 610
+        },
+        "titleOverlapsDetails": false,
+        "vh": 844,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 5,
+        "title": "So hat es angefangen.",
+        "titleOpacity": 0.999,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 643.0625,
+          "bottom": 680
+        },
+        "titleOverlapsDetails": false,
+        "vh": 844,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 6,
+        "title": "Abnahme. Schlüsselübergabe.",
+        "titleOpacity": 0.999,
+        "descriptionOpacity": 1,
+        "details": 2,
+        "overflow": false,
+        "titleRect": {
+          "top": 533.125,
+          "bottom": 607
+        },
+        "titleOverlapsDetails": false,
+        "vh": 844,
+        "videoOn": false,
+        "controls": true
+      }
+    ],
+    "errors": [],
+    "failed": [],
+    "comparison": 0.55
+  },
+  {
+    "width": 393,
+    "height": 852,
+    "initial": {
+      "mode": "lite",
+      "motion": "native",
+      "videoOn": true,
+      "currentTime": 0.154203,
+      "src": "http://localhost:8099/img/film/m3p/intro.mp4",
+      "details": 3
+    },
+    "scenes": [
+      {
+        "scene": 0,
+        "title": "Bauen mit System und Vertrauen.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 441.53125,
+          "bottom": 516
+        },
+        "titleOverlapsDetails": false,
+        "vh": 852,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 1,
+        "title": "Sechs Gewerke. Ein Ansprechpartner.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 6,
+        "overflow": false,
+        "titleRect": {
+          "top": 628.53125,
+          "bottom": 703
+        },
+        "titleOverlapsDetails": false,
+        "vh": 852,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 2,
+        "title": "Bad und Leitungen, SIA-konform.",
+        "titleOpacity": 0.999,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 628.53125,
+          "bottom": 703
+        },
+        "titleOverlapsDetails": false,
+        "vh": 852,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 3,
+        "title": "Zum Schluss die Oberfläche.",
+        "titleOpacity": 0.999,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 628.53125,
+          "bottom": 703
+        },
+        "titleOverlapsDetails": false,
+        "vh": 852,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 4,
+        "title": "Renovation aus einer Hand.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 543.53125,
+          "bottom": 618
+        },
+        "titleOverlapsDetails": false,
+        "vh": 852,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 5,
+        "title": "So hat es angefangen.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 650.765625,
+          "bottom": 688
+        },
+        "titleOverlapsDetails": false,
+        "vh": 852,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 6,
+        "title": "Abnahme. Schlüsselübergabe.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 2,
+        "overflow": false,
+        "titleRect": {
+          "top": 540.53125,
+          "bottom": 615
+        },
+        "titleOverlapsDetails": false,
+        "vh": 852,
+        "videoOn": false,
+        "controls": true
+      }
+    ],
+    "errors": [],
+    "failed": [],
+    "comparison": 0.55
+  },
+  {
+    "width": 412,
+    "height": 915,
+    "initial": {
+      "mode": "lite",
+      "motion": "native",
+      "videoOn": true,
+      "currentTime": 0.154731,
+      "src": "http://localhost:8099/img/film/m3p/intro.mp4",
+      "details": 3
+    },
+    "scenes": [
+      {
+        "scene": 0,
+        "title": "Bauen mit System und Vertrauen.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 500.9375,
+          "bottom": 579
+        },
+        "titleOverlapsDetails": false,
+        "vh": 915,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 1,
+        "title": "Sechs Gewerke. Ein Ansprechpartner.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 6,
+        "overflow": false,
+        "titleRect": {
+          "top": 687.9375,
+          "bottom": 766
+        },
+        "titleOverlapsDetails": false,
+        "vh": 915,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 2,
+        "title": "Bad und Leitungen, SIA-konform.",
+        "titleOpacity": 0.999,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 687.9375,
+          "bottom": 766
+        },
+        "titleOverlapsDetails": false,
+        "vh": 915,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 3,
+        "title": "Zum Schluss die Oberfläche.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 687.9375,
+          "bottom": 766
+        },
+        "titleOverlapsDetails": false,
+        "vh": 915,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 4,
+        "title": "Renovation aus einer Hand.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 601.9375,
+          "bottom": 680
+        },
+        "titleOverlapsDetails": false,
+        "vh": 915,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 5,
+        "title": "So hat es angefangen.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 710.96875,
+          "bottom": 750
+        },
+        "titleOverlapsDetails": false,
+        "vh": 915,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 6,
+        "title": "Abnahme. Schlüsselübergabe.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 2,
+        "overflow": false,
+        "titleRect": {
+          "top": 598.9375,
+          "bottom": 677
+        },
+        "titleOverlapsDetails": false,
+        "vh": 915,
+        "videoOn": false,
+        "controls": true
+      }
+    ],
+    "errors": [],
+    "failed": [],
+    "comparison": 0.55
+  },
+  {
+    "width": 430,
+    "height": 932,
+    "initial": {
+      "mode": "lite",
+      "motion": "native",
+      "videoOn": true,
+      "currentTime": 0.155234,
+      "src": "http://localhost:8099/img/film/m3p/intro.mp4",
+      "details": 3
+    },
+    "scenes": [
+      {
+        "scene": 0,
+        "title": "Bauen mit System und Vertrauen.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 514.53125,
+          "bottom": 596
+        },
+        "titleOverlapsDetails": false,
+        "vh": 932,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 1,
+        "title": "Sechs Gewerke. Ein Ansprechpartner.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 6,
+        "overflow": false,
+        "titleRect": {
+          "top": 701.53125,
+          "bottom": 783
+        },
+        "titleOverlapsDetails": false,
+        "vh": 932,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 2,
+        "title": "Bad und Leitungen, SIA-konform.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 701.53125,
+          "bottom": 783
+        },
+        "titleOverlapsDetails": false,
+        "vh": 932,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 3,
+        "title": "Zum Schluss die Oberfläche.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 701.53125,
+          "bottom": 783
+        },
+        "titleOverlapsDetails": false,
+        "vh": 932,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 4,
+        "title": "Renovation aus einer Hand.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 615.53125,
+          "bottom": 697
+        },
+        "titleOverlapsDetails": false,
+        "vh": 932,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 5,
+        "title": "So hat es angefangen.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 726.265625,
+          "bottom": 767
+        },
+        "titleOverlapsDetails": false,
+        "vh": 932,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 6,
+        "title": "Abnahme. Schlüsselübergabe.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 2,
+        "overflow": false,
+        "titleRect": {
+          "top": 612.53125,
+          "bottom": 694
+        },
+        "titleOverlapsDetails": false,
+        "vh": 932,
+        "videoOn": false,
+        "controls": true
+      }
+    ],
+    "errors": [],
+    "failed": [],
+    "comparison": 0.55
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "initial": {
+      "mode": "lite",
+      "motion": "native",
+      "videoOn": true,
+      "currentTime": 0.158139,
+      "src": "http://localhost:8099/img/film/m3/intro.mp4",
+      "details": 3
+    },
+    "scenes": [
+      {
+        "scene": 0,
+        "title": "Bauen mit System und Vertrauen.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 512.78125,
+          "bottom": 624
+        },
+        "titleOverlapsDetails": false,
+        "vh": 1024,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 1,
+        "title": "Sechs Gewerke. Ein Ansprechpartner.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 6,
+        "overflow": false,
+        "titleRect": {
+          "top": 738.78125,
+          "bottom": 850
+        },
+        "titleOverlapsDetails": false,
+        "vh": 1024,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 2,
+        "title": "Bad und Leitungen, SIA-konform.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 738.78125,
+          "bottom": 850
+        },
+        "titleOverlapsDetails": false,
+        "vh": 1024,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 3,
+        "title": "Zum Schluss die Oberfläche.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 764.28125,
+          "bottom": 875.5
+        },
+        "titleOverlapsDetails": false,
+        "vh": 1024,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 4,
+        "title": "Renovation aus einer Hand.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 650.78125,
+          "bottom": 762
+        },
+        "titleOverlapsDetails": false,
+        "vh": 1024,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 5,
+        "title": "So hat es angefangen.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 776.390625,
+          "bottom": 832
+        },
+        "titleOverlapsDetails": false,
+        "vh": 1024,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 6,
+        "title": "Abnahme. Schlüsselübergabe.",
+        "titleOpacity": 0.999,
+        "descriptionOpacity": 1,
+        "details": 2,
+        "overflow": false,
+        "titleRect": {
+          "top": 647.78125,
+          "bottom": 759
+        },
+        "titleOverlapsDetails": false,
+        "vh": 1024,
+        "videoOn": false,
+        "controls": true
+      }
+    ],
+    "errors": [],
+    "failed": [],
+    "comparison": 0.55
+  },
+  {
+    "width": 812,
+    "height": 375,
+    "initial": {
+      "mode": "lite",
+      "motion": "native",
+      "videoOn": true,
+      "currentTime": 0.158712,
+      "src": "http://localhost:8099/img/film/m3/intro.mp4",
+      "details": 3
+    },
+    "scenes": [
+      {
+        "scene": 0,
+        "title": "Bauen mit System und Vertrauen.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 179.6875,
+          "bottom": 239.40625
+        },
+        "titleOverlapsDetails": false,
+        "vh": 375,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 1,
+        "title": "Sechs Gewerke. Ein Ansprechpartner.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 6,
+        "overflow": false,
+        "titleRect": {
+          "top": 243.6875,
+          "bottom": 303.40625
+        },
+        "titleOverlapsDetails": false,
+        "vh": 375,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 2,
+        "title": "Bad und Leitungen, SIA-konform.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 243.6875,
+          "bottom": 303.40625
+        },
+        "titleOverlapsDetails": false,
+        "vh": 375,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 3,
+        "title": "Zum Schluss die Oberfläche.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 290.34375,
+          "bottom": 320.203125
+        },
+        "titleOverlapsDetails": false,
+        "vh": 375,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 4,
+        "title": "Renovation aus einer Hand.",
+        "titleOpacity": 0.998,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 266.546875,
+          "bottom": 296.40625
+        },
+        "titleOverlapsDetails": false,
+        "vh": 375,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 5,
+        "title": "So hat es angefangen.",
+        "titleOpacity": 0.998,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 266.546875,
+          "bottom": 296.40625
+        },
+        "titleOverlapsDetails": false,
+        "vh": 375,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 6,
+        "title": "Abnahme. Schlüsselübergabe.",
+        "titleOpacity": 0.999,
+        "descriptionOpacity": 1,
+        "details": 2,
+        "overflow": false,
+        "titleRect": {
+          "top": 163.6875,
+          "bottom": 223.40625
+        },
+        "titleOverlapsDetails": false,
+        "vh": 375,
+        "videoOn": false,
+        "controls": true
+      }
+    ],
+    "errors": [],
+    "failed": [],
+    "comparison": 0.55
+  },
+  {
+    "fallback": "reduced",
+    "film": "plain",
+    "motion": "off",
+    "videos": 0,
+    "media": [],
+    "title": "BauStern — Bauunternehmen Zürich: Renovation, Sanitär, Umbau, Fliesen und Malerarbeiten aus einer Hand"
+  },
+  {
+    "fallback": "saveData",
+    "film": "lite",
+    "motion": "native",
+    "videos": 0,
+    "media": [
+      {
+        "src": "",
+        "time": 0,
+        "paused": true
+      }
+    ],
+    "title": "Bauen mit System und Vertrauen."
+  },
+  {
+    "fallback": "videoBlocked",
+    "film": "lite",
+    "motion": "native",
+    "videos": 0,
+    "media": [
+      {
+        "src": "http://localhost:8099/img/film/__qa_missing__/intro.mp4",
+        "time": 0,
+        "paused": true,
+        "error": 4
+      }
+    ],
+    "title": "Bauen mit System und Vertrauen."
+  },
+  {
+    "fallback": "autoplayBlocked",
+    "film": "lite",
+    "motion": "native",
+    "videos": 0,
+    "media": [
+      {
+        "src": "http://localhost:8099/img/film/m3p/intro.mp4",
+        "time": 0,
+        "paused": true
+      }
+    ],
+    "title": "Bauen mit System und Vertrauen."
+  }
+]

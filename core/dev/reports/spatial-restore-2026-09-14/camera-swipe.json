@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "width": 320,
+      "height": 667,
+      "scene": "1",
+      "covered": false,
+      "playing": false,
+      "scrollY": 1101,
+      "infoTop": 6602.828125
+    },
+    {
+      "width": 320,
+      "height": 667,
+      "scene": "2",
+      "covered": false,
+      "playing": false,
+      "scrollY": 2201,
+      "infoTop": 5502.828125
+    },
+    {
+      "width": 375,
+      "height": 667,
+      "scene": "1",
+      "covered": false,
+      "playing": false,
+      "scrollY": 1101,
+      "infoTop": 6602.828125
+    },
+    {
+      "width": 375,
+      "height": 667,
+      "scene": "2",
+      "covered": false,
+      "playing": false,
+      "scrollY": 2201,
+      "infoTop": 5502.828125
+    },
+    {
+      "width": 393,
+      "height": 852,
+      "scene": "1",
+      "covered": false,
+      "playing": false,
+      "scrollY": 1406,
+      "infoTop": 8434.578125
+    },
+    {
+      "width": 393,
+      "height": 852,
+      "scene": "2",
+      "covered": false,
+      "playing": false,
+      "scrollY": 2812,
+      "infoTop": 7028.578125
+    },
+    {
+      "width": 430,
+      "height": 852,
+      "scene": "1",
+      "covered": false,
+      "playing": false,
+      "scrollY": 1406,
+      "infoTop": 8434.578125
+    },
+    {
+      "width": 430,
+      "height": 852,
+      "scene": "2",
+      "covered": false,
+      "playing": false,
+      "scrollY": 2812,
+      "infoTop": 7028.578125
+    }
+  ]
+}

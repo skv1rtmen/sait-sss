@@ -1,0 +1,21 @@
+{
+  "execution": "33833",
+  "status": "success",
+  "nodes": {
+    "Bestaetigung Bauen": {
+      "status": "success",
+      "subject": "Ihre BauStern Referenzmappe (WEB-260912-007)",
+      "pdfLink": "https://6aa51d0bd68ee8cb661753eb--leafy-bublanina-48b840.netlify.app/downloads/baustern-referenzen-v1.pdf"
+    },
+    "Bestaetigung Senden": {
+      "status": "success",
+      "sent": true,
+      "messageId": "1a09500309ed3cc5"
+    },
+    "TG Senden": {
+      "status": "success",
+      "ok": true,
+      "messageId": 2210
+    }
+  }
+}

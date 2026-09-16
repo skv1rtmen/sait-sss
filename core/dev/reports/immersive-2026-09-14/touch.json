@@ -1,0 +1,51 @@
+{
+  "base": "http://localhost:8099",
+  "passed": true,
+  "rows": [
+    {
+      "width": 320,
+      "height": 568,
+      "pan": true,
+      "reverse": true,
+      "stationaryCopy": true,
+      "oneRoomSwipe": true,
+      "finalExit": true
+    },
+    {
+      "mixedTouchKeyboardMouse": true
+    },
+    {
+      "width": 375,
+      "height": 667,
+      "pan": true,
+      "reverse": true,
+      "stationaryCopy": true,
+      "oneRoomSwipe": true,
+      "finalExit": true
+    },
+    {
+      "width": 393,
+      "height": 852,
+      "pan": true,
+      "reverse": true,
+      "stationaryCopy": true,
+      "oneRoomSwipe": true,
+      "finalExit": true
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "pan": true,
+      "reverse": true,
+      "stationaryCopy": true,
+      "oneRoomSwipe": true,
+      "finalExit": true
+    },
+    {
+      "engine": "webkit",
+      "safeAreaTop": 47,
+      "safeAreaBottom": 34,
+      "cta": true
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "working",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "node verify-static.js",
+    "build": "node build.js",
+    "test": "node jsdom-smoke.js",
+    "test:mobile": "node mobile-cinema-test.js",
+    "test:matrix": "node mobile-matrix-test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fontsource/instrument-sans": "^5.3.0",
+    "@fontsource/space-grotesk": "^5.3.0",
+    "gsap": "^3.12.5",
+    "playwright": "^1.62.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "jsdom": "^30.0.1",
+    "lighthouse": "^13.4.1",
+    "postcss": "^8.5.28",
+    "sharp": "^0.35.4"
+  }
+}

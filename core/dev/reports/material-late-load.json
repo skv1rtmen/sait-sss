@@ -1,0 +1,6 @@
+{
+  "base": "http://localhost:8099",
+  "delayedRequests": 7,
+  "wakeWithoutInput": true,
+  "errors": []
+}

@@ -1,0 +1,21 @@
+const {chromium}=require('playwright'),fs=require('fs'),path=require('path'),crypto=require('crypto');
+const BASE=process.env.BASE;if(!BASE)throw Error('BASE required');
+const root=path.resolve(__dirname,'../../site'),out=path.join(__dirname,'reports');
+const assert=(ok,msg)=>{if(!ok)throw Error(msg);};
+(async()=>{const routes=JSON.parse(fs.readFileSync(path.join(root,'_tools/prerender-report.json'),'utf8')),http=[];
+ for(let i=0;i<routes.length;i+=4)await Promise.all(routes.slice(i,i+4).map(async r=>{const res=await fetch(BASE+'/'+(r.route==='home'?'':r.route)),body=await res.text();const row={route:r.route,status:res.status,prerender:body.includes('<!--prerender:start-->'),mobileCSS:body.includes('css/mobile-ui.css'),viewport:body.includes('interactive-widget=resizes-content')};http.push(row);assert(res.ok&&row.prerender&&row.mobileCSS&&row.viewport,'Route/shell mismatch '+r.route);}));
+ const assets=[];for(const name of ['img/film/m3p/intro.mp4','img/film/m3p/c2-flur.fwd.mp4','img/film/m3/intro.mp4','img/film/s13/st0-p.webp','img/film/poster-v13.jpg']){const r=await fetch(BASE+'/'+name,{method:'HEAD'});const row={name,status:r.status,cache:r.headers.get('cache-control'),bytes:r.headers.get('content-length')};assets.push(row);assert(r.ok&&row.cache?.includes('immutable'),'Immutable asset '+name);}
+ const sourceHashes=[];for(const name of ['js/film-mobile.js','js/film.js','js/film-fx.js','js/data.js','js/pages.js','js/motion.js','js/app.js','css/mobile-ui.css','css/mobile-film.css','css/site.css','css/lightbox.css']){const r=await fetch(BASE+'/'+name),body=Buffer.from(await r.arrayBuffer());const hash=b=>crypto.createHash('sha256').update(b).digest('hex');const match=hash(body)===hash(fs.readFileSync(path.join(root,name)));sourceHashes.push({name,match});assert(match,'Deployed source stale '+name);}
+ const browser=await chromium.launch(),screens=[];
+ try{for(const [width,height]of [[320,568],[390,844],[430,932]]){const ctx=await browser.newContext({viewport:{width,height},isMobile:true,hasTouch:true,deviceScaleFactor:1});await ctx.route(/n8n\.baucrm\.net/,r=>r.fulfill({status:200,body:'{}'}));
+  const p=await ctx.newPage(),errors=[],requests=[];p.on('pageerror',e=>errors.push(e.message));p.on('request',r=>requests.push(r.url()));p.on('response',r=>{if(r.url().startsWith(BASE)&&r.status()>=400)errors.push(r.status()+' '+r.url());});
+  await p.addInitScript(()=>{window.__mobilePlays=[];document.addEventListener('playing',e=>{if(e.target.classList?.contains('m-film'))__mobilePlays.push(e.target.currentSrc);},true);});
+  await p.goto(BASE,{waitUntil:'load'});await p.waitForFunction(()=>window.__mobilePlays.length>0,null,{timeout:10000});await p.waitForTimeout(900);await p.screenshot({path:path.join(out,`release-mobile-${width}.png`)});
+  if(width===320){await p.locator('#burger').tap();await p.waitForTimeout(500);await p.screenshot({path:path.join(out,'release-mobile-menu.png')});await p.keyboard.press('Escape');}
+  await p.locator('.m-tour-next').tap();await p.waitForTimeout(3000);
+  const state=await p.evaluate(()=>({mode:Film.mode(),motion:Motion.mode(),scene:document.querySelector('#wohnung').dataset.scene,details:document.querySelectorAll('.m-detail').length,plays:__mobilePlays,overflow:document.documentElement.scrollWidth>innerWidth+1,badge:/Powered by Netlify/i.test(document.body.innerText)||!!document.querySelector('netlify-badge,#netlify-badge,[data-netlify-badge]')}));
+  assert(state.mode==='lite'&&state.motion==='native'&&state.scene==='1'&&state.details===6,'Mobile scene not deployed');assert(state.plays.some(s=>s.includes('/m3/c2-flur.fwd.mp4')),'Full-composition mobile flight not played');assert(!state.badge&&!state.overflow&&!errors.length,'Browser error/badge/overflow');
+  const old=requests.filter(s=>/\/img\/film\/(?:f|f2|f12|f12h|f12l|s9|s10|s11|s12|m1|m1p|m2|m2p|r1|mat|mat3|mat4)\/|\/img\/film\/poster(?:-v(?:10|11|12))?\.jpg/.test(s));assert(!old.length,'Legacy asset requests');screens.push({width,height,...state,errors,oldAssets:old});await ctx.close();
+ }}finally{await browser.close();}
+ const report={base:BASE,passed:true,http,assets,sourceHashes,screens};fs.writeFileSync(path.join(out,process.env.REPORT||'mobile-release-prod.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
+})().catch(e=>{console.error(e);process.exitCode=1;});

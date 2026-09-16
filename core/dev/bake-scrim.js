@@ -1,0 +1,4 @@
+const sharp=require('sharp'),path=require('path');
+(async()=>{const grad=(id,x1,y1,x2,y2,stops)=>`<linearGradient id="${id}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}">${stops.map(([p,a])=>`<stop offset="${p}%" stop-color="#1c1f22" stop-opacity="${a}"/>`).join('')}</linearGradient>`;
+const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900"><defs>${grad('a',0,1,0,0,[[0,.46],[30,.18],[58,0]])}${grad('b',0,0,1,0,[[0,.65],[26,.32],[57,0]])}${grad('c',0,0,0,1,[[0,.28],[18,0]])}</defs><path fill="url(#c)" d="M0 0h1440v900H0z"/><path fill="url(#b)" d="M0 0h1440v900H0z"/><path fill="url(#a)" d="M0 0h1440v900H0z"/></svg>`;
+const out=path.resolve(__dirname,'../../site/img/film/scrim-v13.webp');await sharp(Buffer.from(svg)).webp({lossless:true}).toFile(out);console.log(out);})();

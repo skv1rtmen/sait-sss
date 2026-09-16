@@ -1,0 +1,67 @@
+# ─────────────────────────────────────────────
+#  Репозиторий: код сайта + финальные видео v16
+#  Всё тяжёлое/регенерируемое — мимо гита
+# ─────────────────────────────────────────────
+
+# Рендер-пайплайн RIFE (регенерируется, ~5.2 ГБ)
+_work-rife/
+_work/
+_stage-film-rife/
+
+# rife-ncnn-vulkan — Windows-only бинарник, 860 МБ
+core/tools/
+
+# Сырьё для рендера, 717 МБ
+core/_incoming/
+
+# Архив старых версий, 229 МБ
+core/_legacy/
+core/_backup/
+
+# Старые webp-секвенции кадров (в коде не используются, 185 МБ)
+site/img/film/f13/
+site/img/film/f13h/
+site/img/film/f13l/
+site/img/film/f15/
+site/img/film/fp15/
+
+# Скриншоты Playwright-отчётов (1.48 ГБ, 2300 png — регенерируются прогоном тестов)
+# JSON-отчёты и .md остаются в репо.
+core/dev/reports/**/*.png
+core/dev/reports/**/*.jpg
+core/dev/reports/**/*.jpeg
+core/dev/reports/**/*.webp
+core/dev/_depth/
+
+# Локальные инструменты и деплой
+.netlify/
+.playwright-mcp/
+node_modules/
+.cache/
+dist/
+.vercel/
+
+# Логи и временное
+*.log
+core/dev/_*.txt
+tmp/
+temp/
+*.tmp
+
+# ОС и редакторы
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+desktop.ini
+*.swp
+.idea/
+.vscode/
+
+# Секреты
+.env
+.env.*
+!.env.example
+*.pem
+*.key

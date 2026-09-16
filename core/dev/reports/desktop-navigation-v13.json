@@ -1,0 +1,65 @@
+{
+  "rows": [
+    {
+      "scene": "1",
+      "frame": "191",
+      "heading": "Sechs Gewerke. Ein Ansprechpartner.",
+      "sig": true
+    },
+    {
+      "scene": "2",
+      "frame": "287",
+      "heading": "Bad und Leitungen, SIA-konform.",
+      "sig": true
+    },
+    {
+      "scene": "3",
+      "frame": "383",
+      "heading": "Zum Schluss die Oberfläche.",
+      "sig": true
+    },
+    {
+      "scene": "4",
+      "frame": "479",
+      "heading": "Renovation aus einer Hand.",
+      "sig": true
+    },
+    {
+      "scene": "5",
+      "frame": "479",
+      "heading": "So hat es angefangen.",
+      "sig": true
+    },
+    {
+      "scene": "6",
+      "frame": "575",
+      "heading": "Abnahme. Schlüsselübergabe.",
+      "sig": false
+    },
+    {
+      "scene": "4",
+      "frame": "479",
+      "heading": "Renovation aus einer Hand.",
+      "sig": true
+    },
+    {
+      "scene": "2",
+      "frame": "287",
+      "heading": "Bad und Leitungen, SIA-konform.",
+      "sig": true
+    },
+    {
+      "scene": "1",
+      "frame": "191",
+      "heading": "Sechs Gewerke. Ein Ansprechpartner.",
+      "sig": true
+    },
+    {
+      "scene": "0",
+      "frame": "95",
+      "heading": "Bauen mit System und Vertrauen.",
+      "sig": true
+    }
+  ],
+  "errors": []
+}

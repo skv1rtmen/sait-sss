@@ -1,0 +1,231 @@
+[
+  {
+    "width": 375,
+    "height": 667,
+    "initial": {
+      "mode": "lite",
+      "motion": "native",
+      "videoOn": true,
+      "currentTime": 0.159594,
+      "src": "http://localhost:8099/img/film/m3/intro.mp4",
+      "details": 3
+    },
+    "scenes": [
+      {
+        "scene": 0,
+        "title": "Bauen mit System und Vertrauen.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 385.5,
+          "bottom": 452.03125
+        },
+        "titleOverlapsDetails": false,
+        "vh": 667,
+        "videoOn": false,
+        "controls": true,
+        "playback": {
+          "on": false,
+          "time": 3.4,
+          "src": "http://localhost:8099/img/film/m3/intro.mp4",
+          "readyState": 4,
+          "startupMs": 8
+        }
+      },
+      {
+        "scene": 1,
+        "title": "Sechs Gewerke. Ein Ansprechpartner.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 6,
+        "overflow": false,
+        "titleRect": {
+          "top": 385.5,
+          "bottom": 452.03125
+        },
+        "titleOverlapsDetails": false,
+        "vh": 667,
+        "videoOn": false,
+        "controls": true,
+        "playback": {
+          "on": true,
+          "time": 0.013138,
+          "src": "http://localhost:8099/img/film/m3/c2-flur.fwd.mp4",
+          "readyState": 4,
+          "startupMs": 116
+        }
+      },
+      {
+        "scene": 2,
+        "title": "Bad und Leitungen, SIA-konform.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 385.5,
+          "bottom": 452.03125
+        },
+        "titleOverlapsDetails": false,
+        "vh": 667,
+        "videoOn": false,
+        "controls": true,
+        "playback": {
+          "on": true,
+          "time": 0.022165,
+          "src": "http://localhost:8099/img/film/m3/c3-bad.fwd.mp4",
+          "readyState": 4,
+          "startupMs": 122
+        }
+      },
+      {
+        "scene": 3,
+        "title": "Zum Schluss die Oberfläche.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 385.5,
+          "bottom": 452.03125
+        },
+        "titleOverlapsDetails": false,
+        "vh": 667,
+        "videoOn": false,
+        "controls": true,
+        "playback": {
+          "on": true,
+          "time": 0.021201,
+          "src": "http://localhost:8099/img/film/m3/c4-schlaf.fwd.mp4",
+          "readyState": 4,
+          "startupMs": 113
+        }
+      },
+      {
+        "scene": 4,
+        "title": "Renovation aus einer Hand.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 385.5,
+          "bottom": 452.03125
+        },
+        "titleOverlapsDetails": false,
+        "vh": 667,
+        "videoOn": false,
+        "controls": true,
+        "playback": {
+          "on": true,
+          "time": 0.022038,
+          "src": "http://localhost:8099/img/film/m3/c5-wohnen.fwd.mp4",
+          "readyState": 4,
+          "startupMs": 115
+        }
+      },
+      {
+        "scene": 5,
+        "title": "So hat es angefangen.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 418.765625,
+          "bottom": 452.03125
+        },
+        "titleOverlapsDetails": false,
+        "vh": 667,
+        "videoOn": false,
+        "controls": true,
+        "playback": {
+          "on": false,
+          "time": 2.2,
+          "src": "http://localhost:8099/img/film/m3/c5-wohnen.fwd.mp4",
+          "readyState": 4,
+          "startupMs": 59
+        }
+      },
+      {
+        "scene": 6,
+        "title": "Abnahme. Schlüsselübergabe.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 2,
+        "overflow": false,
+        "titleRect": {
+          "top": 385.5,
+          "bottom": 452.03125
+        },
+        "titleOverlapsDetails": false,
+        "vh": 667,
+        "videoOn": false,
+        "controls": true,
+        "playback": {
+          "on": true,
+          "time": 0.022509,
+          "src": "http://localhost:8099/img/film/m3/c6-eingang.fwd.mp4",
+          "readyState": 4,
+          "startupMs": 122
+        }
+      }
+    ],
+    "errors": [],
+    "failed": [],
+    "comparison": 1
+  },
+  {
+    "fallback": "reduced",
+    "film": "plain",
+    "motion": "off",
+    "videos": 0,
+    "media": [],
+    "title": "BauStern — Bauunternehmen Zürich: Renovation, Sanitär, Umbau, Fliesen und Malerarbeiten aus einer Hand"
+  },
+  {
+    "fallback": "saveData",
+    "film": "lite",
+    "motion": "native",
+    "videos": 0,
+    "media": [
+      {
+        "src": "",
+        "time": 0,
+        "paused": true
+      }
+    ],
+    "title": "Bauen mit System und Vertrauen."
+  },
+  {
+    "fallback": "videoBlocked",
+    "film": "lite",
+    "motion": "native",
+    "videos": 0,
+    "media": [
+      {
+        "src": "http://localhost:8099/img/film/__qa_missing__/intro.mp4",
+        "time": 0,
+        "paused": true,
+        "error": 4
+      }
+    ],
+    "title": "Bauen mit System und Vertrauen."
+  },
+  {
+    "fallback": "autoplayBlocked",
+    "film": "lite",
+    "motion": "native",
+    "videos": 0,
+    "media": [
+      {
+        "src": "http://localhost:8099/img/film/m3/intro.mp4",
+        "time": 0,
+        "paused": true
+      }
+    ],
+    "title": "Bauen mit System und Vertrauen."
+  }
+]

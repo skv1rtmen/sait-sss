@@ -1,0 +1,11 @@
+{
+  "frames": 175,
+  "avgMs": 19.3,
+  "p50": 16.7,
+  "p95": 33.4,
+  "maxMs": 33.4,
+  "pctOver33": 16,
+  "scene": "5",
+  "errors": [],
+  "environment": "1440x900 Windows headless Chromium; rAF scroll benchmark, not physical device certification"
+}

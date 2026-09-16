@@ -1,0 +1,19 @@
+{
+  "date":"2026-09-12",
+  "scope":"Live webhook, actual Supabase records, own BauStern contact only. No real customer application.",
+  "records":[
+    {"nr":"WEB-260912-003","form":"anfrage","files":1,"purpose":"first successful photo and thumbnail test"},
+    {"nr":"WEB-260912-004","form":"anfrage","files":1,"duplicates":2,"request_id":"9701003b-fd89-42f2-83fd-a941a140dfa2"},
+    {"nr":"WEB-260912-005","form":"rueckruf","files":0,"duplicates":2,"request_id":"175113fb-410d-4ec4-bbf3-2f86015cfc4d"},
+    {"nr":"WEB-260912-006","form":"karriere","files":1,"format":"application/pdf","bytes":1047920,"duplicates":2,"request_id":"58f45b8a-6ae4-4223-ba67-06403bbe663d"},
+    {"nr":"WEB-260912-007","form":"referenzmappe","files":0,"duplicates":2,"request_id":"8bdf0230-3d9e-4a59-9efe-1f83658fc42e"},
+    {"nr":"WEB-260912-008","form":"anfrage","origin":"production","files":1,"duplicates":2,"request_id":"fd099dce-4513-49d1-a786-ffde97542597"},
+    {"nr":"WEB-260912-009","form":"referenzmappe","origin":"production","files":0,"duplicates":2,"request_id":"d3eb67a6-8fbc-43d1-81ba-149bba8a4c66"}
+  ],
+  "allVisible":true,"allAutoAssigned":true,"allStatus":"NeuerLead",
+  "duplicateResult":"same receipt, no additional lead or attachment",
+  "invalidPhone":{"httpStatus":422,"ok":false},
+  "sqlRollbackTests":"passed: customer type, address split, idempotency, invalid photo rejection, no orphan lead/customer, service-only execute",
+  "ui":"Published client code syntax and PDF viewer tested locally; actual logged-in user UI requires login in the open Chrome tab.",
+  "emailProof":"crm-pdf-delivery-proof.json"
+}

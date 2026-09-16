@@ -1,0 +1,182 @@
+[
+  {
+    "width": 375,
+    "height": 667,
+    "initial": {
+      "mode": "lite",
+      "motion": "native",
+      "videoOn": true,
+      "currentTime": 0.1667555,
+      "src": "https://leafy-bublanina-48b840.netlify.app/img/film/m3p/intro.mp4",
+      "details": 3
+    },
+    "scenes": [
+      {
+        "scene": 0,
+        "title": "Bauen mit Systemund Vertrauen.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 450.15625,
+          "bottom": 514
+        },
+        "titleOverlapsDetails": false,
+        "vh": 667,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 1,
+        "title": "Sechs Gewerke. EinAnsprechpartner.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 6,
+        "overflow": false,
+        "titleRect": {
+          "top": 463.15625,
+          "bottom": 527
+        },
+        "titleOverlapsDetails": false,
+        "vh": 667,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 2,
+        "title": "Bad und Leitungen,SIA-konform.",
+        "titleOpacity": 0.998,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 463.15625,
+          "bottom": 527
+        },
+        "titleOverlapsDetails": false,
+        "vh": 667,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 3,
+        "title": "Zum Schlussdie Oberfläche.",
+        "titleOpacity": 1,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 463.15625,
+          "bottom": 527
+        },
+        "titleOverlapsDetails": false,
+        "vh": 667,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 4,
+        "title": "Renovationaus einer Hand.",
+        "titleOpacity": 0.999,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 393.15625,
+          "bottom": 457
+        },
+        "titleOverlapsDetails": false,
+        "vh": 667,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 5,
+        "title": "So hat es angefangen.",
+        "titleOpacity": 0.999,
+        "descriptionOpacity": 1,
+        "details": 3,
+        "overflow": false,
+        "titleRect": {
+          "top": 495.078125,
+          "bottom": 527
+        },
+        "titleOverlapsDetails": false,
+        "vh": 667,
+        "videoOn": false,
+        "controls": true
+      },
+      {
+        "scene": 6,
+        "title": "Abnahme.Schlüsselübergabe.",
+        "titleOpacity": 0.998,
+        "descriptionOpacity": 1,
+        "details": 2,
+        "overflow": false,
+        "titleRect": {
+          "top": 390.15625,
+          "bottom": 454
+        },
+        "titleOverlapsDetails": false,
+        "vh": 667,
+        "videoOn": false,
+        "controls": true
+      }
+    ],
+    "errors": [],
+    "failed": [],
+    "comparison": 0.55
+  },
+  {
+    "fallback": "reduced",
+    "film": "plain",
+    "motion": "off",
+    "videos": 0,
+    "media": [],
+    "title": "BauStern — Bauunternehmen Zürich: Renovation, Sanitär, Umbau, Fliesen und Malerarbeiten aus einer Hand"
+  },
+  {
+    "fallback": "saveData",
+    "film": "lite",
+    "motion": "native",
+    "videos": 0,
+    "media": [
+      {
+        "src": "",
+        "time": 0,
+        "paused": true
+      }
+    ],
+    "title": "Bauen mit System und Vertrauen."
+  },
+  {
+    "fallback": "videoBlocked",
+    "film": "lite",
+    "motion": "native",
+    "videos": 0,
+    "media": [
+      {
+        "src": "https://leafy-bublanina-48b840.netlify.app/img/film/__qa_missing__/intro.mp4",
+        "time": 0,
+        "paused": true,
+        "error": 4
+      }
+    ],
+    "title": "Bauen mit System und Vertrauen."
+  },
+  {
+    "fallback": "autoplayBlocked",
+    "film": "lite",
+    "motion": "native",
+    "videos": 0,
+    "media": [
+      {
+        "src": "https://leafy-bublanina-48b840.netlify.app/img/film/m3p/intro.mp4",
+        "time": 0,
+        "paused": true
+      }
+    ],
+    "title": "Bauen mit System und Vertrauen."
+  }
+]

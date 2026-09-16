@@ -1,0 +1,735 @@
+{
+  "base": "http://localhost:8099",
+  "rows": [
+    {
+      "width": 812,
+      "height": 375,
+      "i": 0,
+      "scene": "0",
+      "covered": false,
+      "details": 3,
+      "expected": 3,
+      "heading": {
+        "x": 436,
+        "y": 202.40625,
+        "width": 332,
+        "height": 58.21875,
+        "right": 768,
+        "bottom": 260.625
+      },
+      "cam": {
+        "x": 0,
+        "y": 0,
+        "width": 812,
+        "height": 375,
+        "right": 812,
+        "bottom": 375
+      },
+      "image": {
+        "src": "http://localhost:8099/img/film/s13/st0.jpg",
+        "width": 812,
+        "height": 456,
+        "fit": "cover",
+        "transform": "none"
+      },
+      "video": {
+        "src": "http://localhost:8099/img/film/m3/intro.mp4",
+        "fit": "cover"
+      },
+      "taps": [
+        {
+          "label": "Kamerafahrt abspielen",
+          "rect": {
+            "x": 642,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "right": 686,
+            "bottom": 108
+          },
+          "reachable": true,
+          "hit": true
+        },
+        {
+          "label": "Nächster Raum",
+          "rect": {
+            "x": 746,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "right": 790,
+            "bottom": 108
+          },
+          "reachable": true,
+          "hit": true
+        },
+        {
+          "label": "01Schreiner trifft Metall+",
+          "rect": {
+            "x": 414,
+            "y": 314,
+            "width": 151.984375,
+            "height": 44,
+            "right": 565.984375,
+            "bottom": 358
+          },
+          "reachable": true,
+          "hit": true
+        },
+        {
+          "label": "Vollständiges Raumbild vergrössern",
+          "rect": {
+            "x": 22,
+            "y": 130,
+            "width": 44,
+            "height": 44,
+            "right": 66,
+            "bottom": 174
+          },
+          "reachable": true,
+          "hit": true
+        }
+      ],
+      "overlap": false,
+      "overflow": false,
+      "firstInfo": 4331.25
+    },
+    {
+      "width": 812,
+      "height": 375,
+      "i": 1,
+      "scene": "1",
+      "covered": false,
+      "details": 6,
+      "expected": 6,
+      "heading": {
+        "x": 117.640625,
+        "y": 183.34375,
+        "width": 672.359375,
+        "height": 29.109375,
+        "right": 790,
+        "bottom": 212.453125
+      },
+      "cam": {
+        "x": 0,
+        "y": 0,
+        "width": 812,
+        "height": 375,
+        "right": 812,
+        "bottom": 375
+      },
+      "image": {
+        "src": "http://localhost:8099/img/film/s13/st1.jpg",
+        "width": 1920,
+        "height": 1080,
+        "fit": "cover",
+        "transform": "none"
+      },
+      "video": {
+        "src": "http://localhost:8099/img/film/m3/c2-flur.fwd.mp4",
+        "fit": "cover"
+      },
+      "taps": [
+        {
+          "label": "Kamerafahrt abspielen",
+          "rect": {
+            "x": 642,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "right": 686,
+            "bottom": 108
+          },
+          "reachable": true,
+          "hit": true
+        },
+        {
+          "label": "Vorheriger Raum",
+          "rect": {
+            "x": 694,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "right": 738,
+            "bottom": 108
+          },
+          "reachable": true,
+          "hit": true
+        },
+        {
+          "label": "Nächster Raum",
+          "rect": {
+            "x": 746,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "right": 790,
+            "bottom": 108
+          },
+          "reachable": true,
+          "hit": true
+        },
+        {
+          "label": "01Renovation+",
+          "rect": {
+            "x": 117.640625,
+            "y": 314,
+            "width": 111.21875,
+            "height": 44,
+            "right": 228.859375,
+            "bottom": 358
+          },
+          "reachable": true,
+          "hit": true
+        },
+        {
+          "label": "Vollständiges Raumbild vergrössern",
+          "rect": {
+            "x": 22,
+            "y": 130,
+            "width": 44,
+            "height": 44,
+            "right": 66,
+            "bottom": 174
+          },
+          "reachable": true,
+          "hit": true
+        }
+      ],
+      "overlap": false,
+      "overflow": false,
+      "firstInfo": 3712.25
+    },
+    {
+      "width": 812,
+      "height": 375,
+      "i": 2,
+      "scene": "2",
+      "covered": false,
+      "details": 3,
+      "expected": 3,
+      "heading": {
+        "x": 414,
+        "y": 168.796875,
+        "width": 376,
+        "height": 58.21875,
+        "right": 790,
+        "bottom": 227.015625
+      },
+      "cam": {
+        "x": 0,
+        "y": 0,
+        "width": 812,
+        "height": 375,
+        "right": 812,
+        "bottom": 375
+      },
+      "image": {
+        "src": "http://localhost:8099/img/film/s13/st2.jpg",
+        "width": 1920,
+        "height": 1080,
+        "fit": "cover",
+        "transform": "none"
+      },
+      "video": {
+        "src": "http://localhost:8099/img/film/m3/c3-bad.fwd.mp4",
+        "fit": "cover"
+      },
+      "taps": [
+        {
+          "label": "Kamerafahrt abspielen",
+          "rect": {
+            "x": 642,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "right": 686,
+            "bottom": 108
+          },
+          "reachable": true,
+          "hit": true
+        },
+        {
+          "label": "Vorheriger Raum",
+          "rect": {
+            "x": 694,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "right": 738,
+            "bottom": 108
+          },
+          "reachable": true,
+          "hit": true
+        },
+        {
+          "label": "Nächster Raum",
+          "rect": {
+            "x": 746,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "right": 790,
+            "bottom": 108
+          },
+          "reachable": true,
+          "hit": true
+        },
+        {
+          "label": "01Dicht nach Norm+",
+          "rect": {
+            "x": 414,
+            "y": 314,
+            "width": 134.84375,
+            "height": 44,
+            "right": 548.84375,
+            "bottom": 358
+          },
+          "reachable": true,
+          "hit": true
+        },
+        {
+          "label": "Vollständiges Raumbild vergrössern",
+          "rect": {
+            "x": 22,
+            "y": 130,
+            "width": 44,
+            "height": 44,
+            "right": 66,
+            "bottom": 174
+          },
+          "reachable": true,
+          "hit": true
+        }
+      ],
+      "overlap": false,
+      "overflow": false,
+      "firstInfo": 3093.25
+    },
+    {
+      "width": 812,
+      "height": 375,
+      "i": 3,
+      "scene": "3",
+      "covered": false,
+      "details": 3,
+      "expected": 3,
+      "heading": {
+        "x": 414,
+        "y": 191.4375,
+        "width": 376,
+        "height": 29.109375,
+        "right": 790,
+        "bottom": 220.546875
+      },
+      "cam": {
+        "x": 0,
+        "y": 0,
+        "width": 812,
+        "height": 375,
+        "right": 812,
+        "bottom": 375
+      },
+      "image": {
+        "src": "http://localhost:8099/img/film/s13/st3.jpg",
+        "width": 1920,
+        "height": 1080,
+        "fit": "cover",
+        "transform": "none"
+      },
+      "video": {
+        "src": "http://localhost:8099/img/film/m3/c4-schlaf.fwd.mp4",
+        "fit": "cover"
+      },
+      "taps": [
+        {
+          "label": "Kamerafahrt abspielen",
+          "rect": {
+            "x": 642,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "right": 686,
+            "bottom": 108
+          },
+          "reachable": true,
+          "hit": true
+        },
+        {
+          "label": "Vorheriger Raum",
+          "rect": {
+            "x": 694,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "right": 738,
+            "bottom": 108
+          },
+          "reachable": true,
+          "hit": true
+        },
+        {
+          "label": "Nächster Raum",
+          "rect": {
+            "x": 746,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "right": 790,
+            "bottom": 108
+          },
+          "reachable": true,
+          "hit": true
+        },
+        {
+          "label": "01Abnahme bei Tageslicht+",
+          "rect": {
+            "x": 414,
+            "y": 314,
+            "width": 167.28125,
+            "height": 44,
+            "right": 581.28125,
+            "bottom": 358
+          },
+          "reachable": true,
+          "hit": true
+        },
+        {
+          "label": "Vollständiges Raumbild vergrössern",
+          "rect": {
+            "x": 22,
+            "y": 130,
+            "width": 44,
+            "height": 44,
+            "right": 66,
+            "bottom": 174
+          },
+          "reachable": true,
+          "hit": true
+        }
+      ],
+      "overlap": false,
+      "overflow": false,
+      "firstInfo": 2475.25
+    },
+    {
+      "width": 812,
+      "height": 375,
+      "i": 4,
+      "scene": "4",
+      "covered": false,
+      "details": 3,
+      "expected": 3,
+      "heading": {
+        "x": 414,
+        "y": 183.34375,
+        "width": 376,
+        "height": 29.109375,
+        "right": 790,
+        "bottom": 212.453125
+      },
+      "cam": {
+        "x": 0,
+        "y": 0,
+        "width": 812,
+        "height": 375,
+        "right": 812,
+        "bottom": 375
+      },
+      "image": {
+        "src": "http://localhost:8099/img/film/s13/st4.jpg",
+        "width": 1920,
+        "height": 1080,
+        "fit": "cover",
+        "transform": "none"
+      },
+      "video": {
+        "src": "http://localhost:8099/img/film/m3/c5-wohnen.fwd.mp4",
+        "fit": "cover"
+      },
+      "taps": [
+        {
+          "label": "Kamerafahrt abspielen",
+          "rect": {
+            "x": 642,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "right": 686,
+            "bottom": 108
+          },
+          "reachable": true,
+          "hit": true
+        },
+        {
+          "label": "Vorheriger Raum",
+          "rect": {
+            "x": 694,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "right": 738,
+            "bottom": 108
+          },
+          "reachable": true,
+          "hit": true
+        },
+        {
+          "label": "Nächster Raum",
+          "rect": {
+            "x": 746,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "right": 790,
+            "bottom": 108
+          },
+          "reachable": true,
+          "hit": true
+        },
+        {
+          "label": "01Drei Gewerke im Takt+",
+          "rect": {
+            "x": 414,
+            "y": 314,
+            "width": 154.671875,
+            "height": 44,
+            "right": 568.671875,
+            "bottom": 358
+          },
+          "reachable": true,
+          "hit": true
+        },
+        {
+          "label": "Vollständiges Raumbild vergrössern",
+          "rect": {
+            "x": 22,
+            "y": 130,
+            "width": 44,
+            "height": 44,
+            "right": 66,
+            "bottom": 174
+          },
+          "reachable": true,
+          "hit": true
+        }
+      ],
+      "overlap": false,
+      "overflow": false,
+      "firstInfo": 1856.25
+    },
+    {
+      "width": 812,
+      "height": 375,
+      "i": 5,
+      "scene": "5",
+      "covered": false,
+      "details": 3,
+      "expected": 3,
+      "heading": {
+        "x": 414,
+        "y": 183.34375,
+        "width": 376,
+        "height": 29.109375,
+        "right": 790,
+        "bottom": 212.453125
+      },
+      "cam": {
+        "x": 0,
+        "y": 0,
+        "width": 812,
+        "height": 375,
+        "right": 812,
+        "bottom": 375
+      },
+      "image": {
+        "src": "http://localhost:8099/img/film/mat5/step0.webp",
+        "width": 1920,
+        "height": 1071,
+        "fit": "cover",
+        "transform": "none"
+      },
+      "video": {
+        "src": "http://localhost:8099/img/film/m3/c5-wohnen.fwd.mp4",
+        "fit": "cover"
+      },
+      "taps": [
+        {
+          "label": "Verwandlung wiederholen",
+          "rect": {
+            "x": 642,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "right": 686,
+            "bottom": 108
+          },
+          "reachable": true,
+          "hit": true
+        },
+        {
+          "label": "Vorheriger Raum",
+          "rect": {
+            "x": 694,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "right": 738,
+            "bottom": 108
+          },
+          "reachable": true,
+          "hit": true
+        },
+        {
+          "label": "Nächster Raum",
+          "rect": {
+            "x": 746,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "right": 790,
+            "bottom": 108
+          },
+          "reachable": true,
+          "hit": true
+        },
+        {
+          "label": "01Entsorgt mit Nachweis+",
+          "rect": {
+            "x": 414,
+            "y": 314,
+            "width": 160.828125,
+            "height": 44,
+            "right": 574.828125,
+            "bottom": 358
+          },
+          "reachable": true,
+          "hit": true
+        },
+        {
+          "label": "Vollständiges Raumbild vergrössern",
+          "rect": {
+            "x": 22,
+            "y": 130,
+            "width": 44,
+            "height": 44,
+            "right": 66,
+            "bottom": 174
+          },
+          "reachable": true,
+          "hit": true
+        }
+      ],
+      "overlap": false,
+      "overflow": false,
+      "firstInfo": 1237.25
+    },
+    {
+      "width": 812,
+      "height": 375,
+      "i": 6,
+      "scene": "6",
+      "covered": false,
+      "details": 2,
+      "expected": 2,
+      "heading": {
+        "x": 414,
+        "y": 183.34375,
+        "width": 376,
+        "height": 29.109375,
+        "right": 790,
+        "bottom": 212.453125
+      },
+      "cam": {
+        "x": 0,
+        "y": 0,
+        "width": 812,
+        "height": 375,
+        "right": 812,
+        "bottom": 375
+      },
+      "image": {
+        "src": "http://localhost:8099/img/film/s13/st6.jpg",
+        "width": 1920,
+        "height": 1080,
+        "fit": "cover",
+        "transform": "none"
+      },
+      "video": {
+        "src": "http://localhost:8099/img/film/m3/c6-eingang.fwd.mp4",
+        "fit": "cover"
+      },
+      "taps": [
+        {
+          "label": "Kamerafahrt abspielen",
+          "rect": {
+            "x": 642,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "right": 686,
+            "bottom": 108
+          },
+          "reachable": true,
+          "hit": true
+        },
+        {
+          "label": "Vorheriger Raum",
+          "rect": {
+            "x": 694,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "right": 738,
+            "bottom": 108
+          },
+          "reachable": true,
+          "hit": true
+        },
+        {
+          "label": "Weiter zu Leistungen und Kontakt",
+          "rect": {
+            "x": 746,
+            "y": 64,
+            "width": 44,
+            "height": 44,
+            "right": 790,
+            "bottom": 108
+          },
+          "reachable": true,
+          "hit": true
+        },
+        {
+          "label": "01Schwarz auf weiss+",
+          "rect": {
+            "x": 414,
+            "y": 314,
+            "width": 142.546875,
+            "height": 44,
+            "right": 556.546875,
+            "bottom": 358
+          },
+          "reachable": true,
+          "hit": true
+        },
+        {
+          "label": "Vollständiges Raumbild vergrössern",
+          "rect": {
+            "x": 22,
+            "y": 130,
+            "width": 44,
+            "height": 44,
+            "right": 66,
+            "bottom": 174
+          },
+          "reachable": true,
+          "hit": true
+        }
+      ],
+      "overlap": false,
+      "overflow": false,
+      "firstInfo": 618.25
+    }
+  ],
+  "errors": []
+}

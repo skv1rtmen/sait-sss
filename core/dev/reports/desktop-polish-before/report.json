@@ -1,0 +1,1769 @@
+{
+  "base": "http://localhost:8099",
+  "profiles": [
+    [
+      1440,
+      900
+    ]
+  ],
+  "rows": [
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 0,
+      "scene": "0",
+      "heading": "Bauen mit System und Vertrauen.",
+      "headingVisible": true,
+      "reveal": "",
+      "covered": false,
+      "title": {
+        "x": 80,
+        "y": 219.4609375,
+        "w": 720,
+        "h": 126.71875,
+        "right": 800,
+        "bottom": 346.1796875
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 135,
+          "w": 60.390625,
+          "h": 232.25,
+          "right": 140.390625,
+          "bottom": 367.25
+        },
+        {
+          "name": "wSound",
+          "x": 80,
+          "y": 351.5,
+          "w": 48.546875,
+          "h": 15.75,
+          "right": 128.546875,
+          "bottom": 367.25
+        },
+        {
+          "name": "wPlan",
+          "x": 1210,
+          "y": 100,
+          "w": 150,
+          "h": 131.828125,
+          "right": 1360,
+          "bottom": 231.828125
+        }
+      ],
+      "overlaps": [
+        "wRoomNav"
+      ],
+      "tips": [
+        {
+          "name": "Schreiner trifft Metall",
+          "visible": true,
+          "rect": {
+            "x": 665,
+            "y": 749,
+            "w": 14,
+            "h": 14,
+            "right": 679,
+            "bottom": 763
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Weniger Fugen, mehr Ruhe",
+          "visible": true,
+          "rect": {
+            "x": 1017,
+            "y": 191,
+            "w": 14,
+            "h": 14,
+            "right": 1031,
+            "bottom": 205
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Licht, das mitdenkt",
+          "visible": true,
+          "rect": {
+            "x": 825,
+            "y": 89,
+            "w": 14,
+            "h": 14,
+            "right": 839,
+            "bottom": 103
+          },
+          "inView": true,
+          "clickable": true
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 1,
+      "scene": "1",
+      "heading": "Sechs Gewerke. Ein Ansprechpartner.",
+      "headingVisible": true,
+      "reveal": "1.000",
+      "covered": false,
+      "title": {
+        "x": 80,
+        "y": 605,
+        "w": 640,
+        "h": 126.71875,
+        "right": 720,
+        "bottom": 731.71875
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 135,
+          "w": 48.96875,
+          "h": 232.25,
+          "right": 128.96875,
+          "bottom": 367.25
+        },
+        {
+          "name": "wSound",
+          "x": 80,
+          "y": 351.5,
+          "w": 48.546875,
+          "h": 15.75,
+          "right": 128.546875,
+          "bottom": 367.25
+        },
+        {
+          "name": "wPlan",
+          "x": 1210,
+          "y": 100,
+          "w": 150,
+          "h": 131.828125,
+          "right": 1360,
+          "bottom": 231.828125
+        }
+      ],
+      "overlaps": [],
+      "tips": [
+        {
+          "name": "Renovation — Leerwohnungs-Renovation, Objektbäder, Ausbau von Gewerbeflächen — im Bauzeitplan",
+          "visible": true,
+          "rect": {
+            "x": 915.1680297851562,
+            "y": 77.1778564453125,
+            "w": 255.62493896484375,
+            "h": 159.09461975097656,
+            "right": 1170.79296875,
+            "bottom": 236.27247619628906
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Malerarbeiten — Spachtelung Q3, 2 × gestrichen — Abnahme bei Tageslicht",
+          "visible": false,
+          "rect": {
+            "x": 375.28802490234375,
+            "y": 98.8580551147461,
+            "w": 255.625,
+            "h": 82.19940948486328,
+            "right": 630.9130249023438,
+            "bottom": 181.05746459960938
+          },
+          "inView": true,
+          "clickable": false
+        },
+        {
+          "name": "Neu- & Umbau — Trockenbau, Türen, Zargen — statisch geprüft",
+          "visible": false,
+          "rect": {
+            "x": 1078.76806640625,
+            "y": 300.0828552246094,
+            "w": 254.98583984375,
+            "h": 65.02462768554688,
+            "right": 1333.75390625,
+            "bottom": 365.10748291015625
+          },
+          "inView": true,
+          "clickable": false
+        },
+        {
+          "name": "Sanitär — Serienbäder, Wasserinstallation, Boiler — SIA-konform, mit Protokoll",
+          "visible": false,
+          "rect": {
+            "x": 1111.488037109375,
+            "y": 448.5530700683594,
+            "w": 255.625,
+            "h": 82.19937133789062,
+            "right": 1367.113037109375,
+            "bottom": 530.75244140625
+          },
+          "inView": true,
+          "clickable": false
+        },
+        {
+          "name": "Fliesen & Parkett — Eiche Landhausdiele, geölt — Unterlagsboden schwimmend verlegt",
+          "visible": false,
+          "rect": {
+            "x": 849.72802734375,
+            "y": 651.008056640625,
+            "w": 255.625,
+            "h": 82.199462890625,
+            "right": 1105.35302734375,
+            "bottom": 733.20751953125
+          },
+          "inView": true,
+          "clickable": false
+        },
+        {
+          "name": "Abbruch & Rückbau — Entkernung, selektiver Rückbau — sortenrein, mit Wiegeschein",
+          "visible": false,
+          "rect": {
+            "x": 1078.76806640625,
+            "y": 724.6280517578125,
+            "w": 255.625,
+            "h": 82.199462890625,
+            "right": 1334.39306640625,
+            "bottom": 806.8275146484375
+          },
+          "inView": true,
+          "clickable": false
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 2,
+      "scene": "2",
+      "heading": "Bad und Leitungen, SIA-konform.",
+      "headingVisible": true,
+      "reveal": "1.000",
+      "covered": false,
+      "title": {
+        "x": 80,
+        "y": 605,
+        "w": 640,
+        "h": 126.71875,
+        "right": 720,
+        "bottom": 731.71875
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 135,
+          "w": 48.546875,
+          "h": 232.25,
+          "right": 128.546875,
+          "bottom": 367.25
+        },
+        {
+          "name": "wSound",
+          "x": 80,
+          "y": 351.5,
+          "w": 48.546875,
+          "h": 15.75,
+          "right": 128.546875,
+          "bottom": 367.25
+        },
+        {
+          "name": "wPlan",
+          "x": 1210,
+          "y": 100,
+          "w": 150,
+          "h": 131.828125,
+          "right": 1360,
+          "bottom": 231.828125
+        }
+      ],
+      "overlaps": [],
+      "tips": [
+        {
+          "name": "Dicht nach Norm",
+          "visible": true,
+          "rect": {
+            "x": 206.83447265625,
+            "y": 459.177490234375,
+            "w": 14.31500244140625,
+            "h": 14.31500244140625,
+            "right": 221.14947509765625,
+            "bottom": 473.49249267578125
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Grossformat, kaum Fugen",
+          "visible": true,
+          "rect": {
+            "x": 1139.3544921875,
+            "y": 275.1274719238281,
+            "w": 14.31494140625,
+            "h": 14.31500244140625,
+            "right": 1153.66943359375,
+            "bottom": 289.4424743652344
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Keine Schwelle",
+          "visible": true,
+          "rect": {
+            "x": 812.1544799804688,
+            "y": 790.467529296875,
+            "w": 14.31500244140625,
+            "h": 14.31494140625,
+            "right": 826.469482421875,
+            "bottom": 804.782470703125
+          },
+          "inView": true,
+          "clickable": true
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 3,
+      "scene": "3",
+      "heading": "Zum Schluss die Oberfläche.",
+      "headingVisible": true,
+      "reveal": "1.000",
+      "covered": false,
+      "title": {
+        "x": 80,
+        "y": 632.640625,
+        "w": 640,
+        "h": 126.71875,
+        "right": 720,
+        "bottom": 759.359375
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 135,
+          "w": 115.140625,
+          "h": 232.25,
+          "right": 195.140625,
+          "bottom": 367.25
+        },
+        {
+          "name": "wSound",
+          "x": 80,
+          "y": 351.5,
+          "w": 48.546875,
+          "h": 15.75,
+          "right": 128.546875,
+          "bottom": 367.25
+        },
+        {
+          "name": "wPlan",
+          "x": 1210,
+          "y": 100,
+          "w": 150,
+          "h": 131.828125,
+          "right": 1360,
+          "bottom": 231.828125
+        }
+      ],
+      "overlaps": [],
+      "tips": [
+        {
+          "name": "Abnahme bei Tageslicht",
+          "visible": true,
+          "rect": {
+            "x": 24.570510864257812,
+            "y": 311.9374694824219,
+            "w": 14.31500244140625,
+            "h": 14.31500244140625,
+            "right": 38.88551330566406,
+            "bottom": 326.2524719238281
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Holz, das leuchtet",
+          "visible": true,
+          "rect": {
+            "x": 711.6905517578125,
+            "y": 183.1024627685547,
+            "w": 14.31500244140625,
+            "h": 14.31500244140625,
+            "right": 726.0055541992188,
+            "bottom": 197.41746520996094
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Kein Zug, kein Schimmel",
+          "visible": true,
+          "rect": {
+            "x": 1333.37060546875,
+            "y": 403.96246337890625,
+            "w": 14.31494140625,
+            "h": 14.31500244140625,
+            "right": 1347.685546875,
+            "bottom": 418.2774658203125
+          },
+          "inView": true,
+          "clickable": true
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 4,
+      "scene": "4",
+      "heading": "Renovation aus einer Hand.",
+      "headingVisible": true,
+      "reveal": "1.000",
+      "covered": false,
+      "title": {
+        "x": 80,
+        "y": 522.8125,
+        "w": 640,
+        "h": 126.71875,
+        "right": 720,
+        "bottom": 649.53125
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 135,
+          "w": 72.765625,
+          "h": 232.25,
+          "right": 152.765625,
+          "bottom": 367.25
+        },
+        {
+          "name": "wSound",
+          "x": 80,
+          "y": 351.5,
+          "w": 48.546875,
+          "h": 15.75,
+          "right": 128.546875,
+          "bottom": 367.25
+        },
+        {
+          "name": "wPlan",
+          "x": 1210,
+          "y": 100,
+          "w": 150,
+          "h": 131.828125,
+          "right": 1360,
+          "bottom": 231.828125
+        }
+      ],
+      "overlaps": [],
+      "tips": [
+        {
+          "name": "Drei Gewerke im Takt",
+          "visible": true,
+          "rect": {
+            "x": 615.83447265625,
+            "y": 440.7724914550781,
+            "w": 14.31500244140625,
+            "h": 14.31500244140625,
+            "right": 630.1494750976562,
+            "bottom": 455.0874938964844
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Mass statt Möbelhaus",
+          "visible": true,
+          "rect": {
+            "x": 59.59446716308594,
+            "y": 330.34246826171875,
+            "w": 14.31500244140625,
+            "h": 14.31500244140625,
+            "right": 73.90946960449219,
+            "bottom": 344.657470703125
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Bis zum letzten Vorhang",
+          "visible": true,
+          "rect": {
+            "x": 1368.39453125,
+            "y": 348.7474670410156,
+            "w": 14.31494140625,
+            "h": 14.31500244140625,
+            "right": 1382.70947265625,
+            "bottom": 363.0624694824219
+          },
+          "inView": true,
+          "clickable": true
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 5,
+      "scene": "5",
+      "heading": "So hat es angefangen.",
+      "headingVisible": true,
+      "reveal": "1.000",
+      "covered": false,
+      "title": {
+        "x": 80,
+        "y": 668.359375,
+        "w": 592.53125,
+        "h": 63.359375,
+        "right": 672.53125,
+        "bottom": 731.71875
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 135,
+          "w": 102,
+          "h": 232.25,
+          "right": 182,
+          "bottom": 367.25
+        },
+        {
+          "name": "wSound",
+          "x": 80,
+          "y": 351.5,
+          "w": 48.546875,
+          "h": 15.75,
+          "right": 128.546875,
+          "bottom": 367.25
+        },
+        {
+          "name": "wPlan",
+          "x": 1210,
+          "y": 100,
+          "w": 150,
+          "h": 131.828125,
+          "right": 1360,
+          "bottom": 231.828125
+        }
+      ],
+      "overlaps": [],
+      "tips": [
+        {
+          "name": "Entsorgt mit Nachweis",
+          "visible": true,
+          "rect": {
+            "x": 384.49053955078125,
+            "y": 367.1524658203125,
+            "w": 14.314971923828125,
+            "h": 14.31500244140625,
+            "right": 398.8055114746094,
+            "bottom": 381.46746826171875
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Geprüft vor dem Verputz",
+          "visible": true,
+          "rect": {
+            "x": 973.4505615234375,
+            "y": 348.7474670410156,
+            "w": 14.31500244140625,
+            "h": 14.31500244140625,
+            "right": 987.7655639648438,
+            "bottom": 363.0624694824219
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Grundlage, die trägt",
+          "visible": true,
+          "rect": {
+            "x": 711.6905517578125,
+            "y": 753.657470703125,
+            "w": 14.31500244140625,
+            "h": 14.3150634765625,
+            "right": 726.0055541992188,
+            "bottom": 767.9725341796875
+          },
+          "inView": true,
+          "clickable": true
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 6,
+      "scene": "6",
+      "heading": "Abnahme. Schlüsselübergabe.",
+      "headingVisible": true,
+      "reveal": "1.000",
+      "covered": false,
+      "title": {
+        "x": 80,
+        "y": 544.640625,
+        "w": 640,
+        "h": 126.71875,
+        "right": 720,
+        "bottom": 671.359375
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 135,
+          "w": 75.03125,
+          "h": 232.25,
+          "right": 155.03125,
+          "bottom": 367.25
+        },
+        {
+          "name": "wSound",
+          "x": 80,
+          "y": 351.5,
+          "w": 48.546875,
+          "h": 15.75,
+          "right": 128.546875,
+          "bottom": 367.25
+        },
+        {
+          "name": "wPlan",
+          "x": 1210,
+          "y": 100,
+          "w": 150,
+          "h": 131.828125,
+          "right": 1360,
+          "bottom": 231.828125
+        }
+      ],
+      "overlaps": [],
+      "tips": [
+        {
+          "name": "Schwarz auf weiss",
+          "visible": true,
+          "rect": {
+            "x": 795.7944946289062,
+            "y": 652.429931640625,
+            "w": 14.31500244140625,
+            "h": 14.3150634765625,
+            "right": 810.1094970703125,
+            "bottom": 666.7449951171875
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Der Termin steht fest",
+          "visible": true,
+          "rect": {
+            "x": 1352.034423828125,
+            "y": 440.7724914550781,
+            "w": 14.315185546875,
+            "h": 14.31500244140625,
+            "right": 1366.349609375,
+            "bottom": 455.0874938964844
+          },
+          "inView": true,
+          "clickable": true
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 5,
+      "scene": "5",
+      "heading": "So hat es angefangen.",
+      "headingVisible": true,
+      "reveal": "1.000",
+      "covered": false,
+      "title": {
+        "x": 80,
+        "y": 668.359375,
+        "w": 592.53125,
+        "h": 63.359375,
+        "right": 672.53125,
+        "bottom": 731.71875
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 135,
+          "w": 102,
+          "h": 232.25,
+          "right": 182,
+          "bottom": 367.25
+        },
+        {
+          "name": "wSound",
+          "x": 80,
+          "y": 351.5,
+          "w": 48.546875,
+          "h": 15.75,
+          "right": 128.546875,
+          "bottom": 367.25
+        },
+        {
+          "name": "wPlan",
+          "x": 1210,
+          "y": 100,
+          "w": 150,
+          "h": 131.828125,
+          "right": 1360,
+          "bottom": 231.828125
+        }
+      ],
+      "overlaps": [],
+      "tips": [
+        {
+          "name": "Entsorgt mit Nachweis",
+          "visible": true,
+          "rect": {
+            "x": 381.7297668457031,
+            "y": 367.1524658203125,
+            "w": 14.31500244140625,
+            "h": 14.31500244140625,
+            "right": 396.0447692871094,
+            "bottom": 381.46746826171875
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Geprüft vor dem Verputz",
+          "visible": true,
+          "rect": {
+            "x": 975.7000732421875,
+            "y": 348.7474670410156,
+            "w": 14.31500244140625,
+            "h": 14.31500244140625,
+            "right": 990.0150756835938,
+            "bottom": 363.0624694824219
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Grundlage, die trägt",
+          "visible": true,
+          "rect": {
+            "x": 711.6905517578125,
+            "y": 753.657470703125,
+            "w": 14.31500244140625,
+            "h": 14.3150634765625,
+            "right": 726.0055541992188,
+            "bottom": 767.9725341796875
+          },
+          "inView": true,
+          "clickable": true
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 4,
+      "scene": "4",
+      "heading": "Renovation aus einer Hand.",
+      "headingVisible": true,
+      "reveal": "1.000",
+      "covered": false,
+      "title": {
+        "x": 80,
+        "y": 522.8125,
+        "w": 640,
+        "h": 126.71875,
+        "right": 720,
+        "bottom": 649.53125
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 135,
+          "w": 72.765625,
+          "h": 232.25,
+          "right": 152.765625,
+          "bottom": 367.25
+        },
+        {
+          "name": "wSound",
+          "x": 80,
+          "y": 351.5,
+          "w": 48.546875,
+          "h": 15.75,
+          "right": 128.546875,
+          "bottom": 367.25
+        },
+        {
+          "name": "wPlan",
+          "x": 1210,
+          "y": 100,
+          "w": 150,
+          "h": 131.828125,
+          "right": 1360,
+          "bottom": 231.828125
+        }
+      ],
+      "overlaps": [],
+      "tips": [
+        {
+          "name": "Drei Gewerke im Takt",
+          "visible": true,
+          "rect": {
+            "x": 615.83447265625,
+            "y": 440.7724914550781,
+            "w": 14.31500244140625,
+            "h": 14.31500244140625,
+            "right": 630.1494750976562,
+            "bottom": 455.0874938964844
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Mass statt Möbelhaus",
+          "visible": true,
+          "rect": {
+            "x": 59.59446716308594,
+            "y": 330.34246826171875,
+            "w": 14.31500244140625,
+            "h": 14.31500244140625,
+            "right": 73.90946960449219,
+            "bottom": 344.657470703125
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Bis zum letzten Vorhang",
+          "visible": true,
+          "rect": {
+            "x": 1368.39453125,
+            "y": 348.7474670410156,
+            "w": 14.31494140625,
+            "h": 14.31500244140625,
+            "right": 1382.70947265625,
+            "bottom": 363.0624694824219
+          },
+          "inView": true,
+          "clickable": true
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 3,
+      "scene": "3",
+      "heading": "Zum Schluss die Oberfläche.",
+      "headingVisible": true,
+      "reveal": "1.000",
+      "covered": false,
+      "title": {
+        "x": 80,
+        "y": 632.640625,
+        "w": 640,
+        "h": 126.71875,
+        "right": 720,
+        "bottom": 759.359375
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 135,
+          "w": 115.140625,
+          "h": 232.25,
+          "right": 195.140625,
+          "bottom": 367.25
+        },
+        {
+          "name": "wSound",
+          "x": 80,
+          "y": 351.5,
+          "w": 48.546875,
+          "h": 15.75,
+          "right": 128.546875,
+          "bottom": 367.25
+        },
+        {
+          "name": "wPlan",
+          "x": 1210,
+          "y": 100,
+          "w": 150,
+          "h": 131.828125,
+          "right": 1360,
+          "bottom": 231.828125
+        }
+      ],
+      "overlaps": [],
+      "tips": [
+        {
+          "name": "Abnahme bei Tageslicht",
+          "visible": true,
+          "rect": {
+            "x": 24.570510864257812,
+            "y": 311.9374694824219,
+            "w": 14.31500244140625,
+            "h": 14.31500244140625,
+            "right": 38.88551330566406,
+            "bottom": 326.2524719238281
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Holz, das leuchtet",
+          "visible": true,
+          "rect": {
+            "x": 711.6905517578125,
+            "y": 183.1024627685547,
+            "w": 14.31500244140625,
+            "h": 14.31500244140625,
+            "right": 726.0055541992188,
+            "bottom": 197.41746520996094
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Kein Zug, kein Schimmel",
+          "visible": true,
+          "rect": {
+            "x": 1333.37060546875,
+            "y": 403.96246337890625,
+            "w": 14.31494140625,
+            "h": 14.31500244140625,
+            "right": 1347.685546875,
+            "bottom": 418.2774658203125
+          },
+          "inView": true,
+          "clickable": true
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 2,
+      "scene": "2",
+      "heading": "Bad und Leitungen, SIA-konform.",
+      "headingVisible": true,
+      "reveal": "1.000",
+      "covered": false,
+      "title": {
+        "x": 80,
+        "y": 605,
+        "w": 640,
+        "h": 126.71875,
+        "right": 720,
+        "bottom": 731.71875
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 135,
+          "w": 48.546875,
+          "h": 232.25,
+          "right": 128.546875,
+          "bottom": 367.25
+        },
+        {
+          "name": "wSound",
+          "x": 80,
+          "y": 351.5,
+          "w": 48.546875,
+          "h": 15.75,
+          "right": 128.546875,
+          "bottom": 367.25
+        },
+        {
+          "name": "wPlan",
+          "x": 1210,
+          "y": 100,
+          "w": 150,
+          "h": 131.828125,
+          "right": 1360,
+          "bottom": 231.828125
+        }
+      ],
+      "overlaps": [],
+      "tips": [
+        {
+          "name": "Dicht nach Norm",
+          "visible": true,
+          "rect": {
+            "x": 206.83447265625,
+            "y": 459.177490234375,
+            "w": 14.31500244140625,
+            "h": 14.31500244140625,
+            "right": 221.14947509765625,
+            "bottom": 473.49249267578125
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Grossformat, kaum Fugen",
+          "visible": true,
+          "rect": {
+            "x": 1139.3544921875,
+            "y": 275.1274719238281,
+            "w": 14.31494140625,
+            "h": 14.31500244140625,
+            "right": 1153.66943359375,
+            "bottom": 289.4424743652344
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Keine Schwelle",
+          "visible": true,
+          "rect": {
+            "x": 812.1544799804688,
+            "y": 790.467529296875,
+            "w": 14.31500244140625,
+            "h": 14.31494140625,
+            "right": 826.469482421875,
+            "bottom": 804.782470703125
+          },
+          "inView": true,
+          "clickable": true
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 1,
+      "scene": "1",
+      "heading": "Sechs Gewerke. Ein Ansprechpartner.",
+      "headingVisible": true,
+      "reveal": "1.000",
+      "covered": false,
+      "title": {
+        "x": 80,
+        "y": 605,
+        "w": 640,
+        "h": 126.71875,
+        "right": 720,
+        "bottom": 731.71875
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 135,
+          "w": 48.96875,
+          "h": 232.25,
+          "right": 128.96875,
+          "bottom": 367.25
+        },
+        {
+          "name": "wSound",
+          "x": 80,
+          "y": 351.5,
+          "w": 48.546875,
+          "h": 15.75,
+          "right": 128.546875,
+          "bottom": 367.25
+        },
+        {
+          "name": "wPlan",
+          "x": 1210,
+          "y": 100,
+          "w": 150,
+          "h": 131.828125,
+          "right": 1360,
+          "bottom": 231.828125
+        }
+      ],
+      "overlaps": [],
+      "tips": [
+        {
+          "name": "Renovation — Leerwohnungs-Renovation, Objektbäder, Ausbau von Gewerbeflächen — im Bauzeitplan",
+          "visible": true,
+          "rect": {
+            "x": 915.1680297851562,
+            "y": 77.1778564453125,
+            "w": 255.62493896484375,
+            "h": 159.09461975097656,
+            "right": 1170.79296875,
+            "bottom": 236.27247619628906
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Malerarbeiten — Spachtelung Q3, 2 × gestrichen — Abnahme bei Tageslicht",
+          "visible": false,
+          "rect": {
+            "x": 375.28802490234375,
+            "y": 98.8580551147461,
+            "w": 255.625,
+            "h": 82.19940948486328,
+            "right": 630.9130249023438,
+            "bottom": 181.05746459960938
+          },
+          "inView": true,
+          "clickable": false
+        },
+        {
+          "name": "Neu- & Umbau — Trockenbau, Türen, Zargen — statisch geprüft",
+          "visible": false,
+          "rect": {
+            "x": 1078.76806640625,
+            "y": 300.0828552246094,
+            "w": 254.98583984375,
+            "h": 65.02462768554688,
+            "right": 1333.75390625,
+            "bottom": 365.10748291015625
+          },
+          "inView": true,
+          "clickable": false
+        },
+        {
+          "name": "Sanitär — Serienbäder, Wasserinstallation, Boiler — SIA-konform, mit Protokoll",
+          "visible": false,
+          "rect": {
+            "x": 1111.488037109375,
+            "y": 448.5530700683594,
+            "w": 255.625,
+            "h": 82.19937133789062,
+            "right": 1367.113037109375,
+            "bottom": 530.75244140625
+          },
+          "inView": true,
+          "clickable": false
+        },
+        {
+          "name": "Fliesen & Parkett — Eiche Landhausdiele, geölt — Unterlagsboden schwimmend verlegt",
+          "visible": false,
+          "rect": {
+            "x": 849.72802734375,
+            "y": 651.008056640625,
+            "w": 255.625,
+            "h": 82.199462890625,
+            "right": 1105.35302734375,
+            "bottom": 733.20751953125
+          },
+          "inView": true,
+          "clickable": false
+        },
+        {
+          "name": "Abbruch & Rückbau — Entkernung, selektiver Rückbau — sortenrein, mit Wiegeschein",
+          "visible": false,
+          "rect": {
+            "x": 1078.76806640625,
+            "y": 724.6280517578125,
+            "w": 255.625,
+            "h": 82.199462890625,
+            "right": 1334.39306640625,
+            "bottom": 806.8275146484375
+          },
+          "inView": true,
+          "clickable": false
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 0,
+      "scene": "0",
+      "heading": "Bauen mit System und Vertrauen.",
+      "headingVisible": true,
+      "reveal": "0.000",
+      "covered": false,
+      "title": {
+        "x": 80,
+        "y": 219.4609375,
+        "w": 720,
+        "h": 126.71875,
+        "right": 800,
+        "bottom": 346.1796875
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 135,
+          "w": 60.390625,
+          "h": 232.25,
+          "right": 140.390625,
+          "bottom": 367.25
+        },
+        {
+          "name": "wSound",
+          "x": 80,
+          "y": 351.5,
+          "w": 48.546875,
+          "h": 15.75,
+          "right": 128.546875,
+          "bottom": 367.25
+        },
+        {
+          "name": "wPlan",
+          "x": 1210,
+          "y": 100,
+          "w": 150,
+          "h": 131.828125,
+          "right": 1360,
+          "bottom": 231.828125
+        }
+      ],
+      "overlaps": [
+        "wRoomNav"
+      ],
+      "tips": [
+        {
+          "name": "Schreiner trifft Metall",
+          "visible": true,
+          "rect": {
+            "x": 665,
+            "y": 749,
+            "w": 14,
+            "h": 14,
+            "right": 679,
+            "bottom": 763
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Weniger Fugen, mehr Ruhe",
+          "visible": true,
+          "rect": {
+            "x": 1017,
+            "y": 191,
+            "w": 14,
+            "h": 14,
+            "right": 1031,
+            "bottom": 205
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Licht, das mitdenkt",
+          "visible": true,
+          "rect": {
+            "x": 825,
+            "y": 89,
+            "w": 14,
+            "h": 14,
+            "right": 839,
+            "bottom": 103
+          },
+          "inView": true,
+          "clickable": true
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "spaBack": true,
+      "visible": true
+    }
+  ],
+  "failures": [
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 0,
+      "scene": "0",
+      "heading": "Bauen mit System und Vertrauen.",
+      "headingVisible": true,
+      "reveal": "",
+      "covered": false,
+      "title": {
+        "x": 80,
+        "y": 219.4609375,
+        "w": 720,
+        "h": 126.71875,
+        "right": 800,
+        "bottom": 346.1796875
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 135,
+          "w": 60.390625,
+          "h": 232.25,
+          "right": 140.390625,
+          "bottom": 367.25
+        },
+        {
+          "name": "wSound",
+          "x": 80,
+          "y": 351.5,
+          "w": 48.546875,
+          "h": 15.75,
+          "right": 128.546875,
+          "bottom": 367.25
+        },
+        {
+          "name": "wPlan",
+          "x": 1210,
+          "y": 100,
+          "w": 150,
+          "h": 131.828125,
+          "right": 1360,
+          "bottom": 231.828125
+        }
+      ],
+      "overlaps": [
+        "wRoomNav"
+      ],
+      "tips": [
+        {
+          "name": "Schreiner trifft Metall",
+          "visible": true,
+          "rect": {
+            "x": 665,
+            "y": 749,
+            "w": 14,
+            "h": 14,
+            "right": 679,
+            "bottom": 763
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Weniger Fugen, mehr Ruhe",
+          "visible": true,
+          "rect": {
+            "x": 1017,
+            "y": 191,
+            "w": 14,
+            "h": 14,
+            "right": 1031,
+            "bottom": 205
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Licht, das mitdenkt",
+          "visible": true,
+          "rect": {
+            "x": 825,
+            "y": 89,
+            "w": 14,
+            "h": 14,
+            "right": 839,
+            "bottom": 103
+          },
+          "inView": true,
+          "clickable": true
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 1,
+      "scene": "1",
+      "heading": "Sechs Gewerke. Ein Ansprechpartner.",
+      "headingVisible": true,
+      "reveal": "1.000",
+      "covered": false,
+      "title": {
+        "x": 80,
+        "y": 605,
+        "w": 640,
+        "h": 126.71875,
+        "right": 720,
+        "bottom": 731.71875
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 135,
+          "w": 48.96875,
+          "h": 232.25,
+          "right": 128.96875,
+          "bottom": 367.25
+        },
+        {
+          "name": "wSound",
+          "x": 80,
+          "y": 351.5,
+          "w": 48.546875,
+          "h": 15.75,
+          "right": 128.546875,
+          "bottom": 367.25
+        },
+        {
+          "name": "wPlan",
+          "x": 1210,
+          "y": 100,
+          "w": 150,
+          "h": 131.828125,
+          "right": 1360,
+          "bottom": 231.828125
+        }
+      ],
+      "overlaps": [],
+      "tips": [
+        {
+          "name": "Renovation — Leerwohnungs-Renovation, Objektbäder, Ausbau von Gewerbeflächen — im Bauzeitplan",
+          "visible": true,
+          "rect": {
+            "x": 915.1680297851562,
+            "y": 77.1778564453125,
+            "w": 255.62493896484375,
+            "h": 159.09461975097656,
+            "right": 1170.79296875,
+            "bottom": 236.27247619628906
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Malerarbeiten — Spachtelung Q3, 2 × gestrichen — Abnahme bei Tageslicht",
+          "visible": false,
+          "rect": {
+            "x": 375.28802490234375,
+            "y": 98.8580551147461,
+            "w": 255.625,
+            "h": 82.19940948486328,
+            "right": 630.9130249023438,
+            "bottom": 181.05746459960938
+          },
+          "inView": true,
+          "clickable": false
+        },
+        {
+          "name": "Neu- & Umbau — Trockenbau, Türen, Zargen — statisch geprüft",
+          "visible": false,
+          "rect": {
+            "x": 1078.76806640625,
+            "y": 300.0828552246094,
+            "w": 254.98583984375,
+            "h": 65.02462768554688,
+            "right": 1333.75390625,
+            "bottom": 365.10748291015625
+          },
+          "inView": true,
+          "clickable": false
+        },
+        {
+          "name": "Sanitär — Serienbäder, Wasserinstallation, Boiler — SIA-konform, mit Protokoll",
+          "visible": false,
+          "rect": {
+            "x": 1111.488037109375,
+            "y": 448.5530700683594,
+            "w": 255.625,
+            "h": 82.19937133789062,
+            "right": 1367.113037109375,
+            "bottom": 530.75244140625
+          },
+          "inView": true,
+          "clickable": false
+        },
+        {
+          "name": "Fliesen & Parkett — Eiche Landhausdiele, geölt — Unterlagsboden schwimmend verlegt",
+          "visible": false,
+          "rect": {
+            "x": 849.72802734375,
+            "y": 651.008056640625,
+            "w": 255.625,
+            "h": 82.199462890625,
+            "right": 1105.35302734375,
+            "bottom": 733.20751953125
+          },
+          "inView": true,
+          "clickable": false
+        },
+        {
+          "name": "Abbruch & Rückbau — Entkernung, selektiver Rückbau — sortenrein, mit Wiegeschein",
+          "visible": false,
+          "rect": {
+            "x": 1078.76806640625,
+            "y": 724.6280517578125,
+            "w": 255.625,
+            "h": 82.199462890625,
+            "right": 1334.39306640625,
+            "bottom": 806.8275146484375
+          },
+          "inView": true,
+          "clickable": false
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 1,
+      "scene": "1",
+      "heading": "Sechs Gewerke. Ein Ansprechpartner.",
+      "headingVisible": true,
+      "reveal": "1.000",
+      "covered": false,
+      "title": {
+        "x": 80,
+        "y": 605,
+        "w": 640,
+        "h": 126.71875,
+        "right": 720,
+        "bottom": 731.71875
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 135,
+          "w": 48.96875,
+          "h": 232.25,
+          "right": 128.96875,
+          "bottom": 367.25
+        },
+        {
+          "name": "wSound",
+          "x": 80,
+          "y": 351.5,
+          "w": 48.546875,
+          "h": 15.75,
+          "right": 128.546875,
+          "bottom": 367.25
+        },
+        {
+          "name": "wPlan",
+          "x": 1210,
+          "y": 100,
+          "w": 150,
+          "h": 131.828125,
+          "right": 1360,
+          "bottom": 231.828125
+        }
+      ],
+      "overlaps": [],
+      "tips": [
+        {
+          "name": "Renovation — Leerwohnungs-Renovation, Objektbäder, Ausbau von Gewerbeflächen — im Bauzeitplan",
+          "visible": true,
+          "rect": {
+            "x": 915.1680297851562,
+            "y": 77.1778564453125,
+            "w": 255.62493896484375,
+            "h": 159.09461975097656,
+            "right": 1170.79296875,
+            "bottom": 236.27247619628906
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Malerarbeiten — Spachtelung Q3, 2 × gestrichen — Abnahme bei Tageslicht",
+          "visible": false,
+          "rect": {
+            "x": 375.28802490234375,
+            "y": 98.8580551147461,
+            "w": 255.625,
+            "h": 82.19940948486328,
+            "right": 630.9130249023438,
+            "bottom": 181.05746459960938
+          },
+          "inView": true,
+          "clickable": false
+        },
+        {
+          "name": "Neu- & Umbau — Trockenbau, Türen, Zargen — statisch geprüft",
+          "visible": false,
+          "rect": {
+            "x": 1078.76806640625,
+            "y": 300.0828552246094,
+            "w": 254.98583984375,
+            "h": 65.02462768554688,
+            "right": 1333.75390625,
+            "bottom": 365.10748291015625
+          },
+          "inView": true,
+          "clickable": false
+        },
+        {
+          "name": "Sanitär — Serienbäder, Wasserinstallation, Boiler — SIA-konform, mit Protokoll",
+          "visible": false,
+          "rect": {
+            "x": 1111.488037109375,
+            "y": 448.5530700683594,
+            "w": 255.625,
+            "h": 82.19937133789062,
+            "right": 1367.113037109375,
+            "bottom": 530.75244140625
+          },
+          "inView": true,
+          "clickable": false
+        },
+        {
+          "name": "Fliesen & Parkett — Eiche Landhausdiele, geölt — Unterlagsboden schwimmend verlegt",
+          "visible": false,
+          "rect": {
+            "x": 849.72802734375,
+            "y": 651.008056640625,
+            "w": 255.625,
+            "h": 82.199462890625,
+            "right": 1105.35302734375,
+            "bottom": 733.20751953125
+          },
+          "inView": true,
+          "clickable": false
+        },
+        {
+          "name": "Abbruch & Rückbau — Entkernung, selektiver Rückbau — sortenrein, mit Wiegeschein",
+          "visible": false,
+          "rect": {
+            "x": 1078.76806640625,
+            "y": 724.6280517578125,
+            "w": 255.625,
+            "h": 82.199462890625,
+            "right": 1334.39306640625,
+            "bottom": 806.8275146484375
+          },
+          "inView": true,
+          "clickable": false
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 0,
+      "scene": "0",
+      "heading": "Bauen mit System und Vertrauen.",
+      "headingVisible": true,
+      "reveal": "0.000",
+      "covered": false,
+      "title": {
+        "x": 80,
+        "y": 219.4609375,
+        "w": 720,
+        "h": 126.71875,
+        "right": 800,
+        "bottom": 346.1796875
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 135,
+          "w": 60.390625,
+          "h": 232.25,
+          "right": 140.390625,
+          "bottom": 367.25
+        },
+        {
+          "name": "wSound",
+          "x": 80,
+          "y": 351.5,
+          "w": 48.546875,
+          "h": 15.75,
+          "right": 128.546875,
+          "bottom": 367.25
+        },
+        {
+          "name": "wPlan",
+          "x": 1210,
+          "y": 100,
+          "w": 150,
+          "h": 131.828125,
+          "right": 1360,
+          "bottom": 231.828125
+        }
+      ],
+      "overlaps": [
+        "wRoomNav"
+      ],
+      "tips": [
+        {
+          "name": "Schreiner trifft Metall",
+          "visible": true,
+          "rect": {
+            "x": 665,
+            "y": 749,
+            "w": 14,
+            "h": 14,
+            "right": 679,
+            "bottom": 763
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Weniger Fugen, mehr Ruhe",
+          "visible": true,
+          "rect": {
+            "x": 1017,
+            "y": 191,
+            "w": 14,
+            "h": 14,
+            "right": 1031,
+            "bottom": 205
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Licht, das mitdenkt",
+          "visible": true,
+          "rect": {
+            "x": 825,
+            "y": 89,
+            "w": 14,
+            "h": 14,
+            "right": 839,
+            "bottom": 103
+          },
+          "inView": true,
+          "clickable": true
+        }
+      ],
+      "overflow": false
+    }
+  ],
+  "errors": [
+    {
+      "width": 1440,
+      "type": "warning",
+      "error": "The resource http://localhost:8099/img/film/f12/f0000.webp was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "violations": [],
+  "incomplete": [
+    "color-contrast"
+  ],
+  "passes": 13,
+  "manualContrast": {
+    "method": "Computed colours; translucent panel composited over white (light text), the worst-case backdrop. No assumption about the photograph.",
+    "label": 5.872737703728906,
+    "icon": 6.846660598416299,
+    "colors": {
+      "panel": "rgba(24, 34, 38, 0.72)",
+      "label": "rgb(245, 245, 240)",
+      "thumb": "rgb(64, 95, 107)",
+      "icon": "rgb(255, 255, 255)"
+    }
+  }
+}

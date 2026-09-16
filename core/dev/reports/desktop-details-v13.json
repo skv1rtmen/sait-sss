@@ -1,0 +1,30 @@
+[
+  {
+    "width": 1000,
+    "height": 700,
+    "keyboard": true,
+    "route": true,
+    "axe": []
+  },
+  {
+    "width": 1440,
+    "height": 640,
+    "keyboard": true,
+    "route": true,
+    "axe": []
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "keyboard": true,
+    "route": true,
+    "axe": []
+  },
+  {
+    "width": 3840,
+    "height": 2160,
+    "keyboard": true,
+    "route": true,
+    "axe": []
+  }
+]

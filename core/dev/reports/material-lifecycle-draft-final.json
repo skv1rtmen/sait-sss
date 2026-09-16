@@ -1,0 +1,39 @@
+{
+  "base": "https://6aa523ac3de160521241656e--leafy-bublanina-48b840.netlify.app",
+  "states": [
+    {
+      "renderer": "compositor",
+      "images": 2,
+      "canvas": "hidden",
+      "phase": "Rohbau"
+    },
+    {
+      "renderer": "compositor",
+      "images": 2,
+      "canvas": "hidden",
+      "phase": "Technik"
+    },
+    {
+      "renderer": "compositor",
+      "images": 2,
+      "canvas": "hidden",
+      "phase": "Ausbau"
+    },
+    {
+      "renderer": "compositor",
+      "images": 2,
+      "canvas": "hidden",
+      "phase": "Rohbau"
+    },
+    {
+      "renderer": "compositor",
+      "images": 2,
+      "canvas": "hidden",
+      "phase": "Technik"
+    }
+  ],
+  "homeReset": true,
+  "resizeCleanup": true,
+  "routeCleanup": true,
+  "errors": []
+}

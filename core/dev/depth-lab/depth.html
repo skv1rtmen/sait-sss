@@ -1,0 +1,76 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><title>Tiefenkarten-Labor (Build-Werkzeug)</title>
+<meta name="robots" content="noindex">
+<style>body{font:13px/1.5 ui-monospace,monospace;background:#111;color:#ddd;margin:16px}
+#log{white-space:pre-wrap}img,canvas{max-width:320px;vertical-align:top;margin:4px;border:1px solid #333}</style>
+</head><body>
+<h1>Tiefenkarten-Labor</h1>
+<div id="log">bereit</div><div id="out"></div>
+<script type="module">
+/* Build-Werkzeug: erzeugt die 16 Tiefenkarten zu den v16-Standbildern. Läuft NUR lokal,
+   wird nicht ausgeliefert. Das Modell landet nie im Produktivcode — nur die fertigen PNG. */
+const LOG=document.getElementById('log'),OUT=document.getElementById('out');
+const say=s=>{LOG.textContent+='\n'+s;console.log(s);};
+const ROOMS=['ankunft','schwelle','kueche','bad','schlaf','wohnen','wohnen-rohbau','eingang'];
+const SAVE='http://127.0.0.1:8123/put?name=';
+window.DEPTH={state:'idle',done:[],fail:[],model:null,device:null};
+
+async function boot(){
+  const S=window.DEPTH;S.state='loading';
+  const mods=['https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.8.1'];
+  let T=null,err=[];
+  for(const m of mods){try{T=await import(m);break;}catch(e){err.push(m+': '+e.message);}}
+  if(!T){S.state='error';S.fail=err;say('Import fehlgeschlagen: '+err.join(' | '));return;}
+  T.env.allowLocalModels=false;
+  const cands=[['onnx-community/depth-anything-v2-small','fp32'],['Xenova/depth-anything-small-hf','fp32']];
+  let pipe=null;
+  for(const [mdl,dtype] of cands){
+    for(const dev of ['webgpu','wasm']){
+      try{say('lade '+mdl+' auf '+dev+' …');
+        pipe=await T.pipeline('depth-estimation',mdl,{device:dev,dtype});
+        S.model=mdl;S.device=dev;say('ok: '+mdl+' / '+dev);break;
+      }catch(e){say('  fehlgeschlagen ('+dev+'): '+String(e.message||e).slice(0,140));}
+    }
+    if(pipe)break;
+  }
+  if(!pipe){S.state='error';say('kein Modell lauffähig');return;}
+  S.state='running';
+  for(const room of ROOMS){
+    for(const or of ['L','P']){
+      const name=room+'-'+or;
+      try{ await one(pipe,name); S.done.push(name); }
+      catch(e){ S.fail.push(name+': '+String(e.message||e).slice(0,120)); say('FEHLER '+name+': '+e); }
+    }
+  }
+  S.state='done';say('fertig: '+S.done.length+' ok, '+S.fail.length+' Fehler');
+}
+
+async function one(pipe,name){
+  const url='/img/film/v16/stills/'+name+'.jpg';
+  const img=await loadImg(url);
+  const t0=performance.now();
+  const r=await pipe(url);
+  const raw=r.depth;                       /* RawImage, 1 Kanal, Modellauflösung */
+  /* auf Originalmasse skalieren, Graustufen-PNG */
+  const src=document.createElement('canvas');src.width=raw.width;src.height=raw.height;
+  const sctx=src.getContext('2d');
+  const id=sctx.createImageData(raw.width,raw.height);
+  const d=raw.data,ch=raw.channels||1;
+  for(let i=0,p=0;i<raw.width*raw.height;i++,p+=4){const v=d[i*ch];id.data[p]=id.data[p+1]=id.data[p+2]=v;id.data[p+3]=255;}
+  sctx.putImageData(id,0,0);
+  const c=document.createElement('canvas');c.width=img.naturalWidth;c.height=img.naturalHeight;
+  const cx=c.getContext('2d');cx.imageSmoothingQuality='high';cx.drawImage(src,0,0,c.width,c.height);
+  const blob=await new Promise(res=>c.toBlob(res,'image/png'));
+  const res=await fetch(SAVE+encodeURIComponent(name+'.png'),{method:'POST',body:blob});
+  if(!res.ok)throw Error('save '+res.status);
+  /* Kontrollwerte: Helligkeit in Bildmitte vs. unterer Rand (Boden = nah) */
+  const g=cx.getImageData(0,0,c.width,c.height).data;
+  const at=(fx,fy)=>{const x=Math.round(c.width*fx),y=Math.round(c.height*fy);return g[(y*c.width+x)*4];};
+  say(name+'  '+raw.width+'x'+raw.height+' -> '+c.width+'x'+c.height+'  '+Math.round(performance.now()-t0)+'ms  '+
+      'mitte='+at(.5,.5)+' unten='+at(.5,.92)+' oben='+at(.5,.06)+'  '+(blob.size/1024|0)+'K');
+  const w=document.createElement('div');w.innerHTML='<b>'+name+'</b><br>';
+  const a=new Image();a.src=url;a.width=300;const b=new Image();b.src=URL.createObjectURL(blob);b.width=300;
+  w.append(a,b);OUT.append(w);
+}
+function loadImg(u){return new Promise((res,rej)=>{const i=new Image();i.onload=()=>res(i);i.onerror=rej;i.src=u;});}
+boot();
+</script></body></html>

@@ -1,0 +1,414 @@
+{
+  "id": "y1AXsm72Z0wgLGpu",
+  "name": "BauStern — Web Anfragen",
+  "active": true,
+  "isArchived": false,
+  "tags": [],
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": true,
+    "errorWorkflow": "62197CeYj0t2WOLb"
+  },
+  "createdAt": "2026-08-26T14:32:44.542Z",
+  "updatedAt": "2026-09-09T18:54:06.484Z",
+  "activeVersionId": "7e402cc4-b09a-4d4c-9228-86fdb94c2cd8",
+  "versionCreatedAt": "2026-09-09T18:54:06.487Z",
+  "versionName": "Test-Topic-Routing entfernt (Topic geloescht)",
+  "nodes": [
+    {
+      "id": "c4e794a0-45d1-49db-94d7-e867f6e06afa",
+      "name": "Formular Eingang",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        96
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "web-anfrage",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "webhookId": "aab7354d-a235-4fc9-80f8-7b3c01024009"
+    },
+    {
+      "id": "01584ded-d810-4d23-934f-9aeba554aa8e",
+      "name": "Felder Lesen",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        224,
+        96
+      ],
+      "parameters": {
+        "jsCode": "const wh = $input.first().json || {};\nconst b = (wh.body && typeof wh.body === 'object') ? wh.body : {};\nconst S = function (v) { return v == null ? '' : String(v).trim(); };\nconst name = S(b.name || b.kunde_name);\nconst email = S(b.email || b.mail);\nconst telefon = S(b.telefon || b.phone || b.tel);\nconst ort = S(b.ort || b.plz_ort || b.plz);\nconst gewerk = S(b.service || b.gewerk || b.leistung || b.betreff);\nconst nachricht = S(b.nachricht || b.message || b.beschreibung || b.text);\nconst budget = parseFloat(String(b.budget || '').replace(/[^0-9.]/g, '')) || null;\nconst utm_source = S(b.utm_source);\nconst utm_campaign = S(b.utm_campaign);\nconst utm_term = S(b.utm_term || b.keyword);\nconst gclid = S(b.gclid);\nconst seite = S(b.seite || b.page || ((wh.headers || {}).referer) || '');\nconst honig = S(b.webseite || b.website_url || b.hp);\nconst spam = !!honig || (!name && !email && !telefon) || (!nachricht && !gewerk);\nlet h = 0;\nconst key = (email || telefon || name) + '|' + nachricht.slice(0, 80);\nfor (let i = 0; i < key.length; i++) { h = (h * 31 + key.charCodeAt(i)) >>> 0; }\nconst extern_id = 'web-' + h.toString(36) + '-' + key.length;\nconst titel = ((gewerk ? gewerk + ' - ' : '') + (nachricht ? nachricht.slice(0, 90) : 'Anfrage über die Website')).slice(0, 140);\n// NEU (Task 4, Fotoupload): bis zu 3 Fotos aus dem Formular durchreichen, je client-seitig komprimiert.\n// Format je Foto: { titel, daten } mit daten = \"data:image/...;base64,....\".\nconst fotosIn = Array.isArray(b.fotos) ? b.fotos : [];\nconst fotos = fotosIn.filter(function (f) {\n  return f && typeof f.daten === 'string' && f.daten.length > 0 && f.daten.length < 14000000;\n}).slice(0, 3).map(function (f) {\n  return { titel: S(f.titel).slice(0, 120), daten: f.daten };\n});\nreturn [{ json: { spam: spam, extern_id: extern_id, titel: titel, name: name, email: email, telefon: telefon,\n  ort: ort, gewerk: gewerk, nachricht: nachricht, budget: budget,\n  utm_source: utm_source, utm_campaign: utm_campaign, utm_term: utm_term, gclid: gclid, seite: seite, fotos: fotos } }];"
+      }
+    },
+    {
+      "id": "5f52dea7-d9c9-4697-a966-b3004fb7e15f",
+      "name": "Ist Spam?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        448,
+        96
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.spam }}",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      }
+    },
+    {
+      "id": "5b6c529b-3301-431d-a82a-5b9dc69ddc0f",
+      "name": "Spam Antwort",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        672,
+        0
+      ],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{\"ok\":true}",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "89853838-8a3b-4c37-b577-03aa4cd3bf37",
+      "name": "Ins CRM",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        672,
+        192
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "https://ebnlafxzsjinngfbmoxc.supabase.co/rest/v1/rpc/crm_anfrage_ingest",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ p_quelle: 'website', p_extern_id: $json.extern_id, p_titel: $json.titel, p_kunde_name: $json.name || null, p_telefon: $json.telefon || null, p_email: $json.email || null, p_ort: $json.ort || null, p_gewerk: $json.gewerk || null, p_beschreibung: ($json.nachricht || '') + ($json.seite ? '\\n\\nSeite: ' + $json.seite : ''), p_budget: $json.budget, p_utm_source: $json.utm_source || null, p_utm_campaign: $json.utm_campaign || null, p_utm_term: $json.utm_term || null, p_gclid: $json.gclid || null }) }}",
+        "options": {}
+      },
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 2000,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "qIgrctj0mYx5RKyr",
+          "name": "Supabase service_role"
+        }
+      }
+    },
+    {
+      "id": "61b75c18-cbc5-4ccf-9457-c4c692da9309",
+      "name": "Web Antwort",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        896,
+        0
+      ],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ ok: $json.ok === true, nr: $json.nr || null }) }}",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "b5f13fae-9dd7-4094-8ed4-b93cd431fe8f",
+      "name": "Bestaetigung Bauen",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        896,
+        192
+      ],
+      "parameters": {
+        "jsCode": "const r = $input.first().json || {};\nconst f = $('Felder Lesen').first().json || {};\nif (r.ok !== true || r.doppelt === true || !f.email || f.email.indexOf('@') < 0) return [];\nconst esc = function (s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); };\nconst html = '<div style=\"font-family:Arial,sans-serif;color:#1c2733;max-width:560px;font-size:15px;line-height:1.55\">'\n  + '<p>Guten Tag' + (f.name ? ' ' + esc(f.name) : '') + ',</p>'\n  + '<p>vielen Dank für Ihre Anfrage' + (f.gewerk ? ' zu <b>' + esc(f.gewerk) + '</b>' : '') + '. '\n  + 'Wir haben sie erhalten (Referenz <b>' + esc(r.nr || '') + '</b>) und melden uns innerhalb von 24 Stunden bei Ihnen.</p>'\n  + '<p><b>Tipp:</b> Fotos vom Objekt beschleunigen die Offerte deutlich. '\n  + 'Antworten Sie einfach auf diese E-Mail und hängen Sie Fotos oder Pläne an.</p>'\n  + '<p style=\"color:#5c6b7a;font-size:13px\">BauStern GmbH · Zürich · <a href=\"https://baustern.ch\" style=\"color:#b98a2f\">baustern.ch</a></p></div>';\nreturn [{ json: { an: f.email, betreff: 'Ihre Anfrage ist bei uns angekommen (' + (r.nr || 'BauStern') + ')', html: html } }];"
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "id": "ddf04303-9fd7-47de-ac9c-8532e15e6cdd",
+      "name": "Bestaetigung Senden",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        1120,
+        192
+      ],
+      "parameters": {
+        "resource": "message",
+        "operation": "send",
+        "sendTo": "={{ $json.an }}",
+        "subject": "={{ $json.betreff }}",
+        "emailType": "html",
+        "message": "={{ $json.html }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "onError": "continueRegularOutput",
+      "webhookId": "d85d6d49-8e6b-4b06-ab09-94a06026d9a0",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "S35zLJkQXorNWh0S",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "id": "90da7e54-0ac0-4cc4-83a4-fbaaf69b932f",
+      "name": "TG Text",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        896,
+        384
+      ],
+      "parameters": {
+        "jsCode": "const r = $input.first().json || {};\nconst f = $('Felder Lesen').first().json || {};\nif (r.ok !== true) return [{ json: { text: 'Website-Anfrage konnte NICHT gespeichert werden: ' + (r.error || '?'), messageThreadId: 0 } }];\nif (r.doppelt === true) return [];\n// Test-Topic \"#60 — Живой тест формы\" wurde am 2026-09-09 nach Abschluss des Livetests geloescht.\n// Alle Website-Anfragen (auch mit utm_source=test*) gehen jetzt in den Haupt-Chat (Thread 0).\nconst zeilen = ['Neue Anfrage über die WEBSITE', '',\n  f.titel || '',\n  (f.name || 'Unbekannt') + ' · ' + (f.telefon || f.email || 'kein Kontakt'),\n  f.ort ? 'Ort: ' + f.ort : '',\n  f.utm_source ? 'Quelle: ' + f.utm_source + (f.utm_term ? ' / ' + f.utm_term : '') : '',\n  '', 'Nummer: ' + (r.nr || '')];\nreturn [{ json: { text: zeilen.filter(function (z) { return z !== ''; }).join('\\n'), messageThreadId: 0 } }];"
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "id": "d7422ee2-8fdd-440e-bde6-6fabd687a690",
+      "name": "TG Senden",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1120,
+        384
+      ],
+      "parameters": {
+        "resource": "message",
+        "operation": "sendMessage",
+        "chatId": "-1004404937554",
+        "text": "={{ $json.text }}",
+        "additionalFields": {
+          "message_thread_id": "={{ $json.messageThreadId || 0 }}"
+        }
+      },
+      "onError": "continueRegularOutput",
+      "webhookId": "dd24cb1c-f7c1-4128-b39f-cc9553757508",
+      "credentials": {
+        "telegramApi": {
+          "id": "vRWM6F4j5kZOZcah",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "id": "8f670eef-1dd6-4870-9e38-cd90ecb50f35",
+      "name": "Fotos vorbereiten",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        896,
+        576
+      ],
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "const r = $input.first().json || {};\nconst f = $('Felder Lesen').first().json || {};\nconst fotos = Array.isArray(f.fotos) ? f.fotos : [];\nif (r.ok !== true || r.doppelt === true || !fotos.length || !r.id) return [];\nconst approxBytes = function (s) { return Math.round(String(s || '').length * 3 / 4); };\nconst rows = fotos.map(function (foto, i) {\n  return { anfrage_id: r.id, phase: 'vorher', titel: foto.titel || '', daten: foto.daten, bytes: approxBytes(foto.daten), sortierung: i, quelle: 'website' };\n});\nreturn [{ json: { rows: rows } }];"
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "id": "d192997c-58b1-4aaa-802d-bed4b5dcb602",
+      "name": "Fotos einfuegen",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        1120,
+        576
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "https://ebnlafxzsjinngfbmoxc.supabase.co/rest/v1/crm_fotos",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Prefer",
+              "value": "return=minimal"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.rows) }}",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "qIgrctj0mYx5RKyr",
+          "name": "Supabase service_role"
+        }
+      },
+      "onError": "continueRegularOutput"
+    }
+  ],
+  "connections": {
+    "Formular Eingang": {
+      "main": [
+        [
+          {
+            "node": "Felder Lesen",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Felder Lesen": {
+      "main": [
+        [
+          {
+            "node": "Ist Spam?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ist Spam?": {
+      "main": [
+        [
+          {
+            "node": "Spam Antwort",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Ins CRM",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ins CRM": {
+      "main": [
+        [
+          {
+            "node": "Web Antwort",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Bestaetigung Bauen",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "TG Text",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Fotos vorbereiten",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Bestaetigung Bauen": {
+      "main": [
+        [
+          {
+            "node": "Bestaetigung Senden",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "TG Text": {
+      "main": [
+        [
+          {
+            "node": "TG Senden",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fotos vorbereiten": {
+      "main": [
+        [
+          {
+            "node": "Fotos einfuegen",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,352 @@
+{
+  "base": "https://6aa6b65c2b404db9129d9d1e--leafy-bublanina-48b840.netlify.app",
+  "passed": true,
+  "http": [
+    {
+      "route": "bewertung",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "wissen/leerwohnung-streichen-preise",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "karriere",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "wissen/badsanierung-kosten-zuerich-2026",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "wissen/buero-gewerbe-umbau-ablauf",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "sanierung-winterthur",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "wissen/baubewilligung-zuerich-sanierung",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "sanierung-zug",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "leistungen/renovation",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "leistungen",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "home",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "sanierung-luzern",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "leistungen/abbruch-rueckbau",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "leistungen/sanitaer",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "leistungen/neu-umbau",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "leistungen/fliesen-parkett",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "loesungen/hausverwaltungen",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "loesungen/generalunternehmer",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "loesungen",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "leistungen/malerarbeiten",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "projekt/atlant-komplettausbau",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "projekt/objektbad-gruener-marmor",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "referenzen",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "loesungen/gewerbe-ladenbau",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "wissen",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "ueber-uns",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "projekt/salon-fitout",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "projekt/hotel-gewoelbe",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "impressum",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "kontakt",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    },
+    {
+      "route": "datenschutz",
+      "status": 200,
+      "prerender": true,
+      "mobileCSS": true,
+      "viewport": true
+    }
+  ],
+  "assets": [
+    {
+      "name": "img/film/m3p/intro.mp4",
+      "status": 200,
+      "cache": "public,max-age=31536000,immutable",
+      "bytes": "1747345"
+    },
+    {
+      "name": "img/film/m3p/c2-flur.fwd.mp4",
+      "status": 200,
+      "cache": "public,max-age=31536000,immutable",
+      "bytes": "777420"
+    },
+    {
+      "name": "img/film/m3/intro.mp4",
+      "status": 200,
+      "cache": "public,max-age=31536000,immutable",
+      "bytes": "5980863"
+    },
+    {
+      "name": "img/film/s13/st0-p.webp",
+      "status": 200,
+      "cache": "public,max-age=31536000,immutable",
+      "bytes": "139496"
+    },
+    {
+      "name": "img/film/poster-v13.jpg",
+      "status": 200,
+      "cache": "public,max-age=31536000,immutable",
+      "bytes": "239502"
+    }
+  ],
+  "sourceHashes": [
+    {
+      "name": "js/film-mobile.js",
+      "match": true
+    },
+    {
+      "name": "js/film.js",
+      "match": true
+    },
+    {
+      "name": "js/film-fx.js",
+      "match": true
+    },
+    {
+      "name": "js/data.js",
+      "match": true
+    },
+    {
+      "name": "js/pages.js",
+      "match": true
+    },
+    {
+      "name": "js/motion.js",
+      "match": true
+    },
+    {
+      "name": "js/app.js",
+      "match": true
+    },
+    {
+      "name": "css/mobile-ui.css",
+      "match": true
+    },
+    {
+      "name": "css/mobile-film.css",
+      "match": true
+    },
+    {
+      "name": "css/site.css",
+      "match": true
+    },
+    {
+      "name": "css/lightbox.css",
+      "match": true
+    }
+  ],
+  "screens": [
+    {
+      "width": 320,
+      "height": 568,
+      "mode": "lite",
+      "motion": "native",
+      "scene": "1",
+      "details": 6,
+      "plays": [
+        "https://6aa6b65c2b404db9129d9d1e--leafy-bublanina-48b840.netlify.app/img/film/m3p/intro.mp4",
+        "https://6aa6b65c2b404db9129d9d1e--leafy-bublanina-48b840.netlify.app/img/film/m3p/intro.mp4",
+        "https://6aa6b65c2b404db9129d9d1e--leafy-bublanina-48b840.netlify.app/img/film/m3p/c2-flur.fwd.mp4"
+      ],
+      "overflow": false,
+      "badge": false,
+      "errors": [],
+      "oldAssets": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "mode": "lite",
+      "motion": "native",
+      "scene": "1",
+      "details": 6,
+      "plays": [
+        "https://6aa6b65c2b404db9129d9d1e--leafy-bublanina-48b840.netlify.app/img/film/m3p/intro.mp4",
+        "https://6aa6b65c2b404db9129d9d1e--leafy-bublanina-48b840.netlify.app/img/film/m3p/c2-flur.fwd.mp4"
+      ],
+      "overflow": false,
+      "badge": false,
+      "errors": [],
+      "oldAssets": []
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "mode": "lite",
+      "motion": "native",
+      "scene": "1",
+      "details": 6,
+      "plays": [
+        "https://6aa6b65c2b404db9129d9d1e--leafy-bublanina-48b840.netlify.app/img/film/m3p/intro.mp4",
+        "https://6aa6b65c2b404db9129d9d1e--leafy-bublanina-48b840.netlify.app/img/film/m3p/c2-flur.fwd.mp4"
+      ],
+      "overflow": false,
+      "badge": false,
+      "errors": [],
+      "oldAssets": []
+    }
+  ]
+}

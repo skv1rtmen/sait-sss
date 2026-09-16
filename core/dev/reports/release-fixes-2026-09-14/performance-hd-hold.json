@@ -1,0 +1,74 @@
+[
+  {
+    "mode": "normal",
+    "frames": 490,
+    "p50": 16.699999999999818,
+    "p95": 33.30000000000018,
+    "pctOver33": 7.755102040816326,
+    "paints": 129,
+    "scene": "3",
+    "scrollY": 8387,
+    "canvas": [
+      [
+        "w-canvas",
+        1280,
+        800
+      ],
+      [
+        "w-fx",
+        300,
+        150
+      ]
+    ],
+    "stats": {
+      "bm": 35,
+      "low": 40,
+      "blobs": 292,
+      "lowBlobs": 380
+    },
+    "metrics": {
+      "TaskDuration": 3.821434,
+      "ScriptDuration": 0.319863,
+      "LayoutDuration": 0.034799,
+      "RecalcStyleDuration": 0.672563,
+      "LayoutCount": 219,
+      "RecalcStyleCount": 1730
+    }
+  },
+  {
+    "mode": "normal",
+    "frames": 486,
+    "p50": 16.699999999999818,
+    "p95": 33.30000000000109,
+    "pctOver33": 9.053497942386832,
+    "paints": 140,
+    "scene": "3",
+    "scrollY": 8388,
+    "canvas": [
+      [
+        "w-canvas",
+        1280,
+        800
+      ],
+      [
+        "w-fx",
+        300,
+        150
+      ]
+    ],
+    "stats": {
+      "bm": 37,
+      "low": 40,
+      "blobs": 292,
+      "lowBlobs": 380
+    },
+    "metrics": {
+      "TaskDuration": 3.891202,
+      "ScriptDuration": 0.321097,
+      "LayoutDuration": 0.032855,
+      "RecalcStyleDuration": 0.663893,
+      "LayoutCount": 216,
+      "RecalcStyleCount": 1721
+    }
+  }
+]

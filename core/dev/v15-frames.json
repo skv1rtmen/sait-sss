@@ -1,0 +1,63 @@
+{
+ "fps": 12,
+ "transitionFps": 6,
+ "chapters": [
+  {
+   "id": "ankunft",
+   "sceneIndex": 0,
+   "start": 0,
+   "f": 95,
+   "n": 96,
+   "transition": false
+  },
+  {
+   "id": "flur",
+   "sceneIndex": 1,
+   "start": 96,
+   "f": 227,
+   "n": 132,
+   "transition": true
+  },
+  {
+   "id": "kueche",
+   "sceneIndex": 2,
+   "start": 228,
+   "f": 311,
+   "n": 84,
+   "transition": true
+  },
+  {
+   "id": "bad",
+   "sceneIndex": 3,
+   "start": 312,
+   "f": 389,
+   "n": 78,
+   "transition": true
+  },
+  {
+   "id": "schlaf",
+   "sceneIndex": 4,
+   "start": 390,
+   "f": 491,
+   "n": 102,
+   "transition": true
+  },
+  {
+   "id": "wohnen",
+   "sceneIndex": 5,
+   "start": 492,
+   "f": 569,
+   "n": 78,
+   "transition": true
+  },
+  {
+   "id": "eingang",
+   "sceneIndex": 7,
+   "start": 570,
+   "f": 641,
+   "n": 72,
+   "transition": true
+  }
+ ],
+ "frames": 642
+}

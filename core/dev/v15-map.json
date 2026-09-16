@@ -1,0 +1,20 @@
+{
+  "introSpeed": 1.7,
+  "transitionFps": 6,
+  "chapters": [
+    {"id":"ankunft","sceneIndex":0,"L":"^Camera_moving_along_footbridge","P":"^Camera_moving_towards_glowing_house","stillL":"^Footbridge_leading","stillP":"^Arrival_at_mountain"},
+    {"id":"flur","sceneIndex":1,"holdAt":7.0,"L":"^Camera_moving_toward_fog_mountains_20260915162047","P":"^Dolly_shot_towards_foggy_mountains_20260915162958","stillL":"^Glass_gallery_looking","stillP":"^Gallery_interior_with_fog",
+     "T":"^Camera_gliding_through_glass_gal.*_20260915083754","TP":"^Camera_gliding_through_glass_gal.*_20260915091530"},
+    {"id":"kueche","sceneIndex":2,"holdAt":3.0,"L":"^Camera_pushing_past_kitchen_island_20260915092721","P":"^Camera_moving_toward_window_view_20260915161954","stillL":"^Kitchen_interior_with_island","stillP":"^Kitchen_overlooking",
+     "T":"^Camera_moving_through_gallery_ki.*_20260915084213","TP":"^Camera_gliding_through_glass_gal.*_20260915094720"},
+    {"id":"bad","sceneIndex":3,"holdAt":2.5,"L":"^Camera_moving_toward_stone_bathtub_20260915164608","P":"^Stone_bathtub_overlooking_mountains_1080p_20260915161932","stillL":"^Limestone_bathroom","stillP":"^Bathtub_overlooking",
+     "T":"^Camera_gliding_into_stone_bathroom_20260915084434","TP":"^Camera_moving_through_bathroom_1080p_20260915094545"},
+    {"id":"schlaf","sceneIndex":4,"holdAt":4.5,"L":"^Camera_pushing_towards_foggy_window_20260915162020","P":"^Camera_pushing_towards_foggy_window_20260915063019","stillL":"^Minimal_bedroom","stillP":"^Bedroom_interior",
+     "T":"^Camera_moving_through_bedroom_co.*_20260915084310","TP":"^Camera_moving_through_apartment"},
+    {"id":"wohnen","sceneIndex":5,"holdAt":2.5,"L":"^Camera_moving_toward_mountain_view_20260915164702","P":"^Camera_moving_towards_mountain_view_20260915162004","stillL":"^Living_room_in_glass","stillP":"^Living_room_interior_with",
+     "T":"^Camera_moving_through_living_pav.*_20260915093605","TP":"^Camera_moving_through_living_pav.*_20260915093921"},
+    {"id":"eingang","sceneIndex":7,"holdAt":2.0,"L":"^Camera_moving_down_hallway_corridor_20260915164636","P":"^Camera_pushing_towards_mirror_co.*_20260915164450","stillL":"^Entrance_hall_interior_architect","stillP":"^Entrance_hall_with_mirror",
+     "T":"^Camera_moving_through_corridor_1080p_20260915093431","TP":"^Camera_moving_through_corridor_1080p_20260915093751"}
+  ],
+  "rohbau": {"sceneIndex":6,"holdAt":2.5,"stillL":"^Concrete_room_under_construction","stillP":"^Work_lamp_in_concrete_interior","L":"^Camera_moving_through_concrete_room_20260915061427","P":"^Camera_moving_through_concrete_room_20260915062331"}
+}

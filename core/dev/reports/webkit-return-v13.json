@@ -1,0 +1,111 @@
+[
+  {
+    "t": 7933,
+    "scrollY": 0,
+    "mode": "none",
+    "opacity": null,
+    "word": null,
+    "html": "js",
+    "page": "translate: none; rotate: none; scale: none; transform: translate3d(0px, 0.0664px, 0px); opacity: 0.9953;",
+    "animations": null
+  },
+  {
+    "t": 8341,
+    "scrollY": 0,
+    "mode": "none",
+    "opacity": null,
+    "word": null,
+    "html": "js",
+    "page": "opacity: 1;",
+    "animations": null
+  },
+  {
+    "t": 8810,
+    "scrollY": 0,
+    "mode": "full",
+    "ov": "<div class=\"w-ov is-hero show\" id=\"wOv\" aria-live=\"polite\">\n    <p class=\"w-kicker\"><span class=\"dia\"></span><span class=\"w-kicker-t\">Sechs Gewerke · ",
+    "opacity": "0",
+    "stage": "--cov: 0.000; --ovo: 1.000;",
+    "word": "1",
+    "html": "js pre-hold in-film",
+    "page": "translate: none; rotate: none; scale: none; transform: translate3d(0px, 12.8566px, 0px); opacity: 0.0817;",
+    "animations": [
+      {
+        "time": 0,
+        "start": null,
+        "state": "running"
+      },
+      {
+        "time": 0,
+        "start": null,
+        "state": "running"
+      }
+    ]
+  },
+  {
+    "t": 9221,
+    "scrollY": 0,
+    "mode": "full",
+    "ov": "<div class=\"w-ov is-hero show\" id=\"wOv\" aria-live=\"polite\">\n    <p class=\"w-kicker\"><span class=\"dia\"></span><span class=\"w-kicker-t\">Sechs Gewerke · ",
+    "opacity": "1",
+    "stage": "--cov: 0.000; --ovo: 1.000;",
+    "word": "1",
+    "html": "js in-film",
+    "page": "opacity: 1;",
+    "animations": [
+      {
+        "time": 643,
+        "start": 8576,
+        "state": "running"
+      }
+    ]
+  },
+  {
+    "t": 9628,
+    "scrollY": 0,
+    "mode": "full",
+    "ov": "<div class=\"w-ov is-hero show\" id=\"wOv\" aria-live=\"polite\">\n    <p class=\"w-kicker\"><span class=\"dia\"></span><span class=\"w-kicker-t\">Sechs Gewerke · ",
+    "opacity": "1",
+    "stage": "--cov: 0.000; --ovo: 1.000;",
+    "word": "1",
+    "html": "js in-film",
+    "page": "opacity: 1;",
+    "animations": []
+  },
+  {
+    "t": 10035,
+    "scrollY": 0,
+    "mode": "full",
+    "ov": "<div class=\"w-ov is-hero show reveal-settled\" id=\"wOv\" aria-live=\"polite\">\n    <p class=\"w-kicker\"><span class=\"dia\"></span><span class=\"w-kicker-t\">S",
+    "opacity": "1",
+    "stage": "--cov: 0.000; --ovo: 1.000;",
+    "word": "1",
+    "html": "js in-film",
+    "page": "opacity: 1;",
+    "animations": []
+  },
+  {
+    "t": 10446,
+    "scrollY": 0,
+    "mode": "full",
+    "ov": "<div class=\"w-ov is-hero show reveal-settled\" id=\"wOv\" aria-live=\"polite\">\n    <p class=\"w-kicker\"><span class=\"dia\"></span><span class=\"w-kicker-t\">S",
+    "opacity": "1",
+    "stage": "--cov: 0.000; --ovo: 1.000;",
+    "word": "1",
+    "html": "js in-film",
+    "page": "opacity: 1;",
+    "animations": []
+  },
+  {
+    "t": 10854,
+    "scrollY": 0,
+    "mode": "full",
+    "ov": "<div class=\"w-ov is-hero show reveal-settled\" id=\"wOv\" aria-live=\"polite\">\n    <p class=\"w-kicker\"><span class=\"dia\"></span><span class=\"w-kicker-t\">S",
+    "opacity": "1",
+    "stage": "--cov: 0.000; --ovo: 1.000;",
+    "word": "1",
+    "html": "js in-film",
+    "page": "opacity: 1;",
+    "animations": []
+  }
+]

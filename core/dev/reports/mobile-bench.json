@@ -1,0 +1,345 @@
+{
+  "environment": "Windows headless Chromium; emulated touch viewports, not physical iOS/Android; UI rAF and 30fps encoded video are measured separately.",
+  "rows": [
+    {
+      "width": 375,
+      "viewport": {
+        "width": 375,
+        "height": 667
+      },
+      "raf": {
+        "samples": 1247,
+        "medianMs": 16.7,
+        "p95Ms": 16.8,
+        "over33Percent": 0,
+        "maxMs": 16.8
+      },
+      "videos": [
+        {
+          "src": "http://localhost:8099/img/film/m1p/intro.mp4",
+          "total": 102,
+          "dropped": 3
+        },
+        {
+          "src": "http://localhost:8099/img/film/m1p/c2-flur.fwd.mp4",
+          "total": 66,
+          "dropped": 3
+        },
+        {
+          "src": "http://localhost:8099/img/film/m1p/c3-bad.fwd.mp4",
+          "total": 66,
+          "dropped": 3
+        },
+        {
+          "src": "http://localhost:8099/img/film/m1p/c4-schlaf.fwd.mp4",
+          "total": 66,
+          "dropped": 3
+        },
+        {
+          "src": "http://localhost:8099/img/film/m1p/c5-wohnen.fwd.mp4",
+          "total": 66,
+          "dropped": 3
+        },
+        {
+          "src": "http://localhost:8099/img/film/m1p/c6-eingang.fwd.mp4",
+          "total": 66,
+          "dropped": 3
+        }
+      ],
+      "lcpMs": 956,
+      "cls": 0,
+      "longTasks": [
+        125,
+        59
+      ],
+      "transferBytes": 4526583,
+      "touchScrolled": true,
+      "videoElements": 1,
+      "heap": 10000000,
+      "errors": []
+    },
+    {
+      "width": 393,
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "raf": {
+        "samples": 1266,
+        "medianMs": 16.7,
+        "p95Ms": 16.7,
+        "over33Percent": 0,
+        "maxMs": 16.8
+      },
+      "videos": [
+        {
+          "src": "http://localhost:8099/img/film/m1p/intro.mp4",
+          "total": 102,
+          "dropped": 4
+        },
+        {
+          "src": "http://localhost:8099/img/film/m1p/c2-flur.fwd.mp4",
+          "total": 66,
+          "dropped": 4
+        },
+        {
+          "src": "http://localhost:8099/img/film/m1p/c3-bad.fwd.mp4",
+          "total": 66,
+          "dropped": 4
+        },
+        {
+          "src": "http://localhost:8099/img/film/m1p/c4-schlaf.fwd.mp4",
+          "total": 66,
+          "dropped": 4
+        },
+        {
+          "src": "http://localhost:8099/img/film/m1p/c5-wohnen.fwd.mp4",
+          "total": 66,
+          "dropped": 4
+        },
+        {
+          "src": "http://localhost:8099/img/film/m1p/c6-eingang.fwd.mp4",
+          "total": 66,
+          "dropped": 4
+        }
+      ],
+      "lcpMs": 960,
+      "cls": 0,
+      "longTasks": [
+        117,
+        60
+      ],
+      "transferBytes": 4526583,
+      "touchScrolled": true,
+      "videoElements": 1,
+      "heap": 10000000,
+      "errors": []
+    },
+    {
+      "width": 430,
+      "viewport": {
+        "width": 430,
+        "height": 852
+      },
+      "raf": {
+        "samples": 1265,
+        "medianMs": 16.7,
+        "p95Ms": 16.7,
+        "over33Percent": 0,
+        "maxMs": 16.8
+      },
+      "videos": [
+        {
+          "src": "http://localhost:8099/img/film/m1p/intro.mp4",
+          "total": 102,
+          "dropped": 4
+        },
+        {
+          "src": "http://localhost:8099/img/film/m1p/c2-flur.fwd.mp4",
+          "total": 66,
+          "dropped": 4
+        },
+        {
+          "src": "http://localhost:8099/img/film/m1p/c3-bad.fwd.mp4",
+          "total": 66,
+          "dropped": 4
+        },
+        {
+          "src": "http://localhost:8099/img/film/m1p/c4-schlaf.fwd.mp4",
+          "total": 66,
+          "dropped": 4
+        },
+        {
+          "src": "http://localhost:8099/img/film/m1p/c5-wohnen.fwd.mp4",
+          "total": 66,
+          "dropped": 4
+        },
+        {
+          "src": "http://localhost:8099/img/film/m1p/c6-eingang.fwd.mp4",
+          "total": 66,
+          "dropped": 4
+        }
+      ],
+      "lcpMs": 960,
+      "cls": 0,
+      "longTasks": [
+        116,
+        61
+      ],
+      "transferBytes": 4526583,
+      "touchScrolled": true,
+      "videoElements": 1,
+      "heap": 10000000,
+      "errors": []
+    },
+    {
+      "profile": "4Mbps / 80ms / CPU4x",
+      "titleOpacity": 1,
+      "controller": true,
+      "resources": [
+        {
+          "name": "http://localhost:8099/vendor/fonts/archivo-latin-600-normal.woff2",
+          "bytes": 14120
+        },
+        {
+          "name": "http://localhost:8099/vendor/fonts.css",
+          "bytes": 1422
+        },
+        {
+          "name": "http://localhost:8099/css/site.css",
+          "bytes": 136183
+        },
+        {
+          "name": "http://localhost:8099/css/lightbox.css",
+          "bytes": 5796
+        },
+        {
+          "name": "http://localhost:8099/css/mobile-film.css",
+          "bytes": 10870
+        },
+        {
+          "name": "http://localhost:8099/css/mobile-ui.css",
+          "bytes": 4880
+        },
+        {
+          "name": "http://localhost:8099/img/film/s10/st0-p.webp",
+          "bytes": 43304
+        },
+        {
+          "name": "http://localhost:8099/js/data.js",
+          "bytes": 88524
+        },
+        {
+          "name": "http://localhost:8099/js/analytics.js",
+          "bytes": 7868
+        },
+        {
+          "name": "http://localhost:8099/js/reviews-live.js",
+          "bytes": 2114
+        },
+        {
+          "name": "http://localhost:8099/js/pages.js",
+          "bytes": 78906
+        },
+        {
+          "name": "http://localhost:8099/js/plan.js",
+          "bytes": 1748
+        },
+        {
+          "name": "http://localhost:8099/js/film-fx.js",
+          "bytes": 19034
+        },
+        {
+          "name": "http://localhost:8099/js/film-mobile.js",
+          "bytes": 15051
+        },
+        {
+          "name": "http://localhost:8099/js/film.js",
+          "bytes": 82120
+        },
+        {
+          "name": "http://localhost:8099/js/fx.js",
+          "bytes": 10443
+        },
+        {
+          "name": "http://localhost:8099/js/motion.js",
+          "bytes": 15946
+        },
+        {
+          "name": "http://localhost:8099/js/app.js",
+          "bytes": 58705
+        },
+        {
+          "name": "http://localhost:8099/vendor/fonts/instrument-sans-latin-400-normal.woff2",
+          "bytes": 17160
+        },
+        {
+          "name": "http://localhost:8099/vendor/fonts/instrument-sans-latin-600-normal.woff2",
+          "bytes": 17708
+        },
+        {
+          "name": "http://localhost:8099/vendor/fonts/archivo-latin-700-normal.woff2",
+          "bytes": 14808
+        },
+        {
+          "name": "http://localhost:8099/vendor/fonts/archivo-latin-500-normal.woff2",
+          "bytes": 14900
+        },
+        {
+          "name": "http://localhost:8099/vendor/fonts/instrument-sans-latin-500-normal.woff2",
+          "bytes": 17532
+        },
+        {
+          "name": "http://localhost:8099/vendor/fonts/archivo-latin-400-normal.woff2",
+          "bytes": 15000
+        },
+        {
+          "name": "http://localhost:8099/img/atlant-living-672.webp",
+          "bytes": 28584
+        },
+        {
+          "name": "http://localhost:8099/img/film/s10/st1-p.webp",
+          "bytes": 16216
+        },
+        {
+          "name": "http://localhost:8099/img/film/m1p/intro.mp4",
+          "bytes": 483434
+        }
+      ],
+      "navigation": {
+        "name": "http://localhost:8099/",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 2687.6999999997206,
+        "navigationId": 8268,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0.09999999962747097,
+        "domainLookupStart": 0.599999999627471,
+        "domainLookupEnd": 0.7999999998137355,
+        "connectStart": 0.7999999998137355,
+        "secureConnectionStart": 0,
+        "connectEnd": 1.099999999627471,
+        "requestStart": 1.099999999627471,
+        "responseStart": 2.099999999627471,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 2.099999999627471,
+        "responseEnd": 348.09999999962747,
+        "transferSize": 80043,
+        "encodedBodySize": 79743,
+        "decodedBodySize": 79743,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 358.39999999990687,
+        "domContentLoadedEventStart": 2028.3999999999069,
+        "domContentLoadedEventEnd": 2028.5,
+        "domComplete": 2687.5,
+        "loadEventStart": 2687.6999999997206,
+        "loadEventEnd": 2687.6999999997206,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "high"
+        }
+      },
+      "fcp": 1884
+    }
+  ]
+}

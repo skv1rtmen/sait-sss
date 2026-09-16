@@ -1,0 +1,39 @@
+{
+  "base": "http://localhost:8099",
+  "states": [
+    {
+      "renderer": "compositor",
+      "images": 2,
+      "canvas": "hidden",
+      "phase": "Rohbau"
+    },
+    {
+      "renderer": "compositor",
+      "images": 2,
+      "canvas": "hidden",
+      "phase": "Technik"
+    },
+    {
+      "renderer": "compositor",
+      "images": 2,
+      "canvas": "hidden",
+      "phase": "Rohbau"
+    },
+    {
+      "renderer": "compositor",
+      "images": 2,
+      "canvas": "hidden",
+      "phase": "Möblierung & Licht"
+    },
+    {
+      "renderer": "compositor",
+      "images": 2,
+      "canvas": "hidden",
+      "phase": "Rohbau"
+    }
+  ],
+  "homeReset": true,
+  "resizeCleanup": true,
+  "routeCleanup": true,
+  "errors": []
+}

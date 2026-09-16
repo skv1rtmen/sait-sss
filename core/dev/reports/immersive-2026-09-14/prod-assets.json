@@ -1,0 +1,118 @@
+{
+  "base": "https://www.baustern.ch",
+  "passed": true,
+  "rows": [
+    {
+      "name": "f13l/f0100.webp",
+      "status": 200,
+      "bytes": 41660,
+      "cache": "public,max-age=31536000,immutable",
+      "type": "image/webp"
+    },
+    {
+      "name": "s13/st2.jpg",
+      "status": 200,
+      "bytes": 156848,
+      "cache": "public,max-age=31536000,immutable",
+      "type": "image/jpeg"
+    },
+    {
+      "name": "f13/f0100.webp",
+      "status": 200,
+      "bytes": 81092,
+      "cache": "public,max-age=31536000,immutable",
+      "type": "image/webp"
+    },
+    {
+      "name": "f13h/f0100.webp",
+      "status": 200,
+      "bytes": 198016,
+      "cache": "public,max-age=31536000,immutable",
+      "type": "image/webp"
+    },
+    {
+      "name": "s13/st2-p.webp",
+      "status": 200,
+      "bytes": 89268,
+      "cache": "public,max-age=31536000,immutable",
+      "type": "image/webp"
+    },
+    {
+      "name": "r13/intro.hevc.mp4",
+      "status": 200,
+      "bytes": 3845096,
+      "cache": "public,max-age=31536000,immutable",
+      "type": "video/mp4"
+    },
+    {
+      "name": "r13/c3-bad.fwd.av1.mp4",
+      "status": 200,
+      "bytes": 1490048,
+      "cache": "public,max-age=31536000,immutable",
+      "type": "video/mp4"
+    },
+    {
+      "name": "r13/c3-bad.fwd.h264.mp4",
+      "status": 200,
+      "bytes": 2538499,
+      "cache": "public,max-age=31536000,immutable",
+      "type": "video/mp4"
+    },
+    {
+      "name": "m3lp/intro.mp4",
+      "status": 200,
+      "bytes": 540001,
+      "cache": "public,max-age=31536000,immutable",
+      "type": "video/mp4"
+    },
+    {
+      "name": "m3p/intro.mp4",
+      "status": 200,
+      "bytes": 1747345,
+      "cache": "public,max-age=31536000,immutable",
+      "type": "video/mp4"
+    },
+    {
+      "name": "m3l/intro.mp4",
+      "status": 200,
+      "bytes": 955178,
+      "cache": "public,max-age=31536000,immutable",
+      "type": "video/mp4"
+    },
+    {
+      "name": "m3/intro.mp4",
+      "status": 200,
+      "bytes": 5980863,
+      "cache": "public,max-age=31536000,immutable",
+      "type": "video/mp4"
+    },
+    {
+      "name": "mat5/step6.webp",
+      "status": 200,
+      "bytes": 265338,
+      "cache": "public,max-age=31536000,immutable",
+      "type": "image/webp"
+    },
+    {
+      "name": "scrim-v13.webp",
+      "status": 200,
+      "bytes": 38542,
+      "cache": "public,max-age=31536000,immutable",
+      "type": "image/webp"
+    },
+    {
+      "name": "intro-hold-v13.jpg",
+      "status": 200,
+      "bytes": 270251,
+      "cache": "public,max-age=31536000,immutable",
+      "type": "image/jpeg"
+    },
+    {
+      "name": "poster-v13.jpg",
+      "status": 200,
+      "bytes": 239502,
+      "cache": "public,max-age=31536000,immutable",
+      "type": "image/jpeg"
+    }
+  ]
+}

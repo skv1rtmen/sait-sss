@@ -1,0 +1,415 @@
+{
+  "base": "http://localhost:8098",
+  "environment": "Windows, clean headless Google Chrome profile, GTX 1080 hardware path; rAF timing is NOT proof of physical screen/video FPS. Full scene UI retained; no diagnostic hiding.",
+  "hardware": {
+    "browser": "153.0.8010.36",
+    "devices": [
+      {
+        "vendorId": 4318,
+        "deviceId": 7040,
+        "subSysId": 862393442,
+        "revision": 161,
+        "vendorString": "",
+        "deviceString": "NVIDIA GeForce GTX 1080",
+        "driverVendor": "NVIDIA",
+        "driverVersion": "32.0.15.8266"
+      },
+      {
+        "vendorId": 5140,
+        "deviceId": 140,
+        "subSysId": 0,
+        "revision": 0,
+        "vendorString": "",
+        "deviceString": "Microsoft Basic Render Driver",
+        "driverVendor": "",
+        "driverVersion": "10.0.26100.9278"
+      }
+    ],
+    "features": {
+      "2d_canvas": "enabled",
+      "direct_rendering_display_compositor": "disabled_off_ok",
+      "gpu_compositing": "enabled",
+      "multiple_raster_threads": "enabled_on",
+      "opengl": "enabled_on",
+      "rasterization": "enabled",
+      "raw_draw": "disabled_off_ok",
+      "skia_graphite": "disabled_off",
+      "trees_in_viz": "disabled_off",
+      "video_decode": "enabled",
+      "video_encode": "enabled",
+      "webgl": "enabled",
+      "webgpu": "enabled",
+      "webnn": "disabled_off"
+    }
+  },
+  "rows": [
+    {
+      "width": 1440,
+      "height": 900,
+      "name": "slow-wheel",
+      "frames": 851,
+      "p50": 5.599999999999454,
+      "p95": 16.700000000000728,
+      "p99": 55.5,
+      "max": 161.10000000000036,
+      "over20": 3.9952996474735607,
+      "over33": 1.9976498237367804,
+      "scene": "3",
+      "heading": "Zum Schluss die Oberfläche.",
+      "overflow": false,
+      "images": [],
+      "video": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "quality": {}
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "name": "material-forward",
+      "frames": 1117,
+      "p50": 5.599999999998545,
+      "p95": 5.600000000002183,
+      "p99": 11.099999999998545,
+      "max": 33.39999999999782,
+      "over20": 0.35810205908683973,
+      "over33": 0,
+      "scene": "5",
+      "heading": "So hat es angefangen.",
+      "overflow": false,
+      "renderer": "compositor",
+      "images": [
+        {
+          "width": 1920,
+          "height": 1071,
+          "opacity": "1"
+        },
+        {
+          "width": 1920,
+          "height": 1071,
+          "opacity": "0.3881"
+        }
+      ],
+      "video": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "quality": {}
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "name": "material-reverse",
+      "frames": 1104,
+      "p50": 5.599999999998545,
+      "p95": 6.799999999999272,
+      "p99": 16.700000000000728,
+      "max": 82.5,
+      "over20": 0.8152173913043478,
+      "over33": 0.6340579710144928,
+      "scene": "5",
+      "heading": "So hat es angefangen.",
+      "overflow": false,
+      "renderer": "compositor",
+      "images": [
+        {
+          "width": 1920,
+          "height": 1071,
+          "opacity": "1"
+        },
+        {
+          "width": 1920,
+          "height": 1071,
+          "opacity": "0.3836"
+        }
+      ],
+      "video": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "quality": {}
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "name": "bathroom-pointer",
+      "frames": 694,
+      "p50": 5.599999999998545,
+      "p95": 5.69999999999709,
+      "p99": 11.200000000000728,
+      "max": 22.200000000000728,
+      "over20": 0.2881844380403458,
+      "over33": 0,
+      "scene": "2",
+      "heading": "Bad und Leitungen, SIA-konform.",
+      "overflow": false,
+      "images": [],
+      "video": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "quality": {}
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "name": "idle-canvas",
+      "draws": 0
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "name": "slow-wheel",
+      "frames": 941,
+      "p50": 5.599999999999454,
+      "p95": 11.200000000000728,
+      "p99": 22.30000000000109,
+      "max": 77.80000000000018,
+      "over20": 2.4442082890541976,
+      "over33": 0.4250797024442083,
+      "scene": "2",
+      "heading": "Bad und Leitungen, SIA-konform.",
+      "overflow": false,
+      "images": [],
+      "video": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "quality": {}
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "name": "material-forward",
+      "frames": 1128,
+      "p50": 5.599999999998545,
+      "p95": 5.600000000002183,
+      "p99": 5.700000000000728,
+      "max": 16.200000000000728,
+      "over20": 0,
+      "over33": 0,
+      "scene": "5",
+      "heading": "So hat es angefangen.",
+      "overflow": false,
+      "renderer": "compositor",
+      "images": [
+        {
+          "width": 1920,
+          "height": 1071,
+          "opacity": "1"
+        },
+        {
+          "width": 1920,
+          "height": 1071,
+          "opacity": "0.3888"
+        }
+      ],
+      "video": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "quality": {}
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "name": "material-reverse",
+      "frames": 1129,
+      "p50": 5.599999999998545,
+      "p95": 5.600000000002183,
+      "p99": 5.700000000000728,
+      "max": 11.200000000000728,
+      "over20": 0,
+      "over33": 0,
+      "scene": "5",
+      "heading": "So hat es angefangen.",
+      "overflow": false,
+      "renderer": "compositor",
+      "images": [
+        {
+          "width": 1920,
+          "height": 1071,
+          "opacity": "1"
+        },
+        {
+          "width": 1920,
+          "height": 1071,
+          "opacity": "0.4048"
+        }
+      ],
+      "video": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "quality": {}
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "name": "bathroom-pointer",
+      "frames": 683,
+      "p50": 5.599999999998545,
+      "p95": 5.600000000002183,
+      "p99": 5.700000000004366,
+      "max": 5.700000000004366,
+      "over20": 0,
+      "over33": 0,
+      "scene": "2",
+      "heading": "Bad und Leitungen, SIA-konform.",
+      "overflow": false,
+      "images": [],
+      "video": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "quality": {}
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "name": "idle-canvas",
+      "draws": 0
+    },
+    {
+      "width": 3840,
+      "height": 2160,
+      "name": "slow-wheel",
+      "frames": 1002,
+      "p50": 5.599999999999454,
+      "p95": 11.099999999999454,
+      "p99": 16.600000000000364,
+      "max": 77.69999999999982,
+      "over20": 0.499001996007984,
+      "over33": 0.0998003992015968,
+      "scene": "1",
+      "heading": "Sechs Gewerke. Ein Ansprechpartner.",
+      "overflow": false,
+      "images": [],
+      "video": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "quality": {}
+        }
+      ]
+    },
+    {
+      "width": 3840,
+      "height": 2160,
+      "name": "material-forward",
+      "frames": 1133,
+      "p50": 5.599999999998545,
+      "p95": 5.600000000002183,
+      "p99": 5.700000000000728,
+      "max": 11.200000000000728,
+      "over20": 0,
+      "over33": 0,
+      "scene": "5",
+      "heading": "So hat es angefangen.",
+      "overflow": false,
+      "renderer": "compositor",
+      "images": [
+        {
+          "width": 1920,
+          "height": 1071,
+          "opacity": "1"
+        },
+        {
+          "width": 1920,
+          "height": 1071,
+          "opacity": "0.3885"
+        }
+      ],
+      "video": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "quality": {}
+        }
+      ]
+    },
+    {
+      "width": 3840,
+      "height": 2160,
+      "name": "material-reverse",
+      "frames": 1134,
+      "p50": 5.599999999998545,
+      "p95": 5.600000000002183,
+      "p99": 5.700000000000728,
+      "max": 5.700000000000728,
+      "over20": 0,
+      "over33": 0,
+      "scene": "5",
+      "heading": "So hat es angefangen.",
+      "overflow": false,
+      "renderer": "compositor",
+      "images": [
+        {
+          "width": 1920,
+          "height": 1071,
+          "opacity": "1"
+        },
+        {
+          "width": 1920,
+          "height": 1071,
+          "opacity": "0.4088"
+        }
+      ],
+      "video": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "quality": {}
+        }
+      ]
+    },
+    {
+      "width": 3840,
+      "height": 2160,
+      "name": "bathroom-pointer",
+      "frames": 680,
+      "p50": 5.599999999998545,
+      "p95": 5.600000000005821,
+      "p99": 5.700000000000728,
+      "max": 6.099999999998545,
+      "over20": 0,
+      "over33": 0,
+      "scene": "2",
+      "heading": "Bad und Leitungen, SIA-konform.",
+      "overflow": false,
+      "images": [],
+      "video": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "quality": {}
+        }
+      ]
+    },
+    {
+      "width": 3840,
+      "height": 2160,
+      "name": "idle-canvas",
+      "draws": 0
+    }
+  ],
+  "errors": [],
+  "failures": []
+}

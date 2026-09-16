@@ -1,0 +1,33 @@
+{
+  "checkedAt": "2026-09-14T10:51:00Z",
+  "scope": "Second owner-authorized real test; no further real leads authorized",
+  "execution": "37017",
+  "status": "success",
+  "durationMs": 2637,
+  "lead": {
+    "nr": "WEB-260914-011",
+    "id": "b02dd9d0-723a-4c82-9ba4-55122803f095",
+    "photos": 1,
+    "duplicate": false
+  },
+  "customerEmail": {
+    "provider": "Gmail",
+    "messageId": "1a09f897ab73fbe5",
+    "sent": true
+  },
+  "teamEmail": {
+    "provider": "Gmail",
+    "recipient": "info@baustern.ch",
+    "messageId": "1a09f898142bc587",
+    "sent": true
+  },
+  "telegram": {
+    "ok": true,
+    "messageId": 2379
+  },
+  "limitations": [
+    "Provider acceptance and SENT verified; human inbox reading/spam placement not asserted.",
+    "The real retest succeeded on its first Telegram attempt. Artificially forced transient failure/retry was not tested against the live provider.",
+    "The first test WEB-260914-010 and this test WEB-260914-011 are retained, clearly labelled SYSTEMTEST."
+  ]
+}

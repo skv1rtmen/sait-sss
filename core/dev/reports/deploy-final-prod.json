@@ -1,0 +1,240 @@
+{
+  "base": "https://leafy-bublanina-48b840.netlify.app",
+  "routes": 31,
+  "routeFailures": [],
+  "visual": [
+    {
+      "viewport": "mobile",
+      "fx": true,
+      "pictures": 7,
+      "poster": "img/film/poster-v10.jpg",
+      "mode": "lite",
+      "videoOn": false,
+      "videoOff": false,
+      "errors": [],
+      "failed": [],
+      "oldAssets": []
+    },
+    {
+      "viewport": "tablet",
+      "fx": true,
+      "pictures": 7,
+      "poster": "img/film/poster-v10.jpg",
+      "mode": "lite",
+      "videoOn": false,
+      "videoOff": false,
+      "errors": [],
+      "failed": [],
+      "oldAssets": []
+    },
+    {
+      "viewport": "desktop",
+      "fx": true,
+      "pictures": 7,
+      "poster": "img/film/poster-v10.jpg",
+      "mode": "full",
+      "videoOn": true,
+      "videoOff": true,
+      "errors": [],
+      "failed": [],
+      "oldAssets": [],
+      "videoState": {
+        "videos": [
+          {
+            "className": "w-vid",
+            "src": "https://leafy-bublanina-48b840.netlify.app/img/film/r1/c2-flur.fwd.av1.mp4",
+            "readyState": 4,
+            "networkState": 1,
+            "paused": false,
+            "error": null
+          },
+          {
+            "className": "w-vid",
+            "src": "https://leafy-bublanina-48b840.netlify.app/img/film/r1/c3-bad.fwd.av1.mp4",
+            "readyState": 4,
+            "networkState": 1,
+            "paused": true,
+            "error": null
+          }
+        ],
+        "log": [
+          {
+            "type": "emptied",
+            "src": "",
+            "readyState": 0,
+            "networkState": 3,
+            "error": null
+          },
+          {
+            "type": "loadstart",
+            "src": "https://leafy-bublanina-48b840.netlify.app/img/film/intro-r1.av1.mp4",
+            "readyState": 0,
+            "networkState": 2,
+            "error": null
+          },
+          {
+            "type": "loadedmetadata",
+            "src": "https://leafy-bublanina-48b840.netlify.app/img/film/intro-r1.av1.mp4",
+            "readyState": 1,
+            "networkState": 2,
+            "error": null
+          },
+          {
+            "type": "loadeddata",
+            "src": "https://leafy-bublanina-48b840.netlify.app/img/film/intro-r1.av1.mp4",
+            "readyState": 4,
+            "networkState": 2,
+            "error": null
+          },
+          {
+            "type": "canplay",
+            "src": "https://leafy-bublanina-48b840.netlify.app/img/film/intro-r1.av1.mp4",
+            "readyState": 4,
+            "networkState": 2,
+            "error": null
+          },
+          {
+            "type": "playing",
+            "src": "https://leafy-bublanina-48b840.netlify.app/img/film/intro-r1.av1.mp4",
+            "readyState": 4,
+            "networkState": 2,
+            "error": null
+          },
+          {
+            "type": "emptied",
+            "src": "https://leafy-bublanina-48b840.netlify.app/img/film/r1/c2-flur.fwd.av1.mp4",
+            "readyState": 0,
+            "networkState": 3,
+            "error": null
+          },
+          {
+            "type": "loadstart",
+            "src": "https://leafy-bublanina-48b840.netlify.app/img/film/r1/c2-flur.fwd.av1.mp4",
+            "readyState": 0,
+            "networkState": 2,
+            "error": null
+          },
+          {
+            "type": "suspend",
+            "src": "https://leafy-bublanina-48b840.netlify.app/img/film/intro-r1.av1.mp4",
+            "readyState": 4,
+            "networkState": 1,
+            "error": null
+          },
+          {
+            "type": "loadedmetadata",
+            "src": "https://leafy-bublanina-48b840.netlify.app/img/film/r1/c2-flur.fwd.av1.mp4",
+            "readyState": 1,
+            "networkState": 2,
+            "error": null
+          },
+          {
+            "type": "loadeddata",
+            "src": "https://leafy-bublanina-48b840.netlify.app/img/film/r1/c2-flur.fwd.av1.mp4",
+            "readyState": 4,
+            "networkState": 2,
+            "error": null
+          },
+          {
+            "type": "canplay",
+            "src": "https://leafy-bublanina-48b840.netlify.app/img/film/r1/c2-flur.fwd.av1.mp4",
+            "readyState": 4,
+            "networkState": 2,
+            "error": null
+          },
+          {
+            "type": "suspend",
+            "src": "https://leafy-bublanina-48b840.netlify.app/img/film/r1/c2-flur.fwd.av1.mp4",
+            "readyState": 4,
+            "networkState": 1,
+            "error": null
+          },
+          {
+            "type": "waiting",
+            "src": "https://leafy-bublanina-48b840.netlify.app/img/film/r1/c2-flur.fwd.av1.mp4",
+            "readyState": 1,
+            "networkState": 1,
+            "error": null
+          },
+          {
+            "type": "canplay",
+            "src": "https://leafy-bublanina-48b840.netlify.app/img/film/r1/c2-flur.fwd.av1.mp4",
+            "readyState": 4,
+            "networkState": 1,
+            "error": null
+          },
+          {
+            "type": "playing",
+            "src": "https://leafy-bublanina-48b840.netlify.app/img/film/r1/c2-flur.fwd.av1.mp4",
+            "readyState": 4,
+            "networkState": 1,
+            "error": null
+          },
+          {
+            "type": "waiting",
+            "src": "https://leafy-bublanina-48b840.netlify.app/img/film/r1/c2-flur.fwd.av1.mp4",
+            "readyState": 4,
+            "networkState": 1,
+            "error": null
+          },
+          {
+            "type": "canplay",
+            "src": "https://leafy-bublanina-48b840.netlify.app/img/film/r1/c2-flur.fwd.av1.mp4",
+            "readyState": 4,
+            "networkState": 1,
+            "error": null
+          },
+          {
+            "type": "playing",
+            "src": "https://leafy-bublanina-48b840.netlify.app/img/film/r1/c2-flur.fwd.av1.mp4",
+            "readyState": 4,
+            "networkState": 1,
+            "error": null
+          },
+          {
+            "type": "emptied",
+            "src": "https://leafy-bublanina-48b840.netlify.app/img/film/r1/c3-bad.fwd.av1.mp4",
+            "readyState": 0,
+            "networkState": 3,
+            "error": null
+          },
+          {
+            "type": "loadstart",
+            "src": "https://leafy-bublanina-48b840.netlify.app/img/film/r1/c3-bad.fwd.av1.mp4",
+            "readyState": 0,
+            "networkState": 2,
+            "error": null
+          },
+          {
+            "type": "loadedmetadata",
+            "src": "https://leafy-bublanina-48b840.netlify.app/img/film/r1/c3-bad.fwd.av1.mp4",
+            "readyState": 1,
+            "networkState": 2,
+            "error": null
+          },
+          {
+            "type": "loadeddata",
+            "src": "https://leafy-bublanina-48b840.netlify.app/img/film/r1/c3-bad.fwd.av1.mp4",
+            "readyState": 3,
+            "networkState": 2,
+            "error": null
+          },
+          {
+            "type": "canplay",
+            "src": "https://leafy-bublanina-48b840.netlify.app/img/film/r1/c3-bad.fwd.av1.mp4",
+            "readyState": 3,
+            "networkState": 2,
+            "error": null
+          },
+          {
+            "type": "suspend",
+            "src": "https://leafy-bublanina-48b840.netlify.app/img/film/r1/c3-bad.fwd.av1.mp4",
+            "readyState": 4,
+            "networkState": 1,
+            "error": null
+          }
+        ]
+      }
+    }
+  ]
+}

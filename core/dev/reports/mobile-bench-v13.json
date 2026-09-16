@@ -1,0 +1,400 @@
+{
+  "environment": "Windows headless Chromium; emulated touch viewports, not physical iOS/Android; UI rAF and adaptive 60/30fps video (requestVideoFrameCallback) are measured separately.",
+  "rows": [
+    {
+      "width": 375,
+      "viewport": {
+        "width": 375,
+        "height": 667
+      },
+      "raf": {
+        "samples": 1247,
+        "medianMs": 16.7,
+        "p95Ms": 16.8,
+        "over33Percent": 0,
+        "maxMs": 16.8
+      },
+      "videos": [
+        {
+          "src": "http://localhost:8098/img/film/m3p/intro.mp4",
+          "total": 204,
+          "dropped": 4,
+          "callbackCount": 202,
+          "deliveredMediaFps": 60,
+          "encodedFramesPerSecond": 60
+        },
+        {
+          "src": "http://localhost:8098/img/film/m3p/c2-flur.fwd.mp4",
+          "total": 132,
+          "dropped": 4,
+          "callbackCount": 130,
+          "deliveredMediaFps": 60,
+          "encodedFramesPerSecond": 60
+        },
+        {
+          "src": "http://localhost:8098/img/film/m3p/c3-bad.fwd.mp4",
+          "total": 132,
+          "dropped": 4,
+          "callbackCount": 130,
+          "deliveredMediaFps": 60,
+          "encodedFramesPerSecond": 60
+        },
+        {
+          "src": "http://localhost:8098/img/film/m3p/c4-schlaf.fwd.mp4",
+          "total": 132,
+          "dropped": 4,
+          "callbackCount": 130,
+          "deliveredMediaFps": 60,
+          "encodedFramesPerSecond": 60
+        },
+        {
+          "src": "http://localhost:8098/img/film/m3p/c5-wohnen.fwd.mp4",
+          "total": 132,
+          "dropped": 4,
+          "callbackCount": 130,
+          "deliveredMediaFps": 60,
+          "encodedFramesPerSecond": 60
+        },
+        {
+          "src": "http://localhost:8098/img/film/m3p/c6-eingang.fwd.mp4",
+          "total": 132,
+          "dropped": 4,
+          "callbackCount": 130,
+          "deliveredMediaFps": 60,
+          "encodedFramesPerSecond": 60
+        }
+      ],
+      "lcpMs": 976,
+      "cls": 0,
+      "longTasks": [
+        132,
+        70
+      ],
+      "transferBytes": 9230066,
+      "touchScrolled": true,
+      "videoElements": 1,
+      "heap": 10000000,
+      "errors": []
+    },
+    {
+      "width": 393,
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "raf": {
+        "samples": 1264,
+        "medianMs": 16.7,
+        "p95Ms": 16.8,
+        "over33Percent": 0,
+        "maxMs": 16.8
+      },
+      "videos": [
+        {
+          "src": "http://localhost:8098/img/film/m3p/intro.mp4",
+          "total": 204,
+          "dropped": 4,
+          "callbackCount": 203,
+          "deliveredMediaFps": 60,
+          "encodedFramesPerSecond": 60
+        },
+        {
+          "src": "http://localhost:8098/img/film/m3p/c2-flur.fwd.mp4",
+          "total": 132,
+          "dropped": 5,
+          "callbackCount": 130,
+          "deliveredMediaFps": 60,
+          "encodedFramesPerSecond": 60
+        },
+        {
+          "src": "http://localhost:8098/img/film/m3p/c3-bad.fwd.mp4",
+          "total": 132,
+          "dropped": 5,
+          "callbackCount": 130,
+          "deliveredMediaFps": 60,
+          "encodedFramesPerSecond": 60
+        },
+        {
+          "src": "http://localhost:8098/img/film/m3p/c4-schlaf.fwd.mp4",
+          "total": 132,
+          "dropped": 5,
+          "callbackCount": 130,
+          "deliveredMediaFps": 60,
+          "encodedFramesPerSecond": 60
+        },
+        {
+          "src": "http://localhost:8098/img/film/m3p/c5-wohnen.fwd.mp4",
+          "total": 132,
+          "dropped": 4,
+          "callbackCount": 131,
+          "deliveredMediaFps": 60,
+          "encodedFramesPerSecond": 60
+        },
+        {
+          "src": "http://localhost:8098/img/film/m3p/c6-eingang.fwd.mp4",
+          "total": 132,
+          "dropped": 4,
+          "callbackCount": 131,
+          "deliveredMediaFps": 60,
+          "encodedFramesPerSecond": 60
+        }
+      ],
+      "lcpMs": 1016,
+      "cls": 0,
+      "longTasks": [
+        145,
+        71,
+        53
+      ],
+      "transferBytes": 9230066,
+      "touchScrolled": true,
+      "videoElements": 1,
+      "heap": 10000000,
+      "errors": []
+    },
+    {
+      "width": 430,
+      "viewport": {
+        "width": 430,
+        "height": 852
+      },
+      "raf": {
+        "samples": 1267,
+        "medianMs": 16.7,
+        "p95Ms": 16.8,
+        "over33Percent": 0,
+        "maxMs": 16.8
+      },
+      "videos": [
+        {
+          "src": "http://localhost:8098/img/film/m3p/intro.mp4",
+          "total": 204,
+          "dropped": 4,
+          "callbackCount": 203,
+          "deliveredMediaFps": 60,
+          "encodedFramesPerSecond": 60
+        },
+        {
+          "src": "http://localhost:8098/img/film/m3p/c2-flur.fwd.mp4",
+          "total": 132,
+          "dropped": 5,
+          "callbackCount": 130,
+          "deliveredMediaFps": 60,
+          "encodedFramesPerSecond": 60
+        },
+        {
+          "src": "http://localhost:8098/img/film/m3p/c3-bad.fwd.mp4",
+          "total": 132,
+          "dropped": 4,
+          "callbackCount": 131,
+          "deliveredMediaFps": 60,
+          "encodedFramesPerSecond": 60
+        },
+        {
+          "src": "http://localhost:8098/img/film/m3p/c4-schlaf.fwd.mp4",
+          "total": 132,
+          "dropped": 5,
+          "callbackCount": 130,
+          "deliveredMediaFps": 60,
+          "encodedFramesPerSecond": 60
+        },
+        {
+          "src": "http://localhost:8098/img/film/m3p/c5-wohnen.fwd.mp4",
+          "total": 132,
+          "dropped": 4,
+          "callbackCount": 131,
+          "deliveredMediaFps": 60,
+          "encodedFramesPerSecond": 60
+        },
+        {
+          "src": "http://localhost:8098/img/film/m3p/c6-eingang.fwd.mp4",
+          "total": 132,
+          "dropped": 5,
+          "callbackCount": 130,
+          "deliveredMediaFps": 60,
+          "encodedFramesPerSecond": 60
+        }
+      ],
+      "lcpMs": 996,
+      "cls": 0,
+      "longTasks": [
+        134,
+        59
+      ],
+      "transferBytes": 9230066,
+      "touchScrolled": true,
+      "videoElements": 1,
+      "heap": 10000000,
+      "errors": []
+    },
+    {
+      "profile": "4Mbps / 80ms / CPU4x",
+      "titleOpacity": 1,
+      "controller": true,
+      "resources": [
+        {
+          "name": "http://localhost:8098/vendor/fonts/archivo-latin-600-normal.woff2",
+          "bytes": 14120
+        },
+        {
+          "name": "http://localhost:8098/vendor/fonts.css",
+          "bytes": 1422
+        },
+        {
+          "name": "http://localhost:8098/css/site.css",
+          "bytes": 145768
+        },
+        {
+          "name": "http://localhost:8098/css/lightbox.css",
+          "bytes": 5796
+        },
+        {
+          "name": "http://localhost:8098/css/mobile-film.css",
+          "bytes": 10965
+        },
+        {
+          "name": "http://localhost:8098/css/mobile-ui.css",
+          "bytes": 4880
+        },
+        {
+          "name": "http://localhost:8098/img/film/s13/st0-p.webp",
+          "bytes": 139796
+        },
+        {
+          "name": "http://localhost:8098/js/data.js",
+          "bytes": 88892
+        },
+        {
+          "name": "http://localhost:8098/js/analytics.js",
+          "bytes": 7887
+        },
+        {
+          "name": "http://localhost:8098/js/reviews-live.js",
+          "bytes": 2114
+        },
+        {
+          "name": "http://localhost:8098/js/pages.js",
+          "bytes": 81034
+        },
+        {
+          "name": "http://localhost:8098/js/plan.js",
+          "bytes": 1748
+        },
+        {
+          "name": "http://localhost:8098/js/film-fx.js",
+          "bytes": 24533
+        },
+        {
+          "name": "http://localhost:8098/js/film-mobile.js",
+          "bytes": 15725
+        },
+        {
+          "name": "http://localhost:8098/js/film.js",
+          "bytes": 85509
+        },
+        {
+          "name": "http://localhost:8098/js/fx.js",
+          "bytes": 10443
+        },
+        {
+          "name": "http://localhost:8098/js/motion.js",
+          "bytes": 15946
+        },
+        {
+          "name": "http://localhost:8098/js/app.js",
+          "bytes": 69296
+        },
+        {
+          "name": "http://localhost:8098/vendor/fonts/instrument-sans-latin-400-normal.woff2",
+          "bytes": 17160
+        },
+        {
+          "name": "http://localhost:8098/vendor/fonts/instrument-sans-latin-600-normal.woff2",
+          "bytes": 17708
+        },
+        {
+          "name": "http://localhost:8098/vendor/fonts/archivo-latin-700-normal.woff2",
+          "bytes": 14808
+        },
+        {
+          "name": "http://localhost:8098/vendor/fonts/archivo-latin-500-normal.woff2",
+          "bytes": 14900
+        },
+        {
+          "name": "http://localhost:8098/vendor/fonts/instrument-sans-latin-500-normal.woff2",
+          "bytes": 17532
+        },
+        {
+          "name": "http://localhost:8098/vendor/fonts/archivo-latin-400-normal.woff2",
+          "bytes": 15000
+        },
+        {
+          "name": "http://localhost:8098/img/atlant-living-672.webp",
+          "bytes": 28584
+        },
+        {
+          "name": "http://localhost:8098/img/film/s13/st1-p.webp",
+          "bytes": 66030
+        },
+        {
+          "name": "http://localhost:8098/img/film/m3p/intro.mp4",
+          "bytes": 1747645
+        }
+      ],
+      "navigation": {
+        "name": "http://localhost:8098/",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 3383.2000000029802,
+        "navigationId": 4972,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 0.20000000298023224,
+        "domainLookupStart": 0.7999999970197678,
+        "domainLookupEnd": 1.0999999940395355,
+        "connectStart": 1.0999999940395355,
+        "secureConnectionStart": 0,
+        "connectEnd": 1.3999999910593033,
+        "requestStart": 1.5,
+        "responseStart": 3,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 3,
+        "responseEnd": 359.79999999701977,
+        "transferSize": 81332,
+        "encodedBodySize": 81032,
+        "decodedBodySize": 81032,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 378.70000000298023,
+        "domContentLoadedEventStart": 2690,
+        "domContentLoadedEventEnd": 2690.2000000029802,
+        "domComplete": 3382.5999999940395,
+        "loadEventStart": 3382.7999999970198,
+        "loadEventEnd": 3383.2000000029802,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "low"
+        }
+      },
+      "fcp": 2452
+    }
+  ]
+}

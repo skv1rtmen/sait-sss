@@ -1,0 +1,149 @@
+{
+  "bathroomCanvasStable": true,
+  "audio": {
+    "peak": {
+      "enabled": true,
+      "voices": 4,
+      "state": "running"
+    },
+    "muted": {
+      "enabled": false,
+      "voices": 0,
+      "state": "running"
+    },
+    "closed": {
+      "enabled": false,
+      "voices": 0,
+      "state": "idle"
+    }
+  },
+  "returns": [
+    {
+      "i": 1,
+      "cur": 1,
+      "frame": 191,
+      "reveal": 1,
+      "show": true
+    },
+    {
+      "i": 2,
+      "cur": 2,
+      "frame": 287,
+      "reveal": 1,
+      "show": true
+    },
+    {
+      "i": 3,
+      "cur": 3,
+      "frame": 383,
+      "reveal": 1,
+      "show": true
+    },
+    {
+      "i": 4,
+      "cur": 4,
+      "frame": 479,
+      "reveal": 1,
+      "show": true
+    },
+    {
+      "i": 5,
+      "cur": 5,
+      "frame": 479,
+      "reveal": 1,
+      "show": true
+    }
+  ],
+  "cycles": [
+    {
+      "stages": 1,
+      "title": 1,
+      "cache": {
+        "bm": 6,
+        "low": 0,
+        "blobs": 387,
+        "lowBlobs": 380
+      },
+      "triggers": 94
+    },
+    {
+      "stages": 1,
+      "title": 1,
+      "cache": {
+        "bm": 6,
+        "low": 0,
+        "blobs": 387,
+        "lowBlobs": 380
+      },
+      "triggers": 94
+    },
+    {
+      "stages": 1,
+      "title": 1,
+      "cache": {
+        "bm": 6,
+        "low": 0,
+        "blobs": 387,
+        "lowBlobs": 380
+      },
+      "triggers": 94
+    },
+    {
+      "stages": 1,
+      "title": 1,
+      "cache": {
+        "bm": 6,
+        "low": 0,
+        "blobs": 387,
+        "lowBlobs": 380
+      },
+      "triggers": 94
+    },
+    {
+      "stages": 1,
+      "title": 1,
+      "cache": {
+        "bm": 6,
+        "low": 0,
+        "blobs": 387,
+        "lowBlobs": 380
+      },
+      "triggers": 94
+    },
+    {
+      "stages": 1,
+      "title": 1,
+      "cache": {
+        "bm": 6,
+        "low": 0,
+        "blobs": 387,
+        "lowBlobs": 380
+      },
+      "triggers": 94
+    },
+    {
+      "stages": 1,
+      "title": 1,
+      "cache": {
+        "bm": 6,
+        "low": 0,
+        "blobs": 387,
+        "lowBlobs": 380
+      },
+      "triggers": 94
+    },
+    {
+      "stages": 1,
+      "title": 0.998295,
+      "cache": {
+        "bm": 6,
+        "low": 0,
+        "blobs": 387,
+        "lowBlobs": 380
+      },
+      "triggers": 94
+    }
+  ],
+  "errors": [],
+  "warnings": []
+}

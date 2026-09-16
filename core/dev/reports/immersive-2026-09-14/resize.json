@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "engine": "chromium",
+      "width": 844,
+      "mode": "lite",
+      "planes": 1,
+      "tours": 1,
+      "heading": "Bauen mit System und Vertrauen.",
+      "overflow": false
+    },
+    {
+      "engine": "chromium",
+      "width": 1024,
+      "mode": "plain",
+      "planes": 0,
+      "tours": 0,
+      "heading": "Bauen mit System und Vertrauen.",
+      "overflow": false
+    },
+    {
+      "engine": "chromium",
+      "width": 375,
+      "mode": "lite",
+      "planes": 1,
+      "tours": 1,
+      "heading": "Bauen mit System und Vertrauen.",
+      "overflow": false
+    },
+    {
+      "engine": "webkit",
+      "width": 844,
+      "mode": "lite",
+      "planes": 1,
+      "tours": 1,
+      "heading": "Bauen mit Systemund Vertrauen.",
+      "overflow": false
+    },
+    {
+      "engine": "webkit",
+      "width": 1024,
+      "mode": "plain",
+      "planes": 0,
+      "tours": 0,
+      "heading": "Bauen mit System und Vertrauen.",
+      "overflow": false
+    },
+    {
+      "engine": "webkit",
+      "width": 375,
+      "mode": "lite",
+      "planes": 1,
+      "tours": 1,
+      "heading": "Bauen mit Systemund Vertrauen.",
+      "overflow": false
+    }
+  ]
+}

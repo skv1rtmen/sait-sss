@@ -1,0 +1,43 @@
+{
+  "grade": "eq=brightness=0.025:saturation=1.14:gamma=1.035,unsharp=5:5:0.40:5:5:0",
+  "phase": "compat",
+  "source": "Existing 1080p60 RIFE masters; original generated video was 720p. Encoding does not create true 4K detail.",
+  "folders": {
+    "f13": {
+      "files": 576,
+      "bytes": 28376546
+    },
+    "f13h": {
+      "files": 576,
+      "bytes": 75619184
+    },
+    "f13l": {
+      "files": 576,
+      "bytes": 14038818
+    },
+    "s13": {
+      "files": 31,
+      "bytes": 4233542
+    },
+    "r13": {
+      "files": 23,
+      "bytes": 63984020
+    },
+    "m3": {
+      "files": 11,
+      "bytes": 34206189
+    },
+    "m3p": {
+      "files": 11,
+      "bytes": 9927271
+    },
+    "m3l": {
+      "files": 11,
+      "bytes": 5392209
+    },
+    "m3lp": {
+      "files": 11,
+      "bytes": 2907512
+    }
+  }
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "mode": "default60",
+    "src": "http://localhost:8099/img/film/m3p/intro.mp4",
+    "width": 720,
+    "height": 1280,
+    "passed": true
+  },
+  {
+    "mode": "slow30",
+    "src": "http://localhost:8099/img/film/m3lp/intro.mp4",
+    "width": 540,
+    "height": 960,
+    "passed": true
+  },
+  {
+    "mode": "saveData",
+    "src": "http://localhost:8099/img/film/m3lp/intro.mp4",
+    "width": 540,
+    "height": 960,
+    "passed": true
+  },
+  {
+    "mode": "decodeFallback",
+    "src": "http://localhost:8099/img/film/m3lp/intro.mp4",
+    "width": 540,
+    "height": 960,
+    "passed": true
+  }
+]

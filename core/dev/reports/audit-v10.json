@@ -1,0 +1,7914 @@
+{
+  "summary": {
+    "checked": 31,
+    "failed": 0,
+    "seriousAxe": 0,
+    "axeByRule": [],
+    "overflow": [],
+    "touchSamples": [
+      {
+        "profile": "desktop",
+        "route": "bewertung",
+        "count": 29,
+        "samples": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          }
+        ]
+      },
+      {
+        "profile": "desktop",
+        "route": "karriere",
+        "count": 29,
+        "samples": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          }
+        ]
+      },
+      {
+        "profile": "desktop",
+        "route": "wissen/badsanierung-kosten-zuerich-2026",
+        "count": 30,
+        "samples": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          }
+        ]
+      },
+      {
+        "profile": "desktop",
+        "route": "wissen/leerwohnung-streichen-preise",
+        "count": 30,
+        "samples": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          }
+        ]
+      },
+      {
+        "profile": "desktop",
+        "route": "wissen/baubewilligung-zuerich-sanierung",
+        "count": 30,
+        "samples": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          }
+        ]
+      },
+      {
+        "profile": "desktop",
+        "route": "wissen/buero-gewerbe-umbau-ablauf",
+        "count": 30,
+        "samples": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          }
+        ]
+      },
+      {
+        "profile": "desktop",
+        "route": "sanierung-winterthur",
+        "count": 30,
+        "samples": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          }
+        ]
+      },
+      {
+        "profile": "desktop",
+        "route": "sanierung-zug",
+        "count": 30,
+        "samples": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          }
+        ]
+      },
+      {
+        "profile": "desktop",
+        "route": "sanierung-luzern",
+        "count": 30,
+        "samples": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          }
+        ]
+      },
+      {
+        "profile": "desktop",
+        "route": "home",
+        "count": 30,
+        "samples": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          }
+        ]
+      },
+      {
+        "profile": "desktop",
+        "route": "leistungen",
+        "count": 30,
+        "samples": [
+          {
+            "el": "a.active",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          }
+        ]
+      },
+      {
+        "profile": "desktop",
+        "route": "leistungen/renovation",
+        "count": 30,
+        "samples": [
+          {
+            "el": "a.active",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          }
+        ]
+      },
+      {
+        "profile": "desktop",
+        "route": "leistungen/sanitaer",
+        "count": 30,
+        "samples": [
+          {
+            "el": "a.active",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          }
+        ]
+      },
+      {
+        "profile": "desktop",
+        "route": "leistungen/neu-umbau",
+        "count": 30,
+        "samples": [
+          {
+            "el": "a.active",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          }
+        ]
+      },
+      {
+        "profile": "desktop",
+        "route": "leistungen/abbruch-rueckbau",
+        "count": 30,
+        "samples": [
+          {
+            "el": "a.active",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          }
+        ]
+      },
+      {
+        "profile": "desktop",
+        "route": "leistungen/fliesen-parkett",
+        "count": 30,
+        "samples": [
+          {
+            "el": "a.active",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          }
+        ]
+      },
+      {
+        "profile": "desktop",
+        "route": "leistungen/malerarbeiten",
+        "count": 30,
+        "samples": [
+          {
+            "el": "a.active",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          }
+        ]
+      },
+      {
+        "profile": "desktop",
+        "route": "loesungen",
+        "count": 30,
+        "samples": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a.active",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          }
+        ]
+      },
+      {
+        "profile": "desktop",
+        "route": "loesungen/hausverwaltungen",
+        "count": 30,
+        "samples": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a.active",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          }
+        ]
+      },
+      {
+        "profile": "desktop",
+        "route": "loesungen/generalunternehmer",
+        "count": 30,
+        "samples": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a.active",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          }
+        ]
+      }
+    ],
+    "interactions": {
+      "mobileOpen": {
+        "expanded": "true",
+        "hidden": "false",
+        "active": "Home",
+        "locked": true,
+        "inert": false
+      },
+      "mobileWrapBack": "Offerte anfragen →",
+      "mobileClosed": {
+        "expanded": "false",
+        "hidden": "true",
+        "focus": "burger",
+        "locked": false,
+        "inert": true
+      },
+      "callbackOpen": {
+        "open": true,
+        "hidden": "false",
+        "active": "cbPhone"
+      },
+      "callbackClosed": {
+        "open": false,
+        "hidden": "true",
+        "active": "cbOpen"
+      },
+      "reduced": {
+        "motion": true,
+        "mode": "off",
+        "film": "plain",
+        "videos": 0,
+        "marquee": false,
+        "running": 0
+      },
+      "spaLifecycle": {
+        "pages": 1,
+        "videos": 0,
+        "scrollTriggers": 16,
+        "route": "leistungen",
+        "heap": 10000000
+      },
+      "landscape": {
+        "title": "BauStern — Bauunternehmen Zürich | Renovation, Sanitär, Umbau",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 812,
+        "clientWidth": 812,
+        "wide": [
+          "img",
+          "img",
+          "img",
+          "img",
+          "img",
+          "img",
+          "img",
+          "video.m-film.on",
+          "div.hp",
+          "label"
+        ],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "input#i-priv",
+            "name": "Ich stimme der Datenschutzerklärung zu. Die Daten werden nur zur Bearbeitung mei",
+            "w": 18,
+            "h": 18
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#curtain",
+          "div#wStage.w-stage"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 1,
+        "pages": 1
+      }
+    }
+  },
+  "rows": [
+    {
+      "profile": "desktop",
+      "route": "bewertung",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Bewertung schreiben — BauStern",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Malerarbeiten",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Hausverwaltungen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Generalunternehmer",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Wissen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Karriere",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Winterthur",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Zug",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Luzern",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "+41 76 524 98 98",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "info@baustern.ch",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Impressum",
+            "w": 67.3,
+            "h": 19.5
+          },
+          {
+            "el": "a",
+            "name": "Datenschutz",
+            "w": 76.4,
+            "h": 19.5
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "karriere",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Karriere — Wir suchen Monteure | BauStern Zürich",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [
+          "div.hp",
+          "label",
+          "input#j-hp"
+        ],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Malerarbeiten",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Hausverwaltungen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Generalunternehmer",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Wissen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Karriere",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Winterthur",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Zug",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Luzern",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "+41 76 524 98 98",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "info@baustern.ch",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Impressum",
+            "w": 67.3,
+            "h": 19.5
+          },
+          {
+            "el": "a",
+            "name": "Datenschutz",
+            "w": 76.4,
+            "h": 19.5
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "wissen/badsanierung-kosten-zuerich-2026",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Was kostet eine Badsanierung in Zürich 2026? — BauStern",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "button.lnk-arrow",
+            "name": "← Zurück zu Wissen & Ratgeber",
+            "w": 215.5,
+            "h": 21.8
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 123.2,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 95.1,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Malerarbeiten",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Hausverwaltungen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Generalunternehmer",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Wissen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Karriere",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Winterthur",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Zug",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Luzern",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "+41 76 524 98 98",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "info@baustern.ch",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 243,
+            "h": 33
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "wissen/leerwohnung-streichen-preise",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Leerwohnung streichen: Preise pro Zimmer & m² — BauStern",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "button.lnk-arrow",
+            "name": "← Zurück zu Wissen & Ratgeber",
+            "w": 215.5,
+            "h": 21.8
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 123.2,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 95.1,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Malerarbeiten",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Hausverwaltungen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Generalunternehmer",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Wissen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Karriere",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Winterthur",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Zug",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Luzern",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "+41 76 524 98 98",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "info@baustern.ch",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 243,
+            "h": 33
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "wissen/baubewilligung-zuerich-sanierung",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Baubewilligung in Zürich für Sanierungen — BauStern",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "button.lnk-arrow",
+            "name": "← Zurück zu Wissen & Ratgeber",
+            "w": 215.5,
+            "h": 21.8
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 123.2,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 95.1,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Malerarbeiten",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Hausverwaltungen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Generalunternehmer",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Wissen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Karriere",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Winterthur",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Zug",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Luzern",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "+41 76 524 98 98",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "info@baustern.ch",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 243,
+            "h": 33
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "wissen/buero-gewerbe-umbau-ablauf",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Büroumbau & Gewerbe-Renovierung — BauStern Zürich",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "button.lnk-arrow",
+            "name": "← Zurück zu Wissen & Ratgeber",
+            "w": 215.5,
+            "h": 21.8
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 123.2,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 95.1,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Malerarbeiten",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Hausverwaltungen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Generalunternehmer",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Wissen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Karriere",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Winterthur",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Zug",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Luzern",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "+41 76 524 98 98",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "info@baustern.ch",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 243,
+            "h": 33
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "sanierung-winterthur",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Renovation & Sanitär in Winterthur — BauStern",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "button.lnk-arrow",
+            "name": "Mehr →",
+            "w": 254.5,
+            "h": 21.8
+          },
+          {
+            "el": "button.lnk-arrow",
+            "name": "Mehr →",
+            "w": 254.5,
+            "h": 21.8
+          },
+          {
+            "el": "button.lnk-arrow",
+            "name": "Mehr →",
+            "w": 254.5,
+            "h": 21.8
+          },
+          {
+            "el": "button.lnk-arrow",
+            "name": "Mehr →",
+            "w": 254.5,
+            "h": 21.8
+          },
+          {
+            "el": "button.lnk-arrow",
+            "name": "Mehr →",
+            "w": 254.5,
+            "h": 21.8
+          },
+          {
+            "el": "button.lnk-arrow",
+            "name": "Mehr →",
+            "w": 254.5,
+            "h": 21.8
+          },
+          {
+            "el": "button.chip",
+            "name": "Leerwohnungs-Renovation",
+            "w": 210.5,
+            "h": 41
+          },
+          {
+            "el": "button.chip",
+            "name": "Badsanierung komplett",
+            "w": 186.6,
+            "h": 41
+          },
+          {
+            "el": "button.chip",
+            "name": "Malerarbeiten",
+            "w": 124.8,
+            "h": 41
+          },
+          {
+            "el": "button.chip",
+            "name": "Wand- & Fassadenanstrich",
+            "w": 210.8,
+            "h": 41
+          },
+          {
+            "el": "button.chip",
+            "name": "Plattenarbeiten",
+            "w": 135.7,
+            "h": 41
+          },
+          {
+            "el": "button.chip",
+            "name": "Parkett & Bodenbelag",
+            "w": 176.5,
+            "h": 41
+          },
+          {
+            "el": "button.chip",
+            "name": "Abbruch & Rückbau",
+            "w": 163.6,
+            "h": 41
+          },
+          {
+            "el": "button.chip",
+            "name": "Trockenbau & Gipser",
+            "w": 169.6,
+            "h": 41
+          },
+          {
+            "el": "button.chip",
+            "name": "Sanitär-Reparatur / Montage",
+            "w": 221.4,
+            "h": 41
+          },
+          {
+            "el": "button.chip",
+            "name": "Küchenmontage",
+            "w": 142.4,
+            "h": 41
+          },
+          {
+            "el": "button#cbOpen3.nav-cb.est-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 123.2,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 95.1,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "sanierung-zug",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Renovation & Sanitär im Kanton Zug — BauStern",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "button.lnk-arrow",
+            "name": "Mehr →",
+            "w": 254.5,
+            "h": 21.8
+          },
+          {
+            "el": "button.lnk-arrow",
+            "name": "Mehr →",
+            "w": 254.5,
+            "h": 21.8
+          },
+          {
+            "el": "button.lnk-arrow",
+            "name": "Mehr →",
+            "w": 254.5,
+            "h": 21.8
+          },
+          {
+            "el": "button.lnk-arrow",
+            "name": "Mehr →",
+            "w": 254.5,
+            "h": 21.8
+          },
+          {
+            "el": "button.lnk-arrow",
+            "name": "Mehr →",
+            "w": 254.5,
+            "h": 21.8
+          },
+          {
+            "el": "button.lnk-arrow",
+            "name": "Mehr →",
+            "w": 254.5,
+            "h": 21.8
+          },
+          {
+            "el": "button.chip",
+            "name": "Leerwohnungs-Renovation",
+            "w": 210.5,
+            "h": 41
+          },
+          {
+            "el": "button.chip",
+            "name": "Badsanierung komplett",
+            "w": 186.6,
+            "h": 41
+          },
+          {
+            "el": "button.chip",
+            "name": "Malerarbeiten",
+            "w": 124.8,
+            "h": 41
+          },
+          {
+            "el": "button.chip",
+            "name": "Wand- & Fassadenanstrich",
+            "w": 210.8,
+            "h": 41
+          },
+          {
+            "el": "button.chip",
+            "name": "Plattenarbeiten",
+            "w": 135.7,
+            "h": 41
+          },
+          {
+            "el": "button.chip",
+            "name": "Parkett & Bodenbelag",
+            "w": 176.5,
+            "h": 41
+          },
+          {
+            "el": "button.chip",
+            "name": "Abbruch & Rückbau",
+            "w": 163.6,
+            "h": 41
+          },
+          {
+            "el": "button.chip",
+            "name": "Trockenbau & Gipser",
+            "w": 169.6,
+            "h": 41
+          },
+          {
+            "el": "button.chip",
+            "name": "Sanitär-Reparatur / Montage",
+            "w": 221.4,
+            "h": 41
+          },
+          {
+            "el": "button.chip",
+            "name": "Küchenmontage",
+            "w": 142.4,
+            "h": 41
+          },
+          {
+            "el": "button#cbOpen3.nav-cb.est-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 123.2,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 95.1,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "sanierung-luzern",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Renovation & Sanitär in Luzern — BauStern",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "button.lnk-arrow",
+            "name": "Mehr →",
+            "w": 254.5,
+            "h": 21.8
+          },
+          {
+            "el": "button.lnk-arrow",
+            "name": "Mehr →",
+            "w": 254.5,
+            "h": 21.8
+          },
+          {
+            "el": "button.lnk-arrow",
+            "name": "Mehr →",
+            "w": 254.5,
+            "h": 21.8
+          },
+          {
+            "el": "button.lnk-arrow",
+            "name": "Mehr →",
+            "w": 254.5,
+            "h": 21.8
+          },
+          {
+            "el": "button.lnk-arrow",
+            "name": "Mehr →",
+            "w": 254.5,
+            "h": 21.8
+          },
+          {
+            "el": "button.lnk-arrow",
+            "name": "Mehr →",
+            "w": 254.5,
+            "h": 21.8
+          },
+          {
+            "el": "button.chip",
+            "name": "Leerwohnungs-Renovation",
+            "w": 210.5,
+            "h": 41
+          },
+          {
+            "el": "button.chip",
+            "name": "Badsanierung komplett",
+            "w": 186.6,
+            "h": 41
+          },
+          {
+            "el": "button.chip",
+            "name": "Malerarbeiten",
+            "w": 124.8,
+            "h": 41
+          },
+          {
+            "el": "button.chip",
+            "name": "Wand- & Fassadenanstrich",
+            "w": 210.8,
+            "h": 41
+          },
+          {
+            "el": "button.chip",
+            "name": "Plattenarbeiten",
+            "w": 135.7,
+            "h": 41
+          },
+          {
+            "el": "button.chip",
+            "name": "Parkett & Bodenbelag",
+            "w": 176.5,
+            "h": 41
+          },
+          {
+            "el": "button.chip",
+            "name": "Abbruch & Rückbau",
+            "w": 163.6,
+            "h": 41
+          },
+          {
+            "el": "button.chip",
+            "name": "Trockenbau & Gipser",
+            "w": 169.6,
+            "h": 41
+          },
+          {
+            "el": "button.chip",
+            "name": "Sanitär-Reparatur / Montage",
+            "w": 221.4,
+            "h": 41
+          },
+          {
+            "el": "button.chip",
+            "name": "Küchenmontage",
+            "w": 142.4,
+            "h": 41
+          },
+          {
+            "el": "button#cbOpen3.nav-cb.est-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 123.2,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 95.1,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "home",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "BauStern — Bauunternehmen Zürich | Renovation, Sanitär, Umbau",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [
+          "i",
+          "span.w-hs-lbl",
+          "i",
+          "span.w-hs-lbl",
+          "i",
+          "span.w-hs-lbl",
+          "div.hp",
+          "label",
+          "input#i-hp"
+        ],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "button#wStart.w-start",
+            "name": "Rundgang durch die Wohnung↓",
+            "w": 284,
+            "h": 18
+          },
+          {
+            "el": "button.w-roomnav-dot.on",
+            "name": "Küche",
+            "w": 60.4,
+            "h": 16.5
+          },
+          {
+            "el": "button.w-roomnav-dot",
+            "name": "Flur",
+            "w": 17,
+            "h": 16.5
+          },
+          {
+            "el": "button.w-roomnav-dot",
+            "name": "Bad",
+            "w": 17,
+            "h": 16.5
+          },
+          {
+            "el": "button.w-roomnav-dot",
+            "name": "Schlafzimmer",
+            "w": 17,
+            "h": 16.5
+          },
+          {
+            "el": "button.w-roomnav-dot",
+            "name": "Wohnen",
+            "w": 17,
+            "h": 16.5
+          },
+          {
+            "el": "button.w-roomnav-dot",
+            "name": "Rückblende",
+            "w": 17,
+            "h": 16.5
+          },
+          {
+            "el": "button.w-roomnav-dot",
+            "name": "Eingang",
+            "w": 17,
+            "h": 16.5
+          },
+          {
+            "el": "button#wSound.w-sound",
+            "name": "Ton im Rundgang einschalten",
+            "w": 48.5,
+            "h": 15.8
+          },
+          {
+            "el": "button.go.sec-link",
+            "name": "Leerwohnungen ansehen",
+            "w": 171.4,
+            "h": 21.8
+          },
+          {
+            "el": "button.go.sec-link",
+            "name": "Sanierungen ansehen",
+            "w": 147.1,
+            "h": 21.8
+          },
+          {
+            "el": "button.go.sec-link",
+            "name": "Fit-outs ansehen",
+            "w": 114.2,
+            "h": 21.8
+          },
+          {
+            "el": "button.chip",
+            "name": "Leerwohnungs-Renovation",
+            "w": 130.5,
+            "h": 25.4
+          },
+          {
+            "el": "button.chip",
+            "name": "Badsanierung komplett",
+            "w": 115.7,
+            "h": 25.4
+          },
+          {
+            "el": "button.chip",
+            "name": "Malerarbeiten",
+            "w": 77.4,
+            "h": 25.4
+          },
+          {
+            "el": "button.chip",
+            "name": "Wand- & Fassadenanstrich",
+            "w": 130.7,
+            "h": 25.4
+          },
+          {
+            "el": "button.chip",
+            "name": "Plattenarbeiten",
+            "w": 84.1,
+            "h": 25.4
+          },
+          {
+            "el": "button.chip",
+            "name": "Parkett & Bodenbelag",
+            "w": 109.4,
+            "h": 25.4
+          },
+          {
+            "el": "button.chip",
+            "name": "Abbruch & Rückbau",
+            "w": 101.4,
+            "h": 25.4
+          },
+          {
+            "el": "button.chip",
+            "name": "Trockenbau & Gipser",
+            "w": 105.1,
+            "h": 25.4
+          },
+          {
+            "el": "button.chip",
+            "name": "Sanitär-Reparatur / Montage",
+            "w": 137.2,
+            "h": 25.4
+          },
+          {
+            "el": "button.chip",
+            "name": "Küchenmontage",
+            "w": 88.3,
+            "h": 25.4
+          },
+          {
+            "el": "input#estRange.est-range",
+            "name": "Menge: Wohnungen",
+            "w": 293.1,
+            "h": 27.3
+          },
+          {
+            "el": "input#estNum.est-num-in",
+            "name": "Menge: Wohnungen",
+            "w": 57,
+            "h": 29.5
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#curtain",
+          "div#wStage.w-stage"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 2,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "leistungen",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Leistungen — BauStern Bauunternehmen Zürich",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a.active",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "a.on",
+            "name": "01Renovation",
+            "w": 326,
+            "h": 43.5
+          },
+          {
+            "el": "a",
+            "name": "02Sanitär",
+            "w": 326,
+            "h": 43.5
+          },
+          {
+            "el": "a",
+            "name": "03Neu- & Umbau",
+            "w": 326,
+            "h": 43.5
+          },
+          {
+            "el": "a",
+            "name": "04Abbruch & Rückbau",
+            "w": 326,
+            "h": 43.5
+          },
+          {
+            "el": "a",
+            "name": "05Fliesen & Parkett",
+            "w": 326,
+            "h": 43.5
+          },
+          {
+            "el": "a",
+            "name": "06Malerarbeiten",
+            "w": 326,
+            "h": 43.5
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 123.2,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 95.1,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Malerarbeiten",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Hausverwaltungen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Generalunternehmer",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Wissen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Karriere",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Winterthur",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Zug",
+            "w": 162,
+            "h": 33
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "leistungen/renovation",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Renovation in Zürich — BauStern",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a.active",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "button",
+            "name": "Leistungen",
+            "w": 71.3,
+            "h": 20.3
+          },
+          {
+            "el": "button.lnk-arrow.light",
+            "name": "Anfrage stellen →",
+            "w": 362.7,
+            "h": 21.8
+          },
+          {
+            "el": "button",
+            "name": "Sanitär",
+            "w": 79.7,
+            "h": 39
+          },
+          {
+            "el": "button",
+            "name": "Neu- & Umbau",
+            "w": 128.8,
+            "h": 39
+          },
+          {
+            "el": "button",
+            "name": "Abbruch & Rückbau",
+            "w": 163.6,
+            "h": 39
+          },
+          {
+            "el": "button",
+            "name": "Fliesen & Parkett",
+            "w": 144.3,
+            "h": 39
+          },
+          {
+            "el": "button",
+            "name": "Malerarbeiten",
+            "w": 124.8,
+            "h": 39
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 123.2,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 95.1,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Malerarbeiten",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Hausverwaltungen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Generalunternehmer",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Wissen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Karriere",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Winterthur",
+            "w": 162,
+            "h": 33
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "leistungen/sanitaer",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Sanitärarbeiten in Zürich — BauStern",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a.active",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "button",
+            "name": "Leistungen",
+            "w": 71.3,
+            "h": 20.3
+          },
+          {
+            "el": "button.lnk-arrow.light",
+            "name": "Anfrage stellen →",
+            "w": 362.7,
+            "h": 21.8
+          },
+          {
+            "el": "button",
+            "name": "Renovation",
+            "w": 106.3,
+            "h": 39
+          },
+          {
+            "el": "button",
+            "name": "Neu- & Umbau",
+            "w": 128.8,
+            "h": 39
+          },
+          {
+            "el": "button",
+            "name": "Abbruch & Rückbau",
+            "w": 163.6,
+            "h": 39
+          },
+          {
+            "el": "button",
+            "name": "Fliesen & Parkett",
+            "w": 144.3,
+            "h": 39
+          },
+          {
+            "el": "button",
+            "name": "Malerarbeiten",
+            "w": 124.8,
+            "h": 39
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 123.2,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 95.1,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Malerarbeiten",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Hausverwaltungen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Generalunternehmer",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Wissen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Karriere",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Winterthur",
+            "w": 162,
+            "h": 33
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "leistungen/neu-umbau",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Neu- und Umbau in Zürich — BauStern",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a.active",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "button",
+            "name": "Leistungen",
+            "w": 71.3,
+            "h": 20.3
+          },
+          {
+            "el": "button.lnk-arrow.light",
+            "name": "Anfrage stellen →",
+            "w": 362.7,
+            "h": 21.8
+          },
+          {
+            "el": "button",
+            "name": "Renovation",
+            "w": 106.3,
+            "h": 39
+          },
+          {
+            "el": "button",
+            "name": "Sanitär",
+            "w": 79.7,
+            "h": 39
+          },
+          {
+            "el": "button",
+            "name": "Abbruch & Rückbau",
+            "w": 163.6,
+            "h": 39
+          },
+          {
+            "el": "button",
+            "name": "Fliesen & Parkett",
+            "w": 144.3,
+            "h": 39
+          },
+          {
+            "el": "button",
+            "name": "Malerarbeiten",
+            "w": 124.8,
+            "h": 39
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 123.2,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 95.1,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Malerarbeiten",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Hausverwaltungen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Generalunternehmer",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Wissen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Karriere",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Winterthur",
+            "w": 162,
+            "h": 33
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "leistungen/abbruch-rueckbau",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Abbruch und Rückbau in Zürich — BauStern",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a.active",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "button",
+            "name": "Leistungen",
+            "w": 71.3,
+            "h": 20.3
+          },
+          {
+            "el": "button.lnk-arrow.light",
+            "name": "Anfrage stellen →",
+            "w": 362.7,
+            "h": 21.8
+          },
+          {
+            "el": "button",
+            "name": "Renovation",
+            "w": 106.3,
+            "h": 39
+          },
+          {
+            "el": "button",
+            "name": "Sanitär",
+            "w": 79.7,
+            "h": 39
+          },
+          {
+            "el": "button",
+            "name": "Neu- & Umbau",
+            "w": 128.8,
+            "h": 39
+          },
+          {
+            "el": "button",
+            "name": "Fliesen & Parkett",
+            "w": 144.3,
+            "h": 39
+          },
+          {
+            "el": "button",
+            "name": "Malerarbeiten",
+            "w": 124.8,
+            "h": 39
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 123.2,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 95.1,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Malerarbeiten",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Hausverwaltungen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Generalunternehmer",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Wissen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Karriere",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Winterthur",
+            "w": 162,
+            "h": 33
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "leistungen/fliesen-parkett",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Fliesen und Parkett in Zürich — BauStern",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a.active",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "button",
+            "name": "Leistungen",
+            "w": 71.3,
+            "h": 20.3
+          },
+          {
+            "el": "button.lnk-arrow.light",
+            "name": "Anfrage stellen →",
+            "w": 362.7,
+            "h": 21.8
+          },
+          {
+            "el": "button",
+            "name": "Renovation",
+            "w": 106.3,
+            "h": 39
+          },
+          {
+            "el": "button",
+            "name": "Sanitär",
+            "w": 79.7,
+            "h": 39
+          },
+          {
+            "el": "button",
+            "name": "Neu- & Umbau",
+            "w": 128.8,
+            "h": 39
+          },
+          {
+            "el": "button",
+            "name": "Abbruch & Rückbau",
+            "w": 163.6,
+            "h": 39
+          },
+          {
+            "el": "button",
+            "name": "Malerarbeiten",
+            "w": 124.8,
+            "h": 39
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 123.2,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 95.1,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Malerarbeiten",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Hausverwaltungen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Generalunternehmer",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Wissen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Karriere",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Winterthur",
+            "w": 162,
+            "h": 33
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "leistungen/malerarbeiten",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Malerarbeiten in Zürich — BauStern",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a.active",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "button",
+            "name": "Leistungen",
+            "w": 71.3,
+            "h": 20.3
+          },
+          {
+            "el": "button.lnk-arrow.light",
+            "name": "Anfrage stellen →",
+            "w": 362.7,
+            "h": 21.8
+          },
+          {
+            "el": "button",
+            "name": "Renovation",
+            "w": 106.3,
+            "h": 39
+          },
+          {
+            "el": "button",
+            "name": "Sanitär",
+            "w": 79.7,
+            "h": 39
+          },
+          {
+            "el": "button",
+            "name": "Neu- & Umbau",
+            "w": 128.8,
+            "h": 39
+          },
+          {
+            "el": "button",
+            "name": "Abbruch & Rückbau",
+            "w": 163.6,
+            "h": 39
+          },
+          {
+            "el": "button",
+            "name": "Fliesen & Parkett",
+            "w": 144.3,
+            "h": 39
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 123.2,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 95.1,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Malerarbeiten",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Hausverwaltungen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Generalunternehmer",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Wissen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Karriere",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Winterthur",
+            "w": 162,
+            "h": 33
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "loesungen",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Lösungen für Verwaltungen, GU & Gewerbe — BauStern",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a.active",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "button.seg-btn.on",
+            "name": "Hausverwaltungen",
+            "w": 164.4,
+            "h": 43.8
+          },
+          {
+            "el": "button.seg-btn",
+            "name": "Generalunternehmer",
+            "w": 180.4,
+            "h": 43.8
+          },
+          {
+            "el": "button.seg-btn",
+            "name": "Gewerbe & Ladenbau",
+            "w": 182.6,
+            "h": 43.8
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 123.2,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 95.1,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Malerarbeiten",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Hausverwaltungen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Generalunternehmer",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Wissen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Karriere",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Winterthur",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Zug",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Luzern",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "+41 76 524 98 98",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "info@baustern.ch",
+            "w": 243,
+            "h": 33
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "loesungen/hausverwaltungen",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Bauleistungen für Hausverwaltungen — BauStern Zürich",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a.active",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "button",
+            "name": "Lösungen",
+            "w": 63,
+            "h": 20.3
+          },
+          {
+            "el": "button",
+            "name": "Für Generalunternehmer",
+            "w": 195.8,
+            "h": 39
+          },
+          {
+            "el": "button",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 198,
+            "h": 39
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 123.2,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 95.1,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Malerarbeiten",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Hausverwaltungen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Generalunternehmer",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Wissen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Karriere",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Winterthur",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Zug",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Luzern",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "+41 76 524 98 98",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "info@baustern.ch",
+            "w": 243,
+            "h": 33
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "loesungen/generalunternehmer",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Subunternehmer für Generalunternehmer — BauStern",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a.active",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "button",
+            "name": "Lösungen",
+            "w": 63,
+            "h": 20.3
+          },
+          {
+            "el": "button",
+            "name": "Für Hausverwaltungen",
+            "w": 180.4,
+            "h": 39
+          },
+          {
+            "el": "button",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 198,
+            "h": 39
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 123.2,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 95.1,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Malerarbeiten",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Hausverwaltungen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Generalunternehmer",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Wissen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Karriere",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Winterthur",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Zug",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Luzern",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "+41 76 524 98 98",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "info@baustern.ch",
+            "w": 243,
+            "h": 33
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "loesungen/gewerbe-ladenbau",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Fit-out für Gewerbe und Ladenbau — BauStern Zürich",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a.active",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "button",
+            "name": "Lösungen",
+            "w": 63,
+            "h": 20.3
+          },
+          {
+            "el": "button",
+            "name": "Für Hausverwaltungen",
+            "w": 180.4,
+            "h": 39
+          },
+          {
+            "el": "button",
+            "name": "Für Generalunternehmer",
+            "w": 195.8,
+            "h": 39
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 123.2,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 95.1,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Malerarbeiten",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Hausverwaltungen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Generalunternehmer",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Wissen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Karriere",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Winterthur",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Zug",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Luzern",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "+41 76 524 98 98",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "info@baustern.ch",
+            "w": 243,
+            "h": 33
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "referenzen",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Referenzen — BauStern Zürich",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a.active",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "button.tab.on",
+            "name": "Alle20",
+            "w": 46.9,
+            "h": 39.8
+          },
+          {
+            "el": "button.tab",
+            "name": "Renovation10",
+            "w": 97.4,
+            "h": 39.8
+          },
+          {
+            "el": "button.tab",
+            "name": "Sanitär3",
+            "w": 62.5,
+            "h": 39.8
+          },
+          {
+            "el": "button.tab",
+            "name": "Neu- & Umbau11",
+            "w": 120.7,
+            "h": 39.8
+          },
+          {
+            "el": "button.tab",
+            "name": "Abbruch & Rückbau2",
+            "w": 149.5,
+            "h": 39.8
+          },
+          {
+            "el": "button.tab",
+            "name": "Fliesen & Parkett4",
+            "w": 129.5,
+            "h": 39.8
+          },
+          {
+            "el": "button.tab",
+            "name": "Malerarbeiten5",
+            "w": 109.3,
+            "h": 39.8
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 123.2,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 95.1,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Malerarbeiten",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Hausverwaltungen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Generalunternehmer",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Wissen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Karriere",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Winterthur",
+            "w": 162,
+            "h": 33
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "projekt/atlant-komplettausbau",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "WHK Atlant — Komplettausbau 47 m² | BauStern",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a.active",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "button",
+            "name": "Referenzen",
+            "w": 72,
+            "h": 20.3
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 123.2,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 95.1,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Malerarbeiten",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Hausverwaltungen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Generalunternehmer",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Wissen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Karriere",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Winterthur",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Zug",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Luzern",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "+41 76 524 98 98",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "info@baustern.ch",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 243,
+            "h": 33
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "projekt/objektbad-gruener-marmor",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Objektbad in grünem Marmor — Fallstudie | BauStern",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a.active",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "button",
+            "name": "Referenzen",
+            "w": 72,
+            "h": 20.3
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 123.2,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 95.1,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Malerarbeiten",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Hausverwaltungen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Generalunternehmer",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Wissen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Karriere",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Winterthur",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Zug",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Luzern",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "+41 76 524 98 98",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "info@baustern.ch",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 243,
+            "h": 33
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "projekt/salon-fitout",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Fit-out Coiffure-Salon — Fallstudie | BauStern",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a.active",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "button",
+            "name": "Referenzen",
+            "w": 72,
+            "h": 20.3
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 123.2,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 95.1,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Malerarbeiten",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Hausverwaltungen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Generalunternehmer",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Wissen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Karriere",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Winterthur",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Zug",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Luzern",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "+41 76 524 98 98",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "info@baustern.ch",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 243,
+            "h": 33
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "projekt/hotel-gewoelbe",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Hotelzimmer und Gewölbe-Bar — Fallstudie | BauStern",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a.active",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "button",
+            "name": "Referenzen",
+            "w": 72,
+            "h": 20.2
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 123.2,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 95.1,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Malerarbeiten",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Hausverwaltungen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Generalunternehmer",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Wissen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Karriere",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Winterthur",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Zug",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Luzern",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "+41 76 524 98 98",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "info@baustern.ch",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 243,
+            "h": 33
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "ueber-uns",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Über uns — BauStern Bauunternehmen Zürich",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a.active",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "a.lnk-arrow",
+            "name": "Bei Google prüfen →",
+            "w": 449.4,
+            "h": 21.8
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 123.2,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 95.1,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Malerarbeiten",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Hausverwaltungen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Generalunternehmer",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Wissen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Karriere",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Winterthur",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Zug",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Luzern",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "+41 76 524 98 98",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "info@baustern.ch",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 243,
+            "h": 33
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "wissen",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Wissen & Ratgeber — BauStern Zürich",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "button.wt-ask",
+            "name": "Frage stellen →",
+            "w": 95,
+            "h": 21.8
+          },
+          {
+            "el": "button.wt-ask",
+            "name": "Frage stellen →",
+            "w": 95,
+            "h": 21.8
+          },
+          {
+            "el": "button.wt-ask",
+            "name": "Frage stellen →",
+            "w": 95,
+            "h": 21.8
+          },
+          {
+            "el": "button.wt-ask",
+            "name": "Frage stellen →",
+            "w": 95,
+            "h": 21.8
+          },
+          {
+            "el": "button.wt-ask",
+            "name": "Frage stellen →",
+            "w": 95,
+            "h": 21.8
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 123.2,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 95.1,
+            "h": 21
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Malerarbeiten",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Hausverwaltungen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Generalunternehmer",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Wissen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Karriere",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Winterthur",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Zug",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Luzern",
+            "w": 162,
+            "h": 33
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "impressum",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Impressum — BauStern",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Malerarbeiten",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Hausverwaltungen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Generalunternehmer",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Wissen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Karriere",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Winterthur",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Zug",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Luzern",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "+41 76 524 98 98",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "info@baustern.ch",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Impressum",
+            "w": 67.3,
+            "h": 19.5
+          },
+          {
+            "el": "a",
+            "name": "Datenschutz",
+            "w": 76.4,
+            "h": 19.5
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "datenschutz",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Datenschutz — BauStern",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Malerarbeiten",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Hausverwaltungen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Generalunternehmer",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Wissen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Karriere",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Winterthur",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Zug",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Luzern",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "+41 76 524 98 98",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "info@baustern.ch",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Impressum",
+            "w": 67.3,
+            "h": 19.5
+          },
+          {
+            "el": "a",
+            "name": "Datenschutz",
+            "w": 76.4,
+            "h": 19.5
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    },
+    {
+      "profile": "desktop",
+      "route": "kontakt",
+      "ok": true,
+      "errors": [],
+      "failures": [],
+      "dom": {
+        "title": "Kontakt & Offerte — BauStern Zürich",
+        "lang": "de",
+        "h1": 1,
+        "overflow": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "wide": [
+          "div.hp",
+          "label",
+          "input#i-hp"
+        ],
+        "unnamed": [],
+        "touch": [
+          {
+            "el": "a",
+            "name": "Leistungen",
+            "w": 108.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Lösungen",
+            "w": 99.2,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 109.1,
+            "h": 40.5
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 92.3,
+            "h": 40.5
+          },
+          {
+            "el": "a.active",
+            "name": "Kontakt",
+            "w": 85.6,
+            "h": 40.5
+          },
+          {
+            "el": "button#cbOpen.nav-cb",
+            "name": "Rückruf in 5 Minuten anfordern",
+            "w": 154.1,
+            "h": 41
+          },
+          {
+            "el": "input#i-priv",
+            "name": "Ich stimme der Datenschutzerklärung zu. Die Daten werden nur zur Bearbeitung mei",
+            "w": 18,
+            "h": 18
+          },
+          {
+            "el": "a",
+            "name": "Renovation",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Sanitär",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Neu- & Umbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Abbruch & Rückbau",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Fliesen & Parkett",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Malerarbeiten",
+            "w": 202.5,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Hausverwaltungen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Generalunternehmer",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Für Gewerbe & Ladenbau",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Referenzen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Über uns",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Wissen",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Karriere",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Kontakt",
+            "w": 232.8,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Winterthur",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Zug",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Luzern",
+            "w": 162,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "+41 76 524 98 98",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "info@baustern.ch",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "WhatsApp",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Termin buchen",
+            "w": 243,
+            "h": 33
+          },
+          {
+            "el": "a",
+            "name": "Impressum",
+            "w": 67.3,
+            "h": 19.5
+          },
+          {
+            "el": "a",
+            "name": "Datenschutz",
+            "w": 76.4,
+            "h": 19.5
+          }
+        ],
+        "unlabeled": [],
+        "missingAlt": [],
+        "broken": [],
+        "noDimensions": [],
+        "fixedBottom": [
+          "div.grain",
+          "div#pre",
+          "div#curtain"
+        ],
+        "dialogs": [
+          {
+            "id": "mobmenu",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "cbwrap",
+            "hidden": "true",
+            "modal": "true"
+          },
+          {
+            "id": "lb",
+            "hidden": "true",
+            "modal": "true"
+          }
+        ],
+        "videos": 0,
+        "pages": 1
+      },
+      "axe": []
+    }
+  ]
+}

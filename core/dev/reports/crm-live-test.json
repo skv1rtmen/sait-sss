@@ -1,0 +1,43 @@
+{
+  "marker": "SYSTEMTEST-60FPS-20260912",
+  "base": "http://localhost:8099",
+  "requests": [
+    {
+      "utm_source": "codex_qa",
+      "utm_campaign": "SYSTEMTEST-60FPS-20260912",
+      "seite": "/kontakt",
+      "name": "SYSTEMTEST BauStern",
+      "telefon": "+41 00 000 00 00",
+      "email": "info@baustern.ch",
+      "kundentyp": "Hausverwaltung / Eigentümer",
+      "firma": "",
+      "ort": "8001 Zürich",
+      "objekt": "",
+      "zeitrahmen": "",
+      "datenschutz": true,
+      "gewerk": "Mehrere / noch unklar",
+      "nachricht": "SYSTEMTEST-60FPS-20260912 — Technischer Test mit Foto. KEIN Kundenauftrag. Bitte nicht kontaktieren.\nKundentyp: Hausverwaltung / Eigentümer\nOrt: 8001 Zürich",
+      "webseite": "",
+      "fotos": [
+        {
+          "titel": "favicon-32.png",
+          "bytes": 1531
+        }
+      ],
+      "form": "anfrage",
+      "request_id": "e930f9db-10a8-4a40-88b4-7c4d1c7116a8"
+    }
+  ],
+  "responses": [
+    {
+      "status": 200,
+      "body": {
+        "ok": true,
+        "nr": "WEB-260912-003",
+        "fotos": 1,
+        "duplicate": false
+      }
+    }
+  ],
+  "success": "Anfrage erfasst.\n\nVielen Dank, SYSTEMTEST. Wir melden uns innert 24 Stunden (Werktage) bei Ihnen — Referenz WEB-260912-003.\n\nIhre Anfrage ist gespeichert. Bitte bewahren Sie die Referenz für Rückfragen auf."
+}

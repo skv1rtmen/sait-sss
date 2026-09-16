@@ -1,0 +1,80 @@
+/* BauStern — Lightbox (SPEC §5). Wird von js/app.js (window.Lightbox) gesteuert.
+   Zustände: #lb.on = im Layout (display), #lb.open = sichtbar. GSAP animiert inline; ohne GSAP übernehmen die Transitions. */
+#lb{position:fixed;inset:0;z-index:185;display:none;opacity:0;color:#fff;outline:none;-webkit-tap-highlight-color:transparent}
+#lb.on{display:block}
+#lb.open{opacity:1}
+.no-gsap #lb{transition:opacity .35s ease}
+.lb-back{position:absolute;inset:0;background:rgba(28,31,34,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);cursor:pointer}
+
+/* Panel: Bild links (flex 1), Text rechts 380 px — kein weisser Rahmen */
+.lb-panel{position:absolute;inset:0;display:flex;align-items:stretch;gap:28px;padding:64px 72px 40px;transform:translateY(14px);touch-action:pan-y}
+#lb.open .lb-panel{transform:none}
+.no-gsap .lb-panel{transition:transform .35s cubic-bezier(.16,1,.3,1)}
+
+.lb-media{position:relative;flex:1 1 auto;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
+.lb-stage{flex:0 1 auto;min-height:0;width:100%;display:flex;align-items:center;justify-content:center}
+.lb-stage img{display:block;width:auto;height:auto;max-width:100%;max-height:min(88vh,calc(100vh - 104px));object-fit:contain;border-radius:0;box-shadow:0 0 0 1px var(--line-dark);background:var(--night);user-select:none;-webkit-user-drag:none}
+.lb-media.has-thumbs .lb-stage img{max-height:min(88vh,calc(100vh - 104px - 66px))}
+
+/* Thumbnails (nur bei WORKS[i].imgs) */
+.lb-thumbs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;max-width:100%}
+.lb-thumbs:empty{display:none}
+.lb-th{width:68px;height:50px;border-radius:6px;overflow:hidden;opacity:.5;transition:opacity .3s,box-shadow .3s;background:var(--night);padding:0}
+.lb-th img{width:100%;height:100%;object-fit:cover}
+.lb-th.on{opacity:1}
+@media (hover: hover) and (pointer: fine){
+.lb-th:hover{opacity:1}}
+.lb-th.on{box-shadow:0 0 0 2px var(--brass)}
+
+/* Pfeile: runde 48-px-Buttons, halbtransparent weiss, Hover Messing */
+.lb-arrow{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;display:grid;place-items:center;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.18);transition:background .3s,color .3s,transform .3s}
+@media (hover: hover) and (pointer: fine){
+.lb-arrow:hover{background:var(--accent);color:#fff;box-shadow:none}}
+.lb-arrow[hidden]{display:none}
+.lb-prev{left:12px}
+.lb-next{right:12px}
+
+/* Schliessen oben rechts */
+.lb-close{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;display:grid;place-items:center;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.18);transition:background .3s,color .3s;z-index:2}
+@media (hover: hover) and (pointer: fine){
+.lb-close:hover{background:var(--accent);color:#fff;box-shadow:none}}
+
+/* Textspalte auf --card */
+.lb-text{flex:0 0 380px;width:380px;min-width:0;background:var(--card);color:var(--fg);border-radius:0;padding:28px;display:flex;flex-direction:column;gap:12px;overflow:auto;overscroll-behavior:contain;box-shadow:0 0 0 1px var(--line)}
+.lb-count{font-size:12.5px;font-weight:600;letter-spacing:.04em;color:var(--muted);font-variant-numeric:tabular-nums}
+.lb-title{font-family:'Archivo',system-ui,sans-serif;font-weight:600;font-size:26px;line-height:1.1;letter-spacing:-.025em;color:var(--night)}
+.lb-loc{font-size:13.5px;color:var(--muted);display:flex;align-items:center;gap:8px}
+.lb-loc::before{content:"";width:7px;height:7px;background:var(--brass);transform:rotate(45deg);flex:0 0 auto}
+.lb-tags{display:flex;gap:8px;flex-wrap:wrap}
+.lb-tags span{font-size:11.5px;font-weight:600;padding:5px 11px;border-radius:100px;color:var(--night);background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
+.lb-desc{font-size:15px;line-height:1.6;color:var(--fg)}
+.lb-loc[hidden],.lb-tags[hidden],.lb-desc[hidden]{display:none}
+.lb-btns{margin-top:auto;padding-top:10px;display:flex;flex-direction:column;gap:10px}
+.lb-btns .btn{justify-content:space-between;width:100%;white-space:normal;text-align:left}
+.lb-btns .btn .ic{flex:0 0 34px}
+
+/* Fokus sichtbar (dunkler Grund) */
+#lb .lb-arrow:focus-visible,#lb .lb-close:focus-visible,#lb .lb-th:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+#lb .btn:focus-visible{outline:2px solid var(--night);outline-offset:3px}
+
+/* Mobile ≤ 760: Bild oben (max 55vh), Text unten scrollbar, Pfeile unten */
+@media(max-width:760px){
+  .lb-panel{flex-direction:column;gap:12px;padding:66px 12px 12px}
+  .lb-media{flex:0 0 auto;max-height:55vh;gap:10px}
+  .lb-stage{flex:0 1 auto}
+  .lb-stage img{max-height:calc(55vh - 12px);border-radius:0}
+  .lb-media.has-thumbs .lb-stage img{max-height:calc(55vh - 70px)}
+  .lb-th{width:52px;height:40px}
+  .lb-text{flex:1 1 auto;width:auto;min-height:0;padding:20px 20px 84px;border-radius:0}
+  .lb-title{font-size:22px}
+  .lb-arrow{position:fixed;top:auto;bottom:16px;transform:none;background:rgba(28,31,34,.8);box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
+  .lb-prev{left:16px}
+  .lb-next{right:16px}
+  .lb-close{top:12px;right:12px}
+}
+@media(max-width:760px) and (max-height:620px){
+  .lb-media{max-height:45vh}
+  .lb-stage img{max-height:calc(45vh - 12px)}
+}
+
+/* Reduced-Motion-Override entfernt: Animation läuft immer (Produktentscheidung) */

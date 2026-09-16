@@ -1,0 +1,39 @@
+{
+  "label": "closure-20260914-final",
+  "firstLoad_unthrottled": {
+    "domContentLoaded": 299,
+    "load": 678,
+    "fcp": 468,
+    "firstDrawnFrame": 669,
+    "preloaderGone": 732,
+    "introFinished": 4117,
+    "now": 4116.70000000298
+  },
+  "firstLoad_1p6Mbps_120ms": {
+    "domContentLoaded": 7333,
+    "load": 0,
+    "fcp": 4380,
+    "preloaderGone": 9196,
+    "firstDrawnFrame": 13443,
+    "introFinished": 13443,
+    "now": 13459.70000000298
+  },
+  "scroll_run1": {
+    "frames": 481,
+    "avgMs": 19,
+    "p50": 16.7,
+    "p95": 33.4,
+    "maxMs": 50,
+    "pctOver33": 12.9,
+    "scene": "3"
+  },
+  "scroll_run2": {
+    "frames": 480,
+    "avgMs": 18.8,
+    "p50": 16.7,
+    "p95": 33.4,
+    "maxMs": 50,
+    "pctOver33": 12.5,
+    "scene": "3"
+  }
+}

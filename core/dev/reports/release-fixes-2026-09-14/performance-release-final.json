@@ -1,0 +1,38 @@
+[
+  {
+    "mode": "normal",
+    "frames": 473,
+    "p50": 16.699999999999818,
+    "p95": 33.30000000000109,
+    "pctOver33": 10.993657505285412,
+    "paints": 129,
+    "scene": "3",
+    "scrollY": 8388,
+    "canvas": [
+      [
+        "w-canvas",
+        1280,
+        800
+      ],
+      [
+        "w-fx",
+        300,
+        150
+      ]
+    ],
+    "stats": {
+      "bm": 34,
+      "low": 40,
+      "blobs": 292,
+      "lowBlobs": 380
+    },
+    "metrics": {
+      "TaskDuration": 3.7403869999999997,
+      "ScriptDuration": 0.314503,
+      "LayoutDuration": 0.034113,
+      "RecalcStyleDuration": 0.652793,
+      "LayoutCount": 219,
+      "RecalcStyleCount": 1673
+    }
+  }
+]

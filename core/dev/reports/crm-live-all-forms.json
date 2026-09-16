@@ -1,0 +1,67 @@
+{
+  "marker": "SYSTEMTEST-CRM-60FPS-20260912",
+  "base": "https://leafy-bublanina-48b840.netlify.app",
+  "rows": [
+    {
+      "form": "anfrage",
+      "requestId": "fd099dce-4513-49d1-a786-ffde97542597",
+      "receipt": {
+        "ok": true,
+        "nr": "WEB-260912-008",
+        "fotos": 1,
+        "duplicate": false
+      },
+      "duplicates": [
+        {
+          "status": 200,
+          "ok": true,
+          "nr": "WEB-260912-008",
+          "fotos": 1,
+          "duplicate": true
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "nr": "WEB-260912-008",
+          "fotos": 1,
+          "duplicate": true
+        }
+      ],
+      "attachmentCount": 1
+    },
+    {
+      "form": "referenzmappe",
+      "requestId": "d3eb67a6-8fbc-43d1-81ba-149bba8a4c66",
+      "receipt": {
+        "ok": true,
+        "nr": "WEB-260912-009",
+        "fotos": 0,
+        "duplicate": false
+      },
+      "duplicates": [
+        {
+          "status": 200,
+          "ok": true,
+          "nr": "WEB-260912-009",
+          "fotos": 0,
+          "duplicate": true
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "nr": "WEB-260912-009",
+          "fotos": 0,
+          "duplicate": true
+        }
+      ],
+      "attachmentCount": 0
+    },
+    {
+      "validation": {
+        "status": 422,
+        "ok": false,
+        "error": "Anfrage nicht gespeichert. Bitte Eingaben prüfen und erneut versuchen."
+      }
+    }
+  ]
+}

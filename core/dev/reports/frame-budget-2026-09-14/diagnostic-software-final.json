@@ -1,0 +1,36 @@
+[
+  {
+    "mode": "baseline",
+    "frames": 278,
+    "p50": 16.700000000000728,
+    "p95": 33.399999999999636,
+    "over33": 33.093525179856115,
+    "scene": "5",
+    "renderer": "compositor",
+    "metrics": {
+      "TaskDuration": 0.930751,
+      "ScriptDuration": 0.102398,
+      "LayoutDuration": 0.012179,
+      "RecalcStyleDuration": 0.352282,
+      "LayoutCount": 98,
+      "RecalcStyleCount": 583
+    }
+  },
+  {
+    "mode": "baseline",
+    "frames": 296,
+    "p50": 16.699999999999818,
+    "p95": 33.399999999999636,
+    "over33": 25,
+    "scene": "5",
+    "renderer": "compositor",
+    "metrics": {
+      "TaskDuration": 0.887327,
+      "ScriptDuration": 0.096078,
+      "LayoutDuration": 0.011742,
+      "RecalcStyleDuration": 0.328108,
+      "LayoutCount": 98,
+      "RecalcStyleCount": 600
+    }
+  }
+]

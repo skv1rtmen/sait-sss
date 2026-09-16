@@ -1,0 +1,26 @@
+{
+  "base": "https://6aa7c8bc27616405c3f2cf78--leafy-bublanina-48b840.netlify.app",
+  "markedTest": true,
+  "attemptedAt": "2026-09-14T10:16:14.131Z",
+  "requests": [
+    {
+      "request_id": "45cf4b90-bd8a-481b-8ed6-79e3f90ea4af",
+      "name": "SYSTEMTEST BauStern Freigabe 2026-09-14",
+      "files": [
+        {
+          "title": "SYSTEMTEST-RELEASE-20260914.png"
+        }
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": {
+      "ok": true,
+      "nr": "WEB-260914-010",
+      "fotos": 1,
+      "duplicate": false
+    }
+  },
+  "visibleReceipt": "Anfrage erfasst.\n\nVielen Dank, SYSTEMTEST. Wir melden uns innert 24 Stunden (Werktage) bei Ihnen — Referenz WEB-260914-010.\n\nIhre Anfrage ist gespeichert. Bitte bewahren Sie die Referenz für Rückfragen auf."
+}

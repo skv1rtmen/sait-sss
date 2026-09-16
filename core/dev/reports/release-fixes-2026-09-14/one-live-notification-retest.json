@@ -1,0 +1,27 @@
+{
+  "base": "https://www.baustern.ch",
+  "markedTest": true,
+  "purpose": "Owner-authorized notification repair retest",
+  "attemptedAt": "2026-09-14T10:49:40.569Z",
+  "requests": [
+    {
+      "request_id": "1e19ac52-19dd-41f4-9d81-91b917cff130",
+      "name": "SYSTEMTEST BauStern Benachrichtigung 2026-09-14",
+      "files": [
+        {
+          "title": "SYSTEMTEST-RELEASE-20260914.png"
+        }
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": {
+      "ok": true,
+      "nr": "WEB-260914-011",
+      "fotos": 1,
+      "duplicate": false
+    }
+  },
+  "visibleReceipt": "Anfrage erfasst.\n\nVielen Dank, SYSTEMTEST. Wir melden uns innert 24 Stunden (Werktage) bei Ihnen — Referenz WEB-260914-011.\n\nIhre Anfrage ist gespeichert. Bitte bewahren Sie die Referenz für Rückfragen auf."
+}

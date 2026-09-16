@@ -1,0 +1,20 @@
+{
+  "normal": {
+    "visible": 1,
+    "fallback": 14,
+    "scene": "1",
+    "frame": "191",
+    "videoOff": true
+  },
+  "stalled": {
+    "visible": 1,
+    "fallback": 15,
+    "videoOff": true
+  },
+  "arrival": {
+    "scene": "2",
+    "frame": "287",
+    "title": "1"
+  },
+  "errors": []
+}

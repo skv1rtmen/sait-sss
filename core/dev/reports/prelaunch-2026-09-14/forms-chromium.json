@@ -1,0 +1,1754 @@
+{
+  "rows": [
+    {
+      "name": "empty",
+      "sent": 0,
+      "state": {
+        "path": "/kontakt",
+        "focus": {
+          "id": "i-name",
+          "text": ""
+        },
+        "fields": [
+          {
+            "id": "i-name",
+            "value": "",
+            "invalid": "true",
+            "described": "m-name",
+            "required": false
+          },
+          {
+            "id": "i-firma",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-phone",
+            "value": "",
+            "invalid": "true",
+            "described": "m-phone",
+            "required": false
+          },
+          {
+            "id": "i-mail",
+            "value": "",
+            "invalid": "true",
+            "described": "m-mail",
+            "required": false
+          },
+          {
+            "id": "i-plz",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-msg",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-fotos",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-priv",
+            "value": "on",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-hp",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          }
+        ],
+        "messages": [
+          {
+            "text": "Bitte wählen",
+            "id": "e-who",
+            "live": null,
+            "role": null
+          },
+          {
+            "text": "Pflichtfeld",
+            "id": "m-name",
+            "live": null,
+            "role": null
+          },
+          {
+            "text": "Gültige Telefonnummer nötig",
+            "id": "m-phone",
+            "live": null,
+            "role": null
+          },
+          {
+            "text": "Gültige E-Mail nötig",
+            "id": "m-mail",
+            "live": null,
+            "role": null
+          },
+          {
+            "text": "Zustimmung nötig",
+            "id": "e-priv",
+            "live": null,
+            "role": null
+          }
+        ],
+        "status": "",
+        "who": [
+          {
+            "text": "Hausverwaltung / Eigentümer",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Generalunternehmer",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Gewerbe / Büro / Laden",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Privat-Eigentümer",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          }
+        ],
+        "cbText": "",
+        "cbFocusInside": false,
+        "analytics": {
+          "loaded": true,
+          "consent": {
+            "analytics": false,
+            "ads": false
+          },
+          "dnt": false,
+          "mode": "datalayer-only"
+        },
+        "events": [
+          "page_view",
+          "form_error"
+        ]
+      }
+    },
+    {
+      "name": "spaces-bad-mail-phone",
+      "sent": 0,
+      "state": {
+        "path": "/kontakt",
+        "focus": {
+          "id": "i-name",
+          "text": ""
+        },
+        "fields": [
+          {
+            "id": "i-name",
+            "value": "   ",
+            "invalid": "true",
+            "described": "m-name",
+            "required": false
+          },
+          {
+            "id": "i-firma",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-phone",
+            "value": "12abc",
+            "invalid": "true",
+            "described": "m-phone",
+            "required": false
+          },
+          {
+            "id": "i-mail",
+            "value": "mail-without-at",
+            "invalid": "true",
+            "described": "m-mail",
+            "required": false
+          },
+          {
+            "id": "i-plz",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-msg",
+            "value": "Проверка: rénovation — nur lokaler Browser-Mock.",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-fotos",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-priv",
+            "value": "on",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-hp",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          }
+        ],
+        "messages": [
+          {
+            "text": "Pflichtfeld",
+            "id": "m-name",
+            "live": null,
+            "role": null
+          },
+          {
+            "text": "Gültige Telefonnummer nötig",
+            "id": "m-phone",
+            "live": null,
+            "role": null
+          },
+          {
+            "text": "Gültige E-Mail nötig",
+            "id": "m-mail",
+            "live": null,
+            "role": null
+          }
+        ],
+        "status": "",
+        "who": [
+          {
+            "text": "Hausverwaltung / Eigentümer",
+            "on": "on",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Generalunternehmer",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Gewerbe / Büro / Laden",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Privat-Eigentümer",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          }
+        ],
+        "cbText": "",
+        "cbFocusInside": false,
+        "analytics": {
+          "loaded": true,
+          "consent": {
+            "analytics": false,
+            "ads": false
+          },
+          "dnt": false,
+          "mode": "datalayer-only"
+        },
+        "events": [
+          "page_view",
+          "form_error",
+          "form_error"
+        ]
+      }
+    },
+    {
+      "name": "pasted-mail-spaces",
+      "sent": 1,
+      "state": {
+        "path": "/kontakt",
+        "focus": {
+          "id": "e-send",
+          "text": "Das Senden hat nicht geklappt. Bitte rufen Sie uns an: +41 76 524 98 98"
+        },
+        "fields": [
+          {
+            "id": "i-name",
+            "value": "Ирина Müller 🏠",
+            "invalid": "false",
+            "described": "m-name",
+            "required": false
+          },
+          {
+            "id": "i-firma",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-phone",
+            "value": "+41 (79) 123-45-67",
+            "invalid": "false",
+            "described": "m-phone",
+            "required": false
+          },
+          {
+            "id": "i-mail",
+            "value": "audit@example.invalid",
+            "invalid": "false",
+            "described": "m-mail",
+            "required": false
+          },
+          {
+            "id": "i-plz",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-msg",
+            "value": "Проверка: rénovation — nur lokaler Browser-Mock.",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-fotos",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-priv",
+            "value": "on",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-hp",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          }
+        ],
+        "messages": [
+          {
+            "text": "Das Senden hat nicht geklappt. Bitte rufen Sie uns an: +41 76 524 98 98",
+            "id": "e-send",
+            "live": null,
+            "role": null
+          }
+        ],
+        "status": "Das Senden hat nicht geklappt. Bitte rufen Sie uns an: +41 76 524 98 98.",
+        "who": [
+          {
+            "text": "Hausverwaltung / Eigentümer",
+            "on": "on",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Generalunternehmer",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Gewerbe / Büro / Laden",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Privat-Eigentümer",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          }
+        ],
+        "cbText": "",
+        "cbFocusInside": false,
+        "analytics": {
+          "loaded": true,
+          "consent": {
+            "analytics": false,
+            "ads": false
+          },
+          "dnt": false,
+          "mode": "datalayer-only"
+        },
+        "events": [
+          "page_view",
+          "form_error",
+          "form_error",
+          "form_error",
+          "scroll_depth"
+        ]
+      }
+    },
+    {
+      "name": "enter-contact",
+      "before": 1,
+      "after": 1
+    },
+    {
+      "name": "corrupt-photo",
+      "sent": 1,
+      "state": {
+        "path": "/kontakt",
+        "focus": {
+          "id": "i-mail",
+          "text": ""
+        },
+        "fields": [
+          {
+            "id": "i-name",
+            "value": "Ирина Müller 🏠",
+            "invalid": "false",
+            "described": "m-name",
+            "required": false
+          },
+          {
+            "id": "i-firma",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-phone",
+            "value": "+41 (79) 123-45-67",
+            "invalid": "false",
+            "described": "m-phone",
+            "required": false
+          },
+          {
+            "id": "i-mail",
+            "value": "audit@example.invalid",
+            "invalid": "false",
+            "described": "m-mail",
+            "required": false
+          },
+          {
+            "id": "i-plz",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-msg",
+            "value": "Проверка: rénovation — nur lokaler Browser-Mock.",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-fotos",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-priv",
+            "value": "on",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-hp",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          }
+        ],
+        "messages": [
+          {
+            "text": "Maximal 3 Fotos, je höchstens 10 MB.",
+            "id": "e-foto",
+            "live": null,
+            "role": null
+          },
+          {
+            "text": "Das Senden hat nicht geklappt. Bitte rufen Sie uns an: +41 76 524 98 98",
+            "id": "e-send",
+            "live": null,
+            "role": null
+          }
+        ],
+        "status": "Das Senden hat nicht geklappt. Bitte rufen Sie uns an: +41 76 524 98 98.",
+        "who": [
+          {
+            "text": "Hausverwaltung / Eigentümer",
+            "on": "on",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Generalunternehmer",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Gewerbe / Büro / Laden",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Privat-Eigentümer",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          }
+        ],
+        "cbText": "",
+        "cbFocusInside": false,
+        "analytics": {
+          "loaded": true,
+          "consent": {
+            "analytics": false,
+            "ads": false
+          },
+          "dnt": false,
+          "mode": "datalayer-only"
+        },
+        "events": [
+          "page_view",
+          "form_error",
+          "form_error",
+          "form_error",
+          "scroll_depth"
+        ]
+      }
+    },
+    {
+      "name": "valid-photo",
+      "chips": 1
+    },
+    {
+      "name": "pending-double-click",
+      "sent": 2,
+      "state": {
+        "path": "/kontakt",
+        "focus": {
+          "id": "view",
+          "text": "In 30 Sekunden zur Anfrage.\n Schildern Sie Ihr Projekt — wir melden uns an Werktagen innert 24 Stunden mit den nächsten Schritten.\n\n  \n  \n    Wer sind Sie? *\n  "
+        },
+        "fields": [
+          {
+            "id": "i-name",
+            "value": "Ирина Müller 🏠",
+            "invalid": "false",
+            "described": "m-name",
+            "required": false
+          },
+          {
+            "id": "i-firma",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-phone",
+            "value": "+41 (79) 123-45-67",
+            "invalid": "false",
+            "described": "m-phone",
+            "required": false
+          },
+          {
+            "id": "i-mail",
+            "value": "audit@example.invalid",
+            "invalid": "false",
+            "described": "m-mail",
+            "required": false
+          },
+          {
+            "id": "i-plz",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-msg",
+            "value": "Проверка: rénovation — nur lokaler Browser-Mock.",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-fotos",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-priv",
+            "value": "on",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-hp",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          }
+        ],
+        "messages": [
+          {
+            "text": "Das Senden hat nicht geklappt. Bitte rufen Sie uns an: +41 76 524 98 98",
+            "id": "e-send",
+            "live": null,
+            "role": null
+          }
+        ],
+        "status": "Das Senden hat nicht geklappt. Bitte rufen Sie uns an: +41 76 524 98 98.",
+        "who": [
+          {
+            "text": "Hausverwaltung / Eigentümer",
+            "on": "on",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Generalunternehmer",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Gewerbe / Büro / Laden",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Privat-Eigentümer",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          }
+        ],
+        "cbText": "",
+        "cbFocusInside": false,
+        "analytics": {
+          "loaded": true,
+          "consent": {
+            "analytics": false,
+            "ads": false
+          },
+          "dnt": false,
+          "mode": "datalayer-only"
+        },
+        "events": [
+          "page_view",
+          "form_error",
+          "form_error",
+          "form_error",
+          "scroll_depth"
+        ]
+      }
+    },
+    {
+      "name": "server503",
+      "sent": 2,
+      "state": {
+        "path": "/kontakt",
+        "focus": {
+          "id": "e-send",
+          "text": "Das Senden hat nicht geklappt. Bitte rufen Sie uns an: +41 76 524 98 98"
+        },
+        "fields": [
+          {
+            "id": "i-name",
+            "value": "Ирина Müller 🏠",
+            "invalid": "false",
+            "described": "m-name",
+            "required": false
+          },
+          {
+            "id": "i-firma",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-phone",
+            "value": "+41 (79) 123-45-67",
+            "invalid": "false",
+            "described": "m-phone",
+            "required": false
+          },
+          {
+            "id": "i-mail",
+            "value": "audit@example.invalid",
+            "invalid": "false",
+            "described": "m-mail",
+            "required": false
+          },
+          {
+            "id": "i-plz",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-msg",
+            "value": "Проверка: rénovation — nur lokaler Browser-Mock.",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-fotos",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-priv",
+            "value": "on",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-hp",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          }
+        ],
+        "messages": [
+          {
+            "text": "Das Senden hat nicht geklappt. Bitte rufen Sie uns an: +41 76 524 98 98",
+            "id": "e-send",
+            "live": null,
+            "role": null
+          }
+        ],
+        "status": "Das Senden hat nicht geklappt. Bitte rufen Sie uns an: +41 76 524 98 98.",
+        "who": [
+          {
+            "text": "Hausverwaltung / Eigentümer",
+            "on": "on",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Generalunternehmer",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Gewerbe / Büro / Laden",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Privat-Eigentümer",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          }
+        ],
+        "cbText": "",
+        "cbFocusInside": false,
+        "analytics": {
+          "loaded": true,
+          "consent": {
+            "analytics": false,
+            "ads": false
+          },
+          "dnt": false,
+          "mode": "datalayer-only"
+        },
+        "events": [
+          "page_view",
+          "form_error",
+          "form_error",
+          "form_error",
+          "scroll_depth",
+          "form_error"
+        ]
+      }
+    },
+    {
+      "name": "network-offline",
+      "sent": 3,
+      "state": {
+        "path": "/kontakt",
+        "focus": {
+          "id": "e-send",
+          "text": "Das Senden hat nicht geklappt. Bitte rufen Sie uns an: +41 76 524 98 98"
+        },
+        "fields": [
+          {
+            "id": "i-name",
+            "value": "Ирина Müller 🏠",
+            "invalid": "false",
+            "described": "m-name",
+            "required": false
+          },
+          {
+            "id": "i-firma",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-phone",
+            "value": "+41 (79) 123-45-67",
+            "invalid": "false",
+            "described": "m-phone",
+            "required": false
+          },
+          {
+            "id": "i-mail",
+            "value": "audit@example.invalid",
+            "invalid": "false",
+            "described": "m-mail",
+            "required": false
+          },
+          {
+            "id": "i-plz",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-msg",
+            "value": "Проверка: rénovation — nur lokaler Browser-Mock.",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-fotos",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-priv",
+            "value": "on",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-hp",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          }
+        ],
+        "messages": [
+          {
+            "text": "Das Senden hat nicht geklappt. Bitte rufen Sie uns an: +41 76 524 98 98",
+            "id": "e-send",
+            "live": null,
+            "role": null
+          }
+        ],
+        "status": "Das Senden hat nicht geklappt. Bitte rufen Sie uns an: +41 76 524 98 98.",
+        "who": [
+          {
+            "text": "Hausverwaltung / Eigentümer",
+            "on": "on",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Generalunternehmer",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Gewerbe / Büro / Laden",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Privat-Eigentümer",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          }
+        ],
+        "cbText": "",
+        "cbFocusInside": false,
+        "analytics": {
+          "loaded": true,
+          "consent": {
+            "analytics": false,
+            "ads": false
+          },
+          "dnt": false,
+          "mode": "datalayer-only"
+        },
+        "events": [
+          "page_view",
+          "form_error",
+          "form_error",
+          "form_error",
+          "scroll_depth",
+          "form_error",
+          "form_error"
+        ]
+      }
+    },
+    {
+      "name": "unconfirmed200",
+      "sent": 4,
+      "state": {
+        "path": "/kontakt",
+        "focus": {
+          "id": "e-send",
+          "text": "Das Senden hat nicht geklappt. Bitte rufen Sie uns an: +41 76 524 98 98"
+        },
+        "fields": [
+          {
+            "id": "i-name",
+            "value": "Ирина Müller 🏠",
+            "invalid": "false",
+            "described": "m-name",
+            "required": false
+          },
+          {
+            "id": "i-firma",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-phone",
+            "value": "+41 (79) 123-45-67",
+            "invalid": "false",
+            "described": "m-phone",
+            "required": false
+          },
+          {
+            "id": "i-mail",
+            "value": "audit@example.invalid",
+            "invalid": "false",
+            "described": "m-mail",
+            "required": false
+          },
+          {
+            "id": "i-plz",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-msg",
+            "value": "Проверка: rénovation — nur lokaler Browser-Mock.",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-fotos",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-priv",
+            "value": "on",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-hp",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          }
+        ],
+        "messages": [
+          {
+            "text": "Das Senden hat nicht geklappt. Bitte rufen Sie uns an: +41 76 524 98 98",
+            "id": "e-send",
+            "live": null,
+            "role": null
+          }
+        ],
+        "status": "Das Senden hat nicht geklappt. Bitte rufen Sie uns an: +41 76 524 98 98.",
+        "who": [
+          {
+            "text": "Hausverwaltung / Eigentümer",
+            "on": "on",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Generalunternehmer",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Gewerbe / Büro / Laden",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Privat-Eigentümer",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          }
+        ],
+        "cbText": "",
+        "cbFocusInside": false,
+        "analytics": {
+          "loaded": true,
+          "consent": {
+            "analytics": false,
+            "ads": false
+          },
+          "dnt": false,
+          "mode": "datalayer-only"
+        },
+        "events": [
+          "page_view",
+          "form_error",
+          "form_error",
+          "form_error",
+          "scroll_depth",
+          "form_error",
+          "form_error",
+          "form_error"
+        ]
+      }
+    },
+    {
+      "name": "confirmed-success",
+      "sent": 5,
+      "state": {
+        "path": "/kontakt",
+        "focus": {
+          "id": "",
+          "text": "Anfrage erfasst."
+        },
+        "fields": [],
+        "messages": [],
+        "status": "Anfrage erfasst. Vielen Dank, Ирина. Wir melden uns innert 24 Stunden (Werktage) bei Ihnen — Referenz AUDIT-MOCK-ONLY.",
+        "who": [],
+        "sentHeading": "Anfrage erfasst.",
+        "cbText": "",
+        "cbFocusInside": false,
+        "analytics": {
+          "loaded": true,
+          "consent": {
+            "analytics": false,
+            "ads": false
+          },
+          "dnt": false,
+          "mode": "datalayer-only"
+        },
+        "events": [
+          "page_view",
+          "form_error",
+          "form_error",
+          "form_error",
+          "scroll_depth",
+          "form_error",
+          "form_error",
+          "form_error",
+          "generate_lead"
+        ]
+      }
+    },
+    {
+      "name": "retry-request-id",
+      "ids": [
+        "13bc60b2-fdaa-449e-954f-7dc3cb92556b",
+        "13bc60b2-fdaa-449e-954f-7dc3cb92556b",
+        "13bc60b2-fdaa-449e-954f-7dc3cb92556b",
+        "13bc60b2-fdaa-449e-954f-7dc3cb92556b",
+        "13bc60b2-fdaa-449e-954f-7dc3cb92556b"
+      ]
+    },
+    {
+      "name": "late-success-after-navigation",
+      "sent": 6,
+      "state": {
+        "path": "/leistungen",
+        "focus": {
+          "id": "",
+          "text": "Sechs Gewerke aus einer Hand."
+        },
+        "fields": [],
+        "messages": [],
+        "who": [],
+        "cbText": "",
+        "cbFocusInside": false,
+        "analytics": {
+          "loaded": true,
+          "consent": {
+            "analytics": false,
+            "ads": false
+          },
+          "dnt": false,
+          "mode": "datalayer-only"
+        },
+        "events": [
+          "page_view",
+          "scroll_depth",
+          "page_view",
+          "generate_lead"
+        ]
+      }
+    },
+    {
+      "name": "callback-valid-formatted-number",
+      "sent": 6,
+      "state": {
+        "path": "/kontakt",
+        "focus": {
+          "id": "cbPhone",
+          "text": ""
+        },
+        "fields": [
+          {
+            "id": "i-name",
+            "value": "",
+            "invalid": null,
+            "described": "m-name",
+            "required": false
+          },
+          {
+            "id": "i-firma",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-phone",
+            "value": "",
+            "invalid": null,
+            "described": "m-phone",
+            "required": false
+          },
+          {
+            "id": "i-mail",
+            "value": "",
+            "invalid": null,
+            "described": "m-mail",
+            "required": false
+          },
+          {
+            "id": "i-plz",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-msg",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-fotos",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-priv",
+            "value": "on",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-hp",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          }
+        ],
+        "messages": [],
+        "status": "",
+        "who": [
+          {
+            "text": "Hausverwaltung / Eigentümer",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Generalunternehmer",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Gewerbe / Büro / Laden",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Privat-Eigentümer",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          }
+        ],
+        "cbText": "×\nWir rufen Sie in 5 Minuten zurück.\n\nAn Werktagen 07:00–18:00. Nur Ihre Nummer — sonst nichts.\n\nAnrufen lassen\n→\nBitte eine gültige Nummer eingeben, z. B. +41 79 123 45 67.",
+        "cbFocusInside": true,
+        "analytics": {
+          "loaded": true,
+          "consent": {
+            "analytics": false,
+            "ads": false
+          },
+          "dnt": false,
+          "mode": "datalayer-only"
+        },
+        "events": [
+          "page_view",
+          "callback_open",
+          "callback_submit"
+        ]
+      }
+    },
+    {
+      "name": "callback-success",
+      "sent": 7,
+      "state": {
+        "path": "/kontakt",
+        "focus": {
+          "id": "",
+          "text": "Zum Inhalt springen\n\n\nBauSternWohnung wird geladen\n\nBauStern\n\n\n  BauStern\n  \n    Leistungen\n    Lösungen\n    Referenzen\n    Über uns\n    Kontakt\n  \n  \n    Rückr"
+        },
+        "fields": [
+          {
+            "id": "i-name",
+            "value": "",
+            "invalid": null,
+            "described": "m-name",
+            "required": false
+          },
+          {
+            "id": "i-firma",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-phone",
+            "value": "",
+            "invalid": null,
+            "described": "m-phone",
+            "required": false
+          },
+          {
+            "id": "i-mail",
+            "value": "",
+            "invalid": null,
+            "described": "m-mail",
+            "required": false
+          },
+          {
+            "id": "i-plz",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-msg",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-fotos",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-priv",
+            "value": "on",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "i-hp",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          }
+        ],
+        "messages": [],
+        "status": "",
+        "who": [
+          {
+            "text": "Hausverwaltung / Eigentümer",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Generalunternehmer",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Gewerbe / Büro / Laden",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          },
+          {
+            "text": "Privat-Eigentümer",
+            "on": "",
+            "pressed": null,
+            "checked": null,
+            "role": null
+          }
+        ],
+        "cbText": "×\nNotiert. Das Telefon klingelt gleich.\n\nWir rufen +41 79 123 45 67 an, an Werktagen 07:00–18:00.",
+        "cbFocusInside": false,
+        "analytics": {
+          "loaded": true,
+          "consent": {
+            "analytics": false,
+            "ads": false
+          },
+          "dnt": false,
+          "mode": "datalayer-only"
+        },
+        "events": [
+          "page_view",
+          "callback_open",
+          "callback_submit",
+          "generate_lead"
+        ]
+      }
+    },
+    {
+      "name": "callback-escape",
+      "closed": "true"
+    },
+    {
+      "name": "career-invalid-phone",
+      "sent": 7,
+      "state": {
+        "path": "/karriere",
+        "focus": {
+          "id": "j-phone",
+          "text": ""
+        },
+        "fields": [
+          {
+            "id": "j-name",
+            "value": "Test Applicant",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "j-phone",
+            "value": "123",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "j-file",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "j-hp",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          }
+        ],
+        "messages": [
+          {
+            "text": "Pflichtfeld",
+            "id": "jm-phone",
+            "live": null,
+            "role": null
+          }
+        ],
+        "who": [],
+        "cbText": "",
+        "cbFocusInside": false,
+        "analytics": {
+          "loaded": true,
+          "consent": {
+            "analytics": false,
+            "ads": false
+          },
+          "dnt": false,
+          "mode": "datalayer-only"
+        },
+        "events": [
+          "page_view",
+          "scroll_depth",
+          "scroll_depth"
+        ]
+      }
+    },
+    {
+      "name": "career503",
+      "sent": 8,
+      "state": {
+        "path": "/karriere",
+        "focus": {
+          "id": "",
+          "text": "Zum Inhalt springen\n\n\nBauSternWohnung wird geladen\n\nBauStern\n\n\n  BauStern\n  \n    Leistungen\n    Lösungen\n    Referenzen\n    Über uns\n    Kontakt\n  \n  \n    Rückr"
+        },
+        "fields": [
+          {
+            "id": "j-name",
+            "value": "Test Applicant",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "j-phone",
+            "value": "+41 79 123 45 67",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "j-file",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          },
+          {
+            "id": "j-hp",
+            "value": "",
+            "invalid": null,
+            "described": null,
+            "required": false
+          }
+        ],
+        "messages": [
+          {
+            "text": "Das Senden hat nicht geklappt. Bitte rufen Sie uns an: +41 76 524 98 98",
+            "id": "j-e-send",
+            "live": null,
+            "role": null
+          }
+        ],
+        "who": [],
+        "cbText": "",
+        "cbFocusInside": false,
+        "analytics": {
+          "loaded": true,
+          "consent": {
+            "analytics": false,
+            "ads": false
+          },
+          "dnt": false,
+          "mode": "datalayer-only"
+        },
+        "events": [
+          "page_view",
+          "scroll_depth",
+          "scroll_depth",
+          "form_error"
+        ]
+      }
+    },
+    {
+      "name": "career-success",
+      "sent": 9,
+      "state": {
+        "path": "/karriere",
+        "focus": {
+          "id": "",
+          "text": "Bewerbung erhalten."
+        },
+        "fields": [],
+        "messages": [],
+        "who": [],
+        "sentHeading": "Bewerbung erhalten.",
+        "cbText": "",
+        "cbFocusInside": false,
+        "analytics": {
+          "loaded": true,
+          "consent": {
+            "analytics": false,
+            "ads": false
+          },
+          "dnt": false,
+          "mode": "datalayer-only"
+        },
+        "events": [
+          "page_view",
+          "scroll_depth",
+          "scroll_depth",
+          "form_error",
+          "generate_lead"
+        ]
+      }
+    }
+  ],
+  "errors": [
+    "Cannot set properties of null (setting 'innerHTML')"
+  ],
+  "sent": [
+    {
+      "seite": "/kontakt",
+      "name": "Ирина Müller 🏠",
+      "telefon": "+41 (79) 123-45-67",
+      "email": "audit@example.invalid",
+      "kundentyp": "Hausverwaltung / Eigentümer",
+      "firma": "",
+      "ort": "",
+      "objekt": "",
+      "zeitrahmen": "",
+      "datenschutz": true,
+      "gewerk": "Mehrere / noch unklar",
+      "nachricht": "Проверка: rénovation — nur lokaler Browser-Mock.\nKundentyp: Hausverwaltung / Eigentümer",
+      "webseite": "",
+      "form": "anfrage",
+      "request_id": "13bc60b2-fdaa-449e-954f-7dc3cb92556b"
+    },
+    {
+      "seite": "/kontakt",
+      "name": "Ирина Müller 🏠",
+      "telefon": "+41 (79) 123-45-67",
+      "email": "audit@example.invalid",
+      "kundentyp": "Hausverwaltung / Eigentümer",
+      "firma": "",
+      "ort": "",
+      "objekt": "",
+      "zeitrahmen": "",
+      "datenschutz": true,
+      "gewerk": "Mehrere / noch unklar",
+      "nachricht": "Проверка: rénovation — nur lokaler Browser-Mock.\nKundentyp: Hausverwaltung / Eigentümer",
+      "webseite": "",
+      "form": "anfrage",
+      "request_id": "13bc60b2-fdaa-449e-954f-7dc3cb92556b"
+    },
+    {
+      "seite": "/kontakt",
+      "name": "Ирина Müller 🏠",
+      "telefon": "+41 (79) 123-45-67",
+      "email": "audit@example.invalid",
+      "kundentyp": "Hausverwaltung / Eigentümer",
+      "firma": "",
+      "ort": "",
+      "objekt": "",
+      "zeitrahmen": "",
+      "datenschutz": true,
+      "gewerk": "Mehrere / noch unklar",
+      "nachricht": "Проверка: rénovation — nur lokaler Browser-Mock.\nKundentyp: Hausverwaltung / Eigentümer",
+      "webseite": "",
+      "form": "anfrage",
+      "request_id": "13bc60b2-fdaa-449e-954f-7dc3cb92556b"
+    },
+    {
+      "seite": "/kontakt",
+      "name": "Ирина Müller 🏠",
+      "telefon": "+41 (79) 123-45-67",
+      "email": "audit@example.invalid",
+      "kundentyp": "Hausverwaltung / Eigentümer",
+      "firma": "",
+      "ort": "",
+      "objekt": "",
+      "zeitrahmen": "",
+      "datenschutz": true,
+      "gewerk": "Mehrere / noch unklar",
+      "nachricht": "Проверка: rénovation — nur lokaler Browser-Mock.\nKundentyp: Hausverwaltung / Eigentümer",
+      "webseite": "",
+      "form": "anfrage",
+      "request_id": "13bc60b2-fdaa-449e-954f-7dc3cb92556b"
+    },
+    {
+      "seite": "/kontakt",
+      "name": "Ирина Müller 🏠",
+      "telefon": "+41 (79) 123-45-67",
+      "email": "audit@example.invalid",
+      "kundentyp": "Hausverwaltung / Eigentümer",
+      "firma": "",
+      "ort": "",
+      "objekt": "",
+      "zeitrahmen": "",
+      "datenschutz": true,
+      "gewerk": "Mehrere / noch unklar",
+      "nachricht": "Проверка: rénovation — nur lokaler Browser-Mock.\nKundentyp: Hausverwaltung / Eigentümer",
+      "webseite": "",
+      "form": "anfrage",
+      "request_id": "13bc60b2-fdaa-449e-954f-7dc3cb92556b"
+    },
+    {
+      "seite": "/kontakt",
+      "name": "Ирина Müller 🏠",
+      "telefon": "+41 (79) 123-45-67",
+      "email": "audit@example.invalid",
+      "kundentyp": "Hausverwaltung / Eigentümer",
+      "firma": "",
+      "ort": "",
+      "objekt": "",
+      "zeitrahmen": "",
+      "datenschutz": true,
+      "gewerk": "Mehrere / noch unklar",
+      "nachricht": "Проверка: rénovation — nur lokaler Browser-Mock.\nKundentyp: Hausverwaltung / Eigentümer",
+      "webseite": "",
+      "form": "anfrage",
+      "request_id": "7a589200-3179-49a9-aecd-cbaead827c24"
+    },
+    {
+      "seite": "/kontakt",
+      "name": "Rückruf-Wunsch",
+      "telefon": "+41 79 123 45 67",
+      "gewerk": "Rückruf",
+      "nachricht": "Rückruf in 5 Minuten angefordert über die Website.",
+      "form": "rueckruf",
+      "request_id": "2ab7e46f-684c-4d24-802e-6b16ed644fe8"
+    },
+    {
+      "seite": "/karriere",
+      "name": "Test Applicant",
+      "telefon": "+41 79 123 45 67",
+      "gewerk": "Bewerbung: Initiativbewerbung",
+      "nachricht": "Bewerbung für: Initiativbewerbung",
+      "webseite": "",
+      "form": "karriere",
+      "request_id": "3a26b900-844d-47e9-9379-0c669aa37e94"
+    },
+    {
+      "seite": "/karriere",
+      "name": "Test Applicant",
+      "telefon": "+41 79 123 45 67",
+      "gewerk": "Bewerbung: Initiativbewerbung",
+      "nachricht": "Bewerbung für: Initiativbewerbung",
+      "webseite": "",
+      "form": "karriere",
+      "request_id": "3a26b900-844d-47e9-9379-0c669aa37e94"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "engine": "chromium",
+    "checks": 11,
+    "requestsToMock": 7,
+    "passed": true
+  },
+  {
+    "engine": "webkit",
+    "checks": 11,
+    "requestsToMock": 7,
+    "passed": true
+  }
+]

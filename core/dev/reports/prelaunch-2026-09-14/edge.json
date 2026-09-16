@@ -1,0 +1,72 @@
+[
+  {
+    "engine": "chromium",
+    "case": "long",
+    "requests": 1,
+    "nameLength": 2000,
+    "messageLength": 19038,
+    "overflow": 0,
+    "retainedLength": 2000
+  },
+  {
+    "engine": "chromium",
+    "case": "privacy-link",
+    "popups": 0,
+    "pages": 1,
+    "path": "/kontakt"
+  },
+  {
+    "engine": "chromium",
+    "case": "gallery-escape-settled",
+    "hidden": "true",
+    "focusRestored": true
+  },
+  {
+    "engine": "chromium",
+    "case": "menu-tab",
+    "before": "true",
+    "after": "true",
+    "focused": "<a data-go=\"leistungen\" href=\"/leistungen\">Leistungen</a>"
+  },
+  {
+    "engine": "chromium",
+    "case": "callback-success-tab",
+    "focused": "<button type=\"button\" data-who=\"Hausverwaltung / Eigentümer\">Hausverwaltung / Eigentümer</button>",
+    "inside": false
+  },
+  {
+    "engine": "webkit",
+    "case": "long",
+    "requests": 1,
+    "nameLength": 2000,
+    "messageLength": 19038,
+    "overflow": 0,
+    "retainedLength": 2000
+  },
+  {
+    "engine": "webkit",
+    "case": "privacy-link",
+    "popups": 0,
+    "pages": 1,
+    "path": "/kontakt"
+  },
+  {
+    "engine": "webkit",
+    "case": "gallery-escape-settled",
+    "hidden": "true",
+    "focusRestored": true
+  },
+  {
+    "engine": "webkit",
+    "case": "menu-tab",
+    "before": "true",
+    "after": "true",
+    "focused": "<button type=\"button\" data-who=\"Hausverwaltung / Eigentümer\">Hausverwaltung / Eigentümer</button>"
+  },
+  {
+    "engine": "webkit",
+    "case": "callback-success-tab",
+    "focused": "<button type=\"button\" data-who=\"Hausverwaltung / Eigentümer\">Hausverwaltung / Eigentümer</button>",
+    "inside": false
+  }
+]

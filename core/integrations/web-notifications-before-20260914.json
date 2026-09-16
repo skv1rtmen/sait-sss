@@ -1,0 +1,458 @@
+{
+  "updatedAt": "2026-09-12T09:53:27.004Z",
+  "createdAt": "2026-08-26T14:32:44.542Z",
+  "id": "y1AXsm72Z0wgLGpu",
+  "name": "BauStern — Web Anfragen",
+  "description": "Formulare von baustern.ch landen direkt im CRM: Spam-Filter, Duplikat-Schutz, UTM/gclid-Attribution, sofortige Bestätigungs-E-Mail an den Kunden (mit Foto-Bitte) und Telegram-Meldung ans Team.",
+  "active": true,
+  "isArchived": false,
+  "nodes": [
+    {
+      "id": "c4e794a0-45d1-49db-94d7-e867f6e06afa",
+      "name": "Formular Eingang",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        96
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "web-anfrage",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "webhookId": "aab7354d-a235-4fc9-80f8-7b3c01024009"
+    },
+    {
+      "id": "01584ded-d810-4d23-934f-9aeba554aa8e",
+      "name": "Felder Lesen",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        224,
+        96
+      ],
+      "parameters": {
+        "jsCode": "/* n8n Code-Knoten: Eingaben normalisieren; die Datenbank prüft und speichert atomar. */\nconst wh=$input.first().json||{},b=wh.body&&typeof wh.body==='object'?wh.body:{};\nconst S=v=>v==null?'':String(v).trim();\nconst name=S(b.name||b.kunde_name),email=S(b.email||b.mail),telefon=S(b.telefon||b.phone||b.tel);\nconst nachricht=S(b.nachricht||b.message||b.beschreibung||b.text),gewerk=S(b.service||b.gewerk||b.leistung||b.betreff);\nconst ort=S(b.ort||b.plz_ort||b.plz)||((nachricht.match(/(?:^|\\n)Ort:\\s*([^\\n]+)/)||[])[1]||'');\nconst honig=S(b.webseite||b.website_url||b.hp);\nconst spam=!!honig;\nlet requestId=S(b.request_id);\nif(!/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(requestId)){\n  // Alte Tabs ohne Request-ID: volle Nachricht statt der früheren ersten 80 Zeichen.\n  const key=[name,email,telefon,gewerk,nachricht,ort,Math.floor(Date.now()/3600000)].join('|');let a=2166136261,c=5381;\n  for(let i=0;i<key.length;i++){a=Math.imul(a^key.charCodeAt(i),16777619);c=Math.imul(c,33)^key.charCodeAt(i);}\n  requestId='legacy-'+(a>>>0).toString(16)+'-'+(c>>>0).toString(16);\n}\nconst fotos=Array.isArray(b.fotos)?b.fotos:[];\nconst budget=Number.parseFloat(S(b.budget).replace(/[^0-9.]/g,''));\nreturn [{json:{spam,extern_id:'web-'+requestId,name,email,telefon,ort,gewerk,nachricht,\n  titel:(gewerk+' — '+nachricht).slice(0,140),budget:Number.isFinite(budget)?budget:null,fotos,\n  kundentyp:S(b.kundentyp),firma:S(b.firma),objekt:S(b.objekt),zeitrahmen:S(b.zeitrahmen),\n  datenschutz:b.datenschutz===true,webseite:honig,utm_source:S(b.utm_source),utm_campaign:S(b.utm_campaign),\n  utm_term:S(b.utm_term||b.keyword),gclid:S(b.gclid),seite:S(b.seite||b.page||(wh.headers||{}).referer)}}];\n\r\n"
+      }
+    },
+    {
+      "id": "5f52dea7-d9c9-4697-a966-b3004fb7e15f",
+      "name": "Ist Spam?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        448,
+        96
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.spam }}",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      }
+    },
+    {
+      "id": "5b6c529b-3301-431d-a82a-5b9dc69ddc0f",
+      "name": "Spam Antwort",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        672,
+        0
+      ],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{\"ok\":false,\"error\":\"Eingabe nicht akzeptiert\"}",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              }
+            ]
+          },
+          "responseCode": 422
+        }
+      }
+    },
+    {
+      "id": "89853838-8a3b-4c37-b577-03aa4cd3bf37",
+      "name": "Ins CRM",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        672,
+        192
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "https://ebnlafxzsjinngfbmoxc.supabase.co/rest/v1/rpc/crm_web_anfrage_v2",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "redacted": true
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({p_payload:$json}) }}",
+        "options": {
+          "timeout": 6000
+        }
+      },
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 1000,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "qIgrctj0mYx5RKyr",
+          "name": "Supabase service_role"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "id": "61b75c18-cbc5-4ccf-9457-c4c692da9309",
+      "name": "Web Antwort",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        896,
+        0
+      ],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ok:true,nr:$json.nr,fotos:$json.fotos||0,duplicate:$json.doppelt===true}) }}",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              }
+            ]
+          },
+          "responseCode": 200
+        }
+      }
+    },
+    {
+      "id": "b5f13fae-9dd7-4094-8ed4-b93cd431fe8f",
+      "name": "Bestaetigung Bauen",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        896,
+        192
+      ],
+      "parameters": {
+        "jsCode": "const r=$input.first().json||{},f=$('Felder Lesen').first().json||{};\nif(r.ok!==true||r.doppelt===true||!f.email||f.email.indexOf('@')<0)return [];\nconst esc=s=>String(s==null?'':s).replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]));\nconst mappe=f.gewerk==='Referenzmappe PDF';\nconst pdf='https://leafy-bublanina-48b840.netlify.app/downloads/baustern-referenzen-v1.pdf';\nconst content=mappe?'<p>Vielen Dank für Ihr Interesse an BauStern. Ihre Referenzmappe mit sechs Projektbeispielen und dem Ablauf einer Zusammenarbeit steht hier bereit:</p><p><a href=\"'+pdf+'\" style=\"display:inline-block;padding:14px 20px;background:#1c1f22;color:white;text-decoration:none\">Referenzmappe als PDF herunterladen</a></p><p>Fünf Seiten, ca. 1 MB. Sie können die Datei auch später über diesen Link öffnen.</p>':'<p>Vielen Dank für Ihre Anfrage'+(f.gewerk?' zu <b>'+esc(f.gewerk)+'</b>':'')+'. Wir haben sie gespeichert und melden uns innert 24 Stunden (Werktage) bei Ihnen.</p><p>Sie möchten noch etwas ergänzen? Antworten Sie einfach auf diese E-Mail.</p>';\nconst html='<div style=\"font-family:Arial,sans-serif;color:#1c1f22;max-width:560px;font-size:15px;line-height:1.6\"><h2>BauStern</h2><p>Guten Tag'+(!mappe&&f.name?' '+esc(f.name):'')+',</p>'+content+'<p>Ihre Referenz: <b>'+esc(r.nr)+'</b></p><p style=\"color:#58646d;font-size:13px\">BauStern · Zürich · +41 76 524 98 98 · info@baustern.ch</p></div>';\nreturn [{json:{an:f.email,betreff:(mappe?'Ihre BauStern Referenzmappe':'Ihre Anfrage ist angekommen')+' ('+r.nr+')',html}}];"
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "id": "ddf04303-9fd7-47de-ac9c-8532e15e6cdd",
+      "name": "Bestaetigung Senden",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        1120,
+        192
+      ],
+      "parameters": {
+        "resource": "message",
+        "operation": "send",
+        "sendTo": "={{ $json.an }}",
+        "subject": "={{ $json.betreff }}",
+        "emailType": "html",
+        "message": "={{ $json.html }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "onError": "continueRegularOutput",
+      "webhookId": "d85d6d49-8e6b-4b06-ab09-94a06026d9a0",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "S35zLJkQXorNWh0S",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "id": "90da7e54-0ac0-4cc4-83a4-fbaaf69b932f",
+      "name": "TG Text",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        896,
+        384
+      ],
+      "parameters": {
+        "jsCode": "const r = $input.first().json || {};\nconst f = $('Felder Lesen').first().json || {};\nif (r.ok !== true) return [{ json: { text: 'Website-Anfrage konnte NICHT gespeichert werden: ' + (r.error || '?'), messageThreadId: 0 } }];\nif (r.doppelt === true) return [];\n// Test-Topic \"#60 — Живой тест формы\" wurde am 2026-09-09 nach Abschluss des Livetests geloescht.\n// Alle Website-Anfragen (auch mit utm_source=test*) gehen jetzt in den Haupt-Chat (Thread 0).\nconst zeilen = ['Neue Anfrage über die WEBSITE', '',\n  f.titel || '',\n  (f.name || 'Unbekannt') + ' · ' + (f.telefon || f.email || 'kein Kontakt'),\n  f.ort ? 'Ort: ' + f.ort : '',\n  f.utm_source ? 'Quelle: ' + f.utm_source + (f.utm_term ? ' / ' + f.utm_term : '') : '',\n  '', 'Nummer: ' + (r.nr || '')];\nreturn [{ json: { text: zeilen.filter(function (z) { return z !== ''; }).join('\\n'), messageThreadId: 0 } }];"
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "id": "d7422ee2-8fdd-440e-bde6-6fabd687a690",
+      "name": "TG Senden",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1120,
+        384
+      ],
+      "parameters": {
+        "resource": "message",
+        "operation": "sendMessage",
+        "chatId": "-1004404937554",
+        "text": "={{ $json.text }}",
+        "additionalFields": {
+          "message_thread_id": "={{ $json.messageThreadId || 0 }}"
+        }
+      },
+      "onError": "continueRegularOutput",
+      "webhookId": "dd24cb1c-f7c1-4128-b39f-cc9553757508",
+      "credentials": {
+        "telegramApi": {
+          "id": "vRWM6F4j5kZOZcah",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "id": "web-v2-confirm",
+      "name": "Speicherung bestaetigt?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        860,
+        96
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "version": 2,
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.ok === true && !!$json.nr }}",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              },
+              "id": "condition-1789204014314-3q8gp49jp"
+            }
+          ],
+          "combinator": "and"
+        }
+      }
+    },
+    {
+      "id": "web-v2-error-response",
+      "name": "Fehler Antwort",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        1080,
+        -180
+      ],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{\"ok\":false,\"error\":\"Anfrage nicht gespeichert. Bitte Eingaben prüfen und erneut versuchen.\"}",
+        "options": {
+          "responseCode": "={{ $json.code === 'VALIDATION' ? 422 : 503 }}",
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Formular Eingang": {
+      "main": [
+        [
+          {
+            "node": "Felder Lesen",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Felder Lesen": {
+      "main": [
+        [
+          {
+            "node": "Ist Spam?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ist Spam?": {
+      "main": [
+        [
+          {
+            "node": "Spam Antwort",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Ins CRM",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Bestaetigung Bauen": {
+      "main": [
+        [
+          {
+            "node": "Bestaetigung Senden",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "TG Text": {
+      "main": [
+        [
+          {
+            "node": "TG Senden",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ins CRM": {
+      "main": [
+        [
+          {
+            "node": "Speicherung bestaetigt?",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Fehler Antwort",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "TG Text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Speicherung bestaetigt?": {
+      "main": [
+        [
+          {
+            "node": "Web Antwort",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Fehler Antwort",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Web Antwort": {
+      "main": [
+        [
+          {
+            "node": "Bestaetigung Bauen",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "TG Text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": true,
+    "errorWorkflow": "62197CeYj0t2WOLb"
+  },
+  "staticData": null,
+  "meta": {
+    "aiBuilderAssisted": true,
+    "builderVariant": "mcp"
+  },
+  "nodeGroups": [],
+  "pinData": null,
+  "versionId": "53bc8cea-bb9f-40c0-af62-c00c087cb051",
+  "activeVersionId": "53bc8cea-bb9f-40c0-af62-c00c087cb051",
+  "versionCounter": 10,
+  "triggerCount": 1,
+  "sourceWorkflowId": null,
+  "shared": [
+    {
+      "updatedAt": "2026-08-26T14:32:44.547Z",
+      "createdAt": "2026-08-26T14:32:44.547Z",
+      "role": "workflow:owner",
+      "workflowId": "y1AXsm72Z0wgLGpu",
+      "projectId": "p2TzS6NxSZZvnHjR",
+      "project": {
+        "updatedAt": "2026-08-06T09:48:41.881Z",
+        "createdAt": "2026-08-06T09:41:49.329Z",
+        "id": "p2TzS6NxSZZvnHjR",
+        "name": "Сергей Стецюра <skv1rtmen69@gmail.com>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "customTelemetryTags": [],
+        "creatorId": "6a99c042-f54c-4dff-84d6-d5539cd166d0"
+      }
+    }
+  ],
+  "tags": []
+}

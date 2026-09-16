@@ -1,0 +1,44 @@
+[
+  {
+    "file": "jsdom-smoke.js",
+    "exit": 0,
+    "stdout": "{\n \"mode\": \"full\",\n \"scenes\": 7,\n \"fx\": true,\n \"vid\": 1,\n \"mat\": true,\n \"flightActive\": false,\n \"flightAfter\": false,\n \"matTrace\": [\n  \"5:{\\\"on\\\":true,\\\"p\\\":0.3794944639418182}\"\n ],\n \"videos\": 1,\n \"introSrc\": null,\n \"inertial\": 0.764,\n \"vfStart\": true,\n \"vfActive\": true,\n \"vfOn\": true,\n \"vfAfterEnd\": false,\n \"codec\": \"h264\",\n \"flightSrc\": \"img/film/v/c2-flur.fwd.h264.mp4\",\n \"layers\": true,\n \"missingAssets\": [],\n \"errors\": []\n}\n",
+    "stderr": ""
+  },
+  {
+    "file": "route-test.js",
+    "exit": 0,
+    "stdout": "[\n {\n  \"step\": \"direct /leistungen/sanitaer\",\n  \"url\": \"/leistungen/sanitaer\",\n  \"title\": \"Sanitärarbeiten in Zürich — BauStern\",\n  \"h1\": \"Sanitärarbeiten in Zürich\",\n  \"canon\": \"https://www.baustern.ch/leistungen/sanitaer\"\n },\n {\n  \"step\": \"legacy #/kontakt\",\n  \"url\": \"/kontakt\",\n  \"title\": \"Kontakt & Offerte — BauStern Zürich\",\n  \"h1\": \"In 30 Sekunden zur Anfrage.\",\n  \"canon\": \"https://www.baustern.ch/kontakt\"\n },\n {\n  \"step\": \"click Referenzen\",\n  \"url\": \"/referenzen\",\n  \"title\": \"Referenzen — BauStern Zürich\",\n  \"h1\": \"Ausgeführte Projekte.\",\n  \"canon\": \"https://www.baustern.ch/referenzen\"\n },\n {\n  \"step\": \"click Über uns\",\n  \"url\": \"/ueber-uns\",\n  \"title\": \"Über uns — BauStern Bauunternehmen Zürich\",\n  \"h1\": \"Wer hinter BauStern steht.\",\n  \"canon\": \"https://www.baustern.ch/ueber-uns\"\n },\n {\n  \"step\": \"back\",\n  \"url\": \"/referenzen\",\n  \"title\": \"Referenzen — BauStern Zürich\",\n  \"h1\": \"Ausgeführte Projekte.\",\n  \"canon\": \"https://www.baustern.ch/referenzen\"\n },\n {\n  \"step\": \"forward\",\n  \"url\": \"/ueber-uns\",\n  \"title\": \"Über uns — BauStern Bauunternehmen Zürich\",\n  \"h1\": \"Wer hinter BauStern steht.\",\n  \"canon\": \"https://www.baustern.ch/ueber-uns\"\n },\n {\n  \"step\": \"404\",\n  \"url\": \"/gibts-nicht\",\n  \"title\": \"Seite nicht gefunden — BauStern\",\n  \"h1\": \"Diese Seite gibt es nicht.\",\n  \"canon\": null,\n  \"robots\": \"noindex,follow\"\n },\n {\n  \"step\": \"rail anchor click\",\n  \"urlSame\": true,\n  \"url\": \"http://localhost:8099/leistungen\"\n }\n]\nerrors [\n  'Failed to load resource: the server responded with a status of 404 (Not Found)'\n]\n",
+    "stderr": ""
+  },
+  {
+    "file": "flight-test.js",
+    "exit": 0,
+    "stdout": "fling1 {\"flyStart\":367,\"flyEnd\":2533,\"flyFrames\":126,\"videoOnFrames\":122,\"videoOff\":true,\"videoSrc\":\"img/film/r13/c2-flur.fwd.av1.mp4\",\"frameFrom\":95,\"frameTo\":191,\"final\":[1932,191,\"1\"],\"scene\":\"1\"} p1 0.451\nfling2 {\"from\":1940,\"to\":5727,\"scene\":\"2\",\"flew\":true}\nback {\"from\":5718,\"to\":4875,\"flew\":118,\"frameFrom\":286,\"frameTo\":191,\"scene\":\"2\"}\ndot3 {\"scene\":\"3\",\"frame\":\"383\",\"p\":0.451} errors []\n",
+    "stderr": ""
+  },
+  {
+    "file": "hybrid-test.js",
+    "exit": 0,
+    "stdout": "slow scrub {\"from\":0,\"to\":1925,\"flew\":false,\"videoOn\":false,\"videoOff\":true,\"frames\":[95,191]} p1 0.447\nafter snap p1 0.45\nfast {\"from\":1943,\"to\":5727,\"flew\":true,\"videoOn\":true,\"videoOff\":true,\"frames\":[191,287]} p1 2.459\nerrors []\n",
+    "stderr": ""
+  },
+  {
+    "file": "sig-test2.js",
+    "exit": 0,
+    "stdout": "{\"hidden\":false,\"cs\":\"stroke-dashoffset 0.99s cubic-bezier(0.45, 0.05, 0.55, 0.95)\",\"inline\":\"stroke-dashoffset 0.99s cubic-bezier(0.45, 0.05, 0.55, 0.95)\",\"off\":\"0\",\"len\":148.26959228515625,\"samples\":[\"144.24px\",\"132.726px\",\"109.406px\",\"81.4378px\",\"47.8524px\",\"24.1249px\",\"7.08625px\",\"0.5125px\",\"0px\",\"0px\",\"0px\",\"0px\"],\"inlineAfter\":\"stroke-dashoffset 0.99s cubic-bezier(0.45, 0.05, 0.55, 0.95)\"}\n",
+    "stderr": ""
+  },
+  {
+    "file": "final-home-check.js",
+    "exit": 0,
+    "stdout": "m375 {\"errs\":[],\"failed\":[],\"scene\":\"6\",\"mode\":\"wohnung is-lite is-cinema is-covered\",\"dl\":\"page_view,tour_room,tour_room,tour_room,tour_room,scroll_depth,tour_room,tour_room,scroll_depth,tour_room,scroll_depth,scroll_depth\"}\nt768 {\"errs\":[],\"failed\":[],\"scene\":\"6\",\"mode\":\"wohnung is-lite is-cinema is-covered\",\"dl\":\"page_view,tour_room,tour_room,tour_room,scroll_depth,tour_room,tour_room,scroll_depth,tour_room,scroll_depth,tour_room,scroll_depth\"}\nd1440 {\"errs\":[],\"failed\":[],\"scene\":\"6\",\"mode\":\"wohnung is-full is-drawn is-covered\",\"dl\":\"page_view,tour_room,tour_room,scroll_depth,tour_room,tour_room,scroll_depth,tour_room,scroll_depth,tour_room,scroll_depth\"}\n",
+    "stderr": ""
+  },
+  {
+    "file": "crawl-v9.js",
+    "exit": 0,
+    "stdout": "checked 93 page×viewport combos, problems: 0\n",
+    "stderr": ""
+  }
+]

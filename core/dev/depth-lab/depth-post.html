@@ -1,0 +1,137 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><title>Tiefenkarten — Nachbearbeitung</title>
+<meta name="robots" content="noindex">
+<style>body{font:12px/1.5 ui-monospace,monospace;background:#000;color:#ddd;margin:10px}
+#log{white-space:pre-wrap}#out{display:grid;grid-template-columns:repeat(3,auto);gap:6px}
+#out div{border:1px solid #222}canvas,img{display:block}</style>
+</head><body><div id="log">…</div><div id="out"></div>
+<script type="module">
+/* Build-Werkzeug (wird nicht ausgeliefert): repariert bekannte Fehlstellen der Tiefenkarten,
+   berechnet die Fernmaske für den Nebel und schreibt je Raum EIN Bild:
+     R = Tiefe (hell = nah)   G = Nebelmaske (Fenster/Himmel)   B = 0 */
+const LOG=document.getElementById('log'),OUT=document.getElementById('out');
+const say=s=>{LOG.textContent+='\n'+s;};
+const ROOMS=['ankunft','schwelle','kueche','bad','schlaf','wohnen','wohnen-rohbau','eingang'];
+const SAVE='http://127.0.0.1:8123/put?name=';
+const LONG=960;                                   /* lange Kante der Ausgabe */
+/* Bekannte Fehlstellen: Spiegel/Glas, die das Modell als Loch in der Wand liest.
+   Werte in Originalpixeln des jeweiligen Standbilds. */
+const PATCH={'eingang-P':[{cx:295,cy:400,rx:212,ry:278,feather:16}]};
+window.POST={state:'run',done:[],fail:[],info:{}};
+
+const load=u=>new Promise((r,j)=>{const i=new Image();i.onload=()=>r(i);i.onerror=j;i.src=u;});
+
+function planeFit(px,W,H,inside,near){   /* robuste Ebene d = a + b*x + c*y aus dem Ring um die Fehlstelle */
+  let pts=[];
+  for(let y=0;y<H;y++)for(let x=0;x<W;x++){if(!near(x,y)||inside(x,y))continue;pts.push([x,y,px[(y*W+x)*4]]);}
+  let co=[0,0,0];
+  for(let it=0;it<3;it++){
+    let n=pts.length;if(n<30)break;
+    let Sx=0,Sy=0,Sd=0,Sxx=0,Sxy=0,Syy=0,Sxd=0,Syd=0;
+    for(const [x,y,d] of pts){Sx+=x;Sy+=y;Sd+=d;Sxx+=x*x;Sxy+=x*y;Syy+=y*y;Sxd+=x*d;Syd+=y*d;}
+    const A=[[n,Sx,Sy],[Sx,Sxx,Sxy],[Sy,Sxy,Syy]],B=[Sd,Sxd,Syd];
+    co=solve3(A,B);if(!co){co=[Sd/n,0,0];break;}
+    const res=pts.map(([x,y,d])=>Math.abs(d-(co[0]+co[1]*x+co[2]*y)));
+    const m=res.reduce((a,b)=>a+b,0)/n,sd=Math.sqrt(res.reduce((a,b)=>a+(b-m)*(b-m),0)/n)||1;
+    pts=pts.filter((p,i)=>res[i]<m+1.0*sd);
+  }
+  return co;
+}
+function solve3(A,B){const M=A.map((r,i)=>[...r,B[i]]);
+  for(let i=0;i<3;i++){let p=i;for(let k=i+1;k<3;k++)if(Math.abs(M[k][i])>Math.abs(M[p][i]))p=k;
+    [M[i],M[p]]=[M[p],M[i]];if(Math.abs(M[i][i])<1e-9)return null;
+    for(let k=0;k<3;k++){if(k===i)continue;const f=M[k][i]/M[i][i];for(let j=i;j<4;j++)M[k][j]-=f*M[i][j];}}
+  return [M[0][3]/M[0][0],M[1][3]/M[1][1],M[2][3]/M[2][2]];}
+
+async function one(name){
+  const still=await load('/img/film/v16/stills/'+name+'.jpg');
+  const dep=await load('/_lab/raw/'+name+'.png');
+  const W=dep.naturalWidth,H=dep.naturalHeight;
+  const dc=document.createElement('canvas');dc.width=W;dc.height=H;
+  const dx=dc.getContext('2d',{willReadFrequently:true});dx.drawImage(dep,0,0);
+  const D=dx.getImageData(0,0,W,H);const px=D.data;
+
+  /* 1. Fehlstellen reparieren */
+  let patched=0;
+  for(const e of (PATCH[name]||[])){
+    const inside=(x,y)=>{const u=(x-e.cx)/e.rx,v=(y-e.cy)/e.ry;return u*u+v*v<=1;};
+    const near=(x,y)=>{const u=(x-e.cx)/e.rx,v=(y-e.cy)/e.ry,r=u*u+v*v;return r>1.10&&r<1.85;};
+    const co=planeFit(px,W,H,inside,near);
+    for(let y=0;y<H;y++)for(let x=0;x<W;x++){
+      const u=(x-e.cx)/e.rx,v=(y-e.cy)/e.ry,r=Math.sqrt(u*u+v*v);
+      if(r>1)continue;
+      const plane=co[0]+co[1]*x+co[2]*y;
+      const edge=Math.max(e.feather/Math.max(e.rx,e.ry),0.001);
+      const w=r>1-edge?(1-r)/edge:1;                     /* weicher Rand statt harter Kante */
+      const i=(y*W+x)*4;
+      const v2=Math.max(0,Math.min(255,px[i]*(1-w)+plane*w));
+      px[i]=px[i+1]=px[i+2]=v2;patched++;
+    }
+  }
+  dx.putImageData(D,0,0);
+
+  /* 2. Fernmaske: dunkel in der Tiefe UND hell im Bild = Fenster/Himmel, nicht Wand */
+  const sc=document.createElement('canvas');sc.width=W;sc.height=H;
+  const sx=sc.getContext('2d',{willReadFrequently:true});sx.drawImage(still,0,0,W,H);
+  const S=sx.getImageData(0,0,W,H).data;
+  /* Messung an 5 Standbildern: Himmel/Nebel hinter Glas liegt bei L 190…255, jede Wand,
+     Decke, Boden, Möbel und selbst der Spiegel bei L ≤ 137. Die Tiefe taugt hier NICHT als
+     Kriterium — Glas liest das Modell als nahe Fläche (d≈200). Also rein über die Helligkeit. */
+  const mask=new Uint8ClampedArray(W*H);
+  const tFar=158;
+  for(let i=0;i<W*H;i++){
+    const L=(S[i*4]*0.299+S[i*4+1]*0.587+S[i*4+2]*0.114);
+    /* Die allernächsten Flächen (Boden direkt vor der Kamera, Steinkanten) fliegen raus:
+       Glas liest das Modell bei d≈0…200, der Boden im Vordergrund bei d>215. */
+    const g=1-smooth(px[i*4],215,245);
+    mask[i]=Math.round(255*smooth(L,158,195)*g);
+  }
+  /* Öffnung: dünne Glanzlichter (LED-Leiste, Bettfalte, Steinkante) fallen weg,
+     grosse zusammenhängende Glasflächen bleiben. */
+  const rr=Math.max(6,Math.round(Math.max(W,H)*0.011));
+  morph(mask,W,H,rr,Math.min);morph(mask,W,H,rr,Math.max);
+  blur(mask,W,H,3);
+  /* 3. Ausgabe: R = Tiefe, G = Maske */
+  const s=LONG/Math.max(W,H),oW=Math.round(W*s),oH=Math.round(H*s);
+  const mc=document.createElement('canvas');mc.width=W;mc.height=H;
+  const mx=mc.getContext('2d');const MI=mx.createImageData(W,H);
+  for(let i=0;i<W*H;i++){MI.data[i*4]=px[i*4];MI.data[i*4+1]=mask[i];MI.data[i*4+2]=0;MI.data[i*4+3]=255;}
+  mx.putImageData(MI,0,0);
+  const oc=document.createElement('canvas');oc.width=oW;oc.height=oH;
+  const ox=oc.getContext('2d');ox.imageSmoothingQuality='high';ox.drawImage(mc,0,0,oW,oH);
+  const blob=await new Promise(r=>oc.toBlob(r,'image/webp',0.94));
+  const res=await fetch(SAVE+encodeURIComponent(name+'.webp'),{method:'POST',body:blob});
+  if(!res.ok)throw Error('save '+res.status);
+  let mArea=0;for(let i=0;i<W*H;i++)if(mask[i]>128)mArea++;
+  window.POST.info[name]={W,H,oW,oH,tFar,maskPct:+(100*mArea/(W*H)).toFixed(1),kb:blob.size/1024|0,patched};
+  say(name+'  '+oW+'x'+oH+'  tFar='+tFar+'  Maske='+(100*mArea/(W*H)).toFixed(1)+'%  '+(blob.size/1024|0)+'K'+(patched?'  repariert='+patched+'px':''));
+  /* Vorschau */
+  const box=document.createElement('div');box.innerHTML='<b>'+name+'</b>';
+  const a=new Image();a.src=still.src;a.width=name.endsWith('P')?150:260;
+  const b=new Image();b.src=URL.createObjectURL(blob);b.width=name.endsWith('P')?150:260;
+  const mv=document.createElement('canvas');mv.width=oW;mv.height=oH;
+  const mvx=mv.getContext('2d');const MD=mvx.createImageData(oW,oH);
+  const tmp=document.createElement('canvas');tmp.width=oW;tmp.height=oH;
+  const tx=tmp.getContext('2d');tx.drawImage(mc,0,0,oW,oH);const TD=tx.getImageData(0,0,oW,oH).data;
+  for(let i=0;i<oW*oH;i++){MD.data[i*4]=TD[i*4+1];MD.data[i*4+1]=TD[i*4+1];MD.data[i*4+2]=255;MD.data[i*4+3]=255;}
+  mvx.putImageData(MD,0,0);mv.style.width=(name.endsWith('P')?150:260)+'px';mv.style.height='auto';
+  box.append(a,b,mv);OUT.append(box);
+}
+function smooth(v,a,b){const t=Math.max(0,Math.min(1,(v-a)/(b-a)));return t*t*(3-2*t);}
+function morph(m,W,H,r,f){   /* separierbare Erosion (f=Math.min) bzw. Dilatation (f=Math.max) */
+  const t=new Uint8ClampedArray(m.length);
+  for(let y=0;y<H;y++)for(let x=0;x<W;x++){let v=m[y*W+x];
+    for(let k=-r;k<=r;k++)v=f(v,m[y*W+Math.min(W-1,Math.max(0,x+k))]);t[y*W+x]=v;}
+  for(let x=0;x<W;x++)for(let y=0;y<H;y++){let v=t[y*W+x];
+    for(let k=-r;k<=r;k++)v=f(v,t[Math.min(H-1,Math.max(0,y+k))*W+x]);m[y*W+x]=v;}
+}
+function blur(m,W,H,r){const t=new Uint8ClampedArray(m.length);
+  for(let p=0;p<2;p++){
+    for(let y=0;y<H;y++){let s=0;for(let x=-r;x<=r;x++)s+=m[y*W+Math.min(W-1,Math.max(0,x))];
+      for(let x=0;x<W;x++){t[y*W+x]=s/(2*r+1);s+=m[y*W+Math.min(W-1,x+r+1)]-m[y*W+Math.max(0,x-r)];}}
+    for(let x=0;x<W;x++){let s=0;for(let y=-r;y<=r;y++)s+=t[Math.min(H-1,Math.max(0,y))*W+x];
+      for(let y=0;y<H;y++){m[y*W+x]=s/(2*r+1);s+=t[Math.min(H-1,y+r+1)*W+x]-t[Math.max(0,y-r)*W+x];}}
+  }}
+(async()=>{for(const r of ROOMS)for(const o of ['L','P']){const n=r+'-'+o;
+  try{await one(n);window.POST.done.push(n);}catch(e){window.POST.fail.push(n+': '+e.message);say('FEHLER '+n+' '+e);}}
+  window.POST.state='done';say('fertig '+window.POST.done.length+'/'+16);})();
+</script></body></html>

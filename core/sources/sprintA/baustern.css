@@ -1,0 +1,2 @@
+/* CSS-Approximation (nur für Fotos außerhalb des Films; im Film NIE filter auf Vollbild) */
+.grade{filter:contrast(1.02) saturate(.94) sepia(.04) hue-rotate(-3deg) brightness(1.01)}

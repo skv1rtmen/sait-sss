@@ -1,0 +1,141 @@
+/* BauStern — mobile-film-v2.css (v14) «Vertikaler Schnitt». Gilt nur für .wohnung.is-vcut (js/film-mobile-v2.js).
+   Grundsatz: das Bild besitzt den ganzen Bildschirm. Kein Pult, keine Plakette — Text und Pins liegen AUF dem Bild,
+   lesbar durch einen leichten Verlauf unten und Textschatten, nicht durch eine deckende Fläche. */
+@media(max-width:999px){
+  html.v-snap{scroll-snap-type:y proximity}
+  .v-snap-pt{position:absolute;left:0;width:1px;height:1px;scroll-snap-align:start;pointer-events:none;opacity:0}
+  .wohnung.is-vcut .w-room{position:relative}
+  .wohnung.is-vcut .w-stage{background:#1c2428}
+  .wohnung.is-vcut .w-stage::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+    background:linear-gradient(180deg,rgba(18,26,29,.74) 0%,rgba(18,26,29,.42) 11%,rgba(18,26,29,.12) 22%,rgba(18,26,29,0) 34%,rgba(18,26,29,0) 52%,rgba(18,26,29,.34) 72%,rgba(18,26,29,.68) 100%)}
+  .wohnung.is-vcut .w-cam{position:absolute;inset:0;transform:none!important;filter:none!important;transition:none;overflow:hidden}
+  .wohnung.is-vcut .w-canvas{display:block;position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity .35s}
+  .wohnung.is-vcut.is-drawn .w-canvas{opacity:1}
+  /* Erstes Bild sofort (LCP): das Hochkant-Standbild aus dem Template, bis der Canvas gezeichnet hat */
+  .wohnung.is-vcut .w-stills{display:block}
+  .wohnung.is-vcut.is-drawn .w-stills{display:none}
+  .wohnung.is-vcut .w-still img{object-fit:cover;object-position:var(--m-focal,50%) 50%;transform:none!important}
+  .wohnung.is-vcut .w-poster,.wohnung.is-vcut .w-fx,.wohnung.is-vcut .w-cmp,.wohnung.is-vcut .w-plan,.wohnung.is-vcut .w-hud,.wohnung.is-vcut .w-marks,
+  .wohnung.is-vcut .w-roomnav,.wohnung.is-vcut .w-scrollhint,.wohnung.is-vcut .w-fly,.wohnung.is-vcut .w-hot,.wohnung.is-vcut .w-shade,.wohnung.is-vcut .w-before,.wohnung.is-vcut .w-popm{display:none!important}
+  .wohnung.is-vcut .w-material{position:absolute;inset:0;z-index:1}
+  .wohnung.is-vcut .w-material-layer{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--m-focal,50%) 50%;transform:none!important;transition:none}
+  .v-intro{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover;object-position:var(--m-focal,50%) 50%;opacity:0;pointer-events:none;transition:opacity .28s}
+  .v-intro.on{opacity:1}
+  .v-flash{position:fixed;inset:0;z-index:9;background:#fff;opacity:0;pointer-events:none}
+  /* Navigation über dem Film durchsichtig, wie in v1 */
+  body:not(.mob-open):has(.wohnung.is-vcut:not(.is-covered)) #nav{background:none;box-shadow:none;backdrop-filter:none}
+  body:has(.wohnung.is-vcut:not(.is-covered)) #nav .burger{background:rgba(19,29,33,.35);box-shadow:inset 0 0 0 1px rgba(238,244,245,.55)}
+  body:has(.wohnung.is-vcut:not(.is-covered)) #stickycall{transform:translateY(calc(100% + 30px));pointer-events:none;visibility:hidden}
+  body:has(.wohnung.is-vcut:not(.is-covered)) #totop{opacity:0;pointer-events:none}
+
+  /* ---- Raumkarte: ein Titel, kein Zähler ---- */
+  .v-room{position:absolute;left:22px;top:calc(72px + env(safe-area-inset-top));z-index:7;font:500 11px/1 'Archivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#e9eeef;
+    text-shadow:0 1px 8px rgba(8,13,15,.7);opacity:0;transform:translateY(4px);transition:opacity .35s,transform .35s;pointer-events:none}
+  .v-room.on{opacity:.92;transform:none}
+  .v-room::before{content:"";display:inline-block;width:14px;height:1px;margin:0 8px 3px 0;background:#c9d6da;vertical-align:middle}
+
+  /* ---- Szenentext: unten links auf dem Bild ---- */
+  .wohnung.is-vcut .w-ov,.wohnung.is-vcut .w-ov.is-hero,.no-gsap .wohnung.is-vcut .w-ov.is-hero{
+    position:absolute;left:22px;right:22px;top:auto;bottom:calc(30px + env(safe-area-inset-bottom));max-width:none;width:auto;z-index:5;
+    transform:none!important;opacity:0;transition:opacity .4s,transform .4s;pointer-events:none}
+  .wohnung.is-vcut .w-ov.show,.wohnung.is-vcut .w-ov.is-hero.show,.no-gsap .wohnung.is-vcut .w-ov.is-hero.show{opacity:var(--ovo,1);pointer-events:auto}
+  .wohnung.is-vcut .w-kicker{font:500 10px/1.4 'Archivo',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#c9d6da;margin:0 0 8px;text-shadow:0 1px 6px rgba(8,13,15,.7)}
+  .wohnung.is-vcut .w-kicker .dia{display:none}
+  .wohnung.is-vcut .w-h{font-size:clamp(30px,8.6vw,40px);line-height:1.04;letter-spacing:-.04em;margin:0 0 10px;color:#f6f4ef;text-wrap:balance;text-shadow:0 2px 18px rgba(8,13,15,.6),0 1px 3px rgba(8,13,15,.7)}
+  .wohnung.is-vcut .w-d{font-size:14px;line-height:1.45;color:#e6ebec;margin:0;max-width:44ch;text-shadow:0 1px 10px rgba(8,13,15,.65)}
+  .wohnung.is-vcut .w-ov:not(.is-hero) .w-d{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .wohnung.is-vcut .w-ov :is(.w-chips,.w-counters,.w-trust,.w-etappen){display:none!important}
+  /* Hero: eine Handlung + der Einstieg in den Rundgang */
+  .wohnung.is-vcut .w-ctas{display:flex;gap:10px;margin:16px 0 0}
+  .wohnung.is-vcut .w-ov:not(.is-hero) .w-ctas{display:none}
+  .wohnung.is-vcut .w-ctas .btn{min-height:46px;padding:0 16px;font:600 13px/1.2 'Archivo',sans-serif;border-radius:3px}
+  .wohnung.is-vcut .w-ctas .btn-line{display:none}   /* Telefon steckt im Menü («Anrufen») — auf dem Bild nur EINE Handlung */
+  .wohnung.is-vcut .w-start{display:inline-flex;align-items:center;gap:8px;margin:14px 0 0;padding:0;border:0;background:none;color:#e6ebec;font:500 12px/1.3 'Archivo',sans-serif;letter-spacing:.02em;cursor:pointer;text-shadow:0 1px 8px rgba(8,13,15,.7)}
+  .wohnung.is-vcut .w-start .dia{display:none}
+  .wohnung.is-vcut .w-start i{font-style:normal;animation:v-bob 1.8s ease-in-out infinite}
+  .wohnung.is-vcut .w-ov:not(.is-hero) .w-start{display:none}
+  .wohnung.is-vcut .w-cta{display:flex;gap:10px;margin:16px 0 0}
+  .wohnung.is-vcut .w-cta[hidden]{display:none}
+  .wohnung.is-vcut .w-cta .btn{min-height:46px;padding:0 16px;font:600 13px/1.2 'Archivo',sans-serif;border-radius:3px}
+  @keyframes v-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
+  /* Signatur (Eingang) klein oben rechts */
+  .wohnung.is-vcut .w-sig{right:18px;bottom:auto;top:calc(70px + env(safe-area-inset-top));width:120px;opacity:var(--ovo,1)}
+  .wohnung.is-vcut.is-covered .w-sig{opacity:0}
+
+  /* ---- Pins auf dem Bild ---- */
+  .v-pins{position:absolute;inset:0;z-index:6;pointer-events:none;opacity:var(--ovo,1)}
+  .v-pin{position:absolute;left:0;top:0;display:flex;align-items:center;gap:8px;translate:-14px -14px;padding:0;border:0;background:none;color:#fff;
+    font-family:'Archivo',sans-serif;text-align:left;cursor:pointer;pointer-events:auto;opacity:0;transition:opacity .38s calc(var(--k,0) * var(--stag,.32s));will-change:transform}
+  .v-pin.l{flex-direction:row-reverse;translate:calc(-100% + 14px) -14px}
+  .v-pin.off{display:none}
+  .v-pins.on .v-pin{opacity:1}
+  .v-pins:not(.on) .v-pin{transition-delay:0s;transition-duration:.2s}
+  /* Pin = Messingpunkt + Etikett; kein backdrop-filter (auf iOS beim Scrollen teuer), dafür klare Kanten und ein «Atmen» des Rings */
+  .v-pin-dot{position:relative;flex:0 0 30px;width:30px;height:30px;border-radius:50%;border:1.5px solid #d9b46a;background:#1a2428;box-shadow:0 2px 10px rgba(0,0,0,.45),inset 0 0 0 3px rgba(217,180,106,.16);
+    display:flex;align-items:center;justify-content:center;font:700 10px/1 'Archivo',sans-serif;letter-spacing:.02em;color:#f2dfb5}
+  .v-pin-dot::after{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px solid rgba(217,180,106,.55);opacity:0;animation:v-ring 2.6s ease-out calc(var(--k,0) * var(--stag,.32s) + .5s) infinite}
+  .v-pin.open .v-pin-dot{background:#d9b46a;color:#1a2428}
+  .v-pin-lbl{position:relative;display:block;max-width:min(54vw,230px);padding:8px 12px 8px 12px;border-radius:3px;background:#1a2428;border:1px solid rgba(217,180,106,.35);box-shadow:0 4px 16px rgba(0,0,0,.4);
+    font:500 12.5px/1.25 'Archivo',sans-serif;letter-spacing:.005em;color:#f6f4ef}
+  .v-pin-lbl::after{content:"+";position:absolute;right:-1px;top:-9px;width:18px;height:18px;border-radius:50%;background:#d9b46a;color:#1a2428;font:700 13px/18px 'Archivo',sans-serif;text-align:center}
+  .v-pin:active .v-pin-lbl{transform:scale(.97)}
+  .v-pin:focus-visible .v-pin-dot{outline:2px solid #fff;outline-offset:3px}
+  @keyframes v-ring{0%{transform:scale(.7);opacity:.8}70%{transform:scale(1.3);opacity:0}100%{transform:scale(1.3);opacity:0}}
+  .wohnung.is-vcut.is-covered .v-pins,.wohnung.is-vcut.is-covered .v-room{visibility:hidden}
+
+  /* ---- Bottom-Sheet zum Pin ---- */
+  .v-sheet{position:fixed;inset:auto 0 0 0;width:100%;max-width:none;max-height:min(70svh,560px);margin:0;padding:22px 22px calc(26px + env(safe-area-inset-bottom));border:0;border-radius:14px 14px 0 0;
+    background:#1c2428;color:#fff;box-shadow:0 -12px 40px rgba(0,0,0,.35);overflow-y:auto;overscroll-behavior:contain;animation:v-up .26s cubic-bezier(.2,.7,.2,1)}
+  .v-sheet::backdrop{background:rgba(10,18,22,.45)}
+  .v-sheet::before{content:"";position:absolute;left:50%;top:8px;width:36px;height:3px;margin-left:-18px;border-radius:2px;background:#5b6d74}
+  .v-sheet-x{position:absolute;right:6px;top:6px;width:44px;height:44px;border:0;background:none;color:#fff;font-size:26px;cursor:pointer}
+  .v-sheet-eyebrow{display:block;margin:6px 40px 10px 0;font:500 10px/1.4 'Archivo',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#bbd0d8}
+  .v-sheet h3{margin:0 40px 10px 0;font:600 23px/1.14 'Archivo',sans-serif;letter-spacing:-.025em}
+  .v-sheet p{margin:6px 0;font-size:14px;line-height:1.5;color:#e5ecee}
+  .v-sheet .v-sheet-sub{color:#c5d5db;font-size:13px}
+  .v-sheet-go{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:46px;margin:16px 0 0;padding:14px 0 0;border:0;border-top:1px solid #4a5c64;background:none;color:#fff;font:600 13px/1.3 'Archivo',sans-serif;cursor:pointer}
+  @keyframes v-up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  html:has(.v-sheet[open]),body:has(.v-sheet[open]){overflow:hidden}
+
+  /* ---- Blätter nach dem Rundgang: kompakte Aufklapper (unverändert aus v1 übernommen) ---- */
+  .wohnung.is-vcut .w-sheet{padding:0!important;background:#1c2428;border-top:1px solid #45565e}
+  .wohnung.is-vcut .w-paper{background:#1c2428;overflow:hidden}
+  .wohnung.is-vcut .m-section>summary{display:flex;align-items:center;gap:14px;min-height:82px;padding:20px 22px;list-style:none;color:#f5f3ed;font:500 19px/1.2 'Archivo',sans-serif;cursor:pointer}
+  .wohnung.is-vcut .m-section>summary::-webkit-details-marker{display:none}
+  .wohnung.is-vcut .m-section-n{color:#a9c0c9;font-size:11px;flex:none}
+  .wohnung.is-vcut .m-section>summary>i{font-style:normal;font-size:26px;margin-left:auto;color:#b8cdd5;transition:transform .2s}
+  .wohnung.is-vcut .m-section[open]>summary>i{transform:rotate(45deg)}
+  .wohnung.is-vcut .m-section>summary:focus-visible{outline:2px solid #fff;outline-offset:-5px}
+  .wohnung.is-vcut .m-section-extra{border-top:1px solid #45565e}.wohnung.is-vcut .m-section-extra>summary{font-size:18px}
+  .wohnung.is-vcut .w-sheet .w-sec{padding:28px 0!important}
+  .wohnung.is-vcut .w-sheet .wrap{padding-inline:22px}
+  .wohnung.is-vcut .w-sheet .w-glass{padding:14px;background:none;box-shadow:none}
+  .wohnung.is-vcut .w-sheet .sec-head{margin-bottom:18px!important}
+  .wohnung.is-vcut .w-sheet .sec-head h2{font-size:29px;line-height:1.12}
+  .wohnung.is-vcut .w-sheet .lead{font-size:15px;line-height:1.5}
+  .wohnung.is-vcut :is(.ssr-list,.sit,.case-grid,.trust){display:grid;grid-auto-flow:column;grid-auto-columns:85%;grid-template-columns:none;gap:14px;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:thin;padding-bottom:12px}
+  .wohnung.is-vcut :is(.ssr-list,.sit,.case-grid,.trust)>*{scroll-snap-align:start;min-width:0}
+  .wohnung.is-vcut .ssr-side-in{position:static}.wohnung.is-vcut .ssr-fig{display:none}
+  .wohnung.is-vcut .ssr-item{min-height:0;padding:22px 16px}.wohnung.is-vcut .ssr-item h3{font-size:26px}
+  .wohnung.is-vcut .sit>article{padding:22px 18px}.wohnung.is-vcut .sit .q{font-size:25px}
+  .wohnung.is-vcut .workgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .wohnung.is-vcut .workgrid .work{grid-column:auto;grid-row:auto;aspect-ratio:3/4}
+  .wohnung.is-vcut .work .cap{padding:12px}.wohnung.is-vcut .work .cap h3{font-size:16px}
+  .wohnung.is-vcut .case-fb{min-height:0}.wohnung.is-vcut .case-fb-plate{padding:26px 20px}.wohnung.is-vcut .case-fb h2{font-size:30px}
+  .wohnung.is-vcut .rv-cols{height:auto;max-height:none}.wohnung.is-vcut .rv-col--rev{display:none}
+  .wohnung.is-vcut .rv-track{display:flex;animation:none!important;transform:none!important;overflow-x:auto;scroll-snap-type:x proximity;gap:12px}
+  .wohnung.is-vcut .review{flex:0 0 88%;margin:0;scroll-snap-align:start;padding:22px}
+  .wohnung.is-vcut .review .q{font-size:16px}
+  .wohnung.is-vcut .tl-item{padding-block:22px}.wohnung.is-vcut .tl-head{gap:10px}.wohnung.is-vcut .tl-head h3{font-size:25px}
+  .wohnung.is-vcut .tl-body{padding:14px 0 0}.wohnung.is-vcut .tl-fig{max-height:190px}.wohnung.is-vcut .tl-fig img{height:190px;object-fit:cover}
+}
+@media(max-width:999px) and (orientation:landscape){
+  .wohnung.is-vcut .w-ov,.wohnung.is-vcut .w-ov.is-hero{right:auto;max-width:min(60vw,520px);bottom:calc(18px + env(safe-area-inset-bottom))}
+  .wohnung.is-vcut .w-h{font-size:clamp(26px,4.6vw,34px);margin-bottom:6px}.wohnung.is-vcut .w-d{font-size:13px}
+  .v-room{top:calc(58px + env(safe-area-inset-top))}
+  .v-pin-lbl{max-width:min(34vw,220px)}
+}
+@media(min-width:600px) and (max-width:999px) and (orientation:portrait){
+  .wohnung.is-vcut .w-ov,.wohnung.is-vcut .w-ov.is-hero{left:36px;right:36px;max-width:600px}
+  .wohnung.is-vcut .w-h{font-size:48px}.v-room{left:36px}
+}

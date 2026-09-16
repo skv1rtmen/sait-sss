@@ -1,0 +1,9 @@
+{
+  "site_id": "225f9043-7ff5-4dc2-a1ed-15f71a999079",
+  "site_name": "leafy-bublanina-48b840",
+  "deploy_id": "6aa7e431284ec329992390ec",
+  "deploy_url": "https://6aa7e431284ec329992390ec--leafy-bublanina-48b840.netlify.app",
+  "url": "https://www.baustern.ch",
+  "method": "Netlify CLI deploy --prod --dir=site --no-build --json",
+  "draft_previously_verified": "6aa7dd62b654b34146c77795"
+}

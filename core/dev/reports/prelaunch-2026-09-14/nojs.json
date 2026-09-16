@@ -1,0 +1,38 @@
+[
+  {
+    "route": "kontakt",
+    "status": 200,
+    "h1": [
+      "In 30 Sekunden zur Anfrage."
+    ],
+    "noscript": [
+      "#pre,#curtain,.cursor{display:none!important}#view .rv,#view .page{opacity:1!important;transform:none!important}"
+    ],
+    "canonical": "https://www.baustern.ch/kontakt",
+    "robots": "index,follow"
+  },
+  {
+    "route": "leistungen/sanitaer",
+    "status": 200,
+    "h1": [
+      "Sanitärarbeiten in Zürich"
+    ],
+    "noscript": [
+      "#pre,#curtain,.cursor{display:none!important}#view .rv,#view .page{opacity:1!important;transform:none!important}"
+    ],
+    "canonical": "https://www.baustern.ch/leistungen/sanitaer",
+    "robots": "index,follow"
+  },
+  {
+    "route": "audit-missing-20260914",
+    "status": 200,
+    "h1": [
+      "BauStern — Bauunternehmen Zürich: Renovation, Sanitär, Umbau, Fliesen und Malerarbeiten aus einer Hand"
+    ],
+    "noscript": [
+      "#pre,#curtain,.cursor{display:none!important}#view .rv,#view .page{opacity:1!important;transform:none!important}"
+    ],
+    "canonical": "https://www.baustern.ch/",
+    "robots": "index,follow"
+  }
+]

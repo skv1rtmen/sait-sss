@@ -1,0 +1,56 @@
+[
+  {
+    "width": 1440,
+    "frames": 400,
+    "p50": 16.700000000000728,
+    "p95": 33.399999999999636,
+    "pctOver33": 43.25,
+    "scene": "3",
+    "video": [
+      {
+        "src": "https://leafy-bublanina-48b840.netlify.app/img/film/r13/c5-wohnen.fwd.av1.mp4",
+        "quality": {
+          "total": 0,
+          "dropped": 0
+        }
+      }
+    ],
+    "resources": 16982390
+  },
+  {
+    "width": 1440,
+    "frames": 401,
+    "p50": 16.700000000000728,
+    "p95": 33.400000000000546,
+    "pctOver33": 40.89775561097257,
+    "scene": "3",
+    "video": [
+      {
+        "src": "https://leafy-bublanina-48b840.netlify.app/img/film/r13/c5-wohnen.fwd.av1.mp4",
+        "quality": {
+          "total": 0,
+          "dropped": 0
+        }
+      }
+    ],
+    "resources": 17153531
+  },
+  {
+    "width": 375,
+    "frames": 523,
+    "p50": 16.69999999999891,
+    "p95": 16.799999999999272,
+    "pctOver33": 0,
+    "scene": "3",
+    "video": [
+      {
+        "src": "https://leafy-bublanina-48b840.netlify.app/img/film/m3p/c4-schlaf.fwd.mp4",
+        "quality": {
+          "total": 132,
+          "dropped": 4
+        }
+      }
+    ],
+    "resources": 7348095
+  }
+]

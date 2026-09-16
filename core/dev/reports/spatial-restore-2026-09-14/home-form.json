@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "engine": "chromium",
+      "contrast": [
+        11.985830772335838,
+        11.985830772335838,
+        11.985830772335838,
+        11.985830772335838
+      ],
+      "selectedContrast": 6.846660598416299,
+      "axeViolations": 0,
+      "mockedSubmissions": 1
+    },
+    {
+      "engine": "webkit",
+      "contrast": [
+        11.985830772335838,
+        11.985830772335838,
+        11.985830772335838,
+        11.985830772335838
+      ],
+      "selectedContrast": 6.846660598416299,
+      "axeViolations": 0,
+      "mockedSubmissions": 1
+    }
+  ]
+}

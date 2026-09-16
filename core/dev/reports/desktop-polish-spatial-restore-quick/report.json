@@ -1,0 +1,1792 @@
+{
+  "base": "http://localhost:8099",
+  "profiles": [
+    [
+      1440,
+      900
+    ]
+  ],
+  "rows": [
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 0,
+      "scene": "0",
+      "heading": "Bauen mit System und Vertrauen.",
+      "headingVisible": true,
+      "diagnostic": {
+        "overlay": {
+          "class": "w-ov is-hero show reveal-settled",
+          "opacity": "1",
+          "transform": "none",
+          "inline": null
+        },
+        "heading": {
+          "class": "w-h disp",
+          "opacity": "1",
+          "transform": "none",
+          "inline": null
+        },
+        "words": [
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          }
+        ],
+        "stage": {
+          "class": "w-stage",
+          "opacity": "1",
+          "transform": "none",
+          "inline": "--cov: 0.000; --ovo: 1.000;"
+        },
+        "animations": []
+      },
+      "reveal": "",
+      "covered": false,
+      "title": {
+        "x": 224,
+        "y": 394.6875,
+        "w": 700,
+        "h": 119.78125,
+        "right": 924,
+        "bottom": 514.46875
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 96,
+          "w": 142,
+          "h": 308,
+          "right": 222,
+          "bottom": 404
+        },
+        {
+          "name": "wPlan",
+          "x": 1242,
+          "y": 761.671875,
+          "w": 118,
+          "h": 108.328125,
+          "right": 1360,
+          "bottom": 870
+        }
+      ],
+      "overlaps": [],
+      "tips": [
+        {
+          "name": "Schreiner trifft Metall",
+          "visible": true,
+          "rect": {
+            "x": 650,
+            "y": 800,
+            "w": 183.34375,
+            "h": 44,
+            "right": 833.34375,
+            "bottom": 844
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Weniger Fugen, mehr Ruhe",
+          "visible": true,
+          "rect": {
+            "x": 1002,
+            "y": 176,
+            "w": 218.640625,
+            "h": 44,
+            "right": 1220.640625,
+            "bottom": 220
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Licht, das mitdenkt",
+          "visible": true,
+          "rect": {
+            "x": 810,
+            "y": 96,
+            "w": 172.6875,
+            "h": 44,
+            "right": 982.6875,
+            "bottom": 140
+          },
+          "inView": true,
+          "clickable": true
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 1,
+      "scene": "1",
+      "heading": "Sechs Gewerke. Ein Ansprechpartner.",
+      "headingVisible": true,
+      "diagnostic": {
+        "overlay": {
+          "class": "w-ov show reveal-settled",
+          "opacity": "0.987",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "inline": null
+        },
+        "heading": {
+          "class": "w-h disp",
+          "opacity": "1",
+          "transform": "none",
+          "inline": null
+        },
+        "words": [
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          }
+        ],
+        "stage": {
+          "class": "w-stage",
+          "opacity": "1",
+          "transform": "none",
+          "inline": "--cov: 0.056; --ovo: 0.987; --reveal: 1.000;"
+        },
+        "animations": []
+      },
+      "reveal": "1.000",
+      "covered": false,
+      "title": {
+        "x": 224,
+        "y": 624.375,
+        "w": 700,
+        "h": 119.78125,
+        "right": 924,
+        "bottom": 744.15625
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 96,
+          "w": 142,
+          "h": 308,
+          "right": 222,
+          "bottom": 404
+        },
+        {
+          "name": "wPlan",
+          "x": 1242,
+          "y": 761.671875,
+          "w": 118,
+          "h": 108.328125,
+          "right": 1360,
+          "bottom": 870
+        }
+      ],
+      "overlaps": [],
+      "tips": [
+        {
+          "name": "Renovation",
+          "visible": true,
+          "rect": {
+            "x": 912,
+            "y": 96,
+            "w": 220,
+            "h": 153.0625,
+            "right": 1132,
+            "bottom": 249.0625
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Malerarbeiten",
+          "visible": true,
+          "rect": {
+            "x": 384,
+            "y": 102,
+            "w": 220,
+            "h": 86.234375,
+            "right": 604,
+            "bottom": 188.234375
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Neu- & Umbau",
+          "visible": true,
+          "rect": {
+            "x": 1072,
+            "y": 282,
+            "w": 220,
+            "h": 86.234375,
+            "right": 1292,
+            "bottom": 368.234375
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Sanitär",
+          "visible": true,
+          "rect": {
+            "x": 1104,
+            "y": 444,
+            "w": 220,
+            "h": 86.234375,
+            "right": 1324,
+            "bottom": 530.234375
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Fliesen & Parkett",
+          "visible": true,
+          "rect": {
+            "x": 940,
+            "y": 642,
+            "w": 220,
+            "h": 86.234375,
+            "right": 1160,
+            "bottom": 728.234375
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Abbruch & Rückbau",
+          "visible": true,
+          "rect": {
+            "x": 988,
+            "y": 736,
+            "w": 220,
+            "h": 86.234375,
+            "right": 1208,
+            "bottom": 822.234375
+          },
+          "inView": true,
+          "clickable": true
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 2,
+      "scene": "2",
+      "heading": "Bad und Leitungen, SIA-konform.",
+      "headingVisible": true,
+      "diagnostic": {
+        "overlay": {
+          "class": "w-ov show reveal-settled",
+          "opacity": "0.988",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "inline": null
+        },
+        "heading": {
+          "class": "w-h disp",
+          "opacity": "1",
+          "transform": "none",
+          "inline": null
+        },
+        "words": [
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          }
+        ],
+        "stage": {
+          "class": "w-stage",
+          "opacity": "1",
+          "transform": "none",
+          "inline": "--cov: 0.055; --ovo: 0.988; --reveal: 1.000;"
+        },
+        "animations": []
+      },
+      "reveal": "1.000",
+      "covered": false,
+      "title": {
+        "x": 224,
+        "y": 624.375,
+        "w": 700,
+        "h": 119.78125,
+        "right": 924,
+        "bottom": 744.15625
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 96,
+          "w": 142,
+          "h": 308,
+          "right": 222,
+          "bottom": 404
+        },
+        {
+          "name": "wPlan",
+          "x": 1242,
+          "y": 761.671875,
+          "w": 118,
+          "h": 108.328125,
+          "right": 1360,
+          "bottom": 870
+        }
+      ],
+      "overlaps": [],
+      "tips": [
+        {
+          "name": "Dicht nach Norm",
+          "visible": true,
+          "rect": {
+            "x": 202,
+            "y": 446,
+            "w": 159.390625,
+            "h": 44,
+            "right": 361.390625,
+            "bottom": 490
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Grossformat, kaum Fugen",
+          "visible": true,
+          "rect": {
+            "x": 1114,
+            "y": 266,
+            "w": 213.109375,
+            "h": 44,
+            "right": 1327.109375,
+            "bottom": 310
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Keine Schwelle",
+          "visible": true,
+          "rect": {
+            "x": 940,
+            "y": 770,
+            "w": 151.3125,
+            "h": 44,
+            "right": 1091.3125,
+            "bottom": 814
+          },
+          "inView": true,
+          "clickable": true
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 3,
+      "scene": "3",
+      "heading": "Zum Schluss die Oberfläche.",
+      "headingVisible": true,
+      "diagnostic": {
+        "overlay": {
+          "class": "w-ov show reveal-settled",
+          "opacity": "0.989",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "inline": null
+        },
+        "heading": {
+          "class": "w-h disp",
+          "opacity": "1",
+          "transform": "none",
+          "inline": null
+        },
+        "words": [
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          }
+        ],
+        "stage": {
+          "class": "w-stage",
+          "opacity": "1",
+          "transform": "none",
+          "inline": "--cov: 0.055; --ovo: 0.989; --reveal: 1.000;"
+        },
+        "animations": []
+      },
+      "reveal": "1.000",
+      "covered": false,
+      "title": {
+        "x": 224,
+        "y": 710.1875,
+        "w": 698.265625,
+        "h": 59.890625,
+        "right": 922.265625,
+        "bottom": 770.078125
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 96,
+          "w": 142,
+          "h": 308,
+          "right": 222,
+          "bottom": 404
+        },
+        {
+          "name": "wPlan",
+          "x": 1242,
+          "y": 761.671875,
+          "w": 118,
+          "h": 108.328125,
+          "right": 1360,
+          "bottom": 870
+        }
+      ],
+      "overlaps": [],
+      "tips": [
+        {
+          "name": "Abnahme bei Tageslicht",
+          "visible": true,
+          "rect": {
+            "x": 28,
+            "y": 432,
+            "w": 201.15625,
+            "h": 44,
+            "right": 229.15625,
+            "bottom": 476
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Holz, das leuchtet",
+          "visible": true,
+          "rect": {
+            "x": 698,
+            "y": 176,
+            "w": 166.671875,
+            "h": 44,
+            "right": 864.671875,
+            "bottom": 220
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Kein Zug, kein Schimmel",
+          "visible": true,
+          "rect": {
+            "x": 1207,
+            "y": 392,
+            "w": 204.53125,
+            "h": 44,
+            "right": 1411.53125,
+            "bottom": 436
+          },
+          "inView": true,
+          "clickable": true
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 4,
+      "scene": "4",
+      "heading": "Renovation aus einer Hand.",
+      "headingVisible": true,
+      "diagnostic": {
+        "overlay": {
+          "class": "w-ov show reveal-settled",
+          "opacity": "0.987",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "inline": null
+        },
+        "heading": {
+          "class": "w-h disp",
+          "opacity": "1",
+          "transform": "none",
+          "inline": null
+        },
+        "words": [
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          }
+        ],
+        "stage": {
+          "class": "w-stage",
+          "opacity": "1",
+          "transform": "none",
+          "inline": "--cov: 0.055; --ovo: 0.987; --reveal: 1.000;"
+        },
+        "animations": []
+      },
+      "reveal": "1.000",
+      "covered": false,
+      "title": {
+        "x": 224,
+        "y": 602.078125,
+        "w": 668.3125,
+        "h": 59.890625,
+        "right": 892.3125,
+        "bottom": 661.96875
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 96,
+          "w": 142,
+          "h": 308,
+          "right": 222,
+          "bottom": 404
+        },
+        {
+          "name": "wPlan",
+          "x": 1242,
+          "y": 761.671875,
+          "w": 118,
+          "h": 108.328125,
+          "right": 1360,
+          "bottom": 870
+        }
+      ],
+      "overlaps": [],
+      "tips": [
+        {
+          "name": "Drei Gewerke im Takt",
+          "visible": true,
+          "rect": {
+            "x": 602,
+            "y": 428,
+            "w": 184.765625,
+            "h": 44,
+            "right": 786.765625,
+            "bottom": 472
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Mass statt Möbelhaus",
+          "visible": true,
+          "rect": {
+            "x": 58,
+            "y": 432,
+            "w": 189.1875,
+            "h": 44,
+            "right": 247.1875,
+            "bottom": 476
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Bis zum letzten Vorhang",
+          "visible": true,
+          "rect": {
+            "x": 1210,
+            "y": 338,
+            "w": 202.046875,
+            "h": 44,
+            "right": 1412.046875,
+            "bottom": 382
+          },
+          "inView": true,
+          "clickable": true
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 5,
+      "scene": "5",
+      "heading": "So hat es angefangen.",
+      "headingVisible": true,
+      "diagnostic": {
+        "overlay": {
+          "class": "w-ov show reveal-settled",
+          "opacity": "0.988",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "inline": null
+        },
+        "heading": {
+          "class": "w-h disp",
+          "opacity": "1",
+          "transform": "none",
+          "inline": null
+        },
+        "words": [
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          }
+        ],
+        "stage": {
+          "class": "w-stage",
+          "opacity": "1",
+          "transform": "none",
+          "inline": "--cov: 0.055; --ovo: 0.988; --reveal: 1.000;"
+        },
+        "animations": []
+      },
+      "reveal": "1.000",
+      "covered": false,
+      "title": {
+        "x": 224,
+        "y": 684.265625,
+        "w": 538.65625,
+        "h": 59.890625,
+        "right": 762.65625,
+        "bottom": 744.15625
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 96,
+          "w": 142,
+          "h": 308,
+          "right": 222,
+          "bottom": 404
+        },
+        {
+          "name": "wPlan",
+          "x": 1242,
+          "y": 761.671875,
+          "w": 118,
+          "h": 108.328125,
+          "right": 1360,
+          "bottom": 870
+        }
+      ],
+      "overlaps": [],
+      "tips": [
+        {
+          "name": "Entsorgt mit Nachweis",
+          "visible": true,
+          "rect": {
+            "x": 378,
+            "y": 356,
+            "w": 193.0625,
+            "h": 44,
+            "right": 571.0625,
+            "bottom": 400
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Geprüft vor dem Verputz",
+          "visible": true,
+          "rect": {
+            "x": 954,
+            "y": 338,
+            "w": 203.1875,
+            "h": 44,
+            "right": 1157.1875,
+            "bottom": 382
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Grundlage, die trägt",
+          "visible": true,
+          "rect": {
+            "x": 796,
+            "y": 734,
+            "w": 178.09375,
+            "h": 44,
+            "right": 974.09375,
+            "bottom": 778
+          },
+          "inView": true,
+          "clickable": true
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 6,
+      "scene": "6",
+      "heading": "Abnahme. Schlüsselübergabe.",
+      "headingVisible": true,
+      "diagnostic": {
+        "overlay": {
+          "class": "w-ov show reveal-settled",
+          "opacity": "0.989",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "inline": null
+        },
+        "heading": {
+          "class": "w-h disp",
+          "opacity": "1",
+          "transform": "none",
+          "inline": null
+        },
+        "words": [
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          }
+        ],
+        "stage": {
+          "class": "w-stage",
+          "opacity": "1",
+          "transform": "none",
+          "inline": "--cov: 0.055; --ovo: 0.989; --reveal: 1.000;"
+        },
+        "animations": []
+      },
+      "reveal": "1.000",
+      "covered": false,
+      "title": {
+        "x": 224,
+        "y": 562.296875,
+        "w": 700,
+        "h": 119.78125,
+        "right": 924,
+        "bottom": 682.078125
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 96,
+          "w": 142,
+          "h": 308,
+          "right": 222,
+          "bottom": 404
+        },
+        {
+          "name": "wPlan",
+          "x": 1242,
+          "y": 761.671875,
+          "w": 118,
+          "h": 108.328125,
+          "right": 1360,
+          "bottom": 870
+        }
+      ],
+      "overlaps": [],
+      "tips": [
+        {
+          "name": "Schwarz auf weiss",
+          "visible": true,
+          "rect": {
+            "x": 940,
+            "y": 635,
+            "w": 169.8125,
+            "h": 44,
+            "right": 1109.8125,
+            "bottom": 679
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Der Termin steht fest",
+          "visible": true,
+          "rect": {
+            "x": 1230,
+            "y": 428,
+            "w": 182.109375,
+            "h": 44,
+            "right": 1412.109375,
+            "bottom": 472
+          },
+          "inView": true,
+          "clickable": true
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 5,
+      "scene": "5",
+      "heading": "So hat es angefangen.",
+      "headingVisible": true,
+      "diagnostic": {
+        "overlay": {
+          "class": "w-ov show reveal-settled",
+          "opacity": "0.988",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "inline": null
+        },
+        "heading": {
+          "class": "w-h disp",
+          "opacity": "1",
+          "transform": "none",
+          "inline": null
+        },
+        "words": [
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          }
+        ],
+        "stage": {
+          "class": "w-stage",
+          "opacity": "1",
+          "transform": "none",
+          "inline": "--cov: 0.055; --ovo: 0.988; --reveal: 1.000;"
+        },
+        "animations": []
+      },
+      "reveal": "1.000",
+      "covered": false,
+      "title": {
+        "x": 224,
+        "y": 684.265625,
+        "w": 538.65625,
+        "h": 59.890625,
+        "right": 762.65625,
+        "bottom": 744.15625
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 96,
+          "w": 142,
+          "h": 308,
+          "right": 222,
+          "bottom": 404
+        },
+        {
+          "name": "wPlan",
+          "x": 1242,
+          "y": 761.671875,
+          "w": 118,
+          "h": 108.328125,
+          "right": 1360,
+          "bottom": 870
+        }
+      ],
+      "overlaps": [],
+      "tips": [
+        {
+          "name": "Entsorgt mit Nachweis",
+          "visible": true,
+          "rect": {
+            "x": 378,
+            "y": 356,
+            "w": 193.0625,
+            "h": 44,
+            "right": 571.0625,
+            "bottom": 400
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Geprüft vor dem Verputz",
+          "visible": true,
+          "rect": {
+            "x": 954,
+            "y": 338,
+            "w": 203.1875,
+            "h": 44,
+            "right": 1157.1875,
+            "bottom": 382
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Grundlage, die trägt",
+          "visible": true,
+          "rect": {
+            "x": 796,
+            "y": 734,
+            "w": 178.09375,
+            "h": 44,
+            "right": 974.09375,
+            "bottom": 778
+          },
+          "inView": true,
+          "clickable": true
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 4,
+      "scene": "4",
+      "heading": "Renovation aus einer Hand.",
+      "headingVisible": true,
+      "diagnostic": {
+        "overlay": {
+          "class": "w-ov show reveal-settled",
+          "opacity": "0.987",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "inline": null
+        },
+        "heading": {
+          "class": "w-h disp",
+          "opacity": "1",
+          "transform": "none",
+          "inline": null
+        },
+        "words": [
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          }
+        ],
+        "stage": {
+          "class": "w-stage",
+          "opacity": "1",
+          "transform": "none",
+          "inline": "--cov: 0.055; --ovo: 0.987; --reveal: 1.000;"
+        },
+        "animations": []
+      },
+      "reveal": "1.000",
+      "covered": false,
+      "title": {
+        "x": 224,
+        "y": 602.078125,
+        "w": 668.3125,
+        "h": 59.890625,
+        "right": 892.3125,
+        "bottom": 661.96875
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 96,
+          "w": 142,
+          "h": 308,
+          "right": 222,
+          "bottom": 404
+        },
+        {
+          "name": "wPlan",
+          "x": 1242,
+          "y": 761.671875,
+          "w": 118,
+          "h": 108.328125,
+          "right": 1360,
+          "bottom": 870
+        }
+      ],
+      "overlaps": [],
+      "tips": [
+        {
+          "name": "Drei Gewerke im Takt",
+          "visible": true,
+          "rect": {
+            "x": 602,
+            "y": 428,
+            "w": 184.765625,
+            "h": 44,
+            "right": 786.765625,
+            "bottom": 472
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Mass statt Möbelhaus",
+          "visible": true,
+          "rect": {
+            "x": 58,
+            "y": 432,
+            "w": 189.1875,
+            "h": 44,
+            "right": 247.1875,
+            "bottom": 476
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Bis zum letzten Vorhang",
+          "visible": true,
+          "rect": {
+            "x": 1210,
+            "y": 338,
+            "w": 202.046875,
+            "h": 44,
+            "right": 1412.046875,
+            "bottom": 382
+          },
+          "inView": true,
+          "clickable": true
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 3,
+      "scene": "3",
+      "heading": "Zum Schluss die Oberfläche.",
+      "headingVisible": true,
+      "diagnostic": {
+        "overlay": {
+          "class": "w-ov show reveal-settled",
+          "opacity": "0.989",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "inline": null
+        },
+        "heading": {
+          "class": "w-h disp",
+          "opacity": "1",
+          "transform": "none",
+          "inline": null
+        },
+        "words": [
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          }
+        ],
+        "stage": {
+          "class": "w-stage",
+          "opacity": "1",
+          "transform": "none",
+          "inline": "--cov: 0.055; --ovo: 0.989; --reveal: 1.000;"
+        },
+        "animations": []
+      },
+      "reveal": "1.000",
+      "covered": false,
+      "title": {
+        "x": 224,
+        "y": 710.1875,
+        "w": 698.265625,
+        "h": 59.890625,
+        "right": 922.265625,
+        "bottom": 770.078125
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 96,
+          "w": 142,
+          "h": 308,
+          "right": 222,
+          "bottom": 404
+        },
+        {
+          "name": "wPlan",
+          "x": 1242,
+          "y": 761.671875,
+          "w": 118,
+          "h": 108.328125,
+          "right": 1360,
+          "bottom": 870
+        }
+      ],
+      "overlaps": [],
+      "tips": [
+        {
+          "name": "Abnahme bei Tageslicht",
+          "visible": true,
+          "rect": {
+            "x": 28,
+            "y": 432,
+            "w": 201.15625,
+            "h": 44,
+            "right": 229.15625,
+            "bottom": 476
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Holz, das leuchtet",
+          "visible": true,
+          "rect": {
+            "x": 698,
+            "y": 176,
+            "w": 166.671875,
+            "h": 44,
+            "right": 864.671875,
+            "bottom": 220
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Kein Zug, kein Schimmel",
+          "visible": true,
+          "rect": {
+            "x": 1207,
+            "y": 392,
+            "w": 204.53125,
+            "h": 44,
+            "right": 1411.53125,
+            "bottom": 436
+          },
+          "inView": true,
+          "clickable": true
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 2,
+      "scene": "2",
+      "heading": "Bad und Leitungen, SIA-konform.",
+      "headingVisible": true,
+      "diagnostic": {
+        "overlay": {
+          "class": "w-ov show reveal-settled",
+          "opacity": "0.988",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "inline": null
+        },
+        "heading": {
+          "class": "w-h disp",
+          "opacity": "1",
+          "transform": "none",
+          "inline": null
+        },
+        "words": [
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          }
+        ],
+        "stage": {
+          "class": "w-stage",
+          "opacity": "1",
+          "transform": "none",
+          "inline": "--cov: 0.055; --ovo: 0.988; --reveal: 1.000;"
+        },
+        "animations": []
+      },
+      "reveal": "1.000",
+      "covered": false,
+      "title": {
+        "x": 224,
+        "y": 624.375,
+        "w": 700,
+        "h": 119.78125,
+        "right": 924,
+        "bottom": 744.15625
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 96,
+          "w": 142,
+          "h": 308,
+          "right": 222,
+          "bottom": 404
+        },
+        {
+          "name": "wPlan",
+          "x": 1242,
+          "y": 761.671875,
+          "w": 118,
+          "h": 108.328125,
+          "right": 1360,
+          "bottom": 870
+        }
+      ],
+      "overlaps": [],
+      "tips": [
+        {
+          "name": "Dicht nach Norm",
+          "visible": true,
+          "rect": {
+            "x": 202,
+            "y": 446,
+            "w": 159.390625,
+            "h": 44,
+            "right": 361.390625,
+            "bottom": 490
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Grossformat, kaum Fugen",
+          "visible": true,
+          "rect": {
+            "x": 1114,
+            "y": 266,
+            "w": 213.109375,
+            "h": 44,
+            "right": 1327.109375,
+            "bottom": 310
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Keine Schwelle",
+          "visible": true,
+          "rect": {
+            "x": 940,
+            "y": 770,
+            "w": 151.3125,
+            "h": 44,
+            "right": 1091.3125,
+            "bottom": 814
+          },
+          "inView": true,
+          "clickable": true
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 1,
+      "scene": "1",
+      "heading": "Sechs Gewerke. Ein Ansprechpartner.",
+      "headingVisible": true,
+      "diagnostic": {
+        "overlay": {
+          "class": "w-ov show reveal-settled",
+          "opacity": "0.987",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "inline": null
+        },
+        "heading": {
+          "class": "w-h disp",
+          "opacity": "1",
+          "transform": "none",
+          "inline": null
+        },
+        "words": [
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          }
+        ],
+        "stage": {
+          "class": "w-stage",
+          "opacity": "1",
+          "transform": "none",
+          "inline": "--cov: 0.056; --ovo: 0.987; --reveal: 1.000;"
+        },
+        "animations": []
+      },
+      "reveal": "1.000",
+      "covered": false,
+      "title": {
+        "x": 224,
+        "y": 624.375,
+        "w": 700,
+        "h": 119.78125,
+        "right": 924,
+        "bottom": 744.15625
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 96,
+          "w": 142,
+          "h": 308,
+          "right": 222,
+          "bottom": 404
+        },
+        {
+          "name": "wPlan",
+          "x": 1242,
+          "y": 761.671875,
+          "w": 118,
+          "h": 108.328125,
+          "right": 1360,
+          "bottom": 870
+        }
+      ],
+      "overlaps": [],
+      "tips": [
+        {
+          "name": "Renovation",
+          "visible": true,
+          "rect": {
+            "x": 912,
+            "y": 96,
+            "w": 220,
+            "h": 153.0625,
+            "right": 1132,
+            "bottom": 249.0625
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Malerarbeiten",
+          "visible": true,
+          "rect": {
+            "x": 384,
+            "y": 102,
+            "w": 220,
+            "h": 86.234375,
+            "right": 604,
+            "bottom": 188.234375
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Neu- & Umbau",
+          "visible": true,
+          "rect": {
+            "x": 1072,
+            "y": 282,
+            "w": 220,
+            "h": 86.234375,
+            "right": 1292,
+            "bottom": 368.234375
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Sanitär",
+          "visible": true,
+          "rect": {
+            "x": 1104,
+            "y": 444,
+            "w": 220,
+            "h": 86.234375,
+            "right": 1324,
+            "bottom": 530.234375
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Fliesen & Parkett",
+          "visible": true,
+          "rect": {
+            "x": 940,
+            "y": 642,
+            "w": 220,
+            "h": 86.234375,
+            "right": 1160,
+            "bottom": 728.234375
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Abbruch & Rückbau",
+          "visible": true,
+          "rect": {
+            "x": 988,
+            "y": 736,
+            "w": 220,
+            "h": 86.234375,
+            "right": 1208,
+            "bottom": 822.234375
+          },
+          "inView": true,
+          "clickable": true
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "target": 0,
+      "scene": "0",
+      "heading": "Bauen mit System und Vertrauen.",
+      "headingVisible": true,
+      "diagnostic": {
+        "overlay": {
+          "class": "w-ov is-hero show reveal-settled",
+          "opacity": "1",
+          "transform": "none",
+          "inline": null
+        },
+        "heading": {
+          "class": "w-h disp",
+          "opacity": "1",
+          "transform": "none",
+          "inline": null
+        },
+        "words": [
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          },
+          {
+            "class": "",
+            "opacity": "1",
+            "transform": "none",
+            "inline": null
+          }
+        ],
+        "stage": {
+          "class": "w-stage",
+          "opacity": "1",
+          "transform": "none",
+          "inline": "--cov: 0.000; --ovo: 1.000; --reveal: 1;"
+        },
+        "animations": []
+      },
+      "reveal": "1",
+      "covered": false,
+      "title": {
+        "x": 224,
+        "y": 394.6875,
+        "w": 700,
+        "h": 119.78125,
+        "right": 924,
+        "bottom": 514.46875
+      },
+      "controls": [
+        {
+          "name": "wRoomNav",
+          "x": 80,
+          "y": 96,
+          "w": 142,
+          "h": 308,
+          "right": 222,
+          "bottom": 404
+        },
+        {
+          "name": "wPlan",
+          "x": 1242,
+          "y": 761.671875,
+          "w": 118,
+          "h": 108.328125,
+          "right": 1360,
+          "bottom": 870
+        }
+      ],
+      "overlaps": [],
+      "tips": [
+        {
+          "name": "Schreiner trifft Metall",
+          "visible": true,
+          "rect": {
+            "x": 650,
+            "y": 816,
+            "w": 183.34375,
+            "h": 44,
+            "right": 833.34375,
+            "bottom": 860
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Weniger Fugen, mehr Ruhe",
+          "visible": true,
+          "rect": {
+            "x": 1002,
+            "y": 176,
+            "w": 218.640625,
+            "h": 44,
+            "right": 1220.640625,
+            "bottom": 220
+          },
+          "inView": true,
+          "clickable": true
+        },
+        {
+          "name": "Licht, das mitdenkt",
+          "visible": true,
+          "rect": {
+            "x": 810,
+            "y": 96,
+            "w": 172.6875,
+            "h": 44,
+            "right": 982.6875,
+            "bottom": 140
+          },
+          "inView": true,
+          "clickable": true
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "spaBack": true,
+      "visible": true
+    }
+  ],
+  "failures": [],
+  "errors": []
+}

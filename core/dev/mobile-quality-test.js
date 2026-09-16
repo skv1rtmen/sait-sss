@@ -1,0 +1,7 @@
+const {chromium}=require('playwright'),assert=require('assert/strict'),fs=require('fs');
+(async()=>{const b=await chromium.launch(),rows=[];try{for(const mode of ['default60','slow30','saveData','decodeFallback']){const ctx=await b.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+ if(mode==='slow30'||mode==='saveData')await ctx.addInitScript(mode=>Object.defineProperty(navigator,'connection',{value:{effectiveType:mode==='slow30'?'3g':'4g',saveData:mode==='saveData'}}),mode);
+ if(mode==='decodeFallback')await ctx.route('**/js/data.js',async r=>{const response=await r.fetch();await r.fulfill({response,body:await response.text()+"\nFILM.mobileVideo.portraitDir='img/film/__qa_missing__/';"});});
+ const p=await ctx.newPage();await p.goto('http://localhost:8099');if(mode==='saveData'){await p.waitForTimeout(900);assert.equal(await p.locator('.m-film').evaluate(v=>v.paused),true);await p.locator('.m-tour-play').tap();}
+ await p.waitForFunction(()=>document.querySelector('.m-film')?.currentTime>.05);const s=await p.locator('.m-film').evaluate(v=>({src:v.currentSrc,width:v.videoWidth,height:v.videoHeight}));assert(s.src.includes(mode==='default60'?'/m3p/':'/m3lp/'));assert.equal(s.width,mode==='default60'?720:540);assert.equal(s.height,mode==='default60'?1280:960);rows.push({mode,...s,passed:true});await ctx.close();}
+fs.writeFileSync('reports/mobile-quality.json',JSON.stringify(rows,null,2));console.log(rows);}finally{await b.close();}})().catch(e=>{console.error(e);process.exitCode=1;});

@@ -1,0 +1,481 @@
+{
+  "rows": [
+    {
+      "name": "photo-button-style",
+      "data": {
+        "text": "Fotos auswählen",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgba(0, 0, 0, 0)",
+        "opacity": "1",
+        "parent": "rgb(255, 255, 255)",
+        "rect": {
+          "x": 48,
+          "y": 303.28125,
+          "width": 189.828125,
+          "height": 44.5,
+          "top": 303.28125,
+          "right": 237.828125,
+          "bottom": 347.78125,
+          "left": 48
+        }
+      },
+      "axe": []
+    },
+    {
+      "name": "late-response-overwrites-new-form",
+      "sentCount": 1,
+      "sentNames": [
+        "Old request"
+      ],
+      "before": "Wer sind Sie? *\nHausverwaltung / Eigentümer\nGeneralunternehmer\nGewerbe / Büro / Laden\nPrivat-Eigentümer\nName *\nFirma\nTelefon *\nE-Mail *\nObjekt\nBitte wählen (optional)\nWohnung (bewohnt)\nLeerwohnung\nEinfamilienhaus\nMehrfamilienhaus / Portfolio\nBüro / Gewerbe / Laden\nHotel / Gastronomie\nZeitrahmen\nBitte wählen (optional)\nSo schnell wie möglich\nInnert 4 Wochen\n1–3 Monate\nSpäter / in Planung\nPLZ / Ort des Objekts\nGewünschtes Gewerk\nBitte wählen (optional)\nRenovation\nSanitär\nNeu- & Umbau\nAbbruch & Rückbau\nFliesen & Parkett\nMalerarbeiten\nMehrere / noch unklar\nIhr Projekt\nFotos vom Objekt (optional, bis zu 3)\n\nEin paar Fotos vom Ist-Zustand helfen uns bei der ersten Einschätzung und bei der Vorbereitung unseres Gesprächs.\n\nFotos auswählen\nIch stimme der Datenschutzerklärung zu. Die Daten werden nur zur Bearbeitung meiner Anfrage verwendet. *\nWebseite\nAnfrage senden\n→",
+      "after": "Anfrage erfasst.\n\nVielen Dank, Old. Wir melden uns innert 24 Stunden (Werktage) bei Ihnen — Referenz FIRST-REQUEST-ONLY.\n\nIhre Anfrage ist gespeichert. Bitte bewahren Sie die Referenz für Rückfragen auf.",
+      "newFieldExists": 0
+    },
+    {
+      "name": "service-to-contact",
+      "url": "https://leafy-bublanina-48b840.netlify.app/kontakt",
+      "service": "Sanitär",
+      "who": []
+    },
+    {
+      "name": "menu-tab-escape",
+      "outside": [
+        {
+          "id": "",
+          "inside": true,
+          "text": "Leistungen"
+        },
+        {
+          "id": "",
+          "inside": true,
+          "text": "Lösungen"
+        },
+        {
+          "id": "",
+          "inside": true,
+          "text": "Referenzen"
+        },
+        {
+          "id": "",
+          "inside": true,
+          "text": "Über uns"
+        },
+        {
+          "id": "",
+          "inside": true,
+          "text": "Kontakt"
+        },
+        {
+          "id": "",
+          "inside": true,
+          "text": "Anrufen"
+        },
+        {
+          "id": "",
+          "inside": true,
+          "text": "Offerte anfragen →"
+        },
+        {
+          "id": "",
+          "inside": true,
+          "text": "Home"
+        },
+        {
+          "id": "",
+          "inside": true,
+          "text": "Leistungen"
+        },
+        {
+          "id": "",
+          "inside": true,
+          "text": "Lösungen"
+        },
+        {
+          "id": "",
+          "inside": true,
+          "text": "Referenzen"
+        },
+        {
+          "id": "",
+          "inside": true,
+          "text": "Über uns"
+        },
+        {
+          "id": "",
+          "inside": true,
+          "text": "Kontakt"
+        },
+        {
+          "id": "",
+          "inside": true,
+          "text": "Anrufen"
+        },
+        {
+          "id": "",
+          "inside": true,
+          "text": "Offerte anfragen →"
+        },
+        {
+          "id": "",
+          "inside": true,
+          "text": "Home"
+        },
+        {
+          "id": "",
+          "inside": true,
+          "text": "Leistungen"
+        },
+        {
+          "id": "",
+          "inside": true,
+          "text": "Lösungen"
+        },
+        {
+          "id": "",
+          "inside": true,
+          "text": "Referenzen"
+        },
+        {
+          "id": "",
+          "inside": true,
+          "text": "Über uns"
+        }
+      ]
+    },
+    {
+      "name": "menu-closed",
+      "expanded": "false",
+      "focus": "burger"
+    },
+    {
+      "name": "gallery",
+      "visible": "false",
+      "focus": [
+        {
+          "id": "",
+          "inside": true
+        },
+        {
+          "id": "",
+          "inside": true
+        },
+        {
+          "id": "lbPrev",
+          "inside": true
+        },
+        {
+          "id": "lbNext",
+          "inside": true
+        },
+        {
+          "id": "",
+          "inside": true
+        },
+        {
+          "id": "",
+          "inside": true
+        },
+        {
+          "id": "lbClose",
+          "inside": true
+        },
+        {
+          "id": "",
+          "inside": true
+        },
+        {
+          "id": "",
+          "inside": true
+        },
+        {
+          "id": "lbPrev",
+          "inside": true
+        },
+        {
+          "id": "lbNext",
+          "inside": true
+        },
+        {
+          "id": "",
+          "inside": true
+        }
+      ],
+      "overflow": "hidden"
+    },
+    {
+      "name": "gallery-closed",
+      "hidden": "false",
+      "restored": false
+    },
+    {
+      "name": "calculator-copy",
+      "text": "Was kostet das? Richtwerte in 30 Sekunden.\n\nBandbreiten aus ausgeführten Aufträgen — für Budget und Planung. Verbindlich wird es nach der kostenlosen Besichtigung, als Festpreis Position für Position.\n\nLIVE-RECHNER\nLEISTUNG\nLeerwohnungs-Renovation\nBadsanierung komplett\nMalerarbeiten\nWand- & Fassadenanstrich\nPlattenarbeiten\nParkett & Bodenbelag\nAbbruch & Rückbau\nTrockenbau & Gipser\nSanitär-Reparatur / Montage\nKüchenmontage\nMENGE\nWohnungen\n1\n10\nRichtwert für Leerwohnungs-Renovation · 1 Wohnungen\nCHF 7'000 – 20'000\nCHF\n7'000\n–\n20'000\n\n2.5 bis 4.5 Zimmer, Rückbau bis Übergabe\n\nAlle Preise sind Endpreise, ohne versteckte Aufschläge.\nFestpreis-Offerte dafür anfragen\n→\nRückruf in 5 Min\n\nRichtwerte ohne Gewähr, Stand 08/2026. Materialkosten, Bewilligungen und Sonderfälle werden in der Offerte separat ausgewiesen."
+    },
+    {
+      "name": "calculator-prefill",
+      "svc": "Renovation",
+      "msg": "Richtwert-Anfrage: Leerwohnungs-Renovation × 1 Wohnungen — Richtwert CHF 7'000–20'000. Bitte um Besichtigung und Festpreis-Offerte."
+    },
+    {
+      "name": "pdf",
+      "text": "Anfrage gespeichert (AUDIT-ONLY-REFERENCE). Referenzmappe jetzt herunterladen",
+      "url": "/downloads/baustern-referenzen-v1.pdf"
+    },
+    {
+      "name": "404",
+      "state": {
+        "title": "Seite nicht gefunden — BauStern",
+        "h1": [
+          "Diese Seite gibt es nicht."
+        ],
+        "lang": "de",
+        "description": "Diese Adresse existiert nicht.",
+        "robots": "noindex,follow",
+        "viewport": "width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content",
+        "overflow": 0,
+        "scrollY": 0,
+        "bodyText": "Zum Inhalt springen\nBauStern\nBauStern\nDiese Seite gibt es nicht.\n\nUnter «audit-missing-20260914» ist nichts hinterlegt — vielleicht ein alter Link oder ein Tippfehler in der Adresse.\n\nLeistungen\n\nSechs Gewerke aus einer Hand — Renovation bis Malerarbeiten.\n\nZu den Leistungen\n→\nReferenzen\n\nAusgeführte Projekte mit Bildern und Ablauf.\n\nReferenzen ansehen\n→\nKontakt\n\nAnfrage in 30 Sekunden — Antwort an Werktagen innert 24 Stunden.\n\nAnfrage senden\n→\nStartseite\n\nZurück zum Rundgang durch die Wohnung.\n\nZur Startseite\n→\nBereit für eine kostenlose Besichtigung?\n\nWir melden uns an Werktagen innert 24 Stunden — mit einer klaren Festpreis-Offerte, Position für Position.\n\nTermin buchen\nWhatsApp\nOfferte anfragen\n→\n+41 76 524 98 98\nBauStern\n\nBaupartner für Immobilien & Gewerbe. Sechs Gewerke, ein Ansprechpartner — in der ganzen Deutschschweiz.\n\nHR Zürich\nVersichert\nWerkgarantie 24 Monate\n\nWir suchen Monteure → Offene Stellen\n\nLEISTUNGEN\nRenovation\nSanitär\nNeu- & Umbau\nAbbruch & Rückbau\nFliesen & Parkett\nMalerarbeiten\nUNTERNEHMEN\nFür Hausverwaltungen\nFür Generalunternehmer\nFür Gewerbe & Ladenbau\nReferenzen\nÜber uns\nWissen\nKarriere\nKontakt\nREGIONEN\nZürich\nWinterthur\nZug\nLuzern\nDeutschschweiz\nKONTAKT\n+41 76 524 98 98\ninfo@baustern.ch\nWhatsApp\nTermin buchen\nJakob-Fügli-Strasse 18 · 8048 Zürich\nMo–Fr 07:00–18:00 · Sa 08:00–14:00\n© 2026 Einzelunternehmen BauStern Kozlovskyi\nImpressum\nDatenschutz\nUID CHE-485.600.736 · CH-020.1.105.382-8 · Kanton Zürich\n↑\nAnrufen\nWhatsApp\nOfferte",
+        "headings": [
+          {
+            "tag": "H1",
+            "text": "Diese Seite gibt es nicht."
+          },
+          {
+            "tag": "H3",
+            "text": "Leistungen"
+          },
+          {
+            "tag": "H3",
+            "text": "Referenzen"
+          },
+          {
+            "tag": "H3",
+            "text": "Kontakt"
+          },
+          {
+            "tag": "H3",
+            "text": "Startseite"
+          },
+          {
+            "tag": "H2",
+            "text": "Bereit für eine kostenlose Besichtigung?"
+          }
+        ],
+        "links": [
+          {
+            "text": "Zum Inhalt springen",
+            "href": "https://leafy-bublanina-48b840.netlify.app/#view"
+          },
+          {
+            "text": "Leistungen",
+            "href": "https://leafy-bublanina-48b840.netlify.app/leistungen"
+          },
+          {
+            "text": "Lösungen",
+            "href": "https://leafy-bublanina-48b840.netlify.app/loesungen"
+          },
+          {
+            "text": "Referenzen",
+            "href": "https://leafy-bublanina-48b840.netlify.app/referenzen"
+          },
+          {
+            "text": "Über uns",
+            "href": "https://leafy-bublanina-48b840.netlify.app/ueber-uns"
+          },
+          {
+            "text": "Kontakt",
+            "href": "https://leafy-bublanina-48b840.netlify.app/kontakt"
+          },
+          {
+            "text": "Offerte→",
+            "href": "https://leafy-bublanina-48b840.netlify.app/kontakt"
+          },
+          {
+            "text": "Home",
+            "href": "https://leafy-bublanina-48b840.netlify.app/"
+          },
+          {
+            "text": "Leistungen",
+            "href": "https://leafy-bublanina-48b840.netlify.app/leistungen"
+          },
+          {
+            "text": "Lösungen",
+            "href": "https://leafy-bublanina-48b840.netlify.app/loesungen"
+          },
+          {
+            "text": "Referenzen",
+            "href": "https://leafy-bublanina-48b840.netlify.app/referenzen"
+          },
+          {
+            "text": "Über uns",
+            "href": "https://leafy-bublanina-48b840.netlify.app/ueber-uns"
+          },
+          {
+            "text": "Kontakt",
+            "href": "https://leafy-bublanina-48b840.netlify.app/kontakt"
+          },
+          {
+            "text": "Anrufen",
+            "href": "tel:+41765249898"
+          },
+          {
+            "text": "Offerte anfragen →",
+            "href": "https://leafy-bublanina-48b840.netlify.app/kontakt"
+          },
+          {
+            "text": "Termin buchen",
+            "href": "https://calendly.com/baustern-info/booking"
+          },
+          {
+            "text": "WhatsApp",
+            "href": "https://wa.me/41765249898"
+          },
+          {
+            "text": "Offerte anfragen→",
+            "href": "https://leafy-bublanina-48b840.netlify.app/kontakt"
+          },
+          {
+            "text": "+41 76 524 98 98",
+            "href": "tel:+41765249898"
+          },
+          {
+            "text": "Offene Stellen",
+            "href": "https://leafy-bublanina-48b840.netlify.app/karriere"
+          },
+          {
+            "text": "Renovation",
+            "href": "https://leafy-bublanina-48b840.netlify.app/leistungen/renovation"
+          },
+          {
+            "text": "Sanitär",
+            "href": "https://leafy-bublanina-48b840.netlify.app/leistungen/sanitaer"
+          },
+          {
+            "text": "Neu- & Umbau",
+            "href": "https://leafy-bublanina-48b840.netlify.app/leistungen/neu-umbau"
+          },
+          {
+            "text": "Abbruch & Rückbau",
+            "href": "https://leafy-bublanina-48b840.netlify.app/leistungen/abbruch-rueckbau"
+          },
+          {
+            "text": "Fliesen & Parkett",
+            "href": "https://leafy-bublanina-48b840.netlify.app/leistungen/fliesen-parkett"
+          },
+          {
+            "text": "Malerarbeiten",
+            "href": "https://leafy-bublanina-48b840.netlify.app/leistungen/malerarbeiten"
+          },
+          {
+            "text": "Für Hausverwaltungen",
+            "href": "https://leafy-bublanina-48b840.netlify.app/loesungen/hausverwaltungen"
+          },
+          {
+            "text": "Für Generalunternehmer",
+            "href": "https://leafy-bublanina-48b840.netlify.app/loesungen/generalunternehmer"
+          },
+          {
+            "text": "Für Gewerbe & Ladenbau",
+            "href": "https://leafy-bublanina-48b840.netlify.app/loesungen/gewerbe-ladenbau"
+          },
+          {
+            "text": "Referenzen",
+            "href": "https://leafy-bublanina-48b840.netlify.app/referenzen"
+          },
+          {
+            "text": "Über uns",
+            "href": "https://leafy-bublanina-48b840.netlify.app/ueber-uns"
+          },
+          {
+            "text": "Wissen",
+            "href": "https://leafy-bublanina-48b840.netlify.app/wissen"
+          },
+          {
+            "text": "Karriere",
+            "href": "https://leafy-bublanina-48b840.netlify.app/karriere"
+          },
+          {
+            "text": "Kontakt",
+            "href": "https://leafy-bublanina-48b840.netlify.app/kontakt"
+          },
+          {
+            "text": "Winterthur",
+            "href": "https://leafy-bublanina-48b840.netlify.app/sanierung-winterthur"
+          },
+          {
+            "text": "Zug",
+            "href": "https://leafy-bublanina-48b840.netlify.app/sanierung-zug"
+          },
+          {
+            "text": "Luzern",
+            "href": "https://leafy-bublanina-48b840.netlify.app/sanierung-luzern"
+          },
+          {
+            "text": "+41 76 524 98 98",
+            "href": "tel:+41765249898"
+          },
+          {
+            "text": "info@baustern.ch",
+            "href": "mailto:info@baustern.ch"
+          },
+          {
+            "text": "WhatsApp",
+            "href": "https://wa.me/41765249898"
+          },
+          {
+            "text": "Termin buchen",
+            "href": "https://calendly.com/baustern-info/booking"
+          },
+          {
+            "text": "Impressum",
+            "href": "https://leafy-bublanina-48b840.netlify.app/impressum"
+          },
+          {
+            "text": "Datenschutz",
+            "href": "https://leafy-bublanina-48b840.netlify.app/datenschutz"
+          },
+          {
+            "text": "Anrufen",
+            "href": "tel:+41765249898"
+          },
+          {
+            "text": "WhatsApp",
+            "href": "https://wa.me/41765249898"
+          },
+          {
+            "text": "Offerte",
+            "href": "https://leafy-bublanina-48b840.netlify.app/kontakt"
+          }
+        ],
+        "broken": [],
+        "small": [],
+        "form": [],
+        "analytics": {
+          "loaded": true,
+          "consent": {
+            "analytics": false,
+            "ads": false
+          },
+          "dnt": false,
+          "mode": "datalayer-only"
+        },
+        "dataLayer": [
+          "page_view"
+        ]
+      }
+    },
+    {
+      "name": "skip-link",
+      "active": {
+        "text": "Zum Inhalt springen",
+        "outline": "solid"
+      }
+    },
+    {
+      "name": "200pct-equivalent-reflow",
+      "overflow": 0
+    }
+  ],
+  "errors": [],
+  "sentCount": 2
+}

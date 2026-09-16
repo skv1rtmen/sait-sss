@@ -1,0 +1,30 @@
+{
+ "frames": 576,
+ "fps": 12,
+ "clips": {
+  "c1-kueche": {
+   "start": 0,
+   "end": 95
+  },
+  "c2-flur": {
+   "start": 96,
+   "end": 191
+  },
+  "c3-bad": {
+   "start": 192,
+   "end": 287
+  },
+  "c4-schlaf": {
+   "start": 288,
+   "end": 383
+  },
+  "c5-wohnen": {
+   "start": 384,
+   "end": 479
+  },
+  "c6-eingang": {
+   "start": 480,
+   "end": 575
+  }
+ }
+}

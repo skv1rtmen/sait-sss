@@ -1,0 +1,50 @@
+{
+  "checkedAt": "2026-09-14T10:47:48.248Z",
+  "origin": "https://www.baustern.ch",
+  "rows": [
+    {
+      "url": "http://baustern.ch/",
+      "status": 301,
+      "location": "https://baustern.ch/",
+      "server": "Netlify"
+    },
+    {
+      "url": "https://baustern.ch/",
+      "status": 301,
+      "location": "https://www.baustern.ch/",
+      "server": "Netlify"
+    },
+    {
+      "url": "http://www.baustern.ch/",
+      "status": 301,
+      "location": "https://www.baustern.ch/",
+      "server": "Netlify"
+    },
+    {
+      "url": "https://www.baustern.ch/",
+      "status": 200,
+      "location": null,
+      "server": "Netlify"
+    },
+    {
+      "url": "https://www.baustern.ch/release-check-not-found-20260914",
+      "status": 404,
+      "location": null,
+      "server": "Netlify"
+    }
+  ],
+  "canonicalRoutes": 31,
+  "certificate": {
+    "authorized": true,
+    "issuer": "Let's Encrypt",
+    "subjectAltName": "DNS:baustern.ch, DNS:www.baustern.ch",
+    "validTo": "Dec 13 09:37:27 2026 GMT"
+  },
+  "crmPreflight": {
+    "status": 204,
+    "origin": "https://www.baustern.ch",
+    "methods": "OPTIONS, POST",
+    "headers": "content-type"
+  },
+  "passed": true
+}
