@@ -13,8 +13,10 @@ const VIEWPORTS = [
   { name: 'desktop',   width: 1440, height: 900,  touch: false, chapters: 8 },
   { name: 'landscape', width: 844,  height: 390,  touch: true,  chapters: 3 },
 ];
-/* Kammern mit Mechanik — hier muss #wS5 nach dem Halt Inhalt haben. */
+/* Kammern mit Mechanik. «wipe» baut NICHT in #wS5, sondern schaltet den vorhandenen Vergleichs-
+   Wischer (#wCmp) frei — darum eigene Prüfung. */
 const MECH = { 1: 'six2one', 2: 'takt', 3: 'dusk', 4: 'ablauf', 6: 'wipe', 7: 'clock' };
+const MECH_IN_HOST = k => MECH[k] && MECH[k] !== 'wipe';
 
 const overlap = (a, b) => a && b && !(a.right <= b.left || a.left >= b.right || a.bottom <= b.top || a.top >= b.bottom);
 
@@ -34,8 +36,21 @@ const overlap = (a, b) => a && b && !(a.right <= b.left || a.left >= b.right || 
     const page = await ctx.newPage();
     const errors = [];
     page.on('pageerror', e => errors.push('PAGEERROR ' + String(e).slice(0, 180)));
-    page.on('console', m => { if (m.type() === 'error' && !/favicon|analytics|supabase|401/i.test(m.text())) errors.push('CONSOLE ' + m.text().slice(0, 180)); });
-    page.on('requestfailed', r => { if (!/analytics|supabase|fonts|favicon/i.test(r.url())) errors.push('REQ ' + r.url().split('/').pop() + ' ' + (r.failure()?.errorText || '')); });
+    let expect404 = false;   /* wird in der Bad-Kammer gesetzt, solange der Abend-Render fehlt */
+    page.on('console', m => {
+      if (m.type() !== 'error') return;
+      const t = m.text();
+      if (/favicon|analytics|supabase|401/i.test(t)) return;
+      if (expect404 && /404/.test(t)) return;
+      errors.push('CONSOLE ' + t.slice(0, 180));
+    });
+    /* Abgebrochene Videovorladung beim Kapitelwechsel ist normales Browserverhalten, kein Befund.
+       bad-dusk-*: der Abend-Render aus §6 fehlt noch; stage5-v16.js faellt bewusst auf den Filter zurueck. */
+    page.on('requestfailed', r => {
+      if (/analytics|supabase|fonts|favicon|bad-dusk/i.test(r.url())) return;
+      if (/\.mp4$/i.test(r.url()) && /ABORTED/i.test(r.failure()?.errorText || '')) return;
+      errors.push('REQ ' + r.url().split('/').pop() + ' ' + (r.failure()?.errorText || ''));
+    });
 
     await page.goto(BASE + '/index.html?v=' + Date.now(), { waitUntil: 'networkidle', timeout: 30000 });
     await page.waitForTimeout(1400);
@@ -58,6 +73,7 @@ const overlap = (a, b) => a && b && !(a.right <= b.left || a.left >= b.right || 
     };
 
     for (let k = 0; k < vp.chapters; k++) {
+      expect404 = (k === 3);                       /* Bad: fehlender bad-dusk-*.jpg ist bekannt (§6) */
       if (k > 0) await advance();
       await page.waitForTimeout(2600);              /* Demo + To-do-Animation abwarten */
 
@@ -85,6 +101,8 @@ const overlap = (a, b) => a && b && !(a.right <= b.left || a.left >= b.right || 
           descVisible: (() => { const d = document.querySelector('#wOv .w-d'); return d ? getComputedStyle(d).display !== 'none' : false; })(),
           callVisible: (() => { const c = document.querySelector('#stickycall .call'); return c ? getComputedStyle(c).display !== 'none' : false; })(),
           badge: (() => { const b = document.querySelector('.s5-akte-badge'); return b && !b.hidden ? b.textContent.trim() : ''; })(),
+          cmpOn: (() => { const c = document.querySelector('.w-cmp'); if (!c) return false;
+            const st = getComputedStyle(c); return st.display !== 'none' && st.visibility !== 'hidden' && +st.opacity > .05; })(),
           rects: {
             cards: Array.from(document.querySelectorAll('#wS5 .s5-card.show, #wS5 .s5-card-hub, #wS5 .s5-card-clock')).map(R).filter(Boolean),
             notes: Array.from(document.querySelectorAll('#wS5 .s5-note')).map(R).filter(Boolean),
@@ -97,7 +115,8 @@ const overlap = (a, b) => a && b && !(a.right <= b.left || a.left >= b.right || 
 
       const issues = [];
       const mech = MECH[info.ch];
-      if (mech && info.s5Children < 1) issues.push(`Mechanik «${mech}» nicht gebaut (#wS5 leer)`);
+      if (MECH_IN_HOST(info.ch) && info.s5Children < 1) issues.push(`Mechanik «${mech}» nicht gebaut (#wS5 leer)`);
+      if (mech === 'wipe' && !info.cmpOn) issues.push('Rückblende: Vergleichs-Wischer (.w-cmp) nicht sichtbar');
       if (info.ch > 0) {
         if (!info.todoText) issues.push('To-do-Zeile fehlt');
         else if (!info.todoDone) issues.push('To-do-Zeile nicht fertig animiert');

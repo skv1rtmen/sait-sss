@@ -795,9 +795,11 @@ const FILM_V15={
   /* f = Halt bei 2.5 s (480+30): Sofa, Kamin und Eckverglasung im Bild */
   {id:'wohnen',f:569,room:'wohnen',navLabel:'Wohnen',kicker:'Gewerk 01 · Renovation',h:'Renovation aus <em>einer</em> Hand.',
    d:'Leerwohnung, Objektbad, Gewerbefläche — Beginn und Übergabe stehen im Werkvertrag.',counters:[["6","","Gewerke im Takt"],["1","","Ansprechpartner"],["24","","Monate Werkgarantie"]],
-   hotP:[{x:24,y:52},{x:56,y:58},{x:78,y:40}],
-   hot:[{x:10,y:52,t:'Beton, der bleibt',l:['Kamin in Sichtbeton, Schalungsbild geplant','Neu- & Umbau, statisch geprüft'],go:'leistungen/neu-umbau'},
-        {x:42,y:74,t:'Drei Gewerke im Takt',l:['Boden, Decke, Einbauten synchron','Schreiner, Elektro, Bodenleger'],go:'projekt/atlant-komplettausbau'},
+   /* Etappe 5 (Sichtprüfung 16.09): die Marken lagen auf Kicker und Beschreibung — beide Sätze
+      Koordinaten in die obere Bildhälfte bzw. nach rechts, weg von der Textspalte. */
+   hotP:[{x:18,y:27},{x:24,y:41},{x:80,y:22}],
+   hot:[{x:40,y:34,t:'Beton, der bleibt',l:['Kamin in Sichtbeton, Schalungsbild geplant','Neu- & Umbau, statisch geprüft'],go:'leistungen/neu-umbau'},
+        {x:68,y:82,t:'Drei Gewerke im Takt',l:['Boden, Decke, Einbauten synchron','Schreiner, Elektro, Bodenleger'],go:'projekt/atlant-komplettausbau'},
         {x:88,y:42,t:'Bis zum letzten Vorhang',l:['Eckverglasung, Beschattung, Montage','Teil der Renovation, kein Nachtrag'],go:'leistungen/renovation'}]},
   {id:'rohbau',f:569,img:'img/film/s15/st-rohbau.jpg',imgP:'img/film/s15p/st-rohbau.jpg',compareImg:'img/film/s15/st5.jpg',compareImgP:'img/film/s15p/st5.jpg',room:'wohnen',navLabel:'Rückblende',kicker:'Rückblende · Gewerk 04',h:'So hat es <em>angefangen.</em>',
    d:'Rohbau, Leitungen, Ausbau — derselbe Raum, Monate früher. Der erste Tag jedes Projekts.',flash:true,
