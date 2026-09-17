@@ -509,7 +509,7 @@ ${pageHead("Auf Ihren Betrieb zugeschnitten.","Ob Verwaltung, Generalunternehmer
         <div class="seg-real">${d.real.map(r=>`<div class="r"><b>${r[0]}</b><span>${r[1]}</span></div>`).join('')}</div>
         <div class="hero-cta">
           <a class="btn btn-brass mag" data-go="loesungen/${s.slug}">Lösung im Detail<span class="ic">${ic.arrow}</span></a>
-          <a class="btn btn-ghost" data-go="kontakt" data-who="${esc(SOL_WHO[s.slug]||'')}">Anfrage starten</a>
+          <a class="btn btn-ghost" data-go="kontakt" data-who="${esc(SOL_WHO[s.slug]||'')}">Offerte anfragen</a>
         </div>
       </div>
       <div class="seg-side">
@@ -536,7 +536,7 @@ function pLoesung(slug){
       <h1 class="disp rv">${d.h1}</h1>
       <p class="lead rv" style="margin-top:22px">${d.lead}</p>
       <div class="hero-cta rv" style="margin-top:28px">
-        <a class="btn btn-brass mag" data-go="kontakt" data-who="${esc(SOL_WHO[s.slug]||'')}">Anfrage starten<span class="ic">${ic.arrow}</span></a>
+        <a class="btn btn-brass mag" data-go="kontakt" data-who="${esc(SOL_WHO[s.slug]||'')}">Offerte anfragen<span class="ic">${ic.arrow}</span></a>
         <a class="btn btn-ghost" ${bookingAttrs}>${ic.cal} ${bookingLabel}</a></div>
     </div>
     <div class="fig rv">${lz(s.img,s.t+' — BauStern')}</div>

@@ -1777,3 +1777,91 @@ html:has(.wohnung.is-lite){scroll-snap-type:y proximity}
   #stickycall .cb{flex:1.25}#stickycall .call{flex:.8}#stickycall .off{flex:1.15}
 }
 @media (max-width:999px){#totop,#totop.on{bottom:calc(96px + env(safe-area-inset-bottom,0px))!important}}
+
+
+/* ===================== v17 · Etappe 7 — Design-Durchgang (17.09.2026) =====================
+   Kette: redesign-existing-projects → Nielsen → ui-ux-pro-max → high-end-visual-design → impeccable.
+   Sichtprüfung aller 16 Routen in 390×844 und 1440×900 (core/dev/pw-stage7.js). Was hier steht, ist
+   entweder ein gefundener Fehler (mit Beleg) oder ein Detail, das dem Haus fehlte. Identität bleibt:
+   Navy / Blau / Papier, Archivo + Instrument Sans. Kein Umbau, nur Schliff. */
+
+/* --- 7.1 FEHLER · Bento-Raster überlappt auf dem Telefon (Referenzen + Startseite) --------------------
+   ≤1000px setzt grid-auto-rows:150px, ≤700px setzt die Kacheln auf 4/5 (= 210px bei 168px Breite): die
+   Kacheln ragten 60px in die nächste Zeile, jede Bildunterschrift war halb verdeckt. Zeilen wieder «auto». */
+@media(max-width:700px){
+  /* «auto»-Zeilen reichen nicht: Chrome misst Kacheln mit aspect-ratio + absolut gesetzter Unterschrift
+     als 34px hoch. Darum die Zeile explizit = Kachelbreite × 5/4 ((100vw − 44px Rand − 10px Fuge) / 2). */
+  .workgrid--bento{grid-auto-rows:calc((100vw - 54px) * .625)}
+  .workgrid--bento .work{aspect-ratio:auto!important}
+}
+
+/* --- 7.2 NIELSEN H8/H4 · Sticky «Offerte in 48 h» auf der Kontaktseite -----------------------------
+   Der Knopf führte auf die Seite, auf der man schon steht, und deckte dabei das E-Mail-Feld ab. */
+body[data-route="kontakt"] #stickycall{display:none!important}
+body[data-route="kontakt"] footer{padding-bottom:0}
+@media (max-width:999px){body[data-route="kontakt"] #totop,body[data-route="kontakt"] #totop.on{bottom:calc(18px + env(safe-area-inset-bottom,0px))!important}}
+
+/* --- 7.3 NIELSEN H8 · Footer auf dem Telefon: 25 Links in einer Spalte = 1500px --------------------- */
+@media(max-width:560px){
+  .fgrid{grid-template-columns:1fr 1fr;gap:26px 18px}
+  .fgrid>div:first-child{grid-column:1 / -1}
+  .fgrid a,.fgrid .li{padding:5px 0}
+}
+
+/* --- 7.4 Filter-Reihe (Referenzen) auf dem Telefon: der Abschnitt war hart abgeschnitten -----------
+   Sie scrollt schon waagerecht; jetzt sieht man es auch (weicher Rand rechts, Einrasten). */
+@media(max-width:700px){
+  .tabs{scroll-snap-type:x proximity;padding-right:40px;
+    -webkit-mask-image:linear-gradient(to right,#000 calc(100% - 44px),transparent);
+    mask-image:linear-gradient(to right,#000 calc(100% - 44px),transparent);scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{scroll-snap-align:start}
+}
+
+/* --- 7.5 Typografie · keine Waisenwörter, keine Zeile mit einem Wort -------------------------------- */
+h1,h2,h3,.disp,.sec-head h2{text-wrap:balance}
+p,.lead,li{text-wrap:pretty}
+.fact .big,.fact b,.case-facts b,.stat b,.w-reviews b,.kpi{font-variant-numeric:tabular-nums}
+
+/* --- 7.6 Haptik · Karten heben sich mit getöntem Schatten, nicht nur mit einem Rahmen ------------- */
+@media (hover:hover) and (pointer:fine){
+  .promise.clickcard:hover,.sol:hover,.ref:hover,.teil.clickcard:hover,.work:hover{
+    box-shadow:0 0 0 1px var(--fenstergruen),0 22px 44px -24px rgba(13,18,48,.45)}
+  .sol,.ref,.teil{transition:transform .55s cubic-bezier(.16,1,.3,1),box-shadow .55s}
+  .sol:hover,.ref:hover{transform:translateY(-4px)}
+  .btn-brass:hover{box-shadow:0 12px 28px -14px rgba(26,100,200,.7)}
+  .btn-night:hover{box-shadow:0 12px 28px -14px rgba(13,18,48,.6)}
+  .btn{transition:transform .4s cubic-bezier(.16,1,.3,1),background .4s,color .4s,box-shadow .4s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn:active{transform:translateY(0) scale(.97)}
+}
+/* Verschluss-Zustand auch ohne Maus: kurzer Druck auf dem Telefon */
+.btn:active,#stickycall a:active,#stickycall button:active{transform:scale(.97)}
+#stickycall a,#stickycall button{transition:transform .25s cubic-bezier(.16,1,.3,1),filter .25s}
+
+/* --- 7.7 Mobiles Menü · Einträge kommen gestaffelt, nicht als Block ------------------------------- */
+#mobmenu.open a:nth-child(1){transition-delay:.06s}
+#mobmenu.open a:nth-child(2){transition-delay:.11s}
+#mobmenu.open a:nth-child(3){transition-delay:.16s}
+#mobmenu.open a:nth-child(4){transition-delay:.21s}
+#mobmenu.open a:nth-child(5){transition-delay:.26s}
+#mobmenu.open a:nth-child(6){transition-delay:.31s}
+#mobmenu.open .mob-cta{transition:opacity .5s ease .4s,transform .6s cubic-bezier(.16,1,.3,1) .4s}
+#mobmenu .mob-cta{opacity:0;transform:translateY(12px);transition:opacity .2s,transform .2s}
+#mobmenu.open .mob-cta{opacity:1;transform:none}
+
+/* --- 7.8 Dienstleistungs-Index (Desktop) · die Vorschaubilder waren Briefmarken auf 1440px ------- */
+@media(min-width:1100px){
+  .svc-row{grid-template-columns:64px 1fr minmax(200px,260px)}
+}
+
+/* --- 7.9 Formular · Fokus sichtbar auch auf weissen Karten, Fehler nah am Feld --------------------- */
+.field input:focus-visible,.field textarea:focus-visible,.field select:focus-visible{
+  outline:2px solid var(--blau);outline-offset:2px;border-color:var(--blau)}
+.field .msg{text-wrap:pretty}
+
+/* --- 7.10 Reduzierte Bewegung · die neuen Staffelungen ebenfalls aus --------------------------------- */
+@media (prefers-reduced-motion:reduce){
+  #mobmenu.open a,#mobmenu.open .mob-cta{transition-delay:0s!important}
+  .sol:hover,.ref:hover,.btn:hover{transform:none!important}
+}

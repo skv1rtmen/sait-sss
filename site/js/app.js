@@ -335,6 +335,7 @@ function render(route,first){
   if(matchMedia('(prefers-reduced-motion:reduce)').matches)gsap.set(page,{opacity:1,y:0});
   else{gsap.set(page,{opacity:0,y:14});gsap.to(page,{opacity:1,y:0,duration:.5,ease:'power2.out',delay:first?0:.05});}
   current=route;window.__route=route;
+  document.body.dataset.route=route.name;   /* Etappe 7: CSS je Route (z. B. kein Sticky «Offerte» auf /kontakt) */
   try{document.dispatchEvent(new CustomEvent('bs:route',{detail:route}));}catch(e){}   /* Analytics: page_view je Route */
   requestAnimationFrame(()=>{Motion.unmount();if(window.FX)FX.unmount();Motion.mount(route);if(window.Film)Film.auto(route);if(window.FX)FX.mount(view,document.documentElement.classList.contains('no-gsap')?'off':(Motion.mode()||'full'));syncNav();});
 }

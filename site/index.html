@@ -93,7 +93,7 @@
 </div></div>
 <div id="view" tabindex="-1" data-prerender="1"><!--prerender:start--><div class="page">
 <h1 class="sr-only"><span translate="no">BauStern</span> — Bauunternehmen Zürich: Renovation, Sanitär, Umbau, Fliesen und Malerarbeiten aus einer Hand</h1>
-<div class="wohnung" id="wohnung">
+<div class="wohnung" id="wohnung" style="" data-s5-k="0">
   <div class="w-stage" id="wStage">
   <div class="w-cam">
     <!-- v16: Halt- und Videoebenen legt js/film-v16.js an; hier nur das erste Haltebild als schneller Paint. -->
@@ -104,14 +104,14 @@
       <div class="w-cmp-line"></div>
       <div class="w-cmp-h" role="slider" tabindex="0" aria-label="Vorher / Nachher — Ausbaufortschritt" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-orientation="horizontal"><i aria-hidden="true">‹</i><i aria-hidden="true">›</i></div>
     </div>
-  </div>
+  <div class="v16-wipe" aria-hidden="true"><i class="v16-wipe-line"></i><b class="v16-wipe-a">Heute · Übergabe</b><b class="v16-wipe-b">Monate früher · Rohbau</b></div></div>
   <div class="w-shade" aria-hidden="true"></div>
   <!-- v9.1: Hotspot-Ebene liegt NICHT mehr in .w-cam (transformierter Stacking-Context, z-index wirkungslos):
        vorher lag der Szenentext (.w-ov, z5) über den Hotspots/Popups -> Punkte unter der Überschrift nicht klickbar,
        Popup hinter dem Titel. Jetzt eigene Ebene z6 über dem Text; film.js gibt ihr denselben Drift-Transform wie .w-cam. -->
   <div class="w-hot show" id="wHot"><button type="button" class="w-hs" aria-label="Ein Haus, ein Ansprechpartner" aria-expanded="false" style="--hx: 42; --hy: 52; --i: 0;"><i></i><span class="w-hs-lbl">Ein Haus, ein Ansprechpartner</span><span class="w-hs-pop"><b>Sichtbeton, Lärche, Glas — sechs <span translate="no">Gewerke</span>, ein Werkvertrag</b><em>Beginn und Übergabe stehen schriftlich fest</em><u>Mehr dazu →</u></span></button></div>
   <div class="w-popm" id="wPopM" hidden=""></div>
-  <div class="w-ov is-hero show" id="wOv" aria-live="polite">
+  <div class="s5-host" id="wS5" aria-hidden="false"></div><div class="w-ov is-hero show" id="wOv" aria-live="polite">
     <p class="w-kicker"><span class="dia"></span><span class="w-kicker-t">Zürich · Deutschschweiz · <span class="w-rot"><span class="rot-w">für Hausverwaltungen</span></span></span></p>
     <h2 class="w-h disp"><span class="w-w"><span>Bauen</span></span> <span class="w-w"><span>mit</span></span> <span class="w-w"><span>System</span></span> <span class="w-w"><span>und</span></span> <em><span class="w-w"><span>Vertrauen.</span></span></em></h2>
     <p class="w-todo" aria-live="polite"></p>
@@ -132,11 +132,11 @@
         <g class="w-pcam" transform="translate(8 85) rotate(90)"><path class="w-cone" d="M0 0 L-16 -26 A30 30 0 0 1 16 -26 Z"></path><circle r="3.2"></circle></g></svg><div class="w-plan-lbl">Brücke</div></div>
   <div class="w-scrollhint" id="wScrollHint" aria-hidden="true"><span>Scrollen</span><i></i></div>
   <div class="w-fly" id="wFly" aria-hidden="true"><span class="w-fly-t"></span><i class="w-fly-bar"><b></b></i></div>
-</div>
+<div class="v16-chap is-hero show" aria-hidden="true"><div class="v16-chap-n">01</div><div class="v16-chap-rule"></div><div class="v16-chap-t">Ankunft</div><div class="v16-chap-s">Kapitel 1 von 8</div><div class="v16-chap-p"><i data-i="0" class="cur"></i><i data-i="1"></i><i data-i="2"></i><i data-i="3"></i><i data-i="4"></i><i data-i="5"></i><i data-i="6"></i><i data-i="7"></i></div></div></div>
   <!-- v8.2 «Hinter Glas»: Raumpunkte + HUD liegen AUSSERHALB der Stage (position:fixed, z-index über den Bögen),
        damit sie auch über den Glasplatten sichtbar bleiben — die Wohnung verschwindet nie ganz. -->
-  <nav class="w-roomnav" id="wRoomNav" aria-label="Fortschritt im Rundgang">
-    <button type="button" class="w-roomnav-dot on" data-i="0" aria-label="Ankunft" aria-current="true"><i></i><span>Ankunft</span></button><button type="button" class="w-roomnav-dot" data-i="1" aria-label="Schwelle" aria-current="false"><i></i><span>Schwelle</span></button><button type="button" class="w-roomnav-dot" data-i="2" aria-label="Küche" aria-current="false"><i></i><span>Küche</span></button><button type="button" class="w-roomnav-dot" data-i="3" aria-label="Bad" aria-current="false"><i></i><span>Bad</span></button><button type="button" class="w-roomnav-dot" data-i="4" aria-label="Schlafzimmer" aria-current="false"><i></i><span>Schlafzimmer</span></button><button type="button" class="w-roomnav-dot" data-i="5" aria-label="Wohnen" aria-current="false"><i></i><span>Wohnen</span></button><button type="button" class="w-roomnav-dot" data-i="6" aria-label="Rückblende" aria-current="false"><i></i><span>Rückblende</span></button><button type="button" class="w-roomnav-dot" data-i="7" aria-label="Eingang" aria-current="false"><i></i><span>Eingang</span></button>
+  <nav class="w-roomnav is-hero-active" id="wRoomNav" aria-label="Fortschritt im Rundgang">
+    <button type="button" class="w-roomnav-dot on" data-i="0" aria-label="Ankunft" aria-current="true"><i></i><span>Ankunft</span></button><button type="button" class="w-roomnav-dot" data-i="1" aria-label="Schwelle" aria-current="false"><i></i><span>Schwelle</span></button><button type="button" class="w-roomnav-dot" data-i="2" aria-label="Küche" aria-current="false"><i></i><span>Küche</span></button><button type="button" class="w-roomnav-dot" data-i="3" aria-label="Bad" aria-current="false"><i></i><span>Bad</span></button><button type="button" class="w-roomnav-dot" data-i="4" aria-label="Schlaf" aria-current="false"><i></i><span>Schlaf</span></button><button type="button" class="w-roomnav-dot" data-i="5" aria-label="Wohnen" aria-current="false"><i></i><span>Wohnen</span></button><button type="button" class="w-roomnav-dot" data-i="6" aria-label="Rückblende" aria-current="false"><i></i><span>Rückblende</span></button><button type="button" class="w-roomnav-dot" data-i="7" aria-label="Eingang" aria-current="false"><i></i><span>Eingang</span></button>
   </nav>
   <div class="w-hud" id="wHud" aria-hidden="true"><span class="k">01</span><b>Ankunft</b></div>
   <div class="w-marks" aria-hidden="true"></div>
@@ -222,7 +222,7 @@
       <span class="badge">Projekt im Fokus · Komplett aus einer Hand</span>
       <h2 class="disp">WHK Atlant — Komplettausbau.</h2>
       <p>Wohnungs-Komplettausbau — von der Planung über Rückbau, Trennwände, Sanitär, Elektrik und Heizung bis zur schlüsselfertigen Übergabe. Design, Ausführungspläne und Bau aus einer Hand.</p>
-      <p class="case-fb-facts"><b data-count="47">0</b> m² Wohnfläche<i>·</i><b data-count="6">0</b> Räume komplett<i>·</i><b data-count="100" data-suf="%">0</b> schlüsselfertig</p>
+      <p class="case-fb-facts"><b data-count="47">47</b> m² Wohnfläche<i>·</i><b data-count="6">6</b> Räume komplett<i>·</i><b data-count="100" data-suf="%">100%</b> schlüsselfertig</p>
       <button class="lnk-arrow light" data-go="projekt/atlant-komplettausbau">Zur Fallstudie <span>→</span></button>
     </div>
   </div>
