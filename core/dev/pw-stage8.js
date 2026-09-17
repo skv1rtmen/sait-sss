@@ -210,6 +210,32 @@ const rectsOverlap = (a, b) => a && b && a.w > 0 && a.h > 0 && b.w > 0 && b.h > 
       await p.screenshot({ path: `${SHOTS}/${vp.id}_${k}_${CH[k]}.png` });
     }
 
+    /* Wischkette (Abnahme 17.09): eine Karte darf den Kapitelwechsel nie schlucken — der Bauzeitplan tat
+       genau das, weil er auf dem Telefon in der Bildmitte liegt. */
+    if (vp.touch) {
+      await p.evaluate(() => { Film16.enter(); Film16.go(0); });
+      await p.waitForFunction(() => Film16.ch === 0 && Film16.phase === 'HOLD', null, { timeout: 25000 });
+      await p.waitForTimeout(1200);
+      for (let i = 0; i < 6; i++) {
+        await p.evaluate(() => {
+          const el = document.elementFromPoint(innerWidth / 2, innerHeight * 0.5) || document.body;
+          const mk = (x, y) => new Touch({ identifier: Date.now(), target: el, clientX: x, clientY: y, pageX: x, pageY: y });
+          const f = (t, x, y) => { const tt = mk(x, y); el.dispatchEvent(new TouchEvent(t, { bubbles: true, cancelable: true,
+            touches: t === 'touchend' ? [] : [tt], changedTouches: [tt], targetTouches: t === 'touchend' ? [] : [tt] })); };
+          const cx = innerWidth / 2;
+          f('touchstart', cx, innerHeight * 0.72); f('touchmove', cx, innerHeight * 0.55);
+          f('touchmove', cx, innerHeight * 0.38); f('touchend', cx, innerHeight * 0.38);
+        });
+        await p.waitForTimeout(4200);
+      }
+      const endCh = await p.evaluate(() => Film16.ch);
+      if (endCh !== 6) fail(vp.id, 'Wischkette', `nach 6 Wischern in Kapitel ${endCh} statt 6 — eine Karte schluckt den Wisch`);
+    } else {
+      await p.evaluate(() => { Film16.enter(); Film16.go(6); });
+      await p.waitForFunction(() => Film16.ch === 6 && Film16.phase === 'HOLD', null, { timeout: 25000 });
+      await p.waitForTimeout(1200);
+    }
+
     /* §7.12 — Ende des Rundgangs */
     await p.evaluate(() => Film16.next());
     await p.waitForTimeout(2000);

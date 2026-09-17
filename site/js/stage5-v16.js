@@ -439,14 +439,9 @@
       e.preventDefault();e.stopPropagation();
       stopDemo();setActive(act+(e.key==='ArrowDown'?1:-1));strike();
     },true);
-    let ty=0;
-    on(card,'touchstart',e=>{ty=e.touches[0].clientY;e.stopPropagation();},{capture:true,passive:true});
-    on(card,'touchmove',e=>{
-      e.stopPropagation();if(e.cancelable)e.preventDefault();
-      const dy=ty-e.touches[0].clientY;
-      if(Math.abs(dy)<24)return;
-      ty=e.touches[0].clientY;stopDemo();setActive(act+(dy>0?1:-1));strike();
-    },{capture:true,passive:false});
+    /* KEIN Wisch auf der Karte (Abnahme 17.09): die Karte deckt auf dem Telefon die Bildmitte ab — wer
+       dort wischte, blätterte den Bauzeitplan statt das Kapitel und kam aus der Kammer nicht mehr heraus.
+       Auf dem Telefon schaltet nur das Tippen; der senkrechte Wisch gehört überall dem Film. */
     setActive(0);
     return {
       demo(){
