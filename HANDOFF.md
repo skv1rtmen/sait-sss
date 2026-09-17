@@ -820,7 +820,7 @@ data.js — только запасное значение.
 Цепочка: `redesign-existing-projects` → `nielsen-usability-audit` → `ui-ux-pro-max` → `high-end-visual-design` → `impeccable`.
 Метод: скрин всех 16 маршрутов в 390×844 и 1440×900 (`core/dev/pw-stage7.js --shots`), разбор по кадрам, правки
 только с доказательством. Идентичность (Navy / Blau / Papier, Archivo + Instrument Sans) не тронута — это шлифовка.
-Всё в блоке «v17 · Etappe 7» в конце `site/css/site.css`; коммит `…`.
+Всё в блоке «v17 · Etappe 7» в конце `site/css/site.css`; коммит `08375d8`.
 
 ### 16.1 Найдено и починено
 
