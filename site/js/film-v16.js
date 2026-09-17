@@ -5,9 +5,9 @@
    Zustände:  HOLD(k)  ·  FLY(k→k+1)  ·  FLY(k+1→k)      (Laden/Fehler sind interne Unterzustände)
    Flug  = normales <video> (v16/clips/<a>-<b>-<L|P>.fwd.mp4), zurück = .rev.mp4 (NIE playbackRate=-1).
    Halt  = v16/stills/<room>-<L|P>.jpg — identisch mit dem letzten Kader des ankommenden Clips.
-   Kapitel: 0 ankunft · 1 schwelle · 2 kueche · 3 bad · 4 schlaf · 5 wohnen · 6 rohbau · 7 eingang.
-   5→6 (Rückblende) hat bewusst KEINEN Clip: gleicher Blickwinkel, Monate früher → kurze Blende.
-   6→7 nutzt wohnen-eingang (Rohbau- und Wohnen-Halt sind derselbe Blickwinkel) mit Blende in den ersten Kader.
+   Kapitel (Etappe 8): 0 ankunft · 1 schwelle · 2 kueche · 3 bad · 4 schlaf · 5 wohnen · 6 eingang.
+   Die Rückblende ist seit Etappe 8 KEIN Kapitel mehr, sondern eine Geste in «Wohnen» (stage5-v16.js §4.4) —
+   damit hat jede Strecke einen echten Clip, der Wischer und der Vorher/Nachher-Regler sind entfallen.
    Öffentliche API wie bei film.js: Film.full/lite/plain/auto/unmount/mode + Film.v16 (Debug/Tests).
    ------------------------------------------------------------------------------------------------ */
 (function(){
@@ -162,10 +162,7 @@
     chap.innerHTML='<div class="v16-chap-n"></div><div class="v16-chap-rule"></div><div class="v16-chap-t"></div><div class="v16-chap-s"></div>'+
       '<div class="v16-chap-p">'+S.map((_,i)=>'<i data-i="'+i+'"></i>').join('')+'</div>';
     stage.appendChild(chap);
-    /* v16.1 Rückblende: senkrechter Wischer statt Blitz — ein bewusster Schnitt «heute ↔ Monate früher» */
-    const wipe=document.createElement('div');wipe.className='v16-wipe';wipe.setAttribute('aria-hidden','true');
-    wipe.innerHTML='<i class="v16-wipe-line"></i><b class="v16-wipe-a">Heute · Übergabe</b><b class="v16-wipe-b">Monate früher · Rohbau</b>';
-    cam.appendChild(wipe);
+    /* Etappe 8: der Rückblende-Wischer ist entfallen (die Rückblende lebt jetzt als Geste in «Wohnen»). */
     const chapN=qs(chap,'.v16-chap-n'),chapT=qs(chap,'.v16-chap-t'),chapS=qs(chap,'.v16-chap-s'),chapP=qa(chap,'.v16-chap-p i');
     function chapShow(k){
       chapN.textContent=String(k+1).padStart(2,'0');chapT.textContent=S[k].navLabel||'';
@@ -292,24 +289,34 @@
         el.style.setProperty('--hx',x);el.style.setProperty('--hy',y);el.style.setProperty('--i',i);
         el.setAttribute('aria-label',hp.t);el.setAttribute('aria-expanded','false');
         el.innerHTML=`<i></i><span class="w-hs-lbl">${hp.t}</span><span class="w-hs-pop"><b>${hp.l[0]}</b><em>${hp.l[1]||''}</em>${hp.go?'<u>Mehr dazu →</u>':''}</span>`;
+        /* Etappe 8 §2.2 (Bug des Eigentümers): Der zweite Klick auf eine offene Marke FOLGTE der Route,
+           statt sie zu schliessen — die Sprechblase liess sich nie mehr wegklicken. Jetzt schliesst der
+           zweite Klick; zur Route führt nur noch «Mehr dazu →» in der Blase selbst. */
         el.addEventListener('click',e=>{
           e.stopPropagation();
+          if(hp.go&&e.target.closest&&e.target.closest('.w-hs-pop u'))return goRoute(hp.go);
           const open=el.classList.contains('open');
-          qa(hotL,'.w-hs.open').forEach(x2=>{x2.classList.remove('open');x2.setAttribute('aria-expanded','false');});
+          closeHots();
           if(!open){el.classList.add('open');el.setAttribute('aria-expanded','true');}
-          else if(hp.go)goRoute(hp.go);
         });
         hotL.appendChild(el);
       });
     }
+    function closeHots(){qa(hotL||W,'.w-hs.open').forEach(x=>{x.classList.remove('open');x.setAttribute('aria-expanded','false');});}
+    /* Tippen/Klicken daneben und Escape schliessen die offene Marke ebenfalls (§2.2). */
+    function onDocDown(e){if(e.target.closest&&e.target.closest('.w-hs'))return;closeHots();}
     const plan=(()=>{
       const P=(typeof PLAN!=='undefined')?PLAN:null;if(!P||!planHost)return null;
       planHost.innerHTML=`<svg viewBox="0 0 ${P.w} ${P.h}" aria-hidden="true">${P.rooms.map(r=>`<path class="w-pr" data-room="${r.id}" d="${r.d}"></path>`).join('')}
         <g class="w-pcam"><path class="w-cone" d="M0 0 L-16 -26 A30 30 0 0 1 16 -26 Z"></path><circle r="3.2"></circle></g></svg><div class="w-plan-lbl"></div>`;
       return {svg:qs(planHost,'svg'),cam:qs(planHost,'.w-pcam'),lbl:qs(planHost,'.w-plan-lbl'),P};
     })();
+    /* Etappe 8: PLAN.cam ist nach den ACHT v15-Szenen indexiert (plan.js, mit Rückblende an 6). Der
+       v16-Film hat sieben Kapitel — die Zuordnung läuft darum über den Raumnamen, nicht über den Index. */
+    const CAM_IX={ankunft:0,schwelle:1,kueche:2,bad:3,schlaf:4,wohnen:5,'wohnen-rohbau':6,eingang:7};
     function setPlan(i){
-      if(!plan)return;const c=plan.P.cam[i]||plan.P.cam[0];
+      if(!plan)return;const ix=CAM_IX[ROOMS[i]];
+      const c=plan.P.cam[ix!=null?ix:i]||plan.P.cam[0];
       qa(plan.svg,'.w-pr').forEach(p=>p.classList.toggle('on',p.dataset.room===c.room));
       plan.cam.setAttribute('transform',`translate(${c.x} ${c.y}) rotate(${c.a})`);
       const r=plan.P.rooms.find(r=>r.id===c.room);plan.lbl.textContent=r?r.label:'';
@@ -321,42 +328,9 @@
       if(hud){const t=qs(hud,'.k'),b=qs(hud,'b');if(t)t.textContent=String(i+1).padStart(2,'0');if(b)b.textContent=S[i].navLabel||'';}
     }
 
-    /* ---------------- v16.1 Rückblende-Regler (Desktop): Vorher/Nachher-Drag auf dem Halt der Rückblende ---
-       Wiederverwendet das bestehende #wCmp-Markup (pages.js), aber neu und schlank verdrahtet: kein Canvas,
-       nur Bild + clip-path (film-v16.css). Bindung passiert genau einmal, auch wenn v16 mehrfach ge-mountet
-       wird (SPA-Navigation) — das Element gehört zur statischen Seite, nicht zu unserem mount()/cleanup(). */
-    const RUECK_K=ROOMS.indexOf('wohnen-rohbau'),RUECK_AFTER_K=ROOMS.indexOf('wohnen');
-    if(cmp&&!cmp._v16Bound){
-      cmp._v16Bound=true;
-      const h=qs(cmp,'.w-cmp-h');
-      if(h){
-        let dragging=false;
-        const setX=x=>{x=clamp(x,.04,.96);cmp.style.setProperty('--x',x.toFixed(4));h.setAttribute('aria-valuenow',String(Math.round(x*100)));};
-        const fromEv=e=>{const r=cmp.getBoundingClientRect();return (e.clientX-r.left)/Math.max(1,r.width);};
-        h.addEventListener('pointerdown',e=>{dragging=true;cmp.classList.add('is-drag');try{h.setPointerCapture(e.pointerId);}catch(x){}setX(fromEv(e));e.preventDefault();});
-        addEventListener('pointermove',e=>{if(dragging)setX(fromEv(e));},{passive:true});
-        addEventListener('pointerup',()=>{dragging=false;cmp.classList.remove('is-drag');});
-        addEventListener('pointercancel',()=>{dragging=false;cmp.classList.remove('is-drag');});
-        cmp.addEventListener('click',e=>{if(e.target===h||h.contains(e.target))return;setX(fromEv(e));});
-        h.addEventListener('keydown',e=>{
-          const v=parseFloat(cmp.style.getPropertyValue('--x')),x=Number.isFinite(v)?v:.5;
-          if(e.key==='ArrowLeft'){setX(x-.05);e.preventDefault();}
-          else if(e.key==='ArrowRight'){setX(x+.05);e.preventDefault();}
-          else if(e.key==='Home'){setX(0);e.preventDefault();}
-          else if(e.key==='End'){setX(1);e.preventDefault();}
-        });
-      }
-    }
-    function updateCmp(k){
-      if(!cmp)return;
-      /* Etappe 5 §4.5b: Der Vorher/Nachher-Regler lief bisher nur auf dem Desktop. Auf dem Telefon war der
-         Splitstop der einzige Blick zurück — jetzt bleibt er der Auftritt, und der Regler kommt danach dazu. */
-      if(k===RUECK_K&&RUECK_AFTER_K>=0){
-        if(cmpAfter)cmpAfter.src=stillUrl(RUECK_AFTER_K);
-        cmp.style.setProperty('--x','.5');
-        cmp.hidden=false;
-      } else cmp.hidden=true;
-    }
+    /* Etappe 8 §3.1: Der Vorher/Nachher-Regler (#wCmp) gehörte zur Rückblende-Kammer. Die gibt es nicht mehr;
+       das Markup bleibt für ?film=15 in der Seite, im v16-Film ist es immer aus. */
+    function updateCmp(){if(cmp)cmp.hidden=true;}
 
     /* ---------------- Halt / Flug ---------------- */
     function showHoldImage(url,fade){
@@ -374,55 +348,6 @@
       });
     }
     function setStageFly(on){stage.classList.toggle('is-fly',!!on);}
-    /* Wischer: das neue Haltebild wird von links (dir>0) oder rechts (dir<0) aufgedeckt, dazu eine Kante und zwei Etiketten.
-       v16.1 (§9a): auf dem Telefon hält der Wischer bei 50 % ~1 s — «zwei Zustände nebeneinander» statt eines schnellen
-       Wischs, der als Bugsprung gelesen wurde (HANDOFF §8.2). Desktop bleibt der ununterbrochene 1400-ms-Wisch. */
-    const WIPE_MS=1400,SPLIT_LEG=650,SPLIT_HOLD=950;
-    function showHoldWipe(url,dir){
-      return new Promise(res=>{
-        const next=holdBot,line=qs(wipe,'.v16-wipe-line'),EASE='cubic-bezier(.65,0,.35,1)';
-        const go=()=>{
-          const phone=isPhone();
-          const hiddenClip=dir>0?'inset(0 100% 0 0)':'inset(0 0 0 100%)';
-          const midClip=dir>0?'inset(0 50% 0 0)':'inset(0 0 0 50%)';
-          next.style.transition='none';next.style.clipPath=hiddenClip;
-          next.classList.add('on');
-          wipe.classList.remove('r','l');wipe.classList.add(dir>0?'l':'r');
-          wipe.classList.toggle('to-rohbau',dir>0);
-          if(line){line.style.transition='none';line.style[dir>0?'left':'right']='0%';}
-          void next.offsetWidth;
-          wipe.classList.add('run');
-          const leg=(clip,pct,ms)=>new Promise(r=>{
-            next.style.transition='clip-path '+ms+'ms '+EASE;next.style.clipPath=clip;
-            if(line){line.style.transition=(dir>0?'left':'right')+' '+ms+'ms '+EASE;line.style[dir>0?'left':'right']=pct;}
-            setTimeout(r,ms);
-          });
-          const finish=()=>{
-            holdTop.classList.remove('on');const t=holdTop;holdTop=next;holdBot=t;
-            next.style.transition='';next.style.clipPath='';
-            if(line){line.style.transition='';line.style.left='';line.style.right='';}
-            wipe.classList.remove('run','split','mid');wipe.classList.add('fade');
-            setTimeout(()=>wipe.classList.remove('fade','l','r','to-rohbau'),900);
-            res();
-          };
-          if(phone){
-            wipe.classList.add('split');
-            leg(midClip,'50%',SPLIT_LEG).then(()=>{
-              wipe.classList.add('mid');
-              setTimeout(()=>{
-                wipe.classList.remove('mid');
-                leg('inset(0 0 0 0)','100%',SPLIT_LEG).then(finish);
-              },SPLIT_HOLD);
-            });
-          } else {
-            leg('inset(0 0 0 0)','100%',WIPE_MS).then(finish);
-          }
-        };
-        const ready=()=>{const d=next.decode?next.decode():Promise.resolve();d.then(go,go);};
-        if(next.getAttribute('src')===url&&next.complete)return ready();
-        next.onload=ready;next.onerror=()=>res();next.src=url;
-      });
-    }
 
     async function enterHold(k,opts){
       opts=opts||{};
@@ -492,12 +417,11 @@
       setDots(from,to);chapHide();
       if(cmp)cmp.hidden=true;
       if(ov)ov.classList.remove('show');if(hotL)hotL.classList.remove('show');
-      qa(hotL||W,'.w-hs.open').forEach(x=>x.classList.remove('open'));
+      closeHots();
       const leg=legOf(from,to);
-      /* Rückblende (5↔6): kein Clip, gleicher Blickwinkel — kurze Blende. */
+      /* Etappe 8: jede Strecke hat einen Clip. Fehlt einer (oder reduzierte Bewegung), bleibt die Blende. */
       if(!leg||RED){
-        if(RED)await showHoldImage(stillUrl(to),260);
-        else await showHoldWipe(stillUrl(to),dir);
+        await showHoldImage(stillUrl(to),260);
         if(myGen!==gen)return;
         return enterHold(to,{fade:0});
       }
@@ -635,7 +559,11 @@
       if(d){e.preventDefault();if(e.repeat)return;inGesture=false;gesture(d,99);return;}
       if(e.key==='Home'){e.preventDefault();gotoChapter(0);return;}
       if(e.key==='End'){e.preventDefault();gotoChapter(N-1);return;}
-      if(e.key==='Escape'&&houseActive){e.preventDefault();exitHouse();}
+      if(e.key==='Escape'&&houseActive){
+        e.preventDefault();
+        if(qa(hotL||W,'.w-hs.open').length)return closeHots();   /* §2.2: erst die Sprechblase, dann das Haus */
+        exitHouse();
+      }
     }
     /* Punkt-Navigation: Sprung auf ein beliebiges Kapitel = Kette benachbarter Flüge.
        Es wird immer nur EIN Ziel gemerkt — eine neue Auswahl ersetzt das alte, es entsteht keine Warteschlange.
@@ -659,7 +587,10 @@
     function onDots(e){const b=e.target.closest&&e.target.closest('.w-roomnav-dot');if(!b)return;e.preventDefault();gotoChapter(+b.dataset.i);}
 
     /* ---------------- Haus / Seite ---------------- */
-    const sheet=qs(W,'.w-sheet--final')||qs(W,'.w-sheet');
+    /* Etappe 8 §5: Der Film entlässt in den «Werkvertrag-Auszug» (#ende) — eine undurchsichtige, helle
+       Sektion. Vorher war es das erste .w-sheet, das nach «Hinter Glas» (v8.2) durchsichtig über dem
+       noch gepinnten Film lag: die Karten verloren ihre Farbe und der Text lag auf dem Kader. */
+    const sheet=qs(W,'#ende')||qs(W,'.w-sheet--final')||qs(W,'.w-sheet');
     function lock(on){
       lockScroll=!!on;
       document.documentElement.classList.toggle('v16-lock',lockScroll);
@@ -668,7 +599,10 @@
        Besucher wirklich unten war (leftTop) und wieder ganz oben ankommt — sonst würde das eigene
        Weg-Scrollen sofort als «wieder im Haus» gelesen und man säse in einer Scroll-Falle. */
     let exitAt=0,leftTop=false;
+    /* Etappe 8 §5: Ist der Rundgang vorbei, verschwindet auch seine Bedienung — Raumpunkte, HUD und
+       Grundriss hingen sonst als fixe Elemente über dem «Werkvertrag-Auszug» und allem darunter. */
     function releaseHouse(){houseActive=false;lock(false);chainTarget=null;exitAt=performance.now();leftTop=false;
+      W.classList.add('is-released');
       if(depthReady())V16Depth.pause();}
     function exitHouse(){
       if(!houseActive)return;
@@ -680,7 +614,7 @@
     }
     function enterHouse(atLast){
       if(houseActive)return;
-      houseActive=true;lock(true);leftTop=false;
+      houseActive=true;lock(true);leftTop=false;W.classList.remove('is-released');
       if(depthReady()&&phase==='HOLD')V16Depth.resume();
       inGesture=true;lastFire=performance.now();          /* laufende Geste nicht sofort als Kapitelbefehl werten */
       endGestureSoon();
@@ -746,6 +680,7 @@
     addEventListener('touchend',onTouchEnd,{passive:true});
     addEventListener('keydown',onKey);
     addEventListener('scroll',onScroll,{passive:true});
+    document.addEventListener('pointerdown',onDocDown,true);
     addEventListener('resize',onResize);
     addEventListener('orientationchange',onResize);
     document.addEventListener('visibilitychange',onVis);
@@ -760,6 +695,7 @@
       removeEventListener('wheel',onWheel);removeEventListener('touchstart',onTouchStart);
       removeEventListener('touchmove',onTouchMove);removeEventListener('touchend',onTouchEnd);
       removeEventListener('keydown',onKey);removeEventListener('scroll',onScroll);
+      document.removeEventListener('pointerdown',onDocDown,true);
       removeEventListener('resize',onResize);removeEventListener('orientationchange',onResize);
       document.removeEventListener('visibilitychange',onVis);
       document.removeEventListener('click',onClickAny,true);
@@ -771,7 +707,7 @@
       [holdA,holdB,glCanvas].forEach(el=>el.remove());
       if(poolHost)poolHost.remove();poolHost=null;
       lock(false);
-      W.classList.remove('is-v16');document.documentElement.classList.remove('v16');
+      W.classList.remove('is-v16','is-released');document.documentElement.classList.remove('v16');
       W.style.removeProperty('--reveal');
       if(cmp)cmp.hidden=true;
     };

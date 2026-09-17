@@ -71,3 +71,6 @@ core/dev/_frames*/
 core/dev/_prodchk/
 core/dev/_tmpchk/
 core/dev/_old_*.jpg
+
+# Abnahme-Screenshots (werden bei jedem Lauf neu erzeugt)
+core/dev/shots/

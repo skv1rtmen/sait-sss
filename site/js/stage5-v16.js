@@ -94,7 +94,12 @@
   }
 
   /* ---------------------------------- To-do-Zeile ---------------------------------- */
+  /* Etappe 8 §2.4: Das Durchstreichen kam zu früh — der Besucher sah den Kader noch gar nicht an, da war
+     die Pointe schon vorbei. Zeile nach 1,5 s, Strich nach 2,5 s (Dauer 0,8 s in CSS), Ergebnis nach 3,4 s.
+     Eine echte Geste in der Kammer zieht das sofort vor (strikeNow). */
+  let strikeNow=null;
   function todoLine(cfg){
+    strikeNow=null;
     if(!ov||!cfg||!cfg.todo)return;
     let p=qs(ov,'.w-todo');
     const h=qs(ov,'.w-h');if(!h)return;
@@ -105,120 +110,218 @@
       : '<em>'+t.done+'</em> <u>'+(t.tail||'')+'</u>';
     p.classList.remove('is-in','is-struck','is-done');
     if(RED()){p.classList.add('is-in','is-struck','is-done');return;}
-    later(()=>p.classList.add('is-in'),120);
+    later(()=>p.classList.add('is-in'),1500);
     if(t.task){
-      later(()=>p.classList.add('is-struck'),820);
-      later(()=>p.classList.add('is-done'),1320);
+      later(()=>p.classList.add('is-struck'),2500);
+      later(()=>p.classList.add('is-done'),3400);
     }else{
-      later(()=>p.classList.add('is-struck','is-done'),900);   /* Eingang: erst nach den Versprechen */
+      later(()=>p.classList.add('is-struck','is-done'),2600);   /* Eingang: erst nach den Versprechen */
     }
+    strikeNow=()=>{if(p)p.classList.add('is-in','is-struck','is-done');};
+  }
+  const strike=()=>{if(strikeNow)strikeNow();};
+
+  /* ---------------------------------- Primitive ---------------------------------- */
+  /* Etappe 8 §3.2: EINE Karte in EINEM festen Slot — rechts auf dem Desktop, unter der Kapitelmarke auf
+     dem Telefon. Damit kann keine Mechanik mehr auf Überschrift, To-do-Zeile oder Kapitelmarke geraten. */
+  function s5Card(o){
+    o=o||{};
+    const slot=el('div','s5-slot'+(o.slot==='top'?' s5-slot--top':' s5-slot--right'));
+    const card=el('div','s5-card2'+(o.cls?' '+o.cls:''));
+    slot.appendChild(card);
+    host.appendChild(slot);
+    later(()=>slot.classList.add('is-in'),300);
+    return {slot,card};
+  }
+  const cardHTML=o=>
+    (o.kicker?'<div class="s5-k">'+o.kicker+'</div>':'')+
+    (o.title?'<div class="s5-t">'+o.title+'</div>':'')+
+    (o.text?'<div class="s5-s">'+o.text+'</div>':'')+
+    (o.body||'')+
+    (o.hint?'<div class="s5-hint">'+o.hint+'</div>':'');
+
+  /* Ein Regler auf Pointer Events — ersetzt den Maus-Regler, der sich am Desktop nicht greifen liess und
+     dabei die ganze Seite blau markierte (Etappe 8 §2.1).
+     Ursachen, beide behoben: (1) film-v16.js lauscht in der CAPTURE-Phase auf document/window und nahm den
+     Zeiger vorweg — darum meldet sich der Griff eine Ebene höher (window, capture) ab; (2) ohne
+     preventDefault + user-select:none startet der Browser beim Ziehen eine Textauswahl über das ganze
+     Dokument. setPointerCapture hält den Zeiger am Griff, auch wenn er das Element verlässt. */
+  function makeSlider(opt){
+    const grip=opt.grip,track=opt.track||stage,onChange=opt.onChange||function(){};
+    let drag=false;
+    const pctOf=e=>{const r=stage.getBoundingClientRect();return clamp(((e.clientX-r.left)/Math.max(1,r.width))*100,opt.min||4,opt.max||96);};
+    const stop=e=>{e.stopPropagation();};
+    /* window/capture: läuft VOR den Dokument-Listenern des Films (Etappe 5, HANDOFF §15). */
+    on(window,'pointerdown',e=>{if(grip.contains(e.target))stop(e);},true);
+    on(grip,'pointerdown',e=>{
+      drag=true;W.classList.add('is-s5-drag');
+      try{grip.setPointerCapture(e.pointerId);}catch(x){}
+      e.preventDefault();e.stopPropagation();
+      onChange(pctOf(e));strike();
+    });
+    on(grip,'pointermove',e=>{if(drag){e.preventDefault();onChange(pctOf(e));}});
+    ['pointerup','pointercancel'].forEach(ev=>on(grip,ev,e=>{
+      if(!drag)return;drag=false;W.classList.remove('is-s5-drag');
+      try{grip.releasePointerCapture(e.pointerId);}catch(x){}
+    }));
+    on(grip,'keydown',e=>{
+      if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight')return;
+      e.preventDefault();e.stopPropagation();
+      onChange(clamp((opt.get?opt.get():50)+(e.key==='ArrowRight'?6:-6),opt.min||4,opt.max||96));strike();
+    });
+    /* Klick auf die Fläche springt an die Stelle (der Griff ist auf dem Telefon klein). */
+    on(track,'click',e=>{
+      if(e.target.closest('button,a,input,.w-ov,#stickycall,.s5-sheet,.s5-slot'))return;
+      onChange(pctOf(e));strike();
+    });
+    return {isDrag(){return drag;}};
   }
 
-  /* ---------------------------------- Mechanik 1: Sechs → Eins ---------------------------------- */
-  function mechSix2One(cfg){
-    const d=cfg.six,hub=pick(d.hub),o=orient();
-    const wrap=el('div','s5-six');
-    const svg=svgEl('svg',{viewBox:'0 0 100 100',preserveAspectRatio:'none',class:'s5-lines'});
-    const notes=[];
-    d.notes.forEach((n,i)=>{
-      const p=n[o]||n.P;
-      const line=svgEl('line',{x1:p.x+8,y1:p.y+4,x2:hub.x,y2:hub.y,class:'s5-line'});
-      svg.appendChild(line);
-      const note=el('div','s5-note','<b>'+n.t+'</b>'+n.l);
-      note.style.left=p.x+'%';note.style.top=p.y+'%';
-      note.style.setProperty('--r',n.r+'deg');note.style.setProperty('--i',i);
-      notes.push(note);
-    });
-    wrap.appendChild(svg);notes.forEach(n=>wrap.appendChild(n));
-    const dot=el('button','s5-hub');dot.type='button';
-    dot.setAttribute('aria-label','Sechs Gewerke — halten zum Vergleich');
-    at(dot,hub.x,hub.y);wrap.appendChild(dot);
-    const card=el('div','s5-card s5-card-hub',
-      '<small>'+d.card.k+'</small><b>'+d.card.t+'</b><u>'+d.card.s+'</u>');
-    at(card,hub.x,hub.y);wrap.appendChild(card);
-    host.appendChild(wrap);
+  /* Gewerk-Zeichen für die Marken (§4.2/§9) — eigene, einfache Pfade, keine Bibliothek. */
+  const ICON={
+    saw:'<path d="M3 15l7-7 4 4-7 7z"/><path d="M14 12l7-7-3-3-7 7"/><path d="M4 18h5"/>',
+    tap:'<path d="M12 21v-9"/><path d="M8 12h8"/><path d="M12 8V6a3 3 0 0 1 3-3h4"/><path d="M9 21h6"/>',
+    bolt:'<path d="M13 3L5 14h6l-1 7 8-11h-6z"/>',
+    key:'<circle cx="8" cy="12" r="4"/><path d="M12 12h9M18 12v3M21 12v3"/>'
+  };
+  const icon=(name,size)=>'<svg viewBox="0 0 24 24" width="'+(size||18)+'" height="'+(size||18)+'" fill="none" '+
+    'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(ICON[name]||'')+'</svg>';
 
-    /* Die sechs Gewerke-Chips im Overlay sagen dasselbe wie die Zettel — in dieser Kammer übernimmt
-       die Geste, die Chips bleiben weg (§4.1). */
+  /* Eine Ebene UNTER dem Kapiteltext (zwischen .w-cam und .w-shade): Abendbild, Rohbau, Lichtfeld.
+     Liegt sie in #wS5, deckt sie den Text zu — das war der Fehler in den ersten Entwürfen. */
+  let underEl=null;
+  function under(){
+    if(underEl&&underEl.parentNode)return underEl;
+    underEl=el('div','s5-under');underEl.setAttribute('aria-hidden','true');
+    const cam=qs(stage,'.w-cam');
+    if(cam&&cam.parentNode)cam.parentNode.insertBefore(underEl,cam.nextSibling);
+    else stage.insertBefore(underEl,stage.firstChild);
+    return underEl;
+  }
+
+  /* ---------------------------------- Mechanik 1: Sechs Anrufe → ein Rückruf (Schwelle) ---------------
+     §4.1 — ohne Geste: sechs Meldungen treffen im Takt von 400 ms ein, nach einer Lesepause sammeln sie
+     sich von selbst in einer Nachricht der Bauleitung mit dem Rückruf-Knopf. */
+  function mechPush(cfg){
+    const d=cfg.push;
+    const {slot,card}=s5Card({cls:'s5-push'});
+    slot.classList.add('s5-slot--stack');
+    const stack=el('div','s5-stack');
+    const ROT=[-2.5,2,-1.5,2.5,-2,1.5],DX=[0,10,-8,6,-10,8],STEP=isPhone()?62:86;
+    d.notes.forEach((n,i)=>{
+      const note=el('div','s5-note2',
+        '<span class="av">'+n.av+'</span>'+
+        '<span class="tx"><b>'+n.t+'</b><em>'+n.m+' · '+n.time+'</em><i>'+n.s+'</i></span>'+
+        '<span class="dot"></span>');
+      note.style.top=(i*STEP)+'px';
+      note.style.setProperty('--r',ROT[i%6]+'deg');
+      note.style.setProperty('--dx',DX[i%6]+'px');
+      note.style.zIndex=String(10-i);
+      stack.appendChild(note);
+    });
+    card.parentNode.insertBefore(stack,card);
+    card.innerHTML=cardHTML({
+      kicker:d.final.k,
+      body:'<div class="s5-row"><span class="av-b">B</span><span><b>'+d.final.t+'</b><small>'+d.final.time+'</small></span></div>'+
+           '<div class="s5-s">'+d.final.s+'</div>'+
+           '<a class="s5-btn s5-btn-call" href="tel:'+((typeof CO!=='undefined'&&CO.phoneRaw)||'')+'">'+
+             '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5c0 8 7 15 15 15v-3l-4-2-2 2c-3-1-5-3-6-6l2-2-2-4H4z"/></svg> '+
+             d.final.btn+'</a>'
+    });
+    card.classList.add('is-final');
+    const notes=qa(stack,'.s5-note2');
+    /* Die sechs Gewerke-Chips im Overlay sagen dasselbe wie die Meldungen (§4.1). */
     const chips=ov&&qs(ov,'.w-chips');
     if(chips&&!chips.hidden){chips.hidden=true;detach.push(()=>{chips.hidden=false;});}
-    const hold=v=>{
-      wrap.classList.toggle('is-held',v);
-      if(ov)ov.classList.toggle('s5-dim',v);
-    };
-    on(dot,'pointerdown',e=>{e.preventDefault();hold(true);try{dot.setPointerCapture(e.pointerId);}catch(x){}});
-    ['pointerup','pointercancel','pointerleave'].forEach(ev=>on(dot,ev,()=>hold(false)));
-    on(dot,'keydown',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();hold(true);later(()=>hold(false),1400);}});
 
+    const collapse=()=>{
+      slot.classList.add('is-collapsing');
+      notes.slice().reverse().forEach((n,i)=>later(()=>n.classList.add('is-gone'),i*60));
+      later(()=>{slot.classList.add('is-one');card.classList.add('is-pulse');strike();},520);
+      later(()=>card.classList.remove('is-pulse'),1400);
+    };
     return {
-      demo(){later(()=>{hold(true);later(()=>hold(false),1400);},0);},
-      rest(){wrap.classList.add('is-rest');},
-      destroy(){if(ov)ov.classList.remove('s5-dim');}
+      /* Gesamtdauer ~4,3 s ab Halt: 6 Meldungen in 2 s, kurze Lesepause, dann das Sammeln. */
+      demo(){
+        notes.forEach((n,i)=>later(()=>n.classList.add('is-in'),250+i*330));
+        later(collapse,2900);
+      },
+      rest(){notes.forEach(n=>{n.classList.add('is-in','is-gone');});slot.classList.add('is-collapsing','is-one','no-anim');},
+      destroy(){}
     };
   }
 
-  /* ---------------------------------- Mechanik 2: Takt (Küche) ---------------------------------- */
+  /* ---------------------------------- Mechanik 2: Takt (Küche) ----------------------------------
+     §4.2 — keine Polygone mehr: drei Marken mit Gewerk-Zeichen, ein warmes Lichtfeld auf dem aktiven
+     Objekt, eine Karte im festen Slot. Marken, Segmente, Pfeile und die Karte schalten weiter. */
   function mechTakt(cfg){
-    const d=cfg.takt,o=orient();
-    const wrap=el('div','s5-takt');
-    const svg=svgEl('svg',{viewBox:'0 0 100 100',preserveAspectRatio:'none',class:'s5-zones'});
-    const polys=[],pills=[],card=el('div','s5-card s5-card-takt');
-    d.zones.forEach((z,i)=>{
-      const poly=svgEl('polygon',{points:z[o]||z.P,class:'s5-zone','data-i':i});
-      svg.appendChild(poly);polys.push(poly);
-      const pp=z['p'+o]||z.pP;
-      const pill=el('span','s5-pill',(i+1)+' · '+z.t+'<i>✓</i>');
-      at(pill,pp.x,pp.y);pill.style.setProperty('--i',i);
-      wrap.appendChild(pill);pills.push(pill);
+    const d=cfg.takt,o=orient(),n=d.zones.length;
+    const {slot,card}=s5Card({slot:'top',cls:'s5-takt2'});
+    const spot=el('i','s5-spot');under().appendChild(spot);
+    const pins=d.zones.map((z,i)=>{
+      const p=z['p'+o]||z.pP;
+      const b=el('button','s5-pin',icon(z.icon));b.type='button';
+      b.setAttribute('aria-label',z.t+' — Takt '+(i+1)+' von '+n);
+      at(b,p.x,p.y);host.appendChild(b);
+      on(b,'click',e=>{e.stopPropagation();stopDemo();show(i);strike();});
+      return {b,p};
     });
-    wrap.insertBefore(svg,wrap.firstChild);
-    const cp=(d.card&&(d.card[o]||d.card.P))||{x:50,y:28};
-    at(card,cp.x,cp.y);wrap.appendChild(card);
-    const endLine=el('div','s5-takt-end',d.end);wrap.appendChild(endLine);
-    host.appendChild(wrap);
-
-    let running=false;
-    const show=i=>{
-      polys.forEach((p,j)=>{p.classList.toggle('is-on',j===i);p.classList.toggle('is-done',j<i);});
-      pills.forEach((p,j)=>{p.classList.toggle('is-on',j===i);p.classList.toggle('is-done',j<i);});
-      if(i>=0){card.innerHTML='<small>'+(i+1)+' · '+d.zones[i].t.toUpperCase()+'</small><b>'+d.zones[i].l+'</b>';card.classList.add('show');}
-      else card.classList.remove('show');
+    let act=-1,auto=0;
+    const stopDemo=()=>{if(auto){clearTimeout(auto);auto=0;}};
+    function show(i){
+      act=i;
+      pins.forEach((pn,j)=>{
+        pn.b.classList.toggle('is-on',j===i);
+        pn.b.classList.toggle('is-done',j<i);
+        pn.b.classList.toggle('is-next',j===i+1);
+        pn.b.innerHTML=j<i?'<span class="ok">✓</span>':icon(d.zones[j].icon);
+      });
+      const p=pins[i]?pins[i].p:{x:50,y:50};
+      spot.style.left=p.x+'%';spot.style.top=p.y+'%';spot.classList.add('is-on');
+      const z=d.zones[i];
+      card.innerHTML=cardHTML({
+        kicker:'Takt '+(i+1)+' von '+n+' · '+z.t,
+        title:z.card.t, text:z.card.s,
+        body:'<div class="s5-takt-bar" role="tablist">'+d.zones.map((_,j)=>
+          '<button type="button" class="'+(j<=i?'on':'')+'" data-i="'+j+'" aria-label="Takt '+(j+1)+'"></button>').join('')+'</div>'+
+          (isPhone()?'':'<div class="s5-nav"><button type="button" class="s5-arrow" data-d="-1" aria-label="Vorheriger Takt">‹</button>'+
+                        '<button type="button" class="s5-arrow" data-d="1" aria-label="Nächster Takt">›</button></div>'),
+        hint:isPhone()?'Tippen — nächster Takt':'Klicken — nächster Takt'
+      });
+      if(i>=n-1)card.classList.add('is-end');
+    }
+    const step=dir=>{stopDemo();show(((act+(dir||1))%n+n)%n);strike();};
+    on(card,'click',e=>{
+      const seg=e.target.closest('.s5-takt-bar button'),arr=e.target.closest('.s5-arrow');
+      e.stopPropagation();
+      if(seg)return(stopDemo(),show(+seg.dataset.i),strike());
+      if(arr)return step(+arr.dataset.d);
+      step(1);
+    });
+    on(window,'keydown',e=>{
+      if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight')return;
+      e.preventDefault();e.stopPropagation();step(e.key==='ArrowRight'?1:-1);
+    },true);
+    show(0);
+    return {
+      demo(){
+        const beat=RED()?0:1400;let i=0;
+        const tick=()=>{i++;if(i>=n){auto=0;card.classList.add('is-end');return;}show(i);auto=setTimeout(tick,beat);};
+        auto=setTimeout(tick,beat);
+      },
+      rest(){show(n-1);},
+      destroy(){stopDemo();}
     };
-    const run=()=>{
-      if(running)return;running=true;endLine.classList.remove('show');
-      const beat=RED()?0:650;
-      d.zones.forEach((z,i)=>later(()=>show(i),beat*i));
-      later(()=>{
-        show(-1);polys.forEach(p=>p.classList.add('is-done'));pills.forEach(p=>p.classList.add('is-done'));
-        endLine.classList.add('show');
-        later(()=>{endLine.classList.remove('show');running=false;},1800);
-      },beat*d.zones.length);
-    };
-    /* Tippen irgendwo im Kader (nicht auf Bedienelemente) startet den Takt. */
-    on(stage,'click',e=>{
-      if(e.target.closest('button,a,input,.w-ov,#stickycall,.s5-sheet,.w-cmp-h'))return;
-      run();
-    });
-    /* Bonus: Zeiger über einer Zone hebt sie hervor, ohne die Sequenz zu starten. */
-    polys.forEach((p,i)=>{p.style.pointerEvents='auto';
-      on(p,'pointerenter',()=>{if(!running)show(i);});
-      on(p,'pointerleave',()=>{if(!running)show(-1);});
-    });
-    return {demo(){run();},rest(){polys.forEach(p=>p.classList.add('is-done'));pills.forEach(p=>p.classList.add('is-done'));},destroy(){}};
   }
 
-  /* ---------------------------------- Mechanik 3: Abend bei Kerzen (Bad) ---------------------------------- */
-  function mechDusk(cfg,scene){
-    const d=cfg.dusk,o=orient();
+  /* ---------------------------------- Mechanik 3: Abend bei Kerzen (Bad) ----------------------------
+     §4.6 — Desktop: der Regler, jetzt auf Pointer Events (makeSlider). Telefon: kein Ziehen, sondern ein
+     Lichtschalter an der Wand; das Abendbild liegt UNTER dem Kapiteltext. */
+  function mechDusk(cfg){
+    const d=cfg.dusk,o=orient(),phone=isPhone();
     const wrap=el('div','s5-dusk');
     const img=el('img','s5-dusk-img');img.alt='';img.setAttribute('aria-hidden','true');img.decoding='async';
     img.src=d.img+o+'.jpg';
-    /* Solange der Abend-Render (§6) nicht im Repo liegt, wird der Tages-Halt per Filter zum Abend
-       umgefärbt — die Geste funktioniert, nur die Kerzen fehlen. Der Austausch ist ein Dateikopieren. */
-    img.addEventListener('error',()=>{
-      wrap.classList.add('is-fallback');
-      img.src=(FILM_V16.v16.stillDir)+(FILM_V16.v16.rooms[Film16?Film16.ch:3])+'-'+o+'.jpg';
-    },{once:true});
     wrap.appendChild(img);
     const glows=el('div','s5-dusk-glow');
     (d.glow[o]||d.glow.P).forEach((g,i)=>{
@@ -227,42 +330,65 @@
       glows.appendChild(f);
     });
     wrap.appendChild(glows);
-    const line=el('div','s5-wipe-line'),
-          grip=el('button','s5-wipe-grip','<i>☀</i><i>☾</i>'),
-          labL=el('span','s5-wipe-lab is-l',d.labL),
-          labR=el('span','s5-wipe-lab is-r',d.labR);
+    under().appendChild(wrap);
+
+    if(phone){
+      /* Lichtschalter: ein Tippen, kein Ziehen — Ziehen kollidiert auf dem Telefon mit dem Kapitelwisch. */
+      let on_=false;
+      const sw=el('button','s5-switch','<i></i><b></b>');sw.type='button';
+      sw.setAttribute('aria-pressed','false');sw.setAttribute('aria-label','Abendlicht');
+      at(sw,d.sw.x,d.sw.y);
+      const lab=el('span','s5-switch-lab',d.swOff);at(lab,d.sw.x,d.sw.y);
+      const ring=el('i','s5-tapring');at(ring,d.sw.x,d.sw.y);
+      host.append(sw,lab,ring);
+      const set=v=>{
+        on_=!!v;wrap.classList.toggle('is-on',on_);sw.classList.toggle('is-on',on_);
+        sw.setAttribute('aria-pressed',on_?'true':'false');lab.textContent=on_?d.swOn:d.swOff;
+        if(on_&&window.V16Depth&&V16Depth.pause)V16Depth.pause();
+      };
+      /* Abnahme 17.09: Wer während der Vorführung tippte, schaltete gegen sie an (die Vorführung stellte
+         danach wieder zurück). Ein Tippen beendet die Vorführung jetzt sofort. */
+      let demoT=[];
+      const stopDemo=()=>{demoT.forEach(clearTimeout);demoT=[];};
+      on(sw,'click',e=>{e.stopPropagation();stopDemo();ring.remove();set(!on_);strike();});
+      set(false);
+      return {
+        demo(){demoT=[setTimeout(()=>ring.classList.add('is-in'),400),
+                     setTimeout(()=>set(true),1200),
+                     setTimeout(()=>{set(false);ring.remove();},3800)];
+               demoT.forEach(t=>TIMERS.push(t));},
+        rest(){ring.remove();set(false);},
+        destroy(){stopDemo();if(window.V16Depth&&V16Depth.resume)V16Depth.resume();}
+      };
+    }
+
+    /* Desktop: Regler. --x = Anteil, ab dem das Abendbild sichtbar ist. */
+    let x=0;
+    const grip=el('button','s5-wipe-grip','<i>⇔</i><small>ziehen</small>');
     grip.type='button';grip.setAttribute('role','slider');
     grip.setAttribute('aria-label','Tageslicht bis Abend');
     grip.setAttribute('aria-valuemin','0');grip.setAttribute('aria-valuemax','100');
-    const ui=el('div','s5-wipe');ui.append(line,grip,labL,labR);
-    host.appendChild(wrap);host.appendChild(ui);
-
-    const setX=x=>{
-      x=clamp(x,4,96);
+    const line=el('div','s5-wipe-line'),
+          labL=el('span','s5-wipe-lab is-l',d.labL),
+          labR=el('span','s5-wipe-lab is-r',d.labR);
+    const ui=el('div','s5-wipe');ui.append(line,grip,labL,labR);host.appendChild(ui);
+    const setX=v=>{
+      x=clamp(v,4,96);
       wrap.style.setProperty('--x',x+'%');ui.style.setProperty('--x',x+'%');
       grip.setAttribute('aria-valuenow',String(Math.round(x)));
-      /* 2,5D würde den Tages-Halt bewegen, während der Abend-Layer stillsteht — darum aus, sobald gewischt wird. */
       if(window.V16Depth&&V16Depth.pause&&x>4)V16Depth.pause();
     };
     setX(RED()?d.start:0);
-    let drag=false;
-    const fromEv=e=>{const r=stage.getBoundingClientRect();return ((e.clientX-r.left)/Math.max(1,r.width))*100;};
-    on(grip,'pointerdown',e=>{drag=true;ui.classList.add('is-drag');try{grip.setPointerCapture(e.pointerId);}catch(x){}setX(fromEv(e));e.preventDefault();});
-    on(window,'pointermove',e=>{if(drag)setX(fromEv(e));},{passive:true});
-    ['pointerup','pointercancel'].forEach(ev=>on(window,ev,()=>{drag=false;ui.classList.remove('is-drag');}));
-    on(grip,'keydown',e=>{
-      const v=parseFloat(ui.style.getPropertyValue('--x'))||d.start;
-      if(e.key==='ArrowLeft'){setX(v-6);e.preventDefault();}
-      else if(e.key==='ArrowRight'){setX(v+6);e.preventDefault();}
-    });
-    /* Tippen auf den Kader springt zur Stelle — auf dem Telefon ist der Griff klein. */
-    on(stage,'click',e=>{if(e.target.closest('button,a,.w-ov,#stickycall,.s5-sheet'))return;setX(fromEv(e));});
-
+    /* Greift der Besucher zum Griff, hört die Vorführung sofort auf (sonst zieht sie dagegen). */
+    let demoRun=false;
+    makeSlider({grip,onChange:v=>{demoRun=false;setX(v);},get:()=>x});
     const tween=(from,to,ms)=>new Promise(res=>{
       if(RED()){setX(to);return res();}
+      demoRun=true;
       const t0=performance.now();
       const step=now=>{
-        const p=clamp((now-t0)/ms,0,1),e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;   /* power2.inOut */
+        if(!demoRun)return res();
+        const p=clamp((now-t0)/ms,0,1),e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
         setX(from+(to-from)*e);
         if(p<1)requestAnimationFrame(step);else res();
       };
@@ -275,82 +401,133 @@
     };
   }
 
-  /* ---------------------------------- Mechanik 4: Ablauf-Lichtlinie (Schlaf) ---------------------------------- */
+  /* ---------------------------------- Mechanik 4: Bauzeitplan (Schlaf) ------------------------------
+     §4.3 — senkrechte Karte statt Linie im Kader: fünf Zeilen, die aktive klappt auf. Jede Zeile ist ein
+     Knopf; Rad und Pfeiltasten wirken NUR innerhalb der Karte (sonst wäre es ein Kapitelwechsel). */
   function mechAblauf(cfg){
-    const d=cfg.ablauf,o=orient(),L=d.line[o]||d.line.P;
-    const n=d.steps.length,xs=d.steps.map((_,i)=>L.x0+(L.x1-L.x0)*i/(n-1));
-    const wrap=el('div','s5-ablauf');
-    const svg=svgEl('svg',{viewBox:'0 0 100 100',preserveAspectRatio:'none',class:'s5-abl-svg'});
-    svg.appendChild(svgEl('line',{x1:L.x0,y1:L.y,x2:L.x1,y2:L.y,class:'s5-abl-base'}));
-    const lit=svgEl('line',{x1:L.x0,y1:L.y,x2:L.x0,y2:L.y,class:'s5-abl-lit'});
-    svg.appendChild(lit);wrap.appendChild(svg);
-    const dots=[],labs=[];
-    d.steps.forEach((s,i)=>{
-      const dot=el('i','s5-abl-dot');at(dot,xs[i],L.y);wrap.appendChild(dot);dots.push(dot);
-      const lab=el('div','s5-abl-lab'+(i%2?' is-up':'')+(i===0?' is-first':'')+(i===n-1?' is-last':''),'<b>'+s.t+'</b><span>'+s.f+'</span>');
-      at(lab,xs[i],L.y);wrap.appendChild(lab);labs.push(lab);
+    const d=cfg.ablauf,n=d.steps.length;
+    const {slot,card}=s5Card({cls:'s5-abl2'});
+    card.innerHTML=cardHTML({
+      kicker:d.kicker||'Bauzeitplan',
+      body:'<ol class="s5-steps">'+d.steps.map((s,i)=>
+        '<li data-i="'+i+'"><button type="button" class="s5-step">'+
+          '<span class="no">'+String(i+1).padStart(2,'0')+'</span>'+
+          '<span class="tx"><b>'+s.t+'</b><span class="c">'+s.c+'</span></span>'+
+          '<small>'+s.f+'</small></button></li>').join('')+'</ol>',
+      hint:isPhone()?'Tippen — nächster Schritt':'Klicken — nächster Schritt'
     });
-    const card=el('div','s5-card s5-card-abl');at(card,50,L.y+14);wrap.appendChild(card);
-    host.appendChild(wrap);
-
-    let act=-1;
-    const setActive=i=>{
-      if(i===act)return;act=i;
-      dots.forEach((dt,j)=>{dt.classList.toggle('is-on',j===i);dt.classList.toggle('is-done',j<i);});
-      labs.forEach((lb,j)=>{lb.classList.toggle('is-on',j===i);lb.classList.toggle('is-done',j<=i);});
-      lit.setAttribute('x2',String(xs[clamp(i,0,n-1)]));
-      if(i>=0){
-        card.innerHTML='<small>Schritt '+(i+1)+' von '+n+'</small><b>'+d.steps[i].c+'</b>';
-        card.classList.add('show');
-      }else card.classList.remove('show');
+    const items=qa(card,'.s5-steps li');
+    let act=-1,auto=0;
+    const stopDemo=()=>{if(auto){clearTimeout(auto);auto=0;}};
+    function setActive(i){
+      act=clamp(i,0,n-1);
+      items.forEach((li,j)=>{li.classList.toggle('is-on',j===act);li.classList.toggle('is-done',j<act);});
+    }
+    on(card,'click',e=>{
+      const li=e.target.closest('.s5-steps li');
+      e.stopPropagation();
+      stopDemo();
+      setActive(li?+li.dataset.i:(act+1)%n);strike();
+    });
+    /* Rad/Tasten/Wisch bleiben in der Karte: capture + stopPropagation, sonst blättert der Film das Kapitel. */
+    on(card,'wheel',e=>{
+      e.preventDefault();e.stopPropagation();
+      stopDemo();setActive(act+((e.deltaY||0)>0?1:-1));strike();
+    },{capture:true,passive:false});
+    on(card,'keydown',e=>{
+      if(e.key!=='ArrowUp'&&e.key!=='ArrowDown')return;
+      e.preventDefault();e.stopPropagation();
+      stopDemo();setActive(act+(e.key==='ArrowDown'?1:-1));strike();
+    },true);
+    let ty=0;
+    on(card,'touchstart',e=>{ty=e.touches[0].clientY;e.stopPropagation();},{capture:true,passive:true});
+    on(card,'touchmove',e=>{
+      e.stopPropagation();if(e.cancelable)e.preventDefault();
+      const dy=ty-e.touches[0].clientY;
+      if(Math.abs(dy)<24)return;
+      ty=e.touches[0].clientY;stopDemo();setActive(act+(dy>0?1:-1));strike();
+    },{capture:true,passive:false});
+    setActive(0);
+    return {
+      demo(){
+        const beat=RED()?0:3000;let i=0;
+        const tick=()=>{i++;if(i>=n){auto=0;return;}setActive(i);auto=setTimeout(tick,beat);};
+        auto=setTimeout(tick,beat);
+      },
+      rest(){setActive(d.active!=null?d.active:0);},
+      destroy(){stopDemo();}
     };
-    const nearest=clientX=>{
-      const r=stage.getBoundingClientRect(),x=((clientX-r.left)/Math.max(1,r.width))*100;
-      let best=0,bd=1e9;xs.forEach((v,i)=>{const dd=Math.abs(v-x);if(dd<bd){bd=dd;best=i;}});
-      return best;
-    };
-    /* Waagerechtes Ziehen scrubbt — film-v16.js ignoriert waagerechte Gesten, darum kein Konflikt
-       mit dem Kapitelwechsel (dort zählt nur |dy| > |dx|). */
-    on(stage,'pointermove',e=>{if(e.pointerType==='mouse'&&!e.buttons)return;setActive(nearest(e.clientX));},{passive:true});
-    let tx=0,ty=0;
-    on(stage,'touchstart',e=>{const t=e.touches[0];tx=t.clientX;ty=t.clientY;},{passive:true});
-    on(stage,'touchmove',e=>{
-      const t=e.touches[0],dx=Math.abs(t.clientX-tx),dy=Math.abs(t.clientY-ty);
-      if(dx>10&&dx>dy)setActive(nearest(t.clientX));
-    },{passive:true});
-    dots.forEach((dt,i)=>{dt.style.pointerEvents='auto';on(dt,'pointerenter',()=>setActive(i));});
-
-    const sweep=()=>{
-      if(RED())return setActive(d.active);
-      wrap.classList.add('is-sweep');
-      const ms=1800,t0=performance.now();
-      const step=now=>{
-        const p=clamp((now-t0)/ms,0,1);
-        lit.setAttribute('x2',String(L.x0+(L.x1-L.x0)*p));
-        const upto=Math.min(n-1,Math.floor(p*n));
-        dots.forEach((dt,j)=>dt.classList.toggle('is-done',j<=upto));
-        labs.forEach((lb,j)=>lb.classList.toggle('is-done',j<=upto));
-        if(p<1)requestAnimationFrame(step);
-        else{wrap.classList.remove('is-sweep');setActive(d.active);}
-      };
-      requestAnimationFrame(step);
-    };
-    return {demo(){sweep();},rest(){setActive(d.active);},destroy(){}};
   }
 
-  /* ---------------------------------- Mechanik 5: Rückblende-Wischer ---------------------------------- */
-  function mechWipe(cfg){
-    const cmp=document.getElementById('wCmp');
-    if(!cmp)return {demo(){},rest(){},destroy(){}};
-    const l=qs(cmp,'.w-cmp-tag-l'),r=qs(cmp,'.w-cmp-tag-r');
-    const oldL=l?l.textContent:'',oldR=r?r.textContent:'';
-    if(l)l.textContent=cfg.wipe.labL;
-    if(r)r.textContent=cfg.wipe.labR;
-    cmp.classList.add('s5-wipe-on');
-    return {demo(){},rest(){},destroy(){
-      cmp.classList.remove('s5-wipe-on');
-      if(l)l.textContent=oldL;if(r)r.textContent=oldR;
-    }};
+  /* ---------------------------------- Mechanik 5: Wochen-Update + Rückblende (Wohnen) ----------------
+     §4.4 — die Karte zeigt, was der Hausverwalter wirklich bekommt. Halten im Kader blendet den Rohbau
+     ein («wie war es vorher»); das ersetzt das frühere Kapitel 07 samt Wischer. */
+  function mechFeed(cfg){
+    const d=cfg.feed,o=orient(),n=d.weeks.length;
+    const {slot,card}=s5Card({cls:'s5-feed'});
+    const DIR='img/film/v16/feed/';
+    let w=0,auto=0,held=false,holdT=0,downXY=null,holdSeen=false;
+    const stopDemo=()=>{if(auto){clearTimeout(auto);auto=0;}};
+    function show(i){
+      w=((i%n)+n)%n;const k=d.weeks[w];
+      card.innerHTML=cardHTML({
+        body:'<div class="s5-row s5-feed-h"><span class="av-b">B</span><span><b>'+d.sender+'</b><small>'+d.kicker+'</small></span><em>'+k.w+'</em></div>'+
+             '<div class="s5-feed-t">'+k.t+'</div><div class="s5-s">'+k.s+'</div>'+
+             '<div class="s5-thumbs">'+k.imgs.map(f=>'<img src="'+DIR+f+'" alt="" loading="lazy" decoding="async">').join('')+'</div>'+
+             '<div class="s5-dots">'+d.weeks.map((_,j)=>'<i class="'+(j===w?'on':'')+'"></i>').join('')+'</div>',
+        hint:(isPhone()?'Tippen — nächste Woche':'Klicken — nächste Woche')+(holdSeen?'':'<span class="s5-hold">'+d.hold+'</span>')
+      });
+      card.classList.remove('is-fade');void card.offsetWidth;card.classList.add('is-fade');
+    }
+    on(card,'click',e=>{e.stopPropagation();stopDemo();show(w+1);strike();});
+
+    /* Rückblende: Rohbau-Ebene unter dem Text. */
+    const roh=el('div','s5-roh');
+    const rimg=el('img');rimg.alt='';rimg.decoding='async';rimg.src=(cfg.rueck.img)+o+'.jpg';
+    roh.append(rimg,el('i','s5-roh-vin'));under().appendChild(roh);
+    const lab=el('div','s5-roh-lab',cfg.rueck.lab);host.appendChild(lab);
+    const setHold=v=>{
+      held=!!v;roh.classList.toggle('is-on',held);lab.classList.toggle('is-on',held);
+      slot.classList.toggle('is-dim',held);
+      if(held&&!holdSeen){holdSeen=true;strike();}
+      if(held&&window.V16Depth&&V16Depth.pause)V16Depth.pause();
+    };
+    /* pointerdown auf der Bühne, aber nicht auf Bedienelementen; > 12 px Bewegung = Wisch, nicht Halten.
+       .w-ov steht bewusst NICHT in der Liste: der Kapiteltext ist kein Bedienelement, deckt aber die halbe
+       Bühne ab — mit ihm in der Liste liess sich links im Kader gar nicht halten (Sichtprüfung 17.09). */
+    on(stage,'pointerdown',e=>{
+      if(e.target.closest('button,a,input,.s5-slot,.w-hs,#stickycall,.s5-sheet,#wRoomNav'))return;
+      downXY={x:e.clientX,y:e.clientY};
+      holdT=setTimeout(()=>{holdT=0;setHold(true);},180);
+      TIMERS.push(holdT);
+    },true);
+    on(window,'pointermove',e=>{
+      if(!downXY)return;
+      if(Math.abs(e.clientX-downXY.x)>12||Math.abs(e.clientY-downXY.y)>12){
+        if(holdT){clearTimeout(holdT);holdT=0;}
+        if(held)setHold(false);
+        downXY=null;
+      }
+    },{passive:true});
+    const end=()=>{if(holdT){clearTimeout(holdT);holdT=0;}downXY=null;if(held)setHold(false);};
+    ['pointerup','pointercancel'].forEach(ev=>on(window,ev,end,true));
+    /* Der Klick, der ein Halten beendet, darf nicht als «Seite freigeben» beim Film landen. */
+    on(window,'click',e=>{if(held){e.preventDefault();e.stopPropagation();}},true);
+    on(stage,'contextmenu',e=>e.preventDefault());
+    on(window,'keydown',e=>{if(e.key===' '&&!e.repeat&&!e.target.closest('button,a,input')){setHold(true);}},true);
+    on(window,'keyup',e=>{if(e.key===' ')setHold(false);},true);
+    W.classList.add('s5-feed-on');
+
+    show(0);
+    return {
+      demo(){
+        const beat=RED()?0:2200;let i=0;
+        const tick=()=>{i++;if(i>=n){auto=0;return;}show(i);auto=setTimeout(tick,beat);};
+        auto=setTimeout(tick,beat);
+      },
+      rest(){show(n-1);},
+      destroy(){stopDemo();end();W.classList.remove('s5-feed-on');}
+    };
   }
 
   /* ---------------------------------- Mechanik 6: 48-Stunden-Uhr (Eingang) ---------------------------------- */
@@ -373,45 +550,77 @@
     else if(h>18||(h===18&&m>0)){h=18;m=0;}
     return {day,time:String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')};
   }
+  /* §4.5 — Frist, Versprechen und Unterschrift als EIN Objekt: das Übergabeprotokoll. Der Schlüssel im
+     Kopf dreht sich beim Auftritt; darunter die beiden Wege (Offerte / Richtpreis-Rechner). */
   function mechClock(cfg){
-    const d=cfg.clock,o=orient();
-    const wrap=el('div','s5-clock');
-    const card=el('div','s5-card s5-card-clock');
-    wrap.appendChild(card);
-    const list=el('div','s5-versprechen');
-    d.versprechen.forEach((t,i)=>{
-      const row=el('div','s5-vp','<span>'+String(i+1).padStart(2,'0')+'</span><b>'+t+'</b>');
-      row.style.setProperty('--i',i);list.appendChild(row);
-    });
-    wrap.appendChild(list);host.appendChild(wrap);
-
-    const paint=()=>{const t=deadline48();
-      card.innerHTML='<small>'+d.kicker+'</small><b>'+d.pre+' <u>'+t.day+', '+t.time+'</u></b>';};
-    paint();
-    const iv=setInterval(paint,60000);detach.push(()=>clearInterval(iv));
-
+    const d=cfg.clock;
+    const {slot,card}=s5Card({cls:'s5-prot'});
     const sig=document.getElementById('wSig'),sv=sig&&sig.querySelector('svg');
-    W.classList.add('s5-clock-on');            /* CSS rückt die Unterschrift in das freie Band unter den Versprechen */
+    const sigHTML=sv?sv.outerHTML.replace(/style="[^"]*"/g,''):'';
+    const btns=isPhone()
+      ? '<button type="button" class="s5-k s5-calc" data-s5="calc">'+d.btnCalc+' →</button>'
+      : '<div class="s5-btns"><button type="button" class="s5-btn" data-s5="offer">'+d.btnOffer+' →</button>'+
+        '<button type="button" class="s5-btn s5-btn-line" data-s5="calc">'+d.btnCalc+'</button></div>';
+    const paint=()=>{
+      const t=deadline48();
+      card.innerHTML=
+        '<div class="s5-prot-h"><span class="key">'+icon('key',18)+'</span>'+
+          '<span><span class="s5-k">'+d.kicker+'</span><small>'+d.sub+'</small></span></div>'+
+        '<div class="s5-prot-b">'+
+          '<div class="s5-k s5-k-mute">'+d.pre+'</div><div class="s5-big">'+t.day+', '+t.time+'</div>'+
+          '<ul class="s5-vp2">'+d.versprechen.map(v=>'<li>'+v+'</li>').join('')+'</ul>'+
+          '<div class="s5-sigrow">'+sigHTML+'<span class="who">Artem Kozlovskyi<br>Inhaber</span></div>'+
+          (isPhone()?btns:'')+
+        '</div>';
+      if(!isPhone())card.insertAdjacentHTML('afterend',btns);
+    };
+    paint();
+    const iv=setInterval(()=>{const t=deadline48(),b=qs(card,'.s5-big');if(b)b.textContent=t.day+', '+t.time;},60000);
+    detach.push(()=>clearInterval(iv));
+    if(sig)sig.hidden=true;                     /* die Unterschrift lebt jetzt IN der Karte */
+    W.classList.add('s5-clock-on');
+    /* Beide Wege hängen an denselben Aktionen wie in der Akte-Schublade (§2.5). */
+    on(slot,'click',e=>{
+      const b=e.target.closest('[data-s5]');if(!b)return;
+      e.preventDefault();e.stopPropagation();
+      if(b.dataset.s5==='calc'){
+        if(window.Film16&&Film16.release)Film16.release();
+        const t=document.getElementById('richtwert');
+        later(()=>{if(t)t.scrollIntoView({behavior:RED()?'auto':'smooth',block:'start'});},120);
+      }else{
+        window.PREFILL={gewerk:'Renovation',msg:'Anfrage nach dem Rundgang. Bitte um Rückruf und Offerte innert 48 h.'};
+        if(window.Film16&&Film16.release)Film16.release();
+        if(typeof go==='function')go('kontakt');else location.href='/kontakt';
+      }
+    });
+    const runSig=()=>{const s=qs(card,'svg.sig');if(!s)return;
+      qa(s,'path').forEach(p=>{const L=p.getTotalLength?p.getTotalLength():150;
+        p.style.transition='none';p.style.strokeDasharray=L;p.style.strokeDashoffset=L;
+        void p.getBoundingClientRect();
+        p.style.transition='stroke-dashoffset .7s ease '+(0.12*Array.prototype.indexOf.call(s.children,p))+'s';
+        p.style.strokeDashoffset='0';});};
     return {
       demo(){
-        wrap.classList.add('is-in');
-        later(()=>{if(sv&&sv._sigRun)sv._sigRun();},RED()?0:120*d.versprechen.length+500);
+        later(()=>card.classList.add('is-key'),320);
+        later(()=>{card.classList.add('is-pulse');runSig();},760);
+        later(()=>card.classList.remove('is-pulse'),1700);
       },
-      rest(){wrap.classList.add('is-in','no-anim');if(sv&&sv._sigRun)sv._sigRun();},
-      destroy(){W.classList.remove('s5-clock-on');if(sv&&sv._sigReset)sv._sigReset();}
+      rest(){card.classList.add('is-key','no-anim');qa(card,'svg.sig path').forEach(p=>{p.style.strokeDashoffset='0';});},
+      destroy(){W.classList.remove('s5-clock-on');if(sig)sig.hidden=false;if(sv&&sv._sigReset)sv._sigReset();}
     };
   }
 
-  const MECHS={six2one:mechSix2One,takt:mechTakt,dusk:mechDusk,ablauf:mechAblauf,wipe:mechWipe,clock:mechClock};
+  const MECHS={push:mechPush,takt:mechTakt,dusk:mechDusk,ablauf:mechAblauf,feed:mechFeed,clock:mechClock};
 
   /* ---------------------------------- Auf-/Abbau je Kammer ---------------------------------- */
   function teardown(){
     clearTimers();
     detach.forEach(fn=>{try{fn();}catch(e){}});detach=[];
     if(cur&&cur.destroy){try{cur.destroy();}catch(e){}}
-    cur=null;curCfg=null;curScene=null;
+    cur=null;curCfg=null;curScene=null;strikeNow=null;
     if(host){host.innerHTML='';host.classList.remove('is-on');}
-    if(W)W.classList.remove('s5-clock-on');
+    if(underEl){underEl.remove();underEl=null;}
+    if(W)W.classList.remove('s5-clock-on','s5-feed-on','is-s5-drag');
     if(ov){ov.classList.remove('s5-dim');const p=qs(ov,'.w-todo');if(p)p.classList.remove('is-in','is-struck','is-done');}
   }
   function build(k,scene){

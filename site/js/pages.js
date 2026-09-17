@@ -197,6 +197,37 @@ const wStage=()=>`<div class="w-stage" id="wStage">
   <div class="w-scrollhint" id="wScrollHint" aria-hidden="true"><span>Scrollen</span><i></i></div>
   <div class="w-fly" id="wFly" aria-hidden="true"><span class="w-fly-t"></span><i class="w-fly-bar"><b></b></i></div>
 </div>`;
+/* Etappe 8 §5: «Werkvertrag-Auszug» — der Film entlässt nicht mehr in ein durchsichtiges Blatt über dem
+   noch gepinnten Kader (dort verloren die Karten ihre Farbe und der Text lag auf dem Bild), sondern in
+   eine undurchsichtige helle Sektion: EIN Blatt mit den vier Versprechen, Unterschrift und Stempel. */
+const ENDE_SIG=`<svg class="sig" viewBox="0 0 150 100" aria-hidden="true">
+  <path d="M8 74 C 18 44, 32 14, 44 8 C 56 12, 62 44, 68 74"></path><path d="M24 46 L 60 46"></path>
+  <path d="M84 8 C 83 30, 82 52, 80 74"></path><path d="M116 10 C 100 30, 92 42, 82 46 C 96 52, 106 64, 120 76"></path>
+  <path d="M4 86 C 40 96, 96 92, 146 80"></path></svg>`;
+const endeBand=()=>`<section class="ende" id="ende">
+  <div class="wrap">
+    <p class="ende-k">Rundgang beendet · ${FILM.scenes.length} Kapitel</p>
+    <h2 class="disp">Vier Versprechen. Schriftlich.</h2>
+    <div class="ende-sheet rv">
+      <p class="ende-k ende-k-doc">Werkvertrag · Auszug</p>
+      <div class="ende-grid">
+        <div><span class="dia" aria-hidden="true"></span><b>Offerte innert 48 h</b><p>Festpreis, Position für Position.</p></div>
+        <div><span class="dia" aria-hidden="true"></span><b>Ein Ansprechpartner</b><p>Bis zum Schlüssel, eine Nummer.</p></div>
+        <div><span class="dia" aria-hidden="true"></span><b>Nach Norm — SIA</b><p>Mit Protokoll und Nachweisen.</p></div>
+        <div><span class="dia" aria-hidden="true"></span><b>Termin im Werkvertrag</b><p>24 Monate Werkgarantie.</p></div>
+      </div>
+      <div class="ende-foot">
+        <div class="ende-sig">${ENDE_SIG}<span>Artem Kozlovskyi · Inhaber</span></div>
+        <div class="ende-stamp" aria-hidden="true"><svg viewBox="0 0 120 120">
+          <circle cx="60" cy="60" r="52"></circle><circle cx="60" cy="60" r="44"></circle>
+          <path id="endeStampPath" d="M60 22 a38 38 0 1 1 -.1 0" fill="none"></path>
+          <text><textPath href="#endeStampPath" startOffset="2%">Schriftlich im Werkvertrag ·</textPath></text>
+        </svg></div>
+      </div>
+    </div>
+    <p class="ende-next"><button type="button" class="lnk-arrow" data-scroll="richtwert">Was kostet das? Richtwerte in 30 Sekunden <span>${ic.arrow}</span></button></p>
+  </div>
+</section>`;
 function pHome(){return `
 <h1 class="sr-only">BauStern — Bauunternehmen Zürich: Renovation, Sanitär, Umbau, Fliesen und Malerarbeiten aus einer Hand</h1>
 <div class="wohnung" id="wohnung">
@@ -219,6 +250,7 @@ function pHome(){return `
        Ein-Zeilen-Toggle — hier nur der vorbereitete Ansatzpunkt, keine zwei fertig getestete Layouts. -->
   <div class="w-flow" id="wFlow">
     ${FILM.scenes.map((s,i)=>wRoom(i)).join('\n    ')}
+    ${V16?endeBand():''}
     <!-- v16 (Stufe 6): Unter dem Film nur noch EIN Blatt mit normalen Sektionen in Verkaufsreihenfolge:
          Referenzen -> Richtpreise -> Ablauf -> Kundenstimmen -> FAQ -> Team/Versprechen/Nachweise -> Offerte-Formular. -->
     <section class="w-sheet w-sheet--final" data-type="up" id="anfrage"><div class="w-paper">

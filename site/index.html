@@ -104,7 +104,7 @@
       <div class="w-cmp-line"></div>
       <div class="w-cmp-h" role="slider" tabindex="0" aria-label="Vorher / Nachher — Ausbaufortschritt" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-orientation="horizontal"><i aria-hidden="true">‹</i><i aria-hidden="true">›</i></div>
     </div>
-  <div class="v16-wipe" aria-hidden="true"><i class="v16-wipe-line"></i><b class="v16-wipe-a">Heute · Übergabe</b><b class="v16-wipe-b">Monate früher · Rohbau</b></div></div>
+  </div>
   <div class="w-shade" aria-hidden="true"></div>
   <!-- v9.1: Hotspot-Ebene liegt NICHT mehr in .w-cam (transformierter Stacking-Context, z-index wirkungslos):
        vorher lag der Szenentext (.w-ov, z5) über den Hotspots/Popups -> Punkte unter der Überschrift nicht klickbar,
@@ -132,11 +132,11 @@
         <g class="w-pcam" transform="translate(8 85) rotate(90)"><path class="w-cone" d="M0 0 L-16 -26 A30 30 0 0 1 16 -26 Z"></path><circle r="3.2"></circle></g></svg><div class="w-plan-lbl">Brücke</div></div>
   <div class="w-scrollhint" id="wScrollHint" aria-hidden="true"><span>Scrollen</span><i></i></div>
   <div class="w-fly" id="wFly" aria-hidden="true"><span class="w-fly-t"></span><i class="w-fly-bar"><b></b></i></div>
-<div class="v16-chap is-hero show" aria-hidden="true"><div class="v16-chap-n">01</div><div class="v16-chap-rule"></div><div class="v16-chap-t">Ankunft</div><div class="v16-chap-s">Kapitel 1 von 8</div><div class="v16-chap-p"><i data-i="0" class="cur"></i><i data-i="1"></i><i data-i="2"></i><i data-i="3"></i><i data-i="4"></i><i data-i="5"></i><i data-i="6"></i><i data-i="7"></i></div></div></div>
+<div class="v16-chap is-hero show" aria-hidden="true"><div class="v16-chap-n">01</div><div class="v16-chap-rule"></div><div class="v16-chap-t">Ankunft</div><div class="v16-chap-s">Kapitel 1 von 7</div><div class="v16-chap-p"><i data-i="0" class="cur"></i><i data-i="1"></i><i data-i="2"></i><i data-i="3"></i><i data-i="4"></i><i data-i="5"></i><i data-i="6"></i></div></div></div>
   <!-- v8.2 «Hinter Glas»: Raumpunkte + HUD liegen AUSSERHALB der Stage (position:fixed, z-index über den Bögen),
        damit sie auch über den Glasplatten sichtbar bleiben — die Wohnung verschwindet nie ganz. -->
   <nav class="w-roomnav is-hero-active" id="wRoomNav" aria-label="Fortschritt im Rundgang">
-    <button type="button" class="w-roomnav-dot on" data-i="0" aria-label="Ankunft" aria-current="true"><i></i><span>Ankunft</span></button><button type="button" class="w-roomnav-dot" data-i="1" aria-label="Schwelle" aria-current="false"><i></i><span>Schwelle</span></button><button type="button" class="w-roomnav-dot" data-i="2" aria-label="Küche" aria-current="false"><i></i><span>Küche</span></button><button type="button" class="w-roomnav-dot" data-i="3" aria-label="Bad" aria-current="false"><i></i><span>Bad</span></button><button type="button" class="w-roomnav-dot" data-i="4" aria-label="Schlaf" aria-current="false"><i></i><span>Schlaf</span></button><button type="button" class="w-roomnav-dot" data-i="5" aria-label="Wohnen" aria-current="false"><i></i><span>Wohnen</span></button><button type="button" class="w-roomnav-dot" data-i="6" aria-label="Rückblende" aria-current="false"><i></i><span>Rückblende</span></button><button type="button" class="w-roomnav-dot" data-i="7" aria-label="Eingang" aria-current="false"><i></i><span>Eingang</span></button>
+    <button type="button" class="w-roomnav-dot on" data-i="0" aria-label="Ankunft" aria-current="true"><i></i><span>Ankunft</span></button><button type="button" class="w-roomnav-dot" data-i="1" aria-label="Schwelle" aria-current="false"><i></i><span>Schwelle</span></button><button type="button" class="w-roomnav-dot" data-i="2" aria-label="Küche" aria-current="false"><i></i><span>Küche</span></button><button type="button" class="w-roomnav-dot" data-i="3" aria-label="Bad" aria-current="false"><i></i><span>Bad</span></button><button type="button" class="w-roomnav-dot" data-i="4" aria-label="Schlaf" aria-current="false"><i></i><span>Schlaf</span></button><button type="button" class="w-roomnav-dot" data-i="5" aria-label="Wohnen" aria-current="false"><i></i><span>Wohnen</span></button><button type="button" class="w-roomnav-dot" data-i="6" aria-label="Eingang" aria-current="false"><i></i><span>Eingang</span></button>
   </nav>
   <div class="w-hud" id="wHud" aria-hidden="true"><span class="k">01</span><b>Ankunft</b></div>
   <div class="w-marks" aria-hidden="true"></div>
@@ -180,16 +180,38 @@
     <div class="w-room-txt"><p class="w-kicker"><span translate="no">Gewerk</span> 01 · Renovation</p><h2 class="disp">Renovation aus <em>einer</em> Hand.</h2><p class="w-d">Leerwohnung, Objektbad, Gewerbefläche — Beginn und Übergabe stehen im Werkvertrag.</p>
       <ul class="w-hs-list"><li><b>Beton, der bleibt</b> — Kamin in Sichtbeton, Schalungsbild geplant <button class="lnk-arrow" data-go="leistungen/neu-umbau">Mehr <span>→</span></button></li><li><b>Drei <span translate="no">Gewerke</span> im Takt</b> — Boden, Decke, Einbauten synchron <button class="lnk-arrow" data-go="projekt/atlant-komplettausbau">Mehr <span>→</span></button></li><li><b>Bis zum letzten Vorhang</b> — Eckverglasung, Beschattung, Montage <button class="lnk-arrow" data-go="leistungen/renovation">Mehr <span>→</span></button></li></ul>
     </div></div></section>
-    <section class="w-room" data-scene="6" aria-label="Rückblende · Gewerk 04" style="--room-vh:2.1">
-  <div class="w-room-in"><img src="img/film/v16/stills/wohnen-rohbau-L-1280.jpg" srcset="img/film/v16/stills/wohnen-rohbau-L-1280.jpg 1280w, img/film/v16/stills/wohnen-rohbau-L.jpg 1920w" sizes="100vw" alt="Rückblende · Gewerk 04 — So hat es angefangen." loading="lazy" decoding="async">
-    <div class="w-room-txt"><p class="w-kicker">Rückblende · <span translate="no">Gewerk</span> 04</p><h2 class="disp">So hat es <em>angefangen.</em></h2><p class="w-d">Rohbau, Leitungen, Ausbau — derselbe Raum, Monate früher. Der erste Tag jedes Projekts.</p>
-      <ul class="w-hs-list"><li><b>Entsorgt mit Nachweis</b> — Rückbau, sortenrein getrennt <button class="lnk-arrow" data-go="leistungen/abbruch-rueckbau">Mehr <span>→</span></button></li><li><b>Geprüft vor dem Verputz</b> — Leitungen neu, mit Druckprobe <button class="lnk-arrow" data-go="leistungen/sanitaer">Mehr <span>→</span></button></li><li><b>Grundlage, die trägt</b> — Unterlagsboden schwimmend, mit Dämmung <button class="lnk-arrow" data-go="leistungen/fliesen-parkett">Mehr <span>→</span></button></li></ul>
-    </div></div></section>
-    <section class="w-room" data-scene="7" aria-label="Abnahme" style="--room-vh:2.1">
+    <section class="w-room" data-scene="6" aria-label="Abnahme" style="--room-vh:2.1">
   <div class="w-room-in"><img src="img/film/v16/stills/eingang-L-1280.jpg" srcset="img/film/v16/stills/eingang-L-1280.jpg 1280w, img/film/v16/stills/eingang-L.jpg 1920w" sizes="100vw" alt="Abnahme — Abnahme. Schlüsselübergabe." loading="lazy" decoding="async">
     <div class="w-room-txt"><p class="w-kicker">Abnahme</p><h2 class="disp">Abnahme. <em>Schlüsselübergabe.</em></h2><p class="w-d">Am vereinbarten Termin, mit Protokoll. Ihr Objekt: gleicher Ablauf.</p>
       <ul class="w-hs-list"><li><b>Schwarz auf weiss</b> — Gemeinsame Abnahme, Raum für Raum — Schlüssel auf der Konsole <button class="lnk-arrow" data-go="kontakt">Mehr <span>→</span></button></li><li><b>Der Termin steht fest</b> — Datum steht im Werkvertrag <button class="lnk-arrow" data-go="ueber">Mehr <span>→</span></button></li></ul>
     </div></div></section>
+    <section class="ende" id="ende">
+  <div class="wrap">
+    <p class="ende-k">Rundgang beendet · 7 Kapitel</p>
+    <h2 class="disp">Vier Versprechen. Schriftlich.</h2>
+    <div class="ende-sheet rv">
+      <p class="ende-k ende-k-doc">Werkvertrag · Auszug</p>
+      <div class="ende-grid">
+        <div><span class="dia" aria-hidden="true"></span><b>Offerte innert 48 h</b><p>Festpreis, Position für Position.</p></div>
+        <div><span class="dia" aria-hidden="true"></span><b>Ein Ansprechpartner</b><p>Bis zum Schlüssel, eine Nummer.</p></div>
+        <div><span class="dia" aria-hidden="true"></span><b>Nach Norm — SIA</b><p>Mit Protokoll und Nachweisen.</p></div>
+        <div><span class="dia" aria-hidden="true"></span><b>Termin im Werkvertrag</b><p>24 Monate Werkgarantie.</p></div>
+      </div>
+      <div class="ende-foot">
+        <div class="ende-sig"><svg class="sig sig-done" viewBox="0 0 150 100" aria-hidden="true">
+  <path d="M8 74 C 18 44, 32 14, 44 8 C 56 12, 62 44, 68 74" style="transition: stroke-dashoffset 0.99s cubic-bezier(0.45, 0.05, 0.55, 0.95); stroke-dasharray: 148.27; stroke-dashoffset: 0;"></path><path d="M24 46 L 60 46" style="transition: stroke-dashoffset 0.55s cubic-bezier(0.45, 0.05, 0.55, 0.95) 0.84s; stroke-dasharray: 36; stroke-dashoffset: 0;"></path>
+  <path d="M84 8 C 83 30, 82 52, 80 74" style="transition: stroke-dashoffset 0.55s cubic-bezier(0.45, 0.05, 0.55, 0.95) 1.31s; stroke-dasharray: 66.1271; stroke-dashoffset: 0;"></path><path d="M116 10 C 100 30, 92 42, 82 46 C 96 52, 106 64, 120 76" style="transition: stroke-dashoffset 0.66s cubic-bezier(0.45, 0.05, 0.55, 0.95) 1.78s; stroke-dasharray: 98.6026; stroke-dashoffset: 0;"></path>
+  <path d="M4 86 C 40 96, 96 92, 146 80" style="transition: stroke-dashoffset 0.96s cubic-bezier(0.45, 0.05, 0.55, 0.95) 2.33s; stroke-dasharray: 143.408; stroke-dashoffset: 0;"></path></svg><span>Artem Kozlovskyi · Inhaber</span></div>
+        <div class="ende-stamp" aria-hidden="true"><svg viewBox="0 0 120 120">
+          <circle cx="60" cy="60" r="52"></circle><circle cx="60" cy="60" r="44"></circle>
+          <path id="endeStampPath" d="M60 22 a38 38 0 1 1 -.1 0" fill="none"></path>
+          <text><textPath href="#endeStampPath" startOffset="2%">Schriftlich im Werkvertrag ·</textPath></text>
+        </svg></div>
+      </div>
+    </div>
+    <p class="ende-next"><button type="button" class="lnk-arrow" data-scroll="richtwert">Was kostet das? Richtwerte in 30 Sekunden <span>→</span></button></p>
+  </div>
+</section>
     <!-- v16 (Stufe 6): Unter dem Film nur noch EIN Blatt mit normalen Sektionen in Verkaufsreihenfolge:
          Referenzen -> Richtpreise -> Ablauf -> Kundenstimmen -> FAQ -> Team/Versprechen/Nachweise -> Offerte-Formular. -->
     <section class="w-sheet w-sheet--final" data-type="up" id="anfrage"><div class="w-paper">
@@ -198,10 +220,11 @@
     <div class="sec-head"><h2 class="rv">Referenzen aus Zürich<br>und der Deutschschweiz.</h2><p class="lead rv" style="margin-top:16px">20 Beispiele ausgeführter Arbeiten in Zürich und der Deutschschweiz — nach <span translate="no">Gewerk</span> gefiltert, jedes Bild lässt sich öffnen.</p></div>
     <button class="btn btn-brass rv mag" data-go="kontakt">Offerte anfragen<span class="ic">→</span></button>
   </div>
-  <div class="w-glass"><div class="tabs rv" id="tabs">
+  <div class="tabs rv" id="tabs">
     <button class="tab on" data-f="all">Alle<span class="cnt">20</span></button>
     <button class="tab" data-f="renovation">Renovation<span class="cnt">10</span></button><button class="tab" data-f="sanitaer">Sanitär<span class="cnt">3</span></button><button class="tab" data-f="neu-umbau">Neu- &amp; Umbau<span class="cnt">11</span></button><button class="tab" data-f="abbruch">Abbruch &amp; Rückbau<span class="cnt">2</span></button><button class="tab" data-f="fliesen">Fliesen &amp; Parkett<span class="cnt">4</span></button><button class="tab" data-f="maler">Malerarbeiten<span class="cnt">5</span></button>
-  </div><div class="workgrid workgrid--bento" id="workgrid"><article class="work" data-work="kueche-grifflos" role="button" tabindex="0" aria-label="→Neu- &amp; UmbauKüche, grifflosReferenzprojekt — Bild öffnen"><img loading="lazy" decoding="async" src="img/atlant-kitchen.jpg" alt="Küche, grifflos — Referenzprojekt">
+  </div>
+  <div class="workgrid workgrid--bento" id="workgrid"><article class="work" data-work="kueche-grifflos" role="button" tabindex="0" aria-label="→Neu- &amp; UmbauKüche, grifflosReferenzprojekt — Bild öffnen"><img loading="lazy" decoding="async" src="img/atlant-kitchen.jpg" alt="Küche, grifflos — Referenzprojekt">
     <span class="plus" aria-hidden="true">→</span><div class="cap"><b class="tag">Neu- &amp; Umbau</b><h3>Küche, grifflos</h3><span>Referenzprojekt</span></div></article><article class="work" data-work="wohnraum-offen" role="button" tabindex="0" aria-label="→RenovationWohnraum, offener GrundrissReferenzprojekt — Bild öffnen"><img loading="lazy" decoding="async" src="img/atlant-living.jpg" alt="Wohnraum, offener Grundriss — Referenzprojekt">
     <span class="plus" aria-hidden="true">→</span><div class="cap"><b class="tag">Renovation</b><h3>Wohnraum, offener Grundriss</h3><span>Referenzprojekt</span></div></article><article class="work" data-work="objektbad-marmor" role="button" tabindex="0" aria-label="→SanitärObjektbad, grüner MarmorZürich — Bild öffnen"><img loading="lazy" decoding="async" src="img/bath-green.jpg" alt="Objektbad, grüner Marmor — Zürich">
     <span class="plus" aria-hidden="true">→</span><div class="cap"><b class="tag">Sanitär</b><h3>Objektbad, grüner Marmor</h3><span>Zürich</span></div></article><article class="work" data-work="kueche-nussbaum" role="button" tabindex="0" aria-label="→Neu- &amp; UmbauKüche in NussbaumZürich — Bild öffnen"><img loading="lazy" decoding="async" src="img/kitchen-lux.jpg" alt="Küche in Nussbaum — Zürich">
@@ -209,10 +232,9 @@
     <span class="plus" aria-hidden="true">→</span><div class="cap"><b class="tag">Renovation</b><h3>Coiffure-Salon, Empfang</h3><span>Deutschschweiz</span></div></article><article class="work" data-work="bad-walk-in" role="button" tabindex="0" aria-label="→SanitärBad mit Walk-in-DuscheReferenzprojekt — Bild öffnen"><img loading="lazy" decoding="async" src="img/atlant-bath.jpg" alt="Bad mit Walk-in-Dusche — Referenzprojekt">
     <span class="plus" aria-hidden="true">→</span><div class="cap"><b class="tag">Sanitär</b><h3>Bad mit Walk-in-Dusche</h3><span>Referenzprojekt</span></div></article><article class="work" data-work="hotelzimmer-serie" role="button" tabindex="0" aria-label="→RenovationHotelzimmer in SerieDeutschschweiz — Bild öffnen"><img loading="lazy" decoding="async" src="img/hotel-room.jpg" alt="Hotelzimmer in Serie — Deutschschweiz">
     <span class="plus" aria-hidden="true">→</span><div class="cap"><b class="tag">Renovation</b><h3>Hotelzimmer in Serie</h3><span>Deutschschweiz</span></div></article><article class="work" data-work="gewoelbekeller-bar" role="button" tabindex="0" aria-label="→Neu- &amp; UmbauGewölbekeller, BarDeutschschweiz — Bild öffnen"><img loading="lazy" decoding="async" src="img/bar-vault.jpg" alt="Gewölbekeller, Bar — Deutschschweiz">
-    <span class="plus" aria-hidden="true">→</span><div class="cap"><b class="tag">Neu- &amp; Umbau</b><h3>Gewölbekeller, Bar</h3><span>Deutschschweiz</span></div></article></div><div class="works-foot"><button class="btn btn-ghost mag" id="moreworks" style="display: inline-flex;">Mehr Arbeiten zeigen<span class="ic">→</span></button>
-    <button class="lnk-arrow" data-go="referenzen">Alle Referenzen <span>→</span></button></div></div>
-  
-  
+    <span class="plus" aria-hidden="true">→</span><div class="cap"><b class="tag">Neu- &amp; Umbau</b><h3>Gewölbekeller, Bar</h3><span>Deutschschweiz</span></div></article></div>
+  <div class="works-foot"><button class="btn btn-ghost mag" id="moreworks" style="display: inline-flex;">Mehr Arbeiten zeigen<span class="ic">→</span></button>
+    <button class="lnk-arrow" data-go="referenzen">Alle Referenzen <span>→</span></button></div>
 </div></div>
 
 <div class="sec w-sec m-keep" id="fallstudie" style="padding-top:0"><div class="wrap">

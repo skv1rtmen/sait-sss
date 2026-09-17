@@ -682,36 +682,35 @@ const FILM_V15={
     berührt. Koordinaten in Prozent der Bühne (#wStage), P = Hochkant (Telefon), L = Querformat (Desktop).
     Neue Polygone/Punkte trassiert man mit ?trace=1 (Klick schreibt {x,y} in die Konsole). */
  s5:{
-  flur:{ q:'Wer ist zuständig?', mech:'six2one',
+  /* Etappe 8 §4.1: Die Geste ist weg — sechs Meldungen der Handwerker treffen nacheinander ein und
+     sammeln sich von selbst in EINER Nachricht der Bauleitung. Der einzige Knopf ist der Rückruf. */
+  flur:{ q:'Wer ist zuständig?', mech:'push',
     todo:{task:'Sechs Offerten einholen und vergleichen', done:'eine.'},
-    six:{ hub:{P:{x:46,y:50}, L:{x:48,y:47}},
-      /* Zwei Spalten mit Versatz: der Zettel ist ~34 % breit (Telefon), darum links x<38 und rechts x>56 —
-         so wirkt der Stapel chaotisch (Drehung r), ohne dass sich zwei Zettel wirklich überdecken. */
-      notes:[
-       {t:'Sanitär',     l:'Offerte ausstehend · Termin: <i>?</i>',        P:{x:3,y:28},  L:{x:16,y:24},  r:-6},
-       {t:'Elektro',     l:'Rechnung 2/6 · Rückruf offen',                 P:{x:54,y:14}, L:{x:66,y:14}, r:5},
-       {t:'Schreiner',   l:'Lieferung <i>verschoben</i> · 3 Wochen',       P:{x:56,y:28}, L:{x:70,y:34}, r:-4},
-       {t:'Maler',       l:'wartet auf Gipser',                            P:{x:5,y:42},  L:{x:17,y:47},  r:7},
-       {t:'Plattenleger',l:'Abdichtung: <i>wer?</i>',                      P:{x:2,y:56},  L:{x:16,y:69}, r:-5},
-       {t:'Rückbau',     l:'Wiegeschein fehlt',                            P:{x:52,y:42}, L:{x:68,y:54}, r:4}],
-      card:{k:'EIN BAULEITER', t:'eine Nummer · ein Werkvertrag<br>eine Rechnung', s:'Artem Kozlovskyi · Inhaber'} } },
+    push:{ notes:[
+       {av:'M',t:'Maler',       m:'verpasster Anruf',time:'09:12',s:'Kommen wir Di oder Mi? Gipser noch nicht fertig.'},
+       {av:'S',t:'Sanitär',     m:'SMS',             time:'09:40',s:'Armatur nicht lieferbar, Alternative?'},
+       {av:'E',t:'Elektro',     m:'verpasster Anruf',time:'10:05',s:'Rechnung 2/6 offen — Rückruf bitte.'},
+       {av:'R',t:'Rückbau',     m:'WhatsApp',        time:'10:31',s:'Wiegeschein fehlt für die Mulde.'},
+       {av:'P',t:'Plattenleger',m:'verpasster Anruf',time:'11:18',s:'Wer macht die Abdichtung?'},
+       {av:'H',t:'Schreiner',   m:'E-Mail',          time:'11:52',s:'Lieferung 3 Wochen verschoben.'}],
+      hint:'Sechs Baustellen · eine Nummer',
+      final:{k:'Ein Ansprechpartner', t:'BauStern · Bauleitung', time:'gerade eben',
+        s:'Alles koordiniert. Nächster Schritt: Aufmass am Freitag, 9:00 — Sie müssen niemanden anrufen.',
+        btn:'Rückruf in 5 Min'} } },
 
+  /* Etappe 8 §4.2: keine Polygone mehr — drei Marken mit Gewerk-Zeichen, ein warmes Lichtfeld auf dem
+     aktiven Objekt, eine Karte im festen Slot. Koordinaten am Standbild abgelesen (?trace=1). */
   kueche:{ q:'Wer macht was?', mech:'takt',
     todo:{task:'Schreiner, Sanitär und Elektro koordinieren', done:'ein Takt.'},
     takt:{ end:'Drei Gewerke, ein Termin.',
-      /* Am Standbild abgelesen (?trace=1): Insel unten rechts, Regal mit Armatur in der Wandmitte,
-         Messing-Pendel oben rechts. Die Karte steht in der freien Betonfläche über allem. */
       zones:[
-       {t:'Schreiner', l:'Insel Räuchereiche, Abdeckung Naturstein',
-        P:'55,59 100,55 100,76 57,86',                  L:'48,60 100,53 100,82 54,88',
-        pP:{x:73,y:67}, pL:{x:74,y:70}},
-       {t:'Sanitär', l:'Anschlüsse und Armatur — im Takt mit dem Schreiner',
-        P:'44,54 67,52 67,64 44,66',                    L:'34,46 60,42 60,58 34,60',
-        pP:{x:33,y:58}, pL:{x:40,y:54}},
-       {t:'Elektro', l:'Pendel, Stromschienen, Steuerung — koordiniert',
-        P:'70,19 97,19 97,47 72,47',                    L:'64,12 92,8 92,42 66,44',
-        pP:{x:72,y:38}, pL:{x:78,y:50}}],
-      card:{P:{x:30,y:32}, L:{x:76,y:18}} } },
+       {t:'Schreiner', icon:'saw', pP:{x:73,y:67}, pL:{x:74,y:70},
+        card:{t:'Insel und Fronten.', s:'Räuchereiche, Naturstein — montiert, bevor die Anschlüsse kommen.'}},
+       {t:'Sanitär', icon:'tap', pP:{x:33,y:58}, pL:{x:40,y:54},
+        card:{t:'Anschlüsse und Armatur.', s:'Kommt, wenn die Insel steht — abgestimmt mit dem Schreiner. Ein Termin, nicht drei.'}},
+       /* Sichtprüfung 17.09: die Marke lag auf dem Fensterpfosten statt auf den Messing-Pendeln. */
+       {t:'Elektro', icon:'bolt', pP:{x:74,y:24}, pL:{x:64,y:26},
+        card:{t:'Pendel, Schienen, Steuerung.', s:'Zuletzt, koordiniert — kein Loch in der fertigen Decke.'}}] } },
 
   bad:{ q:'Abnahme bei Tageslicht', mech:'dusk',
     todo:{task:'Abdichtung und Normen selbst kontrollieren', done:'protokolliert.'},
@@ -721,11 +720,16 @@ const FILM_V15={
       /* 17.09: am echten Abend-Render (Nano Banana Pro, core/_incoming/v16/bad-dusk_L_2K_20260917.jpeg)
          abgelesen — Kerzen auf dem Wannenrand und je eine am Boden links/rechts. */
       glow:{P:[{x:44,y:62,r:6},{x:56,y:61,r:6},{x:68,y:76,r:6},{x:3,y:76,r:4}],
-            L:[{x:22,y:59,r:6},{x:42,y:58,r:6},{x:46,y:73,r:5},{x:23,y:78,r:5}]} } },
+            L:[{x:22,y:59,r:6},{x:42,y:58,r:6},{x:46,y:73,r:5},{x:23,y:78,r:5}]},
+      /* Etappe 8 §4.6: auf dem Telefon kein Ziehen (Konflikt mit dem Wisch) — ein Lichtschalter an der
+         linken Wand schaltet Tag/Abend. Desktop behält den Regler. */
+      sw:{x:12,y:46}, swOff:'Licht aus', swOn:'Licht an' } },
 
+  /* Etappe 8 §4.3: statt Lichtlinie im Kader eine Bauzeitplan-Karte im festen Slot — jede Zeile ist ein
+     Ziel, die aktive klappt auf. Keine Wochen-/Tagesangaben (Vorgabe des Eigentümers), nur f. */
   schlaf:{ q:'Wie läuft es ab?', mech:'ablauf',
     todo:{task:'Handwerker-Termine abstimmen', done:'ein Bauzeitplan.'},
-    ablauf:{ line:{P:{y:38,x0:18,x1:76}, L:{y:33,x0:23,x1:84}}, active:3,
+    ablauf:{ active:3, kicker:'Bauzeitplan · 5 Schritte',
       steps:[
        {t:'Anfrage',       f:'Rückruf in 5 Min',      c:'Sie schildern kurz, worum es geht — wir rufen in 5 Minuten zurück'},
        {t:'Besichtigung',  f:'kostenlos, vor Ort',    c:'Aufmass vor Ort, Ist-Zustand mit Fotos dokumentiert'},
@@ -733,17 +737,27 @@ const FILM_V15={
        {t:'Ausführung',    f:'wöchentliches Update',  c:'Ein Bauleiter, ein Bauzeitplan — Sie bekommen jede Woche ein Update'},
        {t:'Übergabe',      f:'Protokoll + Schlüssel', c:'Gemeinsame Abnahme, Protokoll, Schlüssel'}] } },
 
-  wohnen:{ q:'Wie bleibt es?', mech:null,
-    todo:{task:'Wöchentlich auf die Baustelle', done:'wöchentliches Update.'} },
+  /* Etappe 8 §4.4: Was der Hausverwalter wirklich bekommt — das wöchentliche Update als Nachricht.
+     Dazu die Rückblende als Geste (Halten) statt als eigenes Kapitel. */
+  wohnen:{ q:'Wie bleibt es?', mech:'feed',
+    todo:{task:'Wöchentlich auf die Baustelle', done:'wöchentliches Update.'},
+    feed:{ kicker:'Wochen-Update · Baustelle', sender:'BauStern · Bauleitung',
+      hold:'Halten — wie war es vorher?',
+      weeks:[
+       {w:'Woche 1', t:'Rückbau abgeschlossen, Leitungen neu.', s:'Nächste Woche: Boden.',
+        imgs:['w1-1.jpg','w1-2.jpg']},
+       {w:'Woche 2', t:'Boden verlegt, Decke geschlossen.',     s:'Nächste Woche: Einbauten.',
+        imgs:['w2-1.jpg','w2-2.jpg']},
+       {w:'Woche 3', t:'Einbauten montiert.',                   s:'Abnahme Freitag, 14:00.',
+        imgs:['w3-1.jpg','w3-2.jpg','w3-3.jpg']}] },
+    rueck:{ img:'img/film/v16/stills/wohnen-rohbau-', lab:'Vor 4 Monaten · Halten' } },
 
-  rohbau:{ q:'Wie war es vorher?', mech:'wipe',
-    todo:{task:'Schutt, Staub und Container organisieren', done:'täglich besenrein.'},
-    wipe:{labL:'Monate früher', labR:'Heute'} },
-
+  /* Etappe 8 §4.5: Frist, Versprechen und Unterschrift sind EIN Objekt — das Übergabeprotokoll. */
   eingang:{ q:'Wann geht es los?', mech:'clock',
     todo:{done:'Ihre Liste: leer.', tail:'Ein Anruf genügt.'},
-    clock:{ kicker:'ANFRAGE JETZT', pre:'Offerte bis',
-      versprechen:['Offerte innert 48 h','Ein Ansprechpartner — bis zum Schlüssel','Nach Norm — SIA, mit Protokoll','Termin im Werkvertrag · 24 Mt. Garantie'] } }
+    clock:{ kicker:'Übergabeprotokoll', sub:'Anfrage jetzt', pre:'Offerte bis',
+      versprechen:['Offerte innert 48 h','Ein Ansprechpartner — bis zum Schlüssel','Nach Norm — SIA, mit Protokoll','Termin im Werkvertrag · 24 Mt. Garantie'],
+      btnOffer:'Offerte anfragen', btnCalc:'Richtpreis berechnen' } }
  },
  scenes:[
   {id:'ankunft',f:95,room:'ankunft',navLabel:'Ankunft',kicker:'Zürich · Deutschschweiz',rot:['für Hausverwaltungen','für Generalunternehmer','für Gewerbe & Ladenbau','für Eigentümer'],h:'Bauen mit System und <em>Vertrauen.</em>',
@@ -834,10 +848,16 @@ const FILM_V16=Object.assign({},FILM_V15,{
      Build-Werkzeug: core/dev/_depth (Depth Anything V2 small, WebGPU) — das Modell wird nicht ausgeliefert. */
   depthDir:'img/film/v16/depth/',depth:true,
   clipDur:3.0,quiet:700,swipeMin:46,flashFade:420,
-  rooms:['ankunft','schwelle','kueche','bad','schlaf','wohnen','wohnen-rohbau','eingang'],
-  legs:['ankunft-schwelle','schwelle-kueche','kueche-bad','bad-schlaf','schlaf-wohnen',null,'wohnen-eingang'],
-  fadeInLegs:[6]
- }
+  /* Etappe 8 §3.1: sieben Kapitel. Die Rückblende («wohnen-rohbau») ist kein eigenes Kapitel mehr,
+     sondern eine Geste in «Wohnen» — damit entfällt auch die legless Blende, jede Strecke hat einen Clip.
+     wohnen-eingang beginnt am Wohnen-Halt, also keine Einblende mehr nötig (fadeInLegs leer). */
+  rooms:['ankunft','schwelle','kueche','bad','schlaf','wohnen','eingang'],
+  legs:['ankunft-schwelle','schwelle-kueche','kueche-bad','bad-schlaf','schlaf-wohnen','wohnen-eingang'],
+  fadeInLegs:[]
+ },
+ /* scenes wird KOPIERT (nicht mutiert): ?film=15 behält seine acht Kapitel samt Rückblende.
+    «wohnen» verliert die drei Zahlen — die Wochen-Update-Karte (§4.4) sagt dasselbe konkreter. */
+ scenes:FILM_V15.scenes.filter(s=>s.id!=='rohbau').map(s=>s.id==='wohnen'?Object.assign({},s,{counters:null}):s)
 });
 const FILM=(typeof location!=='undefined'&&/[?&]film=13\b/.test(location.search))?FILM_V13
   :(typeof location!=='undefined'&&/[?&]film=15\b/.test(location.search))?FILM_V15:FILM_V16;

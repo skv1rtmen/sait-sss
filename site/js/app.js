@@ -159,6 +159,9 @@ function renderWorks(f,limit,now){
    auf einer Graphitplatte .w-glass. Statt sechs Templates umzubauen wird der Bogen nach dem Render einmal
    umgehängt: alles nach dem Kopfblock wandert in .w-glass. */
 function glassify(root){
+  /* Etappe 8 §5: Im v16-Film entlässt der Rundgang in die undurchsichtige Sektion #ende — die Blätter
+     darunter sind ab da normale helle Seitenabschnitte. «Hinter Glas» (v8.2) gilt nur noch für Engine A. */
+  if(typeof FILM!=='undefined'&&FILM.engine==='v16')return;
   root.querySelectorAll('.w-sheet').forEach(sh=>{
     if(sh.querySelector('.w-glass'))return;
     const wrap=sh.querySelector('.w-paper .wrap')||sh.querySelector('.w-paper');if(!wrap)return;
