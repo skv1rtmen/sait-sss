@@ -718,8 +718,10 @@ const FILM_V15={
     dusk:{ img:'img/film/v16/stills/bad-dusk-', start:38,
       labL:'Tageslicht', labR:'Abend',
       /* Kerzen-Glut: Position der Flammen im ABEND-Bild, Atmung per CSS */
-      glow:{P:[{x:52,y:64,r:8},{x:61,y:67,r:6},{x:44,y:61,r:5}],
-            L:[{x:26,y:62,r:7},{x:33,y:66,r:5},{x:20,y:59,r:5}]} } },
+      /* 17.09: am echten Abend-Render (Nano Banana Pro, core/_incoming/v16/bad-dusk_L_2K_20260917.jpeg)
+         abgelesen — Kerzen auf dem Wannenrand und je eine am Boden links/rechts. */
+      glow:{P:[{x:44,y:62,r:6},{x:56,y:61,r:6},{x:68,y:76,r:6},{x:3,y:76,r:4}],
+            L:[{x:22,y:59,r:6},{x:42,y:58,r:6},{x:46,y:73,r:5},{x:23,y:78,r:5}]} } },
 
   schlaf:{ q:'Wie läuft es ab?', mech:'ablauf',
     todo:{task:'Handwerker-Termine abstimmen', done:'ein Bauzeitplan.'},

@@ -272,6 +272,10 @@
 .s5-btn-brass{background:var(--accent,#1A64C8);color:#fff}
 @media (min-width:761px){.s5-sheet{left:auto;right:24px;bottom:24px;width:420px;border-radius:18px}}
 
+/* Desktop (17.09, mit dem echten Abend-Render gesehen): «TAGESLICHT» lag bei 28 % auf dem Kapitelnamen
+   «BAD». Auf Griffhöhe stört es nichts — der Griff sitzt bei 50 %, die Marken darunter. */
+@media (min-width:761px){.wohnung.is-v16 .s5-wipe-lab{top:57%}}
+
 /* ---------- 3.5b Rückblende: die zwei Marken ---------- */
 /* Sichtprüfung 16.09 (Desktop): «MONATE FRÜHER» stand neben der «07» der Kapitelmarke, «HEUTE» hinter
    dem Fortschrittsbalken und dem Grundriss-Vorschaubild. Auf halber Höhe stört keines von beiden. */

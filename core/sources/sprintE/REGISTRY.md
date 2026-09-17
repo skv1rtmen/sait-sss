@@ -107,3 +107,18 @@ t_bad-schlaf-L, t_schlaf-wohnen-L, t_wohnen-eingang-L — все 1080p, 8 с, «
 
 Сборка: `node core/dev/v16b-build.js` (env V16_ONLY=clips|stills|lite|verify). Портретное окно 608×1080,
 позиции PX в скрипте. Стыки PSNR 41,5–75 dB — см. `core/dev/_v16b-build.log`.
+
+## v16 · Etappe 5 — Bad bei Kerzen (17.09.2026, акк. skv1rtmen69@gmail.com `/u/0/`, проект 208db483-29b6-4bce-8016-0355bccdbe8b)
+
+Nano Banana Pro, image-to-image от `site/img/film/v16/stills/bad-L.jpg` (ингредиент), 16:9, x4, промпт из
+`PLAN-v16-ETAPPE5.md` §6. Стоимость: **0 бонусов** (картинки на Pro-плане не списывают бонусы; 2K-апскейл тоже 0).
+
+| Файл | Что | Размер |
+|---|---|---|
+| `core/_incoming/v16/bad-dusk_L_2K_20260917.jpeg` | мастер, Flow «2K Повышенное разрешение», 2752×1536 | 2,2 МБ |
+| `site/img/film/v16/stills/bad-dusk-L.jpg` | 1920×1080, q3 | 212 КБ |
+| `site/img/film/v16/stills/bad-dusk-P.jpg` | кроп 608×1080 при x=500 (правило v16b, `PX.bad`), lanczos → 1080×1920 | 180 КБ |
+
+Выбран кадр Flow #1 «Candlelit bathroom at dusk» (в контрольном листе для владельца — #4). Три остальных
+варианта лежат в Downloads владельца (`Bathroom_lit_by_candles_at_20260917094455/094501/094811.jpeg`, 1376×768).
+Проверка: наложение 50 % с `bad-L.jpg` без «плывущей» геометрии; свечи на бортике попадают в портретный кроп.
