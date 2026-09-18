@@ -90,7 +90,71 @@
   <div class="ok" id="cbOk"><div class="c"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12l4 4L19 7"/></svg></div>
     <h3 id="cbOkT" tabindex="-1">Rückruf erfasst.</h3><p id="cbOkP"></p></div>
 </div></div>
-<div id="view" role="main" tabindex="-1" data-prerender="1"></div>
+<div id="view" role="main" tabindex="-1" data-prerender="1"><!--prerender:start--><div class="page">
+<section class="sec" style="padding-bottom:20px"><div class="wrap">
+ <h1 class="disp rv" style="font-size:clamp(38px,5.6vw,68px);font-weight:600;line-height:1.02;max-width:16ch">In 30 Sekunden zur Anfrage.</h1>
+ <p class="lead rv" style="margin-top:22px">Schildern Sie Ihr Projekt — wir melden uns an Werktagen innert 24 Stunden mit den nächsten Schritten.</p></div></section>
+<section class="sec" style="padding-top:20px"><div class="wrap contact">
+  
+  <form class="form rv" id="formCard" novalidate="" aria-label="Offerte anfragen" aria-busy="false">
+    <div class="field"><label id="whoLabel">Wer sind Sie? <span class="req">*</span></label>
+      <div class="who" id="who" role="radiogroup" aria-labelledby="whoLabel" aria-required="true" aria-describedby="e-who"><button type="button" role="radio" aria-checked="false" tabindex="0" data-who="Hausverwaltung / Eigentümer">Hausverwaltung / Eigentümer</button><button type="button" role="radio" aria-checked="false" tabindex="-1" data-who="Generalunternehmer">Generalunternehmer</button><button type="button" role="radio" aria-checked="false" tabindex="-1" data-who="Gewerbe / Büro / Laden">Gewerbe / Büro / Laden</button><button type="button" role="radio" aria-checked="false" tabindex="-1" data-who="Privat-Eigentümer">Privat-Eigentümer</button></div>
+      <div class="msg" id="e-who" style="display:none">Bitte wählen</div></div>
+    <div class="one">
+      <div class="field" id="f-name"><label for="i-name">Name <span class="req">*</span></label><input id="i-name" type="text" autocomplete="name" placeholder="Vor- und Nachname" aria-describedby="m-name"><div class="msg" id="m-name" style="display:none">Pflichtfeld</div></div></div>
+    <div class="two">
+      <div class="field" id="f-phone"><label for="i-phone">Telefon <span class="req">*</span></label><input id="i-phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+41 …" aria-describedby="m-phone"><div class="msg" id="m-phone" style="display:none">Gültige Telefonnummer nötig</div></div>
+      <div class="field" id="f-mail"><label for="i-mail">E-Mail <span class="req">*</span></label><input id="i-mail" type="email" inputmode="email" autocomplete="email" placeholder="name@firma.ch" aria-describedby="m-mail"><div class="msg" id="m-mail" style="display:none">Gültige E-Mail nötig</div></div></div>
+    <div class="field"><label for="i-msg">Ihr Projekt</label><textarea id="i-msg" rows="4" placeholder="Objekt, Umfang, gewünschter Termin …"></textarea></div>
+    <details class="form-more"><summary>Weitere Angaben <span>optional</span></summary><div class="form-more-in">
+    <div class="field"><label for="i-firma">Firma</label><input id="i-firma" type="text" autocomplete="organization" placeholder="optional"></div>
+    <div class="three">
+      <div class="field"><label for="i-obj">Objekt</label><select id="i-obj"><option value="">Bitte wählen (optional)</option><option>Wohnung (bewohnt)</option><option>Leerwohnung</option><option>Einfamilienhaus</option><option>Mehrfamilienhaus / Portfolio</option><option>Büro / Gewerbe / Laden</option><option>Hotel / Gastronomie</option></select></div>
+      <div class="field"><label for="i-when">Zeitrahmen</label><select id="i-when"><option value="">Bitte wählen (optional)</option><option>So schnell wie möglich</option><option>Innert 4 Wochen</option><option>1–3 Monate</option><option>Später / in Planung</option></select></div>
+      <div class="field"><label for="i-plz">PLZ / Ort des Objekts</label><input id="i-plz" type="text" autocomplete="postal-code" placeholder="z. B. 8048 Zürich"></div>
+    </div>
+    <div class="field"><label for="i-svc">Gewünschtes <span translate="no">Gewerk</span></label><select id="i-svc"><option value="">Bitte wählen (optional)</option><option>Renovation</option><option>Sanitär</option><option>Neu- &amp; Umbau</option><option>Abbruch &amp; Rückbau</option><option>Fliesen &amp; Parkett</option><option>Malerarbeiten</option><option>Mehrere / noch unklar</option></select></div>
+    <div class="field">
+      <label>Fotos vom Objekt <span style="font-weight:400;color:var(--muted)">(optional, bis zu 3)</span></label>
+      <p style="font-size:13px;color:var(--muted);margin:-2px 0 10px;line-height:1.5">Ein paar Fotos vom Ist-Zustand helfen uns bei der ersten Einschätzung und bei der Vorbereitung unseres Gesprächs.</p>
+      <div class="foto-up" id="fotoUp">
+        <input type="file" id="i-fotos" accept="image/jpeg,image/png,image/webp,image/avif" multiple="" hidden="">
+        <button type="button" class="btn btn-upload" id="fotoAdd" aria-describedby="e-foto"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8h3l2-2h6l2 2h3v11H4z"></path><circle cx="12" cy="13.5" r="3.2"></circle></svg> Fotos auswählen</button>
+        <div class="foto-list" id="fotoList" aria-live="polite"></div>
+      </div>
+      <div class="msg" id="e-foto" role="status" aria-live="polite" style="display:none">Maximal 3 Fotos, je höchstens 10 MB.</div>
+    </div>
+    </div></details>
+    <label class="check"><input type="checkbox" id="i-priv" aria-describedby="e-priv"><span>Ich stimme der <a data-go="datenschutz" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:3px" href="/datenschutz">Datenschutzerklärung</a> zu. Die Daten werden nur zur Bearbeitung meiner Anfrage verwendet. <span class="req">*</span></span></label>
+    <div class="msg" id="e-priv" style="display:none;margin:-14px 0 16px">Zustimmung nötig</div>
+    <div class="hp" aria-hidden="true"><label>Webseite</label><input id="i-hp" type="text" tabindex="-1" autocomplete="off"></div>
+    <button type="submit" class="btn btn-brass mag" id="submitBtn">Offerte anfragen <span class="ic">→</span></button>
+  </form>
+  <div id="formStatus" class="sr-only" role="status" aria-live="polite"></div>
+  <div class="cinfo rv">
+    <div class="dark"><div class="k">Direkter Kontakt</div>
+      <a class="big" href="tel:+41765249898"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5c0 8 7 15 15 15v-3l-4-2-2 2c-3-1-5-3-6-6l2-2-2-4H4z"></path></svg> +41 76 524 98 98</a>
+      <a href="mailto:info@baustern.ch"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="1.5"></rect><path d="M4 7l8 6 8-6"></path></svg> info@baustern.ch</a>
+      <a href="https://wa.me/41765249898" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h16v11H9l-5 4V5z"></path></svg> WhatsApp</a>
+      <a href="/kontakt" data-go="kontakt" data-message="Ich wünsche eine kostenlose Beratung mit Ihrem Projektmanager. Bitte kontaktieren Sie mich zur Terminvereinbarung."><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg> Kostenlose Beratung</a>
+      <div class="li"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z"></path><circle cx="12" cy="10" r="2.3"></circle></svg> <span>Jakob-Fügli-Strasse 18 · 8048 Zürich</span></div></div>
+    <div class="light"><div class="k">Öffnungszeiten</div>
+      <div style="font-size:15px;line-height:1.7">Mo–Fr 07:00–18:00 · Sa 08:00–14:00</div>
+      <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)">Kostenlose Beratung. Rückruf in 5 Minuten, Festpreis-Offerte innert 48 h.</div></div>
+  </div>
+</div></section><footer><div class="wrap">
+  <div class="fgrid">
+    <div><div class="fbrand"><svg class="brand-mark" viewBox="0 0 190 170" role="img" aria-label="BauStern"><g transform="translate(44,0)"><rect fill="var(--logo-ink)" x="12" y="56" width="22" height="52"></rect><rect fill="var(--logo-ink)" x="38" y="28" width="22" height="80"></rect><rect fill="var(--logo-accent)" x="64" y="42" width="26" height="66"></rect><polygon fill="var(--logo-accent)" points="49,4 51.7,11.28 59.46,11.6 53.37,16.42 55.47,23.9 49,19.6 42.53,23.9 44.63,16.42 38.54,11.6 46.3,11.28"></polygon></g><text x="95" y="150" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="800" font-size="34" letter-spacing="-1"><tspan fill="var(--logo-ink)">Bau</tspan><tspan fill="var(--logo-accent)">Stern</tspan></text></svg></div>
+      <p style="color:rgba(255,255,255,.6);font-size:14px;line-height:1.7;max-width:30ch">Baupartner für Immobilien &amp; Gewerbe. Sechs <span translate="no">Gewerke</span>, ein Ansprechpartner — in der ganzen Deutschschweiz.</p>
+      <div class="tags"><span>HR Zürich</span><span>Versichert</span><span>Werkgarantie 24 Monate</span></div>
+      <p class="fjob">Wir suchen Monteure → <a data-go="karriere" href="/karriere">Offene Stellen</a></p></div>
+    <div><div class="k">Leistungen</div><a data-go="leistungen/renovation" href="/leistungen/renovation">Renovation</a><a data-go="leistungen/sanitaer" href="/leistungen/sanitaer">Sanitär</a><a data-go="leistungen/neu-umbau" href="/leistungen/neu-umbau">Neu- &amp; Umbau</a><a data-go="leistungen/abbruch-rueckbau" href="/leistungen/abbruch-rueckbau">Abbruch &amp; Rückbau</a><a data-go="leistungen/fliesen-parkett" href="/leistungen/fliesen-parkett">Fliesen &amp; Parkett</a><a data-go="leistungen/malerarbeiten" href="/leistungen/malerarbeiten">Malerarbeiten</a></div>
+    <div><div class="k">Unternehmen</div><a data-go="loesungen/hausverwaltungen" href="/loesungen/hausverwaltungen">Für Hausverwaltungen</a><a data-go="loesungen/generalunternehmer" href="/loesungen/generalunternehmer">Für Generalunternehmer</a><a data-go="loesungen/gewerbe-ladenbau" href="/loesungen/gewerbe-ladenbau">Für Gewerbe &amp; Ladenbau</a><a data-go="referenzen" href="/referenzen">Referenzen</a><a data-go="ueber" href="/ueber-uns">Über uns</a><a data-go="wissen" href="/wissen">Wissen</a><a data-go="karriere" href="/karriere">Karriere</a><a data-go="kontakt" href="/kontakt">Kontakt</a></div>
+    <div><div class="k">Regionen</div><div class="li">Zürich</div><a data-go="sanierung-winterthur" href="/sanierung-winterthur">Winterthur</a><a data-go="sanierung-zug" href="/sanierung-zug">Zug</a><a data-go="sanierung-luzern" href="/sanierung-luzern">Luzern</a><div class="li">Deutschschweiz</div></div>
+    <div><div class="k">Kontakt</div><a href="tel:+41765249898" style="color:#fff;font-weight:600">+41 76 524 98 98</a><a href="mailto:info@baustern.ch">info@baustern.ch</a><a href="https://wa.me/41765249898" target="_blank" rel="noopener">WhatsApp</a><a href="/kontakt" data-go="kontakt" data-message="Ich wünsche eine kostenlose Beratung mit Ihrem Projektmanager. Bitte kontaktieren Sie mich zur Terminvereinbarung.">Kostenlose Beratung</a><div class="li">Jakob-Fügli-Strasse 18 · 8048 Zürich</div><div class="li">Mo–Fr 07:00–18:00 · Sa 08:00–14:00</div></div>
+  </div>
+  <div class="fbot"><span>© 2026 Einzelunternehmen <span translate="no">BauStern</span> Kozlovskyi</span><span style="display:flex;gap:18px"><a data-go="impressum" href="/impressum">Impressum</a><a data-go="datenschutz" href="/datenschutz">Datenschutz</a></span><span>UID CHE-485.600.736 · CH-020.1.105.382-8 · Kanton Zürich</span></div>
+</div></footer></div><!--prerender:end--></div>
 
 <!-- Lightbox (SPEC §5) — kein Route, wird von js/app.js gesteuert -->
 <div id="lb" role="dialog" aria-modal="true" aria-labelledby="lbT" aria-hidden="true" tabindex="-1">

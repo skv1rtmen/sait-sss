@@ -209,6 +209,28 @@ const SOL=[
    gruende:[["Weniger Koordination","Sie melden das Objekt, wir übernehmen den Rest — inklusive Mieterinformation und Schlüsselübergabe."],
             ["Kürzerer Leerstand","Alle Gewerke parallel geplant aus einem Betrieb. Der Übergabetermin steht im Werkvertrag."],
             ["Saubere Akten","Jede Leistung ist belegt und pro Wohnung zugeordnet — für Eigentümerabrechnung und Nebenkosten."]],
+   /* Etappe 11: Verwaltungen denken in Objekten und Terminen, nicht in Gewerken. Ablauf, Zugang und
+      Rahmenvertrag ausgeschrieben — inhaltlich nichts Neues versprochen, nur das, was ohnehin auf der
+      Seite und in der FAQ steht (Offerte 48 h, Abnahmeprotokoll, Fotos, Rechnung folgt der Offerte). */
+   cta:{t:"Leerwohnung melden",
+        msg:"Leerwohnung zur Instandstellung.\n\nLiegenschaft / Adresse: \nWohnung / Stockwerk: \nAuszug der Mieterschaft am: \nGewünschter Übergabetermin: \nSchlüssel liegen bei: \n\nBitte um Aufnahme vor Ort und Festpreis-Offerte."},
+   ablauf:{kicker:"Ablauf",t:"Von der Meldung bis zur Schlüsselrückgabe.",
+    lead:"Fünf Schritte, in der Reihenfolge, in der sie bei Ihnen anfallen. Sie melden das Objekt — den Rest koordinieren wir.",
+    steps:[
+     ["Objekt melden","Adresse, Wohnung, Auszugsdatum und der Übergabetermin, den Sie halten müssen. Per Formular, E-Mail oder Telefon."],
+     ["Aufnahme vor Ort","Besichtigung mit Schlüsselübernahme per Protokoll. Der Zustand wird fotografiert, bevor jemand anfängt."],
+     ["Festpreis-Offerte innert 48 h","Position für Position, mit Übergabetermin. Nach Ihrer Freigabe beginnt die Ausführung."],
+     ["Ausführung in der leeren Wohnung","Maler, Böden, Bad, Küche, Kleinreparaturen — alle Gewerke aus einem Betrieb, parallel geplant. Kein Mieterkontakt nötig."],
+     ["Übergabe mit Protokoll","Abnahmeprotokoll, Fotos vorher/nachher, besenreine Wohnung, Schlüsselrückgabe quittiert. Die Rechnung folgt der Offerte Position für Position."]]},
+   zugang:{kicker:"Zugang",t:"Wir brauchen den Mieter nicht.",
+    lead:"Der häufigste Grund für Verzögerungen bei einer Leerwohnung ist die Terminabstimmung. Bei uns entfällt sie.",
+    items:[
+     ["Schlüssel per Protokoll","Übernahme und Rückgabe schriftlich quittiert — mit Datum, Anzahl Schlüssel und Namen."],
+     ["Arbeiten in der leeren Wohnung","Keine Rücksicht auf Wohnzeiten, keine Termine mit Mietern, alle Gewerke parallel."],
+     ["Fotoprotokoll","Zustand bei Übernahme und bei Rückgabe dokumentiert — für Eigentümer, Mieter und die Nebenkostenabrechnung."]]},
+   rahmen:{kicker:"Rahmenvertrag",t:"Was schriftlich festgehalten wird.",
+    lead:"Für Verwaltungen mit mehreren Objekten. Einmal vereinbart, gilt für jedes Objekt im Portfolio.",
+    items:["Feste Regieansätze","Pauschalen für wiederkehrende Arbeiten","Vereinbarte Reaktionszeit bei Störungen","Abrechnung pro Objekt oder gebündelt pro Monat","Jährliche Überprüfung der Konditionen"]},
    faq:[["Bieten Sie Rahmenverträge an?","Ja. Feste Regieansätze, Pauschalen für wiederkehrende Arbeiten und eine Reaktionszeit für Störungen — schriftlich, mit jährlicher Überprüfung."],
         ["Wie schnell sind Sie bei einer Störung vor Ort?","Die Reaktionszeit wird im Rahmenvertrag vereinbart und hängt von Objektzahl und Region ab. Ohne Rahmenvertrag antworten wir an Werktagen innert 24 Stunden."],
         ["Übernehmen Sie auch die Hauswartung?","Nein. Wir übernehmen den technischen Unterhalt — Sanitär, Heizkörper, Reparaturen, Malerei — aber keine Reinigung, Gartenpflege oder Winterdienst."],

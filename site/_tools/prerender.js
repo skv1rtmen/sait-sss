@@ -25,10 +25,17 @@ function serve(){return new Promise(res=>{const s=http.createServer((q,r)=>{let 
   s.listen(PORT,()=>res(s));});}
 const esc=s=>String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
 const START='<!--prerender:start-->',END='<!--prerender:end-->';
+/* Kanonische Form des SPA-Behälters. Hier UND in site/index.html ändern, sonst fällt der SSR-Inhalt weg. */
+const VIEW_OPEN='<div id="view" role="main" tabindex="-1">';
+const VIEW_OPEN_PR='<div id="view" role="main" tabindex="-1" data-prerender="1">';
+const VIEW_TAG=VIEW_OPEN+'</div>';
 function shell(){let h=fs.readFileSync(path.join(SITE,'index.html'),'utf8');
   /* vorhandenen Prerender-Inhalt der Startseite entfernen -> neutrale Shell */
   h=h.replace(new RegExp(START+'[\\s\\S]*?'+END),'');
-  h=h.replace(/<div id="view" tabindex="-1"[^>]*>\s*<\/div>/,'<div id="view" tabindex="-1"></div>');
+  /* Etappe 11: Die Shell trug bis Etappe 10 genau <div id="view" tabindex="-1">. Seit role="main"
+     dazukam, passte das feste Muster nicht mehr — die Routen wurden ohne SSR-Inhalt geschrieben
+     (13 KB statt 25-85 KB, also ohne Text für Suchmaschinen und ohne JS). Darum attributtolerant. */
+  h=h.replace(/<div id="view"[^>]*>\s*<\/div>/,VIEW_TAG);
   return h;}
 function fill(tpl,d){let h=tpl;
   if(d.route!=='notfound')d.url=ORIGIN+'/'+(d.route==='home'?'':d.route);
@@ -47,7 +54,8 @@ function fill(tpl,d){let h=tpl;
   set(/<meta property="og:description" content="[^"]*">/,`<meta property="og:description" content="${esc(d.desc)}">`);
   set(/<meta name="twitter:title" content="[^"]*">/,`<meta name="twitter:title" content="${esc(d.title)}">`);
   set(/<meta name="twitter:description" content="[^"]*">/,`<meta name="twitter:description" content="${esc(d.desc)}">`);
-  set(/<div id="view" tabindex="-1"><\/div>/,`<div id="view" tabindex="-1" data-prerender="1">${START}${d.html}${END}</div>`);
+  set(new RegExp(VIEW_TAG.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')),
+      VIEW_OPEN_PR+START+d.html+END+'</div>');
   return h;}
 (async()=>{
   const srv=await serve();

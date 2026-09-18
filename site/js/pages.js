@@ -571,8 +571,10 @@ function pLoesung(slug){
       <h1 class="disp rv">${d.h1}</h1>
       <p class="lead rv" style="margin-top:22px">${d.lead}</p>
       <div class="hero-cta rv" style="margin-top:28px">
-        <a class="btn btn-brass mag" data-go="kontakt" data-who="${esc(SOL_WHO[s.slug]||'')}">Offerte anfragen<span class="ic">${ic.arrow}</span></a>
-        <a class="btn btn-ghost" ${bookingAttrs}>${ic.cal} ${bookingLabel}</a></div>
+        ${d.cta?`<a class="btn btn-brass mag" data-go="kontakt" data-who="${esc(SOL_WHO[s.slug]||'')}" data-svc="Renovation" data-message="${esc(d.cta.msg)}">${esc(d.cta.t)}<span class="ic">${ic.arrow}</span></a>
+        <a class="btn btn-ghost" data-go="kontakt" data-who="${esc(SOL_WHO[s.slug]||'')}">Offerte anfragen</a>`
+        :`<a class="btn btn-brass mag" data-go="kontakt" data-who="${esc(SOL_WHO[s.slug]||'')}">Offerte anfragen<span class="ic">${ic.arrow}</span></a>
+        <a class="btn btn-ghost" ${bookingAttrs}>${ic.cal} ${bookingLabel}</a>`}</div>
     </div>
     <div class="fig rv">${lz(s.img,s.t+' — BauStern')}</div>
   </div>
@@ -589,6 +591,26 @@ function pLoesung(slug){
   ${secHead('Was BauStern übernimmt.','','40px')}
   <div class="trust">${d.takes.map(t=>`<div class="rv"><div class="k"><span class="dia" aria-hidden="true"></span></div><h3>${t[0]}</h3><p>${t[1]}</p></div>`).join('')}</div>
 </div></section>
+
+${d.ablauf?`
+<section class="sec"><div class="wrap">
+  ${secHead(d.ablauf.t,d.ablauf.lead,'34px')}
+  <ol class="wtable">${d.ablauf.steps.map((x,i)=>`<li class="wt-row rv"><span class="wt-n disp">${String(i+1).padStart(2,'0')}</span><div class="wt-txt"><h3>${x[0]}</h3><p>${x[1]}</p></div></li>`).join('')}</ol>
+</div></section>`:''}
+
+${d.zugang?`
+<section class="sec" style="padding-top:0"><div class="wrap">
+  ${secHead(d.zugang.t,d.zugang.lead,'34px')}
+  <div class="promises">
+    ${d.zugang.items.map(x=>`<article class="promise rv"><span class="dia" aria-hidden="true"></span><h3 class="disp">${x[0]}</h3><p>${x[1]}</p></article>`).join('')}
+  </div>
+</div></section>`:''}
+
+${d.rahmen?`
+<section class="sec incl-band" style="padding-top:0"><div class="wrap">
+  ${secHead(d.rahmen.t,d.rahmen.lead,'30px')}
+  <ul class="incl-list">${d.rahmen.items.map(x=>`<li class="rv">${x}</li>`).join('')}</ul>
+</div></section>`:''}
 
 <section class="sec"><div class="wrap">
   ${secHead('Drei Gründe.','','38px')}
