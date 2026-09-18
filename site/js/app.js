@@ -80,11 +80,12 @@ const ROUTES={
   datenschutz:()=>pDatenschutz(),
   bewertung:()=>pBewertung(),
   karriere:()=>pKarriere(),
-  'sanierung-winterthur':()=>pRegionSeo('winterthur'),
-  'sanierung-zug':()=>pRegionSeo('zug'),
-  'sanierung-luzern':()=>pRegionSeo('luzern'),
   notfound:slug=>pNotFound(slug),
 };
+/* Etappe 12: Ortsseiten und die vier Badsanierungs-Seiten aus den Daten registrieren — neue Stadt
+   heisst ein Eintrag in REGION_SEO, hier ist nichts nachzutragen. */
+if(typeof REGION_SEO!=='undefined')REGION_SEO.forEach(r=>{ROUTES['sanierung-'+r.slug]=()=>pRegionSeo(r.slug);});
+if(typeof GEWERK_SEO!=='undefined')GEWERK_SEO.forEach(g=>{ROUTES[g.slug]=()=>pGewerkSeo(g.slug);});
 /* Routen, die im Nav/META auf eine andere Hauptroute abbilden (projekt/:slug gehört zu "Referenzen") */
 const ROUTE_ALIAS={projekt:'referenzen'};
 /* Abwärtskompatibilität alter data-go-Namen -> Pfad */

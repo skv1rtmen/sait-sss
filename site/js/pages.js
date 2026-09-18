@@ -774,6 +774,23 @@ ${ctaBand()}`;
 }
 
 /* ===== Region-SEO-Seiten ===== */
+/* Etappe 12: Hinweis zur Baubewilligung, je nach Kanton verschieden — das ist der Teil, der eine
+   Ortsseite inhaltlich von der nächsten unterscheidet, statt nur den Ortsnamen zu tauschen. */
+function bewilligungHinweis(kt,n){
+  if(kt==='ZH')return 'Im Kanton Zürich entscheidet die Gemeinde '+n+', ob Ihr Vorhaben ein Baugesuch braucht. '+
+    'Innenrenovationen ohne Eingriff in Tragstruktur, Fassade oder Nutzung bleiben meist bewilligungsfrei — '+
+    'wir klären den Fall vor Baubeginn ab.';
+  return n+' liegt im Kanton '+(KANTONE[kt]||kt)+'. Dort gelten andere kantonale Vorgaben als im Kanton Zürich; '+
+    'die Abklärung mit der Gemeinde übernehmen wir vor Baubeginn und halten sie schriftlich fest.';
+}
+/* Querverweise zwischen den Ortsseiten — ohne interne Links bleiben neue Seiten Waisen. */
+function ortsLinks(aktiv){
+  const l=REGION_SEO.filter(r=>r.slug!==aktiv);
+  if(!l.length)return '';
+  return `<div class="sec" style="padding-top:0"><div class="wrap">
+    <div class="other-svc rv"><span>Wir arbeiten auch in:</span>${l.map(r=>`<button data-go="sanierung-${r.slug}">${r.n}</button>`).join('')}</div>
+  </div></div>`;
+}
 function pRegionSeo(slug){
   const r=REGION_SEO.find(x=>x.slug===slug);
   if(!r)return null;
@@ -781,6 +798,7 @@ function pRegionSeo(slug){
 ${pageHead('Bauunternehmen für '+r.n+'.',r.lead)}
 <p class="sr-only">Renovation, Sanitär &amp; Umbau in ${r.n} — BauStern</p>
 <section class="sec" style="padding-top:0"><div class="wrap">
+  ${secHead('Was für '+r.n+' gilt.','','24px')}
   <div class="promises">
     <article class="promise rv"><span class="dia" aria-hidden="true"></span><h3 class="disp">Anfahrt</h3><p>${r.zeit} — Anfahrt ist im Festpreis inbegriffen, keine separate Position auf der Rechnung.</p></article>
     <article class="promise rv"><span class="dia" aria-hidden="true"></span><h3 class="disp">Ein Ansprechpartner</h3><p>Sechs Gewerke aus einer Hand, koordiniert von einer Bauleitung — auch für Objekte in ${r.n}.</p></article>
@@ -788,11 +806,95 @@ ${pageHead('Bauunternehmen für '+r.n+'.',r.lead)}
   </div>
 </div></section>
 <section class="sec" style="padding-top:0"><div class="wrap">
-  ${secHead('Leistungen in '+r.n+'.','Dieselben Gewerke wie in Zürich — dieselbe Bauleitung, dieselben Festpreis-Konditionen.')}
+  ${secHead('Wie wir in '+r.n+' arbeiten.','','24px')}
+  <p class="lead" style="max-width:70ch">${r.absatz||''}</p>
+</div></section>
+<section class="sec" style="padding-top:0"><div class="wrap">
+  ${secHead('Meistgefragt in '+r.n+'.','Schwerpunkt vor Ort: '+(r.fokus||'')+'. Alle sechs Gewerke bieten wir überall an.')}
   <div class="promises">
-    ${SVC.slice(0,6).map(s=>`<article class="promise rv"><span class="dia" aria-hidden="true"></span><h3 class="disp">${s.t}</h3><p>${s.d}</p><button class="lnk-arrow" data-go="leistungen/${s.slug}">Mehr <span>${ic.arrow}</span></button></article>`).join('')}
+    ${(r.svc||[]).map(k=>SVC.find(x=>x.slug===k)).filter(Boolean).map(x=>`<article class="promise rv"><span class="dia" aria-hidden="true"></span><h3 class="disp">${x.t}</h3><p>${x.d}</p><button class="lnk-arrow" data-go="leistungen/${x.slug}">Mehr <span>${ic.arrow}</span></button></article>`).join('')}
+  </div>
+  <div style="margin-top:22px"><button class="lnk-arrow" data-go="leistungen">Alle sechs Gewerke <span>${ic.arrow}</span></button></div>
+</div></section>
+<section class="sec incl-band" style="padding-top:0"><div class="wrap">
+  ${secHead('Baubewilligung in '+r.n+'.','','24px')}
+  <p class="lead" style="max-width:68ch">${bewilligungHinweis(r.kt,r.n)}</p>
+  <div style="margin-top:20px"><button class="lnk-arrow" data-go="wissen/baubewilligung-zuerich-sanierung">Wann ein Baugesuch nötig ist <span>${ic.arrow}</span></button></div>
+</div></section>
+${(()=>{const g=GEWERK_SEO.find(x=>x.region===r.slug);return g?`
+<section class="sec" style="padding-top:0"><div class="wrap">
+  ${secHead('Häufigster Auftrag in '+r.n+'.','Schwerpunkt vor Ort: '+r.fokus+'.','24px')}
+  <div style="margin-top:6px"><button class="lnk-arrow" data-go="${g.slug}">Badsanierung in ${g.n} — Ablauf und Richtwert <span>${ic.arrow}</span></button></div>
+</div></section>`:'';})()}
+${r.faq&&r.faq.length?faqSec(r.faq,'Fragen aus '+r.n+'.',''):''}
+${estimateSec()}
+${ortsLinks(r.slug)}
+${ctaBand()}`;
+}
+
+/* ===== Gewerk × Ort (nur Badsanierung, vier Städte — siehe GEWERK_SEO in data.js) ===== */
+function pGewerkSeo(slug){
+  const g=GEWERK_SEO.find(x=>x.slug===slug);
+  if(!g)return null;
+  const rw=RICHTWERTE.find(x=>x.k==='bad');
+  const ref=projectBySlug('objektbad-gruener-marmor');
+  return `
+${pageHead('Badsanierung in '+g.n+'.',g.lead)}
+<p class="sr-only">Badsanierung ${g.n} — Vollsanierung vom Rückbau bis zur Abnahme</p>
+<section class="sec" style="padding-top:0"><div class="wrap">
+  ${secHead('Drei feste Zusagen.','','24px')}
+  <div class="promises">
+    <article class="promise rv"><span class="dia" aria-hidden="true"></span><h3 class="disp">Ein Betrieb</h3><p>Rückbau, Sanitär, Abdichtung und Platten aus demselben Haus — keine Schnittstelle, an der es hängen bleibt.</p></article>
+    <article class="promise rv"><span class="dia" aria-hidden="true"></span><h3 class="disp">Mit Prüfprotokoll</h3><p>Druck- und Dichtigkeitsprüfung der neuen Leitungen, Fotos der Abdichtung vor dem Schliessen — beides geht an Sie.</p></article>
+    <article class="promise rv"><span class="dia" aria-hidden="true"></span><h3 class="disp">Fester Übergabetermin</h3><p>Der Termin steht im Werkvertrag, nicht in einer mündlichen Zusage. Werkgarantie 24 Monate.</p></article>
   </div>
 </div></section>
+
+${g.absatz?`
+<section class="sec" style="padding-top:0"><div class="wrap">
+  ${secHead(g.titel+'.','','24px')}
+  <p class="lead" style="max-width:70ch">${g.absatz}</p>
+</div></section>`:''}
+
+<section class="sec" style="padding-top:0"><div class="wrap">
+  ${secHead('So läuft eine Vollsanierung.','Sechs Schritte, immer in dieser Reihenfolge. Wird einer übersprungen, zeigt sich das erst nach Jahren — meist als Feuchtigkeit.','30px')}
+  <ol class="wtable">${BAD_ABLAUF.map((x,i)=>`<li class="wt-row rv"><span class="wt-n disp">${String(i+1).padStart(2,'0')}</span><div class="wt-txt"><h3>${x[0]}</h3><p>${x[1]}</p></div></li>`).join('')}</ol>
+</div></section>
+
+${rw?`
+<section class="sec incl-band" style="padding-top:0"><div class="wrap">
+  ${secHead('Was es kostet.','','24px')}
+  <p class="lead" style="max-width:68ch">Für eine komplette Badsanierung rechnen wir in ${g.n} mit
+    <b>CHF ${rw.min.toLocaleString('de-CH')}–${rw.max.toLocaleString('de-CH')} Arbeitsleistung</b> —
+    ${rw.note}. Material (Platten, Apparate, Armaturen) kommt nach Ihrer Wahl dazu. Die Anfahrt ist im
+    Festpreis enthalten und erscheint nicht als eigene Position.</p>
+  <ul class="incl-list" style="margin-top:22px">${INCLUDED.map(x=>`<li class="rv">${x}</li>`).join('')}</ul>
+</div></section>`:''}
+
+<section class="sec" style="padding-top:0"><div class="wrap">
+  ${secHead('Baubewilligung.','','24px')}
+  <p class="lead" style="max-width:68ch">${bewilligungHinweis(g.kt,g.n)} Ein Bad, das am selben Ort bleibt und
+    keine neue Leitung durch die Tragstruktur braucht, ist in der Regel unproblematisch.</p>
+</div></section>
+
+${ref?`
+<section class="sec" style="padding-top:0"><div class="wrap">
+  ${secHead('Ein ausgeführtes Bad.','','24px')}
+  <div class="promises">
+    <article class="promise rv"><span class="dia" aria-hidden="true"></span><h3 class="disp">${ref.title}</h3><p>${ref.story.ergebnis}</p><button class="lnk-arrow" data-go="projekt/${ref.slug}">Projekt ansehen <span>${ic.arrow}</span></button></article>
+  </div>
+</div></section>`:''}
+
+${faqSec((g.faq||[]).concat([
+ ['Wie lange dauert eine Badsanierung?','Beim Referenzprojekt Objektbad waren es drei bis vier Wochen vom Rückbau bis zur Abnahme. Den verbindlichen Termin nennen wir nach der Aufnahme vor Ort; er steht danach im Werkvertrag.'],
+ ['Können wir das Bad während der Arbeiten benutzen?','Nein. Bei einer Vollsanierung ist das Bad von der Demontage bis zur Montage ausser Betrieb. Gibt es im Objekt nur ein Bad, planen wir das vorher mit Ihnen durch.'],
+ ['Wer kauft Platten und Apparate?','Wie Sie möchten. Wir beschaffen auf Wunsch alles, oder Sie liefern das Material und wir verarbeiten es — in beiden Fällen steht die Arbeitsleistung getrennt in der Offerte.'],
+ ['Arbeiten Sie auch mehrere Bäder in Serie ab?','Ja. Gleiche Materialien, gleicher Ablauf, Wohnung für Wohnung — so bleibt der Aufwand pro Bad kalkulierbar und die Objekte sind nacheinander wieder vermietbar.'],
+]),'Häufige Fragen.','Was uns vor einer Badsanierung in '+g.n+' am häufigsten gefragt wird.')}
+
+${g.region?`<div class="sec" style="padding-top:0"><div class="wrap">
+  <div class="other-svc rv"><span>Alle Leistungen in ${g.n}:</span><button data-go="sanierung-${g.region}">Bauunternehmen für ${g.n}</button></div>
+</div></div>`:''}
 ${estimateSec()}
 ${ctaBand()}`;
 }
@@ -903,7 +1005,7 @@ const footer=`<footer><div class="wrap">
       <p class="fjob">Wir suchen Monteure → <a data-go="karriere" href="/karriere">Offene Stellen</a></p></div>
     <div><div class="k">Leistungen</div>${SVC.map(s=>`<a data-go="leistungen/${s.slug}">${s.t}</a>`).join('')}</div>
     <div><div class="k">Unternehmen</div>${SOL.map(s=>`<a data-go="loesungen/${s.slug}">${s.t}</a>`).join('')}<a data-go="referenzen">Referenzen</a><a data-go="ueber">Über uns</a><a data-go="wissen">Wissen</a><a data-go="karriere" href="/karriere">Karriere</a><a data-go="kontakt">Kontakt</a></div>
-    <div><div class="k">Regionen</div>${REGIONS.map(r=>{const seo=(typeof REGION_SEO!=='undefined'?REGION_SEO:[]).find(x=>x.n===r.n);return seo?`<a data-go="sanierung-${seo.slug}" href="/sanierung-${seo.slug}">${r.n}</a>`:`<div class="li">${r.n}</div>`;}).join('')}</div>
+    <div><div class="k">Regionen</div>${(typeof REGION_SEO!=='undefined'?REGION_SEO:[]).map(r=>`<a data-go="sanierung-${r.slug}" href="/sanierung-${r.slug}">${r.n}</a>`).join('')}<div class="li">Übrige Deutschschweiz</div></div>
     <div><div class="k">Kontakt</div><a href="tel:${CO.phoneRaw}" style="color:#fff;font-weight:600">${CO.phone}</a><a href="mailto:${CO.mail}">${CO.mail}</a><a href="${CO.wa}" target="_blank" rel="noopener">WhatsApp</a><a ${bookingAttrs}>${bookingLabel}</a><div class="li">${CO.addr}</div><div class="li">${CO.hours}</div></div>
   </div>
   <div class="fbot"><span>© 2026 ${CO.legal}</span><span style="display:flex;gap:18px"><a data-go="impressum">Impressum</a><a data-go="datenschutz">Datenschutz</a></span><span>UID ${CO.uid} · ${CO.hr}</span></div>
@@ -970,3 +1072,19 @@ const META={
  datenschutz:["Datenschutz — BauStern","Was wir mit Ihren Daten tun."],
  kontakt:["Kontakt & Offerte — BauStern Zürich","Kostenlose Beratung mit unserem Projektmanager. Festpreis-Offerte innert 48 h."],
 };
+/* Etappe 12: Titel und Beschreibung der Ortsseiten kommen aus den Daten — eine neue Stadt ist damit
+   ein Eintrag in REGION_SEO und sonst nichts. prerender.js liest die Routenliste aus META. */
+REGION_SEO.forEach(r=>{
+  if(META['sanierung-'+r.slug])return;
+  const kt=KANTONE[r.kt]||r.kt;
+  META['sanierung-'+r.slug]=[
+    'Renovation & Sanitär in '+r.n+' — BauStern',
+    'Bauunternehmen für Renovation, Sanitär und Umbau in '+r.n+' (Kanton '+kt+') — für Hausverwaltungen, GU und Gewerbe. Festpreis, ein Ansprechpartner, '+r.zeit.replace(/^ca\. /,'rund ')+'.'
+  ];
+});
+GEWERK_SEO.forEach(g=>{
+  META[g.slug]=[
+    'Badsanierung '+g.n+' — Festpreis & Termin | BauStern',
+    'Komplette Badsanierung in '+g.n+': Ablauf in sechs Schritten, Richtwert, Prüfprotokoll und 24 Monate Werkgarantie. Offerte innert 48 h.'
+  ];
+});

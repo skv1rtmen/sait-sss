@@ -5,7 +5,7 @@
 const { chromium } = require('playwright');
 const BASE = process.argv[2] && !process.argv[2].startsWith('--') ? process.argv[2] : 'http://127.0.0.1:8123';
 const SHOTS = process.argv.includes('--shots');
-const ROUTES=['/','/leistungen','/leistungen/renovation','/leistungen/sanitaer','/loesungen','/loesungen/hausverwaltungen','/referenzen','/projekt/atlant-komplettausbau','/ueber-uns','/wissen','/kontakt','/karriere','/bewertung','/sanierung-zug','/impressum','/404'];
+const ROUTES=['/','/leistungen','/leistungen/renovation','/leistungen/sanitaer','/loesungen','/loesungen/hausverwaltungen','/referenzen','/projekt/atlant-komplettausbau','/ueber-uns','/wissen','/kontakt','/karriere','/bewertung','/sanierung-zug','/sanierung-baden','/sanierung-dietikon','/badsanierung-zuerich','/badsanierung-luzern','/impressum','/404'];
 const file = r => r==='/' ? '/index.html' : r+'.html';
 (async()=>{
   const b=await chromium.launch({executablePath:process.env.PW_CHROME||'/opt/pw-browsers/chromium-1194/chrome-linux/chrome',headless:true,args:['--no-sandbox']});
