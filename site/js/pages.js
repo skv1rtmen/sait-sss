@@ -157,8 +157,11 @@ const wRoom=i=>{const s=FILM.scenes[i];const vh=(i===0?(FILM.room0Vh||1.2):(FILM
     </div></div></section>`;};
 const wStage=()=>`<div class="w-stage" id="wStage">
   <div class="w-cam">
-    ${V16?`<!-- v16: Halt- und Videoebenen legt js/film-v16.js an; hier nur das erste Haltebild als schneller Paint. -->
-    <img class="v16-boot" src="${FILM.v16.stillDir}ankunft-L.jpg" alt="" aria-hidden="true" fetchpriority="high" decoding="async">`
+    ${V16?`<!-- v16: Halt- und Videoebenen legt js/film-v16.js an; hier nur das erste Haltebild als schneller Paint.
+         Hochkant bekommt das Hochkant-Standbild: das Querformat-Bild wurde auf dem Telefon formatfüllend
+         beschnitten und sah als erster Eindruck stark herangezoomt aus (Sichtprüfung 18.09). -->
+    <picture class="v16-boot-pic"><source media="(orientation:portrait)" srcset="${FILM.v16.stillDir}ankunft-P.jpg">
+    <img class="v16-boot" src="${FILM.v16.stillDir}ankunft-L.jpg" alt="" aria-hidden="true" fetchpriority="high" decoding="async"></picture>`
     :`<picture><source media="(min-width:1000px)" srcset="${FILM.poster}"><img class="w-poster" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" aria-hidden="true" fetchpriority="high" decoding="async"></picture>
     <canvas class="w-canvas" aria-hidden="true"></canvas>
     <canvas class="w-fx" aria-hidden="true"></canvas>

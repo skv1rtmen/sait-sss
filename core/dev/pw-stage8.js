@@ -236,6 +236,32 @@ const rectsOverlap = (a, b) => a && b && a.w > 0 && a.h > 0 && b.w > 0 && b.h > 
       await p.waitForTimeout(1200);
     }
 
+    /* Etappe 9 (Mängel «Ruckeln» + «Bild zoomt heran und springt heraus»): Über einen kompletten
+       Durchgang darf (a) kein Kader ohne deckende Ebene bleiben (sonst blitzt eine falsche Ebene durch)
+       und (b) kein Kader länger als 50 ms dauern. Beides war vorher verletzt: 16 nackte Kader je Wechsel,
+       51 Ruckler in 6 s (2,5D-Shader). */
+    await p.evaluate(() => { Film16.enter(); Film16.go(0); });
+    await p.waitForFunction(() => Film16.ch === 0 && Film16.phase === 'HOLD', null, { timeout: 25000 });
+    await p.waitForTimeout(1200);
+    await p.evaluate(() => {
+      window.__r = { naked: 0, jank: 0, max: 0, n: 0 };
+      let last = performance.now();
+      const tick = () => {
+        const now = performance.now(), dt = now - last; last = now;
+        const r = window.__r; r.n++; if (dt > 50) r.jank++; if (dt > r.max) r.max = Math.round(dt);
+        const holdOn = [...document.querySelectorAll('.v16-hold')].some(h => +getComputedStyle(h).opacity > .9);
+        const v = document.querySelector('.v16-v.is-on');
+        if (!holdOn && !(v && +getComputedStyle(v).opacity > .9)) r.naked++;
+        requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+    for (let i = 0; i < 6; i++) { await p.evaluate(() => Film16.next()); await p.waitForTimeout(4000); }
+    const perf = await p.evaluate(() => window.__r);
+    if (perf.naked > 2) fail(vp.id, 'Kader', `${perf.naked} Kader ohne deckende Ebene (falsche Ebene blitzt durch)`);
+    if (perf.jank > 4) fail(vp.id, 'Kader', `${perf.jank} Ruckler > 50 ms (max ${perf.max} ms) in ${perf.n} Kadern`);
+    console.log(`   Kader: ${perf.n}, nackt ${perf.naked}, Ruckler ${perf.jank}, max ${perf.max} ms`);
+
     /* §7.12 — Ende des Rundgangs */
     await p.evaluate(() => Film16.next());
     await p.waitForTimeout(2000);

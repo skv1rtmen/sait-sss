@@ -116,9 +116,32 @@ void main(){
   /* ---------------- Schleife ---------------- */
   function fxK(){if(!fxT0)return 0;const k=Math.min(1,(performance.now()-fxT0)/FX_IN);return k*k*(3-2*k);}
   function setFx(k){gl.uniform1f(U.uFog,reduced()?0:FOG*k);gl.uniform1f(U.uBreath,reduced()?0:BREATH*k);}
+  /* Etappe 9 (Mangel des Eigentümers «viele Lags auf dem Telefon»): Die 2,5D-Ebene zeichnet dauerhaft mit
+     60 fps einen Vollbild-Shader (zwei Texturen, Atmen + Nebel). Auf schwacher Hardware kostet das den
+     halben Kader — gemessen 12 fps gegenüber 60 fps ohne sie. Darum misst sie sich jetzt selbst: sind die
+     ersten ~90 Kader im Median langsamer als KILL_MS, schaltet sie sich für die Sitzung ab und der Halt
+     bleibt das flache Standbild (pixelgleich, nur ohne Atmen). */
+  const KILL_MS=26, PROBE_N=90;
+  let pT=[],pLast=0,killed=false;
+  function watchdog(now){
+    if(killed||pT.length>=PROBE_N){return;}
+    if(pLast){pT.push(now-pLast);}
+    pLast=now;
+    if(pT.length<PROBE_N)return;
+    const m=pT.slice().sort((a,b)=>a-b)[Math.floor(pT.length/2)];
+    if(m>KILL_MS){
+      killed=true;mode='off';
+      try{api.hide();}catch(e){}
+      on=false;api.ready=false;stop();
+      if(cv){cv.style.transition='none';cv.style.opacity='0';}
+      if(window.console&&console.info)console.info('[v16 depth] zu teuer ('+m.toFixed(1)+' ms/Kader) — 2,5D für diese Sitzung aus');
+    }
+  }
   function frame(){
     raf=0;
     if(!on||paused||!ready||lost||document.hidden)return;
+    watchdog(performance.now());
+    if(killed)return;
     cx+=(tx-cx)*EASE; cy+=(ty-cy)*EASE;
     const mag=Math.min(1,Math.hypot(cx,cy));
     gl.uniform2f(U.uOff,cx*AMP,cy*AMP);
@@ -198,6 +221,15 @@ void main(){
     mount(canvas,hostEl){
       cv=canvas;host=hostEl||canvas.parentNode;
       if(reduced()){mode='off';return false;}
+      /* Etappe 9: Auf Telefonen bleibt die Ebene aus. Zwei Gründe, beide vom Eigentümer gemeldet:
+         (1) Ruckeln — der Shader kostet dort dauerhaft Kader; (2) der sichtbare Zoom-Sprung: die Ebene
+         «atmet» (±1 %), beim Flugbeginn verschwindet sie schlagartig und das flache Bild springt auf 100 %
+         zurück. Ohne sie ist der Halt schlicht das Standbild — und der Übergang Video→Halt bruchlos. */
+      const q=/[?&]depth=(force|off)\b/.exec(location.search),force=q&&q[1]==='force';
+      if(q&&q[1]==='off'){mode='off';return false;}
+      const weak=(navigator.deviceMemory&&navigator.deviceMemory<=4)||
+                 (navigator.hardwareConcurrency&&navigator.hardwareConcurrency<=4);
+      if(!force&&(coarse()||Math.min(innerWidth,innerHeight)<=900||weak)){mode='off';return false;}
       if(!initGL()){gl=null;return mountFallback();}
       mode='gl';t0=performance.now();
       host.addEventListener('pointermove',onMove,{passive:true});

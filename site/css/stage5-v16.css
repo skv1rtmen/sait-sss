@@ -332,7 +332,12 @@ html:has(.wohnung.is-s5-drag){cursor:ew-resize}
 }
 
 /* ============================ 7 · Telefon: ein Slot für alle Karten ============================ */
+/* Etappe 9: Auf dem Telefon keine Hintergrund-Unschärfe — sie zwingt den Compositor, hinter jeder Karte
+   dauerhaft neu zu filtern (messbar in jedem Kader). Eine dichtere Fläche sieht fast gleich aus. */
 @media (max-width:760px){
+  .wohnung.is-v16 .s5-card2,
+  .wohnung.is-v16 .s5-note2{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(14,18,22,.92)}
+  .wohnung.is-v16 .s5-note2{background:rgba(20,24,28,.94)}
   .wohnung.is-v16 .s5-slot,
   .wohnung.is-v16 .s5-slot--top,
   .wohnung.is-v16 .s5-slot--stack{left:16px;right:16px;top:186px;width:auto}

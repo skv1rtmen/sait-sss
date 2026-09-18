@@ -63,7 +63,9 @@
   const needFade=(from,to)=>(V.fadeInLegs||[]).indexOf(legIx(from,to))>=0;
 
   /* ---------- Video-Pool: warme, dekodierbereite Elemente ---------- */
-  const POOL_MAX=6;
+  /* Etappe 9: Auf dem Telefon kosten vorgeladene Clips Speicher, Datenvolumen und Dekoder — drei reichen
+     (aktueller Flug + beide Nachbarn), sechs waren für Desktop-Verhältnisse gedacht. */
+  const POOL_MAX=matchMedia('(max-width:760px)').matches?3:6;
   const pool=new Map();                 /* url -> {v, ready:Promise<void>, used:number} */
   let poolHost=null;
   function makeVideo(url){
@@ -333,17 +335,32 @@
     function updateCmp(){if(cmp)cmp.hidden=true;}
 
     /* ---------------- Halt / Flug ---------------- */
+    /* BUG (Sichtprüfung Telefon 18.09, gemeldet als «Bild zoomt nach dem Video kurz heran und springt
+       dann heraus»): Der neue Halt wurde mit einer Blende (260 ms nach blockiertem Autoplay, 220 ms nach
+       einem Videofehler, 420 ms bei der Blende) eingeblendet, WÄHREND der alte Halt schon abgeschaltet und
+       das Video entfernt war. In diesen ~0,3 s war die oberste Ebene das Startbild .v16-boot — und das ist
+       das QUERFORMAT-Standbild der Ankunft, auf dem Hochkant-Telefon formatfüllend beschnitten, also ein
+       deutlich herangezoomter, falscher Kader. Jetzt blendet der neue Halt IMMER über dem alten ein
+       (eigener z-index), der alte geht erst danach aus, und der Flugzustand endet vor der Blende. */
     function showHoldImage(url,fade){
       return new Promise(res=>{
-        const next=holdBot;
+        const next=holdBot,ms=fade?Math.min(fade,520):0;
         const done=()=>{
-          next.classList.add('on');holdTop.classList.remove('on');
-          const t=holdTop;holdTop=next;holdBot=t;
-          setTimeout(res,fade?Math.min(fade,520):0);
+          setStageFly(false);                       /* sonst hält die .is-fly-Regel die Blende bei 0 */
+          next.style.zIndex='2';
+          next.style.transitionDuration=ms+'ms';
+          next.classList.add('on');
+          const finish=()=>{
+            holdTop.classList.remove('on');holdTop.style.zIndex='';
+            const t=holdTop;holdTop=next;holdBot=t;
+            holdBot.style.zIndex='';
+            res();
+          };
+          if(ms)setTimeout(finish,ms);
+          else requestAnimationFrame(finish);
         };
         if(next.getAttribute('src')===url&&next.complete)return done();
         next.onload=done;next.onerror=()=>res();
-        next.style.transitionDuration=(fade||0)+'ms';
         next.src=url;
       });
     }
@@ -670,6 +687,9 @@
     const startup=async()=>{
       mountDepth();
       await enterHold(0,{fade:0});
+      /* Das Startbild hat seinen Zweck (schneller erster Paint) erfüllt; ab jetzt wäre es nur noch die
+         Ebene, die bei jeder Lücke durchscheint — siehe showHoldImage(). */
+      const boot=qs(cam,'.v16-boot');if(boot)(boot.closest('picture')||boot).remove();
       if(startBtn)startBtn.classList.add('show');
     };
     startup();
