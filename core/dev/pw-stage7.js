@@ -14,7 +14,7 @@ const file = r => r==='/' ? '/index.html' : r+'.html';
     const ctx=await b.newContext({viewport:{width:vp.width,height:vp.height},deviceScaleFactor:1,hasTouch:vp.touch,isMobile:vp.touch});
     const p=await ctx.newPage(); const errs=[];
     p.on('pageerror',e=>errs.push('PAGEERROR '+String(e).slice(0,120)));
-    p.on('console',m=>{if(m.type()==='error'&&!/favicon|analytics|supabase|401|404/i.test(m.text()))errs.push('CONSOLE '+m.text().slice(0,120));});
+    p.on('console',m=>{if(m.type()==='error'&&!/favicon|analytics|supabase|401|404|ERR_TUNNEL_CONNECTION_FAILED/i.test(m.text()))errs.push('CONSOLE '+m.text().slice(0,120));});
     for(const r of ROUTES){
       errs.length=0;
       try{await p.goto(BASE+file(r),{waitUntil:'networkidle',timeout:30000});}catch(e){out.push({vp:name,r,issues:['goto: '+String(e).slice(0,80)]});failures++;continue;}

@@ -24,12 +24,20 @@
   const s5of=scene=>(scene&&F.s5&&F.s5[scene.id])||null;
   const sceneMech=scene=>{const c=s5of(scene);return c&&c.mech||null;};
   const goRoute=g=>{if(typeof go==='function')go(g);else location.href='/'+String(g).replace(/^\/+/,'');};
+  /* Etappe 10: Messung des Rundgangs. Die alten Maschinen (film.js, film-mobile.js) meldeten 'tour_room';
+     mit Maschine B fiel das weg — es war also nicht mehr zu sehen, wie weit die Leute durchs Haus kommen.
+     analytics.js hört auf 'bs:event' (dataLayer/GA4). */
+  const trackV16=(name,params)=>{try{document.dispatchEvent(new CustomEvent('bs:event',{detail:{name,params:params||{}}}));}catch(e){}};
 
   /* ---------- Netz/Gerät: leichter Tier (720p) ---------- */
   let TIER='hd',tierProbe=null;
   function pickTier(){
     const m=/[?&]tier=(hd|lite)\b/.exec(location.search);if(m)return m[1];      /* Testschalter */
     const n=navigator,c=n.connection||n.mozConnection||n.webkitConnection;
+    /* Etappe 10: Am Telefon IMMER die leichte Fassung. Gemessen (kueche-bad-P, auf 1170 px Gerätebreite
+       skaliert): SSIM 0,985 gegenüber HD bei 5,5-fach kleinerer Datei (3,2 MB -> 0,6 MB). Der Unterschied
+       ist auf dem Gerät nicht zu sehen, die gesparten Bytes und der kleinere Dekoder sehr wohl. */
+    if(matchMedia('(max-width:820px)').matches||(matchMedia('(pointer:coarse)').matches&&Math.min(screen.width,screen.height)<=900))return 'lite';
     if((n.deviceMemory&&n.deviceMemory<=2)||(n.hardwareConcurrency&&n.hardwareConcurrency<=2))return 'lite';
     if(c){
       if(c.saveData)return 'lite';
@@ -178,6 +186,7 @@
     const RED=reduced();
     let ch=0,phase='HOLD',flyDir=0,flyTo=0,gen=0,active=null,pending=0,destroyed=false;
     let houseActive=true,lockScroll=true;
+    const seenRooms=new Set();            /* Etappe 10: je Kammer nur EIN tour_room-Ereignis */
 
     /* ---------------- Szenentext / Punkte / Grundriss ---------------- */
     let rotTimer=0;
@@ -396,6 +405,7 @@
          Der erste gezeichnete Kader ist pixelgleich zum Standbild — kein Sprung am Übergang. */
       showDepth(k);
       W.dispatchEvent(new CustomEvent('v16:hold',{detail:{ch:k,k,scene:S[k]}}));   /* stepChain() + stage5-v16.js hängen hier dran */
+      if(!seenRooms.has(k)){seenRooms.add(k);trackV16('tour_room',{room:ROOMS[k]||String(k),index:k,chapter:k+1,of:S.length});}
       if(pending&&chainTarget==null){const p=pending;pending=0;setTimeout(()=>command(p),40);}
       else pending=0;
     }
@@ -628,6 +638,7 @@
       const y=(sheet?sheet.getBoundingClientRect().top+scrollY:innerHeight);
       scrollTo({top:Math.max(1,Math.round(y)),behavior:RED?'auto':'smooth'});
       W.dispatchEvent(new CustomEvent('v16:exit'));
+      trackV16('tour_end',{rooms:seenRooms.size,of:S.length,complete:seenRooms.size>=S.length?1:0});
     }
     function enterHouse(atLast){
       if(houseActive)return;

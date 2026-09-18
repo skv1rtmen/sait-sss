@@ -6,8 +6,11 @@
           (GA4 dann als Tag im Container anlegen; alle Site-Ereignisse liegen im dataLayer, s. analytics.js).
    Beide leer = nichts wird geladen, der dataLayer wird trotzdem befüllt (debug:true zeigt Ereignisse in der Konsole). */
 const ANALYTICS={ga4Id:'',gtmId:'',debug:false};
-/* Supabase liefert derzeit 401; bis ein gültiger read-only Anon-Key vorliegt, bleiben die kuratierten Fallback-Rezensionen aktiv. */
-const REVIEWS_LIVE={enabled:false};
+/* Etappe 10: Der 401 kam nicht vom Schlüssel, sondern von der fehlenden Tabellen-Berechtigung — die
+   RLS-Regel «google_reviews_cache_public_read» war da, das GRANT SELECT an anon fehlte. Nachgeholt
+   (18.09); geprüft im Browser: HTTP 200, 5 Google-Rezensionen. Bei Fehler bleiben die kuratierten
+   REVIEWS aus dieser Datei stehen (reviews-live.js fängt alles ab). */
+const REVIEWS_LIVE={enabled:true};
 const CO={name:"BauStern",legal:"Einzelunternehmen BauStern Kozlovskyi",owner:"Artem Kozlovskyi",
   uid:"CHE-485.600.736",hr:"CH-020.1.105.382-8 · Kanton Zürich",hrSince:"19.02.2026",addr:"Jakob-Fügli-Strasse 18 · 8048 Zürich",
   hours:"Mo–Fr 07:00–18:00 · Sa 08:00–14:00",area:"Zürich und die gesamte Deutschschweiz",

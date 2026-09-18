@@ -20,6 +20,9 @@
   const isPhone=()=>matchMedia('(max-width:760px)').matches;
   const pick=o=>!o?null:(o[orient()]!==undefined?o[orient()]:o);
   const el=(tag,cls,html)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(html!=null)n.innerHTML=html;return n;};
+  /* Etappe 10: Die beiden Schlussknöpfe («Offerte anfragen», «Richtpreis berechnen») fingen die Klicks
+     mit stopPropagation ab und tauchten darum in keiner Messung auf. analytics.js hört auf 'bs:event'. */
+  const trackS5=(name,params)=>{try{document.dispatchEvent(new CustomEvent('bs:event',{detail:{name,params:params||{}}}));}catch(e){}};
   const SVGNS='http://www.w3.org/2000/svg';
   const svgEl=(tag,attrs)=>{const n=document.createElementNS(SVGNS,tag);for(const k in attrs)n.setAttribute(k,attrs[k]);return n;};
   const at=(node,x,y)=>{node.style.left=x+'%';node.style.top=y+'%';return node;};
@@ -78,11 +81,13 @@
       if(b.classList.contains('s5-sheet-x'))return sheetEl.classList.remove('show');
       const rooms=akteRooms();
       if(b.dataset.s5==='calc'){
+        trackS5('calc_open',{placement:'akte'});
         sheetEl.classList.remove('show');
         if(window.Film16&&Film16.release)Film16.release();
         const t=document.getElementById('richtwert');
         later(()=>{if(t)t.scrollIntoView({behavior:RED()?'auto':'smooth',block:'start'});},120);
       }else{
+        trackS5('cta_offerte',{label:'Offerte anfragen',placement:'akte'});
         sheetEl.classList.remove('show');
         window.PREFILL={gewerk:'Renovation',
           msg:'Anfrage nach dem Rundgang — angeschaut: '+(rooms.length?rooms.join(', '):'das ganze Haus')+
@@ -579,10 +584,12 @@
       const b=e.target.closest('[data-s5]');if(!b)return;
       e.preventDefault();e.stopPropagation();
       if(b.dataset.s5==='calc'){
+        trackS5('calc_open',{placement:'uebergabe'});
         if(window.Film16&&Film16.release)Film16.release();
         const t=document.getElementById('richtwert');
         later(()=>{if(t)t.scrollIntoView({behavior:RED()?'auto':'smooth',block:'start'});},120);
       }else{
+        trackS5('cta_offerte',{label:'Offerte anfragen',placement:'uebergabe'});
         window.PREFILL={gewerk:'Renovation',msg:'Anfrage nach dem Rundgang. Bitte um Rückruf und Offerte innert 48 h.'};
         if(window.Film16&&Film16.release)Film16.release();
         if(typeof go==='function')go('kontakt');else location.href='/kontakt';

@@ -31,7 +31,9 @@ const rectsOverlap = (a, b) => a && b && a.w > 0 && a.h > 0 && b.w > 0 && b.h > 
     const p = await ctx.newPage();
     const errs = [];
     p.on('pageerror', e => errs.push('PAGEERROR ' + String(e).slice(0, 180)));
-    p.on('console', m => { if (m.type() === 'error' && !/favicon|analytics|supabase|401|ERR_ABORTED/i.test(m.text())) errs.push('CONSOLE ' + m.text().slice(0, 160)); });
+    /* ERR_TUNNEL_CONNECTION_FAILED kommt ausschliesslich vom Egress-Proxy der Sandbox (Supabase/Google
+       sind dort gesperrt) und nie vom Produkt — sonst ist jede Abnahme rot, ohne dass etwas kaputt ist. */
+    p.on('console', m => { if (m.type() === 'error' && !/favicon|analytics|supabase|401|ERR_ABORTED|ERR_TUNNEL_CONNECTION_FAILED/i.test(m.text())) errs.push('CONSOLE ' + m.text().slice(0, 160)); });
     await p.goto(BASE + '?v=' + Date.now(), { waitUntil: 'networkidle', timeout: 35000 });
     await p.waitForTimeout(1600);
 
